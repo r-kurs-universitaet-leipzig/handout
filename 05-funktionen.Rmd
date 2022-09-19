@@ -1,0 +1,194 @@
+# Funktionen{#funktionen}
+
+Zur Erinnerung:
+
+In R wird grundsätzlich zwischen **Funktionen** und **Objekten** unterschieden.
+
+In diesem Kapitel wird es um die Grundlagen im Umgang mit Funktionen gehen. 
+
+Technisch gesehen, handelt es sich bei R um eine *funktionale Programmiersprache*. D.h., einfach formuliert, dass Problemlösungen durch Funktionen erfolgen.[^*]
+
+[^*]: Für die technischen Details, siehe [Wickham, H.: Advanced R, Chapter 6, Introduction](https://adv-r.hadley.nz/fp.html).
+
+## Eigenschaften
+
+Die meisten Funktionen in R haben bestimmte eigenschaften:
+
+**1. Funktionen sind "eigenständig".**
+
+Der Output einer Funktion hängt lediglich von seinem Input ab. Wird eine Funktion mit den gleichen argumentativen Werten zweimal ausgeführt, ist der Output in beiden Durchgängen identisch.
+
+Ausnahmen bilden Funktionen, die auf (Pseudo-) Zufallsverfahren beruhen, wie z.B. `rnorm()`.
+
+**2. Funktionen helfen beim Erreichen bestimmter Ziele.**
+
+Funktionen sollten vom Output her gedacht werden (Welches Ziel soll erreicht werden?). Der Auswahl einer passenden Funktion muss ein Ziel *formuliert* werden.
+
+**3. Funktionen bestehen im Wesentlichen aus einer Komposition von *Base*-Funktionen.**
+
+In R sind sogenannte *primitive* Funktionen definiert und bilden die kleinste Einheit von Funktionen. 
+
+Beispiel:
+
+```{r}
+mean
+```
+
+Alle anderen Funktionen bestehen aus einer Komposition dieser *primitiven* Funktionen.
+
+Beispiel:
+
+```{r}
+sd
+```
+
+## Aufbau{#aufbau}
+
+Funktionsaufrufe folgen i.d.R. dem Schema
+
+`Funktionsname(Argument 1 = ..., Argument 2 = ..., ...)`
+
+Bei den Argumenten handelt es sich meistens...
+
+- um ein oder mehrere **Objekte**, auf die sich die Funktion bezieht.
+- **Optionen**, die die Verarbeitung des Objekts beeinflusst.
+
+Beispiel:
+
+```{r, eval=FALSE}
+rep(x = 1:3,     # x ist hier das Objekt
+    times = 2)   # times ist die Option
+```
+
+Die Reihenfolge der Argumente in einer Funktion sind fest definiert.
+
+```{r}
+rep(3, 2)
+
+rep(2, 3)
+```
+
+In diesem Fall wird das erste Argument als Objekt (`x`) und das zweite als Option (`times`) erkannt. Die Reihenfolge der Argumente ist aber nur dann relevant, wenn die Argumente nicht benannte werden. Werden die Argumente hingegen benannt, wird die interne Reihenfolge überschrieben:
+
+```{r}
+rep(x = 2,
+    times = 3)
+
+rep(times = 3,
+    x = 2)
+```
+
+**Wichtiger Hinweis!**
+
+Es lohnt sich immer, die Argumente in einer Funktion zu benennen. Nicht nur erleichtert es euch, den Code auch nach langer Zeit noch zu verstehen, sondern auch anderen wird das Lesen eures Codes erleichtert.
+
+## Verschachtelungen
+
+Bei dem Output von Funktionen handelt es sich (fast) immer um Objekte. Diese Objekte können natürlich direkt wieder einer Funktion übergeben werden. Diese Eigenschaft ermöglicht es, Funktionen zu schachteln. Hieraus ergibt sich, dass R diese Schachtelungen von **Innen nach Außen** auflöst.
+
+Im folgenden Beispiel wird also zunächst der Mittelwert des Vektors bestimmt. Im Anschluss wird der Absolutbetrag hiervon genommen, usw. 
+
+```{r}
+round(log(abs(mean(c(-1,-2,-3,-4)))))
+```
+
+Dieses Beispiel ist noch relativ gut überschaubar. Im Arbeiten werden diese Ketten jedoch schnell komplexer und unübersichtlich. Eine Alternative hierzu bieten sogenannte **Pipes**.
+
+## Pipes
+
+Pipes bilden die Alternative zu geschachtelten Funktionen. Erstmals eingeführt wurden diese inner der Package-Familie des *Tidyverse* (`%>%`, siehe Kapitel zum Tidyverse). Seit der R Version 4.1.0 ist jedoch auch ein nativer Pipe-Operator verfügbar (`|>`).
+
+Pipes funktionieren analog zu geschachtelten Funktionen:
+
+- Ein Objekt (X) wird an eine Funktion (z.B. `mean()`) übergeben.
+- Die Funktion gibt ein Objekt zurück.
+- Das entstandene Objekt wird an eine weitere Funktion übergeben.
+- Auch diese Funktion gibt ein Objekt zurück.
+- usw. 
+
+```{r echo=FALSE, fig.height=2}
+library(DiagrammeR)
+
+mermaid("
+graph LR;
+    A(X) -->|mean| B(Mittelwert von X)
+    B -->|round| C(gerundeter Mittelwert von X)
+        ")
+```
+
+Code Beispiel:
+
+```{r}
+c(-1,-2,-3,-4) |> 
+  mean() |>
+  abs() |>
+  log() |> 
+  round()
+```
+
+An dem Code Beispiel werden die Vorteile von Pipes nochmal deutlich. Die Code-Sequenz kann von Oben nach Unten gelesen werden (wie eine Geschichte). Außerdem wird deutlicher, was mit den Daten Passiert und der Vorgang kann schnell, Durch das Anpassen von Argumenten abgewandelt werden.
+
+**Pro Tipp**
+
+Um einen Pipe-Operator einzufügen, kann die Tastenkombination `Str + Umschalt + m` bzw. `CMD + Umschalt + m` genutzt werden. Will man statt des nativen Operators den Operator aus dem Tidyverse nutzen, kann das über `Tools` $\rightarrow$ `Global Options` $\rightarrow$ `Code` $\rightarrow$ `Use native pipe operator` geändert werden.
+
+## Default Werte
+
+Die meisten Funktionen in R verfügen über sogenannte *Default Werte*. Hierbei handelt es sich um voreingestellte Werte, die für bestimmte Argumente verwendet werden, wenn bei diesen kein Wert übergeben wird.
+
+Für die Funktion `round()` ist ein Default Wert von `0` für das Argument `digits` hinterlegt. Entsprechend sind die folgenden zwei Codezeilen funktional identisch:
+
+```{r}
+round(x = pi)
+
+round(x = pi,
+      digits = 0)
+```
+
+In manchen Fällen sind aber auch logische Werte als Default Werte hinterlegt. In der Funktion `sd()` ist das Argument `na.rm` enthalten. Enthält der Vektor, der der Funktion übergeben wird ein `NA`, wird die Funktion auch `NA` zurückgeben. Schließlich ist ein Wert unbekannt und daher kann auch nicht mit Sicherheit eine Standardabweichung bestimmt werden. Mit dem Argument `na.rm` können vor der Berechnung alle `NA` entfernt werden. Hier ist ein logischer Default Wert von `FALSE` vorgegeben.
+
+```{r}
+x <- c(1,2,3,NA)
+sd(x)            
+# Das entspricht:
+sd(x, na.rm = FALSE)
+# Mit geändertem Wert:
+sd(x, na.rm = TRUE)
+```
+
+## Help Fenster
+
+Natürlich muss und soll niemand alle Argumente zu allen Funktionen auswendig lernen. R stellt hierzu bereits intern ein hilfreiches Hilfe-Fenster zur Verfügung. 
+
+Für jede Funktion kann dieses über `?Funktionsaufruf` aufgerufen werden.
+
+```{r, echo=FALSE, out.width='80%', fig.align='center', fig.cap="Help Fenster"}
+knitr::include_graphics("resources/Help.png")
+```
+
+Die **Description** gibt detailliert Auskunft über die Funktionsweise der Funktion. Hier ist das "Ziel" der Funktion festgeschrieben, dass vor der Auswahl der Funktion von den Nutzer:innen formuliert werden sollte.
+
+In der **Usage** sind die verschiedenen Argumente und ihre interne Reihenfolge (siehe Kapitel \@ref(aufbau)) bereits aufgeführt. Die hier aufgeführten Werte für die Argumente sind die hinterlegten *Default Werte.*
+
+Unter **Arguments** können die Beschreibungen der einzelnen Argumente gefunden werden. Hier sollte besondern darauf geachtet werden, welcher Datentyp als Wert übergeben werden muss.
+
+**Details** enthält Hinweise zur internen Berechnung von Werten, Verfahren, etc. Das ist dann besonder relevant, wenn es für die Berechnung von Kennwerten keine einheitlichen Konventionen gibt.
+
+In der Sektion **See also** sind Verweise zu anderen Funktionen oder Literaturhinweise vermerkt.
+
+Schließlich finden sich im letzten Abschnitt, unter **Examples** konkrete Code Beispiele für die Anwendung der Funktion.
+
+**Hinweis!**
+
+Je nach Package und Entwickler der Funktion ist das korrespondierende Hilfe-Fenster hilfreicher oder weniger hilfreich. Manchmal sind die Beschreibungen sehr kryptisch. Im Zweifel lohnt sich immer eine Google-Suche für euer spezifisches Problem (Stack Overflow!). 
+
+Und im Zweifel gilt: Immer mit der Ruhe und keine Panik ;-)
+
+## Prüfe dich selbst
+
+Von dieser Sitzung solltest du folgendes mitgenommen haben: 
+
+- [x] Du solltest den typischen Aufbau von Funktionen kennen.
+- [x] Du solltest Pipes kennen, verstehen und rudimentär anwenden können.
+- [x] Du solltest wissen, dass es Default Werte gibt und wie du herausfindest, welche Werte als solche hinterlegt sind.
+- [x] Du solltest dich im Hilfefenster zurechtfinden.

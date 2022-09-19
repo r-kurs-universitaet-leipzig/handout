@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Kapitel 5 Funktionen | Handout für R Grundkurs</title>
+  <meta name="description" content="Kapitel 5 Funktionen | Handout für R Grundkurs" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Kapitel 5 Funktionen | Handout für R Grundkurs" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Kapitel 5 Funktionen | Handout für R Grundkurs" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="strukturierte-datentypen.html"/>
+<link rel="next" href="packages.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="libs/d3-3.3.8/d3.min.js"></script>
+<script src="libs/dagre-0.4.0/dagre-d3.min.js"></script>
+<link href="libs/mermaid-0.3.0/dist/mermaid.css" rel="stylesheet" />
+<script src="libs/mermaid-0.3.0/dist/mermaid.slim.min.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/chromatography-0.1/chromatography.js"></script>
+<script src="libs/DiagrammeR-binding-1.0.9/DiagrammeR.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Handout R Kurs</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Vorwort</a></li>
+<li class="chapter" data-level="" data-path="hinweise-zur-verwendung-des-handouts.html"><a href="hinweise-zur-verwendung-des-handouts.html"><i class="fa fa-check"></i>Hinweise zur Verwendung des Handouts</a></li>
+<li class="chapter" data-level="1" data-path="einführung.html"><a href="einführung.html"><i class="fa fa-check"></i><b>1</b> Einführung</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="einführung.html"><a href="einführung.html#was-ist-r-und-warum-sollte-man-r-lernen"><i class="fa fa-check"></i><b>1.1</b> Was ist R und warum sollte man R lernen?</a></li>
+<li class="chapter" data-level="1.2" data-path="einführung.html"><a href="einführung.html#installation"><i class="fa fa-check"></i><b>1.2</b> Installation</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="oberfläche.html"><a href="oberfläche.html"><i class="fa fa-check"></i><b>2</b> Oberfläche</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="oberfläche.html"><a href="oberfläche.html#r-gui"><i class="fa fa-check"></i><b>2.1</b> R GUI</a></li>
+<li class="chapter" data-level="2.2" data-path="oberfläche.html"><a href="oberfläche.html#rstudio"><i class="fa fa-check"></i><b>2.2</b> RStudio</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="oberfläche.html"><a href="oberfläche.html#console"><i class="fa fa-check"></i><b>2.2.1</b> Console</a></li>
+<li class="chapter" data-level="2.2.2" data-path="oberfläche.html"><a href="oberfläche.html#script-editor"><i class="fa fa-check"></i><b>2.2.2</b> Script Editor</a></li>
+<li class="chapter" data-level="2.2.3" data-path="oberfläche.html"><a href="oberfläche.html#file-editor-und-environment"><i class="fa fa-check"></i><b>2.2.3</b> File-Editor und Environment</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="oberfläche.html"><a href="oberfläche.html#prüfe-dich-selbst"><i class="fa fa-check"></i><b>2.3</b> Prüfe dich selbst</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="atomare-datentypen.html"><a href="atomare-datentypen.html"><i class="fa fa-check"></i><b>3</b> Atomare Datentypen</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="atomare-datentypen.html"><a href="atomare-datentypen.html#arithmetische-grundoperationen-und-basisfunktionen"><i class="fa fa-check"></i><b>3.1</b> Arithmetische Grundoperationen und Basisfunktionen</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="atomare-datentypen.html"><a href="atomare-datentypen.html#funktionsaufrufe"><i class="fa fa-check"></i><b>3.1.1</b> Funktionsaufrufe</a></li>
+<li class="chapter" data-level="3.1.2" data-path="atomare-datentypen.html"><a href="atomare-datentypen.html#objekte-funktionen-und-referenzen"><i class="fa fa-check"></i><b>3.1.2</b> Objekte, Funktionen und Referenzen</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="atomare-datentypen.html"><a href="atomare-datentypen.html#erzeugung-von-referenzierbaren-objekten"><i class="fa fa-check"></i><b>3.2</b> Erzeugung von referenzierbaren Objekten</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="atomare-datentypen.html"><a href="atomare-datentypen.html#anmerkung-namen"><i class="fa fa-check"></i><b>3.2.1</b> Anmerkung Namen</a></li>
+<li class="chapter" data-level="3.2.2" data-path="atomare-datentypen.html"><a href="atomare-datentypen.html#rechnungen-mit-werten-von-objekten"><i class="fa fa-check"></i><b>3.2.2</b> Rechnungen mit Werten von Objekten</a></li>
+<li class="chapter" data-level="3.2.3" data-path="atomare-datentypen.html"><a href="atomare-datentypen.html#namen-überschreiben"><i class="fa fa-check"></i><b>3.2.3</b> Namen überschreiben</a></li>
+<li class="chapter" data-level="3.2.4" data-path="atomare-datentypen.html"><a href="atomare-datentypen.html#objekte-löschen"><i class="fa fa-check"></i><b>3.2.4</b> Objekte löschen</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="atomare-datentypen.html"><a href="atomare-datentypen.html#logische-werte-und-operationen"><i class="fa fa-check"></i><b>3.3</b> Logische Werte und Operationen</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="atomare-datentypen.html"><a href="atomare-datentypen.html#der-logische-wert-na"><i class="fa fa-check"></i><b>3.3.1</b> Der “logische” Wert NA</a></li>
+<li class="chapter" data-level="3.3.2" data-path="atomare-datentypen.html"><a href="atomare-datentypen.html#vergleichs-operationen"><i class="fa fa-check"></i><b>3.3.2</b> Vergleichs-Operationen</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="atomare-datentypen.html"><a href="atomare-datentypen.html#zeichenketten-character-strings"><i class="fa fa-check"></i><b>3.4</b> Zeichenketten (character strings)</a></li>
+<li class="chapter" data-level="3.5" data-path="atomare-datentypen.html"><a href="atomare-datentypen.html#klasse-eines-datenobjektes"><i class="fa fa-check"></i><b>3.5</b> Klasse eines Datenobjektes</a></li>
+<li class="chapter" data-level="3.6" data-path="atomare-datentypen.html"><a href="atomare-datentypen.html#spezielle-werte"><i class="fa fa-check"></i><b>3.6</b> Spezielle Werte</a></li>
+<li class="chapter" data-level="3.7" data-path="atomare-datentypen.html"><a href="atomare-datentypen.html#prüfe-dich-selbst-1"><i class="fa fa-check"></i><b>3.7</b> Prüfe dich selbst</a></li>
+<li class="chapter" data-level="3.8" data-path="atomare-datentypen.html"><a href="atomare-datentypen.html#literaturverweise"><i class="fa fa-check"></i><b>3.8</b> Literaturverweise</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="strukturierte-datentypen.html"><a href="strukturierte-datentypen.html"><i class="fa fa-check"></i><b>4</b> Strukturierte Datentypen</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="strukturierte-datentypen.html"><a href="strukturierte-datentypen.html#vektoren"><i class="fa fa-check"></i><b>4.1</b> Vektoren</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="strukturierte-datentypen.html"><a href="strukturierte-datentypen.html#abfragen-von-werten-durch-subsetting-von-vektoren"><i class="fa fa-check"></i><b>4.1.1</b> Abfragen von Werten durch Subsetting von Vektoren</a></li>
+<li class="chapter" data-level="4.1.2" data-path="strukturierte-datentypen.html"><a href="strukturierte-datentypen.html#vektorisierte-operationen"><i class="fa fa-check"></i><b>4.1.2</b> Vektorisierte Operationen</a></li>
+<li class="chapter" data-level="4.1.3" data-path="strukturierte-datentypen.html"><a href="strukturierte-datentypen.html#operationen-auf-vektoren"><i class="fa fa-check"></i><b>4.1.3</b> Operationen auf Vektoren</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="strukturierte-datentypen.html"><a href="strukturierte-datentypen.html#matrizen"><i class="fa fa-check"></i><b>4.2</b> Matrizen</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="strukturierte-datentypen.html"><a href="strukturierte-datentypen.html#benennung-von-spalten"><i class="fa fa-check"></i><b>4.2.1</b> Benennung von Spalten</a></li>
+<li class="chapter" data-level="4.2.2" data-path="strukturierte-datentypen.html"><a href="strukturierte-datentypen.html#erzeugung-von-matrizen-aus-vektoren"><i class="fa fa-check"></i><b>4.2.2</b> Erzeugung von Matrizen aus Vektoren</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="strukturierte-datentypen.html"><a href="strukturierte-datentypen.html#listen"><i class="fa fa-check"></i><b>4.3</b> Listen</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="strukturierte-datentypen.html"><a href="strukturierte-datentypen.html#indizierung-von-listen"><i class="fa fa-check"></i><b>4.3.1</b> Indizierung von Listen</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="strukturierte-datentypen.html"><a href="strukturierte-datentypen.html#data-frames"><i class="fa fa-check"></i><b>4.4</b> Data Frames</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="strukturierte-datentypen.html"><a href="strukturierte-datentypen.html#indizierung-von-datentabellen"><i class="fa fa-check"></i><b>4.4.1</b> Indizierung von Datentabellen</a></li>
+<li class="chapter" data-level="4.4.2" data-path="strukturierte-datentypen.html"><a href="strukturierte-datentypen.html#aufname-weiterer-variablenspalten"><i class="fa fa-check"></i><b>4.4.2</b> Aufname weiterer Variablen/Spalten</a></li>
+<li class="chapter" data-level="4.4.3" data-path="strukturierte-datentypen.html"><a href="strukturierte-datentypen.html#operationen-auf-datentabellen"><i class="fa fa-check"></i><b>4.4.3</b> Operationen auf Datentabellen</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="strukturierte-datentypen.html"><a href="strukturierte-datentypen.html#prüfe-dich-selbst-2"><i class="fa fa-check"></i><b>4.5</b> Prüfe dich selbst</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="funktionen.html"><a href="funktionen.html"><i class="fa fa-check"></i><b>5</b> Funktionen</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="funktionen.html"><a href="funktionen.html#eigenschaften"><i class="fa fa-check"></i><b>5.1</b> Eigenschaften</a></li>
+<li class="chapter" data-level="5.2" data-path="funktionen.html"><a href="funktionen.html#aufbau"><i class="fa fa-check"></i><b>5.2</b> Aufbau</a></li>
+<li class="chapter" data-level="5.3" data-path="funktionen.html"><a href="funktionen.html#verschachtelungen"><i class="fa fa-check"></i><b>5.3</b> Verschachtelungen</a></li>
+<li class="chapter" data-level="5.4" data-path="funktionen.html"><a href="funktionen.html#pipes"><i class="fa fa-check"></i><b>5.4</b> Pipes</a></li>
+<li class="chapter" data-level="5.5" data-path="funktionen.html"><a href="funktionen.html#default-werte"><i class="fa fa-check"></i><b>5.5</b> Default Werte</a></li>
+<li class="chapter" data-level="5.6" data-path="funktionen.html"><a href="funktionen.html#help-fenster"><i class="fa fa-check"></i><b>5.6</b> Help Fenster</a></li>
+<li class="chapter" data-level="5.7" data-path="funktionen.html"><a href="funktionen.html#prüfe-dich-selbst-3"><i class="fa fa-check"></i><b>5.7</b> Prüfe dich selbst</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="packages.html"><a href="packages.html"><i class="fa fa-check"></i><b>6</b> Packages</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="packages.html"><a href="packages.html#packages-installieren-und-laden"><i class="fa fa-check"></i><b>6.1</b> Packages installieren und Laden</a></li>
+<li class="chapter" data-level="6.2" data-path="packages.html"><a href="packages.html#needs"><i class="fa fa-check"></i><b>6.2</b> needs()</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="dateimanagement.html"><a href="dateimanagement.html"><i class="fa fa-check"></i><b>7</b> Dateimanagement</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="dateimanagement.html"><a href="dateimanagement.html#absolute-und-relative-dateipfade-exkurs"><i class="fa fa-check"></i><b>7.1</b> Absolute und relative Dateipfade (Exkurs)</a></li>
+<li class="chapter" data-level="7.2" data-path="dateimanagement.html"><a href="dateimanagement.html#r-projects"><i class="fa fa-check"></i><b>7.2</b> R Projects</a></li>
+<li class="chapter" data-level="7.3" data-path="dateimanagement.html"><a href="dateimanagement.html#dateien-einlesen"><i class="fa fa-check"></i><b>7.3</b> Dateien einlesen</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="dateimanagement.html"><a href="dateimanagement.html#r-interne-dateien"><i class="fa fa-check"></i><b>7.3.1</b> R-interne Dateien</a></li>
+<li class="chapter" data-level="7.3.2" data-path="dateimanagement.html"><a href="dateimanagement.html#r-externe-dateien"><i class="fa fa-check"></i><b>7.3.2</b> R-externe Dateien</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="tidyverse.html"><a href="tidyverse.html"><i class="fa fa-check"></i><b>8</b> Tidyverse</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="tidyverse.html"><a href="tidyverse.html#das-tidyverse"><i class="fa fa-check"></i><b>8.1</b> Das “Tidyverse”</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="tidyverse.html"><a href="tidyverse.html#tidyverse-laden"><i class="fa fa-check"></i><b>8.1.1</b> Tidyverse laden</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="tidyverse.html"><a href="tidyverse.html#dplyr"><i class="fa fa-check"></i><b>8.2</b> <code>dplyr::</code></a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="tidyverse.html"><a href="tidyverse.html#daten-verfügbar-machen"><i class="fa fa-check"></i><b>8.2.1</b> Daten verfügbar machen</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="tidyverse.html"><a href="tidyverse.html#variablen-manipulieren"><i class="fa fa-check"></i><b>8.3</b> Variablen Manipulieren</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="tidyverse.html"><a href="tidyverse.html#neue-variablen-erstellen"><i class="fa fa-check"></i><b>8.3.1</b> Neue Variablen erstellen</a></li>
+<li class="chapter" data-level="8.3.2" data-path="tidyverse.html"><a href="tidyverse.html#variablen-umbennen"><i class="fa fa-check"></i><b>8.3.2</b> Variablen umbennen</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="tidyverse.html"><a href="tidyverse.html#fälle-manipulieren"><i class="fa fa-check"></i><b>8.4</b> Fälle Manipulieren</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="tidyverse.html"><a href="tidyverse.html#fälle-gruppieren"><i class="fa fa-check"></i><b>8.4.1</b> Fälle Gruppieren</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="tidyverse.html"><a href="tidyverse.html#prüfe-dich-selbst-4"><i class="fa fa-check"></i><b>8.5</b> Prüfe dich selbst</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="kontrollstrukturen.html"><a href="kontrollstrukturen.html"><i class="fa fa-check"></i><b>9</b> Kontrollstrukturen</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="kontrollstrukturen.html"><a href="kontrollstrukturen.html#prinzipien-der-programmierung"><i class="fa fa-check"></i><b>9.1</b> Prinzipien der Programmierung</a></li>
+<li class="chapter" data-level="9.2" data-path="kontrollstrukturen.html"><a href="kontrollstrukturen.html#funktionen-selber-schreiben"><i class="fa fa-check"></i><b>9.2</b> Funktionen selber schreiben</a></li>
+<li class="chapter" data-level="9.3" data-path="kontrollstrukturen.html"><a href="kontrollstrukturen.html#kontrollstrukturen-1"><i class="fa fa-check"></i><b>9.3</b> Kontrollstrukturen</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="kontrollstrukturen.html"><a href="kontrollstrukturen.html#vektorisierte-fallunterscheidungen"><i class="fa fa-check"></i><b>9.3.1</b> Vektorisierte Fallunterscheidungen</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="kontrollstrukturen.html"><a href="kontrollstrukturen.html#schleifen"><i class="fa fa-check"></i><b>9.4</b> Schleifen</a></li>
+<li class="chapter" data-level="9.5" data-path="kontrollstrukturen.html"><a href="kontrollstrukturen.html#vektorisiertes-programmieren"><i class="fa fa-check"></i><b>9.5</b> Vektorisiertes Programmieren</a></li>
+<li class="chapter" data-level="9.6" data-path="kontrollstrukturen.html"><a href="kontrollstrukturen.html#prüfe-dich-selbst-5"><i class="fa fa-check"></i><b>9.6</b> Prüfe dich selbst</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Handout für R Grundkurs</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="funktionen" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">Kapitel 5</span> Funktionen<a href="funktionen.html#funktionen" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Zur Erinnerung:</p>
+<p>In R wird grundsätzlich zwischen <strong>Funktionen</strong> und <strong>Objekten</strong> unterschieden.</p>
+<p>In diesem Kapitel wird es um die Grundlagen im Umgang mit Funktionen gehen.</p>
+<p>Technisch gesehen, handelt es sich bei R um eine <em>funktionale Programmiersprache</em>. D.h., einfach formuliert, dass Problemlösungen durch Funktionen erfolgen.<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a></p>
+<div id="eigenschaften" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> Eigenschaften<a href="funktionen.html#eigenschaften" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Die meisten Funktionen in R haben bestimmte eigenschaften:</p>
+<p><strong>1. Funktionen sind “eigenständig”.</strong></p>
+<p>Der Output einer Funktion hängt lediglich von seinem Input ab. Wird eine Funktion mit den gleichen argumentativen Werten zweimal ausgeführt, ist der Output in beiden Durchgängen identisch.</p>
+<p>Ausnahmen bilden Funktionen, die auf (Pseudo-) Zufallsverfahren beruhen, wie z.B. <code>rnorm()</code>.</p>
+<p><strong>2. Funktionen helfen beim Erreichen bestimmter Ziele.</strong></p>
+<p>Funktionen sollten vom Output her gedacht werden (Welches Ziel soll erreicht werden?). Der Auswahl einer passenden Funktion muss ein Ziel <em>formuliert</em> werden.</p>
+<p><strong>3. Funktionen bestehen im Wesentlichen aus einer Komposition von <em>Base</em>-Funktionen.</strong></p>
+<p>In R sind sogenannte <em>primitive</em> Funktionen definiert und bilden die kleinste Einheit von Funktionen.</p>
+<p>Beispiel:</p>
+<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="funktionen.html#cb146-1" aria-hidden="true" tabindex="-1"></a>mean</span></code></pre></div>
+<pre><code>## function (x, ...) 
+## UseMethod(&quot;mean&quot;)
+## &lt;bytecode: 0x565089f40cb8&gt;
+## &lt;environment: namespace:base&gt;</code></pre>
+<p>Alle anderen Funktionen bestehen aus einer Komposition dieser <em>primitiven</em> Funktionen.</p>
+<p>Beispiel:</p>
+<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb148-1"><a href="funktionen.html#cb148-1" aria-hidden="true" tabindex="-1"></a>sd</span></code></pre></div>
+<pre><code>## function (x, na.rm = FALSE) 
+## sqrt(var(if (is.vector(x) || is.factor(x)) x else as.double(x), 
+##     na.rm = na.rm))
+## &lt;bytecode: 0x56508a90cf28&gt;
+## &lt;environment: namespace:stats&gt;</code></pre>
+</div>
+<div id="aufbau" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> Aufbau<a href="funktionen.html#aufbau" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Funktionsaufrufe folgen i.d.R. dem Schema</p>
+<p><code>Funktionsname(Argument 1 = ..., Argument 2 = ..., ...)</code></p>
+<p>Bei den Argumenten handelt es sich meistens…</p>
+<ul>
+<li>um ein oder mehrere <strong>Objekte</strong>, auf die sich die Funktion bezieht.</li>
+<li><strong>Optionen</strong>, die die Verarbeitung des Objekts beeinflusst.</li>
+</ul>
+<p>Beispiel:</p>
+<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="funktionen.html#cb150-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rep</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>,     <span class="co"># x ist hier das Objekt</span></span>
+<span id="cb150-2"><a href="funktionen.html#cb150-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">times =</span> <span class="dv">2</span>)   <span class="co"># times ist die Option</span></span></code></pre></div>
+<p>Die Reihenfolge der Argumente in einer Funktion sind fest definiert.</p>
+<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="funktionen.html#cb151-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rep</span>(<span class="dv">3</span>, <span class="dv">2</span>)</span></code></pre></div>
+<pre><code>## [1] 3 3</code></pre>
+<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="funktionen.html#cb153-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rep</span>(<span class="dv">2</span>, <span class="dv">3</span>)</span></code></pre></div>
+<pre><code>## [1] 2 2 2</code></pre>
+<p>In diesem Fall wird das erste Argument als Objekt (<code>x</code>) und das zweite als Option (<code>times</code>) erkannt. Die Reihenfolge der Argumente ist aber nur dann relevant, wenn die Argumente nicht benannte werden. Werden die Argumente hingegen benannt, wird die interne Reihenfolge überschrieben:</p>
+<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="funktionen.html#cb155-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rep</span>(<span class="at">x =</span> <span class="dv">2</span>,</span>
+<span id="cb155-2"><a href="funktionen.html#cb155-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">times =</span> <span class="dv">3</span>)</span></code></pre></div>
+<pre><code>## [1] 2 2 2</code></pre>
+<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="funktionen.html#cb157-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rep</span>(<span class="at">times =</span> <span class="dv">3</span>,</span>
+<span id="cb157-2"><a href="funktionen.html#cb157-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="dv">2</span>)</span></code></pre></div>
+<pre><code>## [1] 2 2 2</code></pre>
+<p><strong>Wichtiger Hinweis!</strong></p>
+<p>Es lohnt sich immer, die Argumente in einer Funktion zu benennen. Nicht nur erleichtert es euch, den Code auch nach langer Zeit noch zu verstehen, sondern auch anderen wird das Lesen eures Codes erleichtert.</p>
+</div>
+<div id="verschachtelungen" class="section level2 hasAnchor" number="5.3">
+<h2><span class="header-section-number">5.3</span> Verschachtelungen<a href="funktionen.html#verschachtelungen" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Bei dem Output von Funktionen handelt es sich (fast) immer um Objekte. Diese Objekte können natürlich direkt wieder einer Funktion übergeben werden. Diese Eigenschaft ermöglicht es, Funktionen zu schachteln. Hieraus ergibt sich, dass R diese Schachtelungen von <strong>Innen nach Außen</strong> auflöst.</p>
+<p>Im folgenden Beispiel wird also zunächst der Mittelwert des Vektors bestimmt. Im Anschluss wird der Absolutbetrag hiervon genommen, usw.</p>
+<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="funktionen.html#cb159-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">log</span>(<span class="fu">abs</span>(<span class="fu">mean</span>(<span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="sc">-</span><span class="dv">2</span>,<span class="sc">-</span><span class="dv">3</span>,<span class="sc">-</span><span class="dv">4</span>)))))</span></code></pre></div>
+<pre><code>## [1] 1</code></pre>
+<p>Dieses Beispiel ist noch relativ gut überschaubar. Im Arbeiten werden diese Ketten jedoch schnell komplexer und unübersichtlich. Eine Alternative hierzu bieten sogenannte <strong>Pipes</strong>.</p>
+</div>
+<div id="pipes" class="section level2 hasAnchor" number="5.4">
+<h2><span class="header-section-number">5.4</span> Pipes<a href="funktionen.html#pipes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Pipes bilden die Alternative zu geschachtelten Funktionen. Erstmals eingeführt wurden diese inner der Package-Familie des <em>Tidyverse</em> (<code>%&gt;%</code>, siehe Kapitel zum Tidyverse). Seit der R Version 4.1.0 ist jedoch auch ein nativer Pipe-Operator verfügbar (<code>|&gt;</code>).</p>
+<p>Pipes funktionieren analog zu geschachtelten Funktionen:</p>
+<ul>
+<li>Ein Objekt (X) wird an eine Funktion (z.B. <code>mean()</code>) übergeben.</li>
+<li>Die Funktion gibt ein Objekt zurück.</li>
+<li>Das entstandene Objekt wird an eine weitere Funktion übergeben.</li>
+<li>Auch diese Funktion gibt ein Objekt zurück.</li>
+<li>usw.</li>
+</ul>
+<div id="htmlwidget-2db5179f6c8fd74ef695" style="width:672px;height:192px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2db5179f6c8fd74ef695">{"x":{"diagram":"\ngraph LR;\n    A(X) -->|mean| B(Mittelwert von X)\n    B -->|round| C(gerundeter Mittelwert von X)\n        "},"evals":[],"jsHooks":[]}</script>
+<p>Code Beispiel:</p>
+<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="funktionen.html#cb161-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="sc">-</span><span class="dv">2</span>,<span class="sc">-</span><span class="dv">3</span>,<span class="sc">-</span><span class="dv">4</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb161-2"><a href="funktionen.html#cb161-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mean</span>() <span class="sc">|&gt;</span></span>
+<span id="cb161-3"><a href="funktionen.html#cb161-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">abs</span>() <span class="sc">|&gt;</span></span>
+<span id="cb161-4"><a href="funktionen.html#cb161-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">log</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb161-5"><a href="funktionen.html#cb161-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">round</span>()</span></code></pre></div>
+<pre><code>## [1] 1</code></pre>
+<p>An dem Code Beispiel werden die Vorteile von Pipes nochmal deutlich. Die Code-Sequenz kann von Oben nach Unten gelesen werden (wie eine Geschichte). Außerdem wird deutlicher, was mit den Daten Passiert und der Vorgang kann schnell, Durch das Anpassen von Argumenten abgewandelt werden.</p>
+<p><strong>Pro Tipp</strong></p>
+<p>Um einen Pipe-Operator einzufügen, kann die Tastenkombination <code>Str + Umschalt + m</code> bzw. <code>CMD + Umschalt + m</code> genutzt werden. Will man statt des nativen Operators den Operator aus dem Tidyverse nutzen, kann das über <code>Tools</code> <span class="math inline">\(\rightarrow\)</span> <code>Global Options</code> <span class="math inline">\(\rightarrow\)</span> <code>Code</code> <span class="math inline">\(\rightarrow\)</span> <code>Use native pipe operator</code> geändert werden.</p>
+</div>
+<div id="default-werte" class="section level2 hasAnchor" number="5.5">
+<h2><span class="header-section-number">5.5</span> Default Werte<a href="funktionen.html#default-werte" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Die meisten Funktionen in R verfügen über sogenannte <em>Default Werte</em>. Hierbei handelt es sich um voreingestellte Werte, die für bestimmte Argumente verwendet werden, wenn bei diesen kein Wert übergeben wird.</p>
+<p>Für die Funktion <code>round()</code> ist ein Default Wert von <code>0</code> für das Argument <code>digits</code> hinterlegt. Entsprechend sind die folgenden zwei Codezeilen funktional identisch:</p>
+<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="funktionen.html#cb163-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="at">x =</span> pi)</span></code></pre></div>
+<pre><code>## [1] 3</code></pre>
+<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="funktionen.html#cb165-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="at">x =</span> pi,</span>
+<span id="cb165-2"><a href="funktionen.html#cb165-2" aria-hidden="true" tabindex="-1"></a>      <span class="at">digits =</span> <span class="dv">0</span>)</span></code></pre></div>
+<pre><code>## [1] 3</code></pre>
+<p>In manchen Fällen sind aber auch logische Werte als Default Werte hinterlegt. In der Funktion <code>sd()</code> ist das Argument <code>na.rm</code> enthalten. Enthält der Vektor, der der Funktion übergeben wird ein <code>NA</code>, wird die Funktion auch <code>NA</code> zurückgeben. Schließlich ist ein Wert unbekannt und daher kann auch nicht mit Sicherheit eine Standardabweichung bestimmt werden. Mit dem Argument <code>na.rm</code> können vor der Berechnung alle <code>NA</code> entfernt werden. Hier ist ein logischer Default Wert von <code>FALSE</code> vorgegeben.</p>
+<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="funktionen.html#cb167-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="cn">NA</span>)</span>
+<span id="cb167-2"><a href="funktionen.html#cb167-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(x)            </span></code></pre></div>
+<pre><code>## [1] NA</code></pre>
+<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="funktionen.html#cb169-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Das entspricht:</span></span>
+<span id="cb169-2"><a href="funktionen.html#cb169-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(x, <span class="at">na.rm =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<pre><code>## [1] NA</code></pre>
+<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="funktionen.html#cb171-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Mit geändertem Wert:</span></span>
+<span id="cb171-2"><a href="funktionen.html#cb171-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>## [1] 1</code></pre>
+</div>
+<div id="help-fenster" class="section level2 hasAnchor" number="5.6">
+<h2><span class="header-section-number">5.6</span> Help Fenster<a href="funktionen.html#help-fenster" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Natürlich muss und soll niemand alle Argumente zu allen Funktionen auswendig lernen. R stellt hierzu bereits intern ein hilfreiches Hilfe-Fenster zur Verfügung.</p>
+<p>Für jede Funktion kann dieses über <code>?Funktionsaufruf</code> aufgerufen werden.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-80"></span>
+<img src="resources/Help.png" alt="Help Fenster" width="80%" />
+<p class="caption">
+Abb. 5.1: Help Fenster
+</p>
+</div>
+<p>Die <strong>Description</strong> gibt detailliert Auskunft über die Funktionsweise der Funktion. Hier ist das “Ziel” der Funktion festgeschrieben, dass vor der Auswahl der Funktion von den Nutzer:innen formuliert werden sollte.</p>
+<p>In der <strong>Usage</strong> sind die verschiedenen Argumente und ihre interne Reihenfolge (siehe Kapitel <a href="funktionen.html#aufbau">5.2</a>) bereits aufgeführt. Die hier aufgeführten Werte für die Argumente sind die hinterlegten <em>Default Werte.</em></p>
+<p>Unter <strong>Arguments</strong> können die Beschreibungen der einzelnen Argumente gefunden werden. Hier sollte besondern darauf geachtet werden, welcher Datentyp als Wert übergeben werden muss.</p>
+<p><strong>Details</strong> enthält Hinweise zur internen Berechnung von Werten, Verfahren, etc. Das ist dann besonder relevant, wenn es für die Berechnung von Kennwerten keine einheitlichen Konventionen gibt.</p>
+<p>In der Sektion <strong>See also</strong> sind Verweise zu anderen Funktionen oder Literaturhinweise vermerkt.</p>
+<p>Schließlich finden sich im letzten Abschnitt, unter <strong>Examples</strong> konkrete Code Beispiele für die Anwendung der Funktion.</p>
+<p><strong>Hinweis!</strong></p>
+<p>Je nach Package und Entwickler der Funktion ist das korrespondierende Hilfe-Fenster hilfreicher oder weniger hilfreich. Manchmal sind die Beschreibungen sehr kryptisch. Im Zweifel lohnt sich immer eine Google-Suche für euer spezifisches Problem (Stack Overflow!).</p>
+<p>Und im Zweifel gilt: Immer mit der Ruhe und keine Panik ;-)</p>
+</div>
+<div id="prüfe-dich-selbst-3" class="section level2 hasAnchor" number="5.7">
+<h2><span class="header-section-number">5.7</span> Prüfe dich selbst<a href="funktionen.html#prüfe-dich-selbst-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Von dieser Sitzung solltest du folgendes mitgenommen haben:</p>
+<ul class="task-list">
+<li><input type="checkbox" disabled="" checked="" />
+Du solltest den typischen Aufbau von Funktionen kennen.</li>
+<li><input type="checkbox" disabled="" checked="" />
+Du solltest Pipes kennen, verstehen und rudimentär anwenden können.</li>
+<li><input type="checkbox" disabled="" checked="" />
+Du solltest wissen, dass es Default Werte gibt und wie du herausfindest, welche Werte als solche hinterlegt sind.</li>
+<li><input type="checkbox" disabled="" checked="" />
+Du solltest dich im Hilfefenster zurechtfinden.</li>
+</ul>
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="3">
+<li id="fn3"><p>Für die technischen Details, siehe <a href="https://adv-r.hadley.nz/fp.html">Wickham, H.: Advanced R, Chapter 6, Introduction</a>.<a href="funktionen.html#fnref3" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="strukturierte-datentypen.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="packages.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/peer-schwertfeger/handout_r_kurs/edit/master/05-funktionen.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/peer-schwertfeger/handout_r_kurs/blob/master/05-funktionen.Rmd",
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

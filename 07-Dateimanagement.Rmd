@@ -1,0 +1,157 @@
+# Dateimanagement
+
+RStudio bietet intern bereits ein gutes Tool, um Dateien auf der Festplatte zu verarbeiten. Dateien lassen sich hier *löschen*, *umbenennen*, *neuen Ordnern hinzufügen*, *verschieben* oder *kopieren.*
+
+## Absolute und relative Dateipfade (Exkurs)
+
+Um Dateien in R zu laden, muss zumeist ein Datenpfad angegeben werden, der zu der zu ladenden Datei führt. Der Datenpfad ist dabei zunächst entsprechen lang:
+
+```{r eval=FALSE}
+df_example <- read.csv(file = "/Users/username/Documents/GitHub/r-kurs/sitzung/data/strata.csv")
+```
+
+Diese langen Datenpfade können mithilfe von *Working Directories* (WD) gelöst werden. Diese können mit der Funktion `setwd()` eingerichtet werden.
+
+```{r eval = FALSE}
+setwd(dir = "/Users/username/Documents/GitHub/r-kurs/sitzung")
+```
+
+Im Zweifel kann die WD dann mithilfe von `getwd()` abgerufen werden.
+
+Wurde eine WD festgelegt, kann der Datenpfad nun bei dem Ort beginnen, der über die `setwd()` Funktion festgelegt wurde.
+
+```{r eval=FALSE}
+df_example <- read.csv(file = "data/strata.csv")
+```
+
+Der Nachteil dieser Herangehensweise ist, dass die WD global für alle Arbeitsschritte festgelegt wird. Sollen aber WDs für einzelne "Projekte" festgelegt werden, **sollten** RProjects genutzt werden.
+
+## R Projects
+
+```{r, echo=FALSE, out.width='40%', fig.align='center', fig.cap="R Project Logo"}
+knitr::include_graphics("resources/r_proj.png")
+```
+
+Um ein R Project anzulegen, sollten folgende Schritte befolgt werden:
+
+1. Projekt-Ordner anlegen (Name des Ordners wird zum Projekt-Namen)
+
+2. In RStudio über `Projects` (oben rechts) `New Project...` wählen
+
+3. `New Project` $\Rightarrow$ `Existing Directory` $\Rightarrow$ Erstellten Ordner aus 1. wählen $\Rightarrow$ `Create`
+
+Ein Projekt kann dann immer über die `.RProj`-Datei geöffnet werden.
+
+Vorteile von Projekten:
+
+- Wechsel von Projekten einfach möglich (WD muss nicht immer neu festgelegt werden)
+- Code wird transportabel
+- Deutlich übersichtlicher als lose Ordnerstruktur
+- RHistory wird projektbezogen gespeichert
+
+## Dateien einlesen
+
+In R sind grundsätzlich alle Datei-Typen einlesbar bzw. verarbeitbar. Hierunter zählen z.B.
+
+Datenformat | File-Extension    | Bemerkung
+----------- | --------------    | --------
+ RData/RDS  | .Rda bzw. .Rds    | native R-Datenformate
+ CSV        | .csv              | Comma-Seperated Values
+ Text/ASCII | .txt              | Reines Textfile
+ XLS        | .xls bzw. .xlsx   | EXCEL-Datenformat
+ SAV        | .sav              | SPSS-Datenformat
+ DTA        | .dta              | Stata-Datenformat
+ R          | .R                | Speicherung als R-Skript
+ 
+R interne Dateien, sowie verschiedene Text-Formate (.csv, .tsv, .txt, ...) können bereits mit R Base eingelesen werden. Komplexere Datenformate (Excel, Stata, SPSS) benötigen bestimmte Packages.
+
+### R-interne Dateien
+
+Objekte in der R Umgebung lassen sich explizit als Datei auf dem Computer speichern. 
+Hierzu gibt es zwei mögliche Datei-Formate:
+
+**`.Rda` (R Data)**
+
+Mithilfe der Funktion `save()` können R Objekte gespeichert werden.
+
+```{r eval = FALSE}
+df_data <- data.frame(x = 1:10,   # Objekte anlegen
+                      y = 10:1)
+
+x <- 4
+
+save(list = c("df_data","x"),     # Objekt speichern (als Liste)
+     file = "data/example.Rda")   # Datenpfad
+```
+
+Die Funktion `load` lädt die gespeicherten Objekte wieder in die Umgebung.
+
+```{r eval = FALSE}
+load(file = "data/example.Rda")
+```
+
+*Vorteil*
+
+- Mehrere Objekte speicherbar
+
+*Nachteil*
+
+- Objekte werden mit gleichem Namen wieder geladen
+
+**`.Rds` (R Data Single)**
+
+Das `.Rds`-Format erlaubt das speichern *eines* Objektes. Das speichern erfolgt
+ähnlich, wie bei den `.Rda`-Formaten.
+
+```{r eval = FALSE}
+saveRDS(df_data,
+        file = "data/example.Rds")
+```
+
+Beim Laden wird ein neuer Name für das Objekt festgelegt.
+
+```{r eval = FALSE}
+df_new <- readRDS("data/example.Rds")
+```
+
+*Vorteil*
+
+- An neuen Namen bindbar
+
+*Nachteil*
+
+- Nur ein Objekt kann gespeichert/geladen werden
+ 
+### R-externe Dateien
+
+Sollen andere Dateiformate eingelesen werden, werden unterschiedliche Packages benötigt.
+
+#### Haven Package
+
+```{r, echo=FALSE, out.width='40%', fig.align='center', fig.cap="haven Package Logo"}
+knitr::include_graphics("resources/logo_haven.png")
+```
+
+Das `haven`-Package ist ein mächtiges Package, um Dateien in anderen gängigen 
+Statistik-Formaten (`.sav`, `.dta`) einzulesen.
+
+Die Funktionen funktionieren weitestgehend selbsterklärend:
+
+```{r eval = FALSE}
+needs(haven)
+
+df_example_spss <- 
+  read_spss(file = "data/example.sav",  # Dateipfad
+            encoding = "UTF-8")         # Optional
+
+df_example_stata <- 
+  read_stata(file = "data/example.dta", # Dateipfad
+             encoding = "UTF-8")        # Optional
+```
+
+
+
+
+
+
+

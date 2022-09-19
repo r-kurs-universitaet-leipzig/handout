@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<<<<<<< HEAD
+  <title>Chapter 3 Atomare Datentypen | Handout für R Grundkurs</title>
+  <meta name="description" content="Chapter 3 Atomare Datentypen | Handout für R Grundkurs" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+=======
+  <title>Kapitel 3 Atomare Datentypen | Handout für R Grundkurs</title>
+  <meta name="description" content="Kapitel 3 Atomare Datentypen | Handout für R Grundkurs" />
+  <meta name="generator" content="bookdown 0.25 and GitBook 2.6.7" />
+>>>>>>> cb540add05f3f2b60c4e9c302b546d0ee77b6674
+
+  <meta property="og:title" content="Kapitel 3 Atomare Datentypen | Handout für R Grundkurs" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Kapitel 3 Atomare Datentypen | Handout für R Grundkurs" />
+  
+  
+  
+
+<meta name="author" content="Peter Kannewitz &amp; Peer Schwertfeger" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="oberfläche.html"/>
+<link rel="next" href="funktionen.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Handout R Kurs</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Einführung</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#was-ist-r-und-warum-sollte-man-r-lernen"><i class="fa fa-check"></i><b>1.1</b> Was ist R und warum sollte man R lernen?</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#installation"><i class="fa fa-check"></i><b>1.2</b> Installation</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="oberfläche.html"><a href="oberfläche.html"><i class="fa fa-check"></i><b>2</b> Oberfläche</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="oberfläche.html"><a href="oberfläche.html#r-gui"><i class="fa fa-check"></i><b>2.1</b> R GUI</a></li>
+<li class="chapter" data-level="2.2" data-path="oberfläche.html"><a href="oberfläche.html#rstudio"><i class="fa fa-check"></i><b>2.2</b> RStudio</a>
+<ul>
+<<<<<<< HEAD
+<li class="chapter" data-level="2.2.1" data-path="oberfläche.html"><a href="oberfläche.html#console"><i class="fa fa-check"></i><b>2.2.1</b> Console</a></li>
+<li class="chapter" data-level="2.2.2" data-path="oberfläche.html"><a href="oberfläche.html#script-editor"><i class="fa fa-check"></i><b>2.2.2</b> Script Editor</a></li>
+=======
+<li class="chapter" data-level="2.2.1" data-path="oberfläche.html"><a href="oberfläche.html#console"><i class="fa fa-check"></i><b>2.2.1</b> Console<span></span></a></li>
+<li class="chapter" data-level="2.2.2" data-path="oberfläche.html"><a href="oberfläche.html#script-editor"><i class="fa fa-check"></i><b>2.2.2</b> Script Editor<span></span></a></li>
+<li class="chapter" data-level="2.2.3" data-path="oberfläche.html"><a href="oberfläche.html#file-editor-und-environment"><i class="fa fa-check"></i><b>2.2.3</b> File-Editor und Environment<span></span></a></li>
+>>>>>>> cb540add05f3f2b60c4e9c302b546d0ee77b6674
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="oberfläche.html"><a href="oberfläche.html#prüfe-dich-selbst"><i class="fa fa-check"></i><b>2.3</b> Prüfe dich selbst<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="atomare-datentypen.html"><a href="atomare-datentypen.html"><i class="fa fa-check"></i><b>3</b> Atomare Datentypen</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="atomare-datentypen.html"><a href="atomare-datentypen.html#arithmetische-grundoperationen-und-basisfunktionen"><i class="fa fa-check"></i><b>3.1</b> Arithmetische Grundoperationen und Basisfunktionen</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="atomare-datentypen.html"><a href="atomare-datentypen.html#funktionsaufrufe"><i class="fa fa-check"></i><b>3.1.1</b> Funktionsaufrufe</a></li>
+<li class="chapter" data-level="3.1.2" data-path="atomare-datentypen.html"><a href="atomare-datentypen.html#objekte-funktionen-und-referenzen"><i class="fa fa-check"></i><b>3.1.2</b> Objekte, Funktionen und Referenzen</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="atomare-datentypen.html"><a href="atomare-datentypen.html#erzeugung-von-referenzierbaren-objekten"><i class="fa fa-check"></i><b>3.2</b> Erzeugung von referenzierbaren Objekten</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="atomare-datentypen.html"><a href="atomare-datentypen.html#anmerkung-namen"><i class="fa fa-check"></i><b>3.2.1</b> Anmerkung Namen</a></li>
+<li class="chapter" data-level="3.2.2" data-path="atomare-datentypen.html"><a href="atomare-datentypen.html#rechnungen-mit-werten-von-objekten"><i class="fa fa-check"></i><b>3.2.2</b> Rechnungen mit Werten von Objekten</a></li>
+<li class="chapter" data-level="3.2.3" data-path="atomare-datentypen.html"><a href="atomare-datentypen.html#namen-überschreiben"><i class="fa fa-check"></i><b>3.2.3</b> Namen überschreiben</a></li>
+<li class="chapter" data-level="3.2.4" data-path="atomare-datentypen.html"><a href="atomare-datentypen.html#objekte-löschen"><i class="fa fa-check"></i><b>3.2.4</b> Objekte löschen</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="atomare-datentypen.html"><a href="atomare-datentypen.html#logische-werte-und-operationen"><i class="fa fa-check"></i><b>3.3</b> Logische Werte und Operationen</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="atomare-datentypen.html"><a href="atomare-datentypen.html#der-logische-wert-na"><i class="fa fa-check"></i><b>3.3.1</b> Der “logische” Wert NA</a></li>
+<li class="chapter" data-level="3.3.2" data-path="atomare-datentypen.html"><a href="atomare-datentypen.html#vergleichs-operationen"><i class="fa fa-check"></i><b>3.3.2</b> Vergleichs-Operationen</a></li>
+</ul></li>
+<<<<<<< HEAD
+<li class="chapter" data-level="3.4" data-path="atomare-datentypen.html"><a href="atomare-datentypen.html#zeichenketten-character-strings"><i class="fa fa-check"></i><b>3.4</b> Zeichenketten (character strings)</a></li>
+<li class="chapter" data-level="3.5" data-path="atomare-datentypen.html"><a href="atomare-datentypen.html#klasse-eines-datenobjektes"><i class="fa fa-check"></i><b>3.5</b> Klasse eines Datenobjektes</a></li>
+<li class="chapter" data-level="3.6" data-path="atomare-datentypen.html"><a href="atomare-datentypen.html#spezielle-werte"><i class="fa fa-check"></i><b>3.6</b> Spezielle Werte</a></li>
+<li class="chapter" data-level="3.7" data-path="atomare-datentypen.html"><a href="atomare-datentypen.html#prüfe-dich-selbst"><i class="fa fa-check"></i><b>3.7</b> Prüfe dich selbst</a></li>
+=======
+<li class="chapter" data-level="3.4" data-path="atomare-datentypen.html"><a href="atomare-datentypen.html#zeichen-character"><i class="fa fa-check"></i><b>3.4</b> Zeichen (character)<span></span></a></li>
+<li class="chapter" data-level="3.5" data-path="atomare-datentypen.html"><a href="atomare-datentypen.html#klasse-eines-datenobjektes"><i class="fa fa-check"></i><b>3.5</b> Klasse eines Datenobjektes<span></span></a></li>
+<li class="chapter" data-level="3.6" data-path="atomare-datentypen.html"><a href="atomare-datentypen.html#spezielle-werte"><i class="fa fa-check"></i><b>3.6</b> Spezielle Werte<span></span></a></li>
+<li class="chapter" data-level="3.7" data-path="atomare-datentypen.html"><a href="atomare-datentypen.html#prüfe-dich-selbst-1"><i class="fa fa-check"></i><b>3.7</b> Prüfe dich selbst<span></span></a></li>
+>>>>>>> cb540add05f3f2b60c4e9c302b546d0ee77b6674
+</ul></li>
+<li class="chapter" data-level="4" data-path="funktionen.html"><a href="funktionen.html"><i class="fa fa-check"></i><b>4</b> Funktionen</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Handout für R Grundkurs</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<<<<<<< HEAD
+<div id="atomare-datentypen" class="section level1" number="3">
+<h1><span class="header-section-number">Chapter 3</span> Atomare Datentypen</h1>
+=======
+<div id="atomare-datentypen" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">Kapitel 3</span> Atomare Datentypen<a href="atomare-datentypen.html#atomare-datentypen" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+>>>>>>> cb540add05f3f2b60c4e9c302b546d0ee77b6674
+<p>Datentypen sind die Grundlage einer jeder Programmiersprache und somit essenziell zum Verständnis dieser. Sie dienen dazu, verschiedene Typen unterscheiden. Etwa Zahlen von Buchstaben. Das ist besonders wichtig, da wir mit unterschiedlichen ‘Typen’ unterschiedliche Operationen ausführen, bzw. nicht ausführen, können. Zum Beispiel können wir mit Zahlen rechnen, mit Buchstaben hingegen nicht. Mit logischen Bedingungen können wir wiederum Wahrheitswerte ermitteln, mit Zahlen hingegen nicht. Zu wissen, welche Eigenschaften die verschiedene Datentypen haben und welche Operationen mit diesen möglich sind, hilft dabei vielen potenziellen Fehlern vorzubeugen und so Frustration zu vermeiden.</p>
+<p>Zunächst einmal wollen wir uns die atomaren Datentypen anschauen. Diese bilden die Grundlage aller folgenden Datentypen.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Datentyp</th>
+<th align="left">Beschreibung</th>
+<th align="center">Beispiel</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">integer</td>
+<td align="left">ganze Zahlen</td>
+<td align="center">-2L</td>
+</tr>
+<tr class="even">
+<td align="left">numeric</td>
+<td align="left">reelle Zahlen</td>
+<td align="center">5.2456</td>
+</tr>
+<tr class="odd">
+<td align="left">logic</td>
+<td align="left">logische Werte</td>
+<td align="center">TRUE</td>
+</tr>
+<tr class="even">
+<td align="left">character</td>
+<td align="left">Zeichenfolge</td>
+<td align="center">“Mexico”</td>
+</tr>
+<tr class="odd">
+<td align="left">NA,NULL,NaN</td>
+<td align="left">Unbestimmt, Leer, Undefiniert</td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="left">Inf</td>
+<td align="left">Unendlich</td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<p>Die numerischen Datentypen <code>integer</code> und <code>numeric</code> erlauben es uns numerische Informationen zu repräsentieren. Mit dem Datentyp <code>logic</code> können wir logische Informationen repräsentieren. Um symbolische Informationen zu repräsentieren, verwenden wir den Datentyp <code>character</code>. Mit numerischen-, logischen- und symbolischen Informationen ist es bereits möglich eine Vielzahl von Sachverhalten auszudrücken. Was dies sein kann, wollen wir uns im Folgenden anschauen.</p>
+<div id="arithmetische-grundoperationen-und-basisfunktionen" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> Arithmetische Grundoperationen und Basisfunktionen</h2>
+<p>R beherscht für alle Zahlen die arithmetischen Grundoperationen und eignet sich somit wunderbar als Taschenrechner.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Operation</th>
+<th align="left">Beschreibung</th>
+<th align="left">Beispiel</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>+,-</code></td>
+<td align="left">Addition, Subtraktion</td>
+<td align="left"><code>3-1.2</code></td>
+</tr>
+<tr class="even">
+<td align="left"><code>*,/</code></td>
+<td align="left">Multiplikation, Division</td>
+<td align="left"><code>4.8/4</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><code>^</code></td>
+<td align="left">Potenz</td>
+<td align="left"><code>5^2</code></td>
+</tr>
+</tbody>
+</table>
+<p>Beispiel:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="atomare-datentypen.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">+</span><span class="dv">2</span></span></code></pre></div>
+<pre><code>## [1] 3</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="atomare-datentypen.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span><span class="sc">*</span><span class="fl">3.5</span></span></code></pre></div>
+<pre><code>## [1] 7</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="atomare-datentypen.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fl">10.1</span><span class="sc">^</span><span class="dv">3</span></span></code></pre></div>
+<pre><code>## [1] 1030.301</code></pre>
+<p>R vefügt für den Datentypen <code>numeric</code> über viele elementare Grundfunktionen.
+Hier nur ein paar wenige relevante Beispiele:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Operation</th>
+<th align="left">Beschreibung</th>
+<th align="left">Beispiel</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>sqrt()</code></td>
+<td align="left">Quadratwurzel</td>
+<td align="left"><code>sqrt(9)</code></td>
+</tr>
+<tr class="even">
+<td align="left"><code>abs()</code></td>
+<td align="left">Absolutbetrag</td>
+<td align="left"><code>abs(-12)</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><code>log(),exp()</code></td>
+<td align="left">Logarithmus und Expontentialfunktion</td>
+<td align="left"><code>exp(3)</code></td>
+</tr>
+<tr class="even">
+<td align="left"><code>round()</code></td>
+<td align="left">Runden</td>
+<td align="left"><code>round(2.12)</code></td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="atomare-datentypen.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="dv">5</span>)</span></code></pre></div>
+<pre><code>## [1] 2.236068</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="atomare-datentypen.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">log</span>(<span class="dv">3</span>)</span></code></pre></div>
+<pre><code>## [1] 1.098612</code></pre>
+<div id="funktionsaufrufe" class="section level3" number="3.1.1">
+<h3><span class="header-section-number">3.1.1</span> Funktionsaufrufe</h3>
+<p>Funktionen sind ein wichtiger Teil von R und werden syntaktisch durch eine öffnende und eine schließende Klammer gekennzeichnet, nach diesem Schema: <code>funktion()</code>. Gerade haben wir bereits eine Funktion ausgeführt, indem wir <code>sqrt(9)</code> aufgerufen haben. Ausführlich werden Funktionen noch in Kapitel 3 besprochen. Ein paar Grundlagen wollen wir hier aber schon einmal einführen:</p>
+<p>Funktionensaufrufe erfolgen in der Regel über das Schema</p>
+<p><code>Funktionsname(Argument 1, Argument 2, ...)</code></p>
+<p>Beispiel: Die Funktion</p>
+<p><code>signif(x,digits)</code></p>
+<p>rundet eine Zahl <code>x</code> auf <code>digits</code> signifikante Stellen.</p>
+<ol style="list-style-type: decimal">
+<li>Argumente haben zumeist einen festen Namen, sodass diesen eindeutig Werte
+zugewiesen werden können:</li>
+</ol>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="atomare-datentypen.html#cb11-1" aria-hidden="true" tabindex="-1"></a>  <span class="fu">signif</span>(<span class="at">x =</span> <span class="fl">12.3456</span>, <span class="at">digits =</span> <span class="dv">3</span>)</span></code></pre></div>
+<pre><code>## [1] 12.3</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>Alternativ können aufgrund der Position bzw. der Ordnung den Argumenten Werte zugewiesen werden:</li>
+</ol>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="atomare-datentypen.html#cb13-1" aria-hidden="true" tabindex="-1"></a>  <span class="fu">signif</span>(<span class="fl">12.3456</span>, <span class="dv">3</span>)</span></code></pre></div>
+<pre><code>## [1] 12.3</code></pre>
+</div>
+<div id="objekte-funktionen-und-referenzen" class="section level3" number="3.1.2">
+<h3><span class="header-section-number">3.1.2</span> Objekte, Funktionen und Referenzen</h3>
+<p>“To understand computations in R, two slogans are helpful: Everything that exists is an object. Everything that happens is a function call.” (John M. Chambers) <a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p>
+<ul>
+<li>Funktionen haben wir gerade kennengelernt, also kennen wir auch schon “Everything that happens”.</li>
+<li>Objekte haben wir auch schon durchgehend verwendet.</li>
+</ul>
+<p>Geben wir etwa <code>3</code> oder <code>"password"</code> in die Konsole ein, wird ein entsprechendes Objekt im Speicher erzeugt.</p>
+<p><img src="resources/1_pure_memory.png" width="20%" style="display: block; margin: auto;" /></p>
+<p>Auf diese Objekte haben wir allerdings anschließend keinen Zugriff mehr. Wenn wir jetzt zum Beispiel erneut die Zeichenkette <code>"password"</code> benötigten, müssten wir sie auch erneut eintippen. Wie wir dies ändern können, sodass uns Objekte längerfristig zur Verfügung stehen, wollen wir uns jetzt anschauen.</p>
+</div>
+</div>
+<div id="erzeugung-von-referenzierbaren-objekten" class="section level2" number="3.2">
+<h2><span class="header-section-number">3.2</span> Erzeugung von referenzierbaren Objekten</h2>
+<p>Mit dem Operator <code>&lt;-</code> lässt sich ein referenzierbares Objekt erstellen. Das bedeutet, dass das Objekt an einen Namen gebunden wird:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="atomare-datentypen.html#cb15-1" aria-hidden="true" tabindex="-1"></a> x_test <span class="ot">&lt;-</span> <span class="dv">3</span></span></code></pre></div>
+<p>Das Objekt lässt sich nun über den Namen aus dem Speicher abrufen:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="atomare-datentypen.html#cb16-1" aria-hidden="true" tabindex="-1"></a>x_test</span></code></pre></div>
+<pre><code>## [1] 3</code></pre>
+<p>Wenn wir</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="atomare-datentypen.html#cb18-1" aria-hidden="true" tabindex="-1"></a> x_test <span class="ot">&lt;-</span> <span class="dv">3</span></span></code></pre></div>
+<p>ausführen, passiert formal eigentlich Folgendes:</p>
+<ol style="list-style-type: decimal">
+<li>Es wird im Speicher ein Objekt mit Wert 3 erzeugt.</li>
+<li>Es wird der Name <code>x_test</code> an dieses Objekt gebunden, sodass zu diesen Objekt
+mit dem Namen <code>x_test</code> referiert werden kann bzw. bei Aufruf von <code>x_test</code>
+der Wert zurückgegeben wird.</li>
+</ol>
+<p><img src="resources/2_assign_object.png" width="55%" style="display: block; margin: auto;" /></p>
+<p>Über den Namen, welcher nun an das Objekt gebunden ist, können wir dieses jetzt dauerhaft abrufen (referenzieren).</p>
+<div id="anmerkung-namen" class="section level3" number="3.2.1">
+<h3><span class="header-section-number">3.2.1</span> Anmerkung Namen</h3>
+<p>Für Namen dürfen alle Buchstaben und Zahlen verwendet werden, sowie
+die beiden Sonderzeichen <code>_</code> und <code>.</code>, wobei diese nicht
+am Anfang stehen dürfen.</p>
+<p>Beispiel:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="atomare-datentypen.html#cb19-1" aria-hidden="true" tabindex="-1"></a>x_1 <span class="ot">&lt;-</span> <span class="dv">3</span></span></code></pre></div>
+<p>Aber:</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="atomare-datentypen.html#cb20-1" aria-hidden="true" tabindex="-1"></a>_x_1 <span class="ot">&lt;-</span> <span class="dv">3</span></span></code></pre></div>
+<pre><code>## Error: &lt;text&gt;:1:1: unexpected input
+## 1: _
+##     ^</code></pre>
+<p><strong>Bemerkung:</strong> Man sollte sich bei den Buchstaben nur auf a,…,z bzw. A,.., Z beschränken, auch wenn je nach lokalem Setting z.B. auch andere Buchstaben wie ä zulässig sind.</p>
+</div>
+<div id="rechnungen-mit-werten-von-objekten" class="section level3" number="3.2.2">
+<h3><span class="header-section-number">3.2.2</span> Rechnungen mit Werten von Objekten</h3>
+<p>Das über seinen Namen referenzierbare Objekt steht für alle weiteren
+Berechnungen und Operationen zur Verfügung:</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="atomare-datentypen.html#cb22-1" aria-hidden="true" tabindex="-1"></a>x_test <span class="sc">+</span> <span class="dv">2</span></span></code></pre></div>
+<pre><code>## [1] 5</code></pre>
+<p><img src="resources/3_calculation.png" width="70%" style="display: block; margin: auto;" /></p>
+<p>Das Ergebnis dieses Ausdrucks ist ein neues numerisches Objekt. Dieses kann für spätere Zwecke erneut an einen Namen gebunden werden:</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="atomare-datentypen.html#cb24-1" aria-hidden="true" tabindex="-1"></a>y_test <span class="ot">&lt;-</span> x_test <span class="sc">+</span> <span class="dv">2</span></span>
+<span id="cb24-2"><a href="atomare-datentypen.html#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-3"><a href="atomare-datentypen.html#cb24-3" aria-hidden="true" tabindex="-1"></a>y_test</span></code></pre></div>
+<pre><code>## [1] 5</code></pre>
+<p><img src="resources/4_calculation_with_assignmend.png" width="80%" style="display: block; margin: auto;" /></p>
+<p>Unser Speicher sieht aktuell so aus:
+</p>
+<p><img src="resources/5_calculation_left_over.png" width="40%" style="display: block; margin: auto;" /></p>
+<p>Zwar haben wir für die Berechnung auch eine Zwei im Speicher angelegt, diese ist aber nicht an einen Namen gebunden. Die Drei und die Fünf hingegen schon. Wenn wir nun <code>x_test</code> und <code>y_test</code> aufrufen, bekommen wir jeweils das entsprechende Objekt zurück.</p>
+</div>
+<div id="namen-überschreiben" class="section level3" number="3.2.3">
+<h3><span class="header-section-number">3.2.3</span> Namen überschreiben</h3>
+<p>ACHTUNG! - Verwendet man denselben Namen noch einmal, geht die ursprüngliche Referenz verloren:</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="atomare-datentypen.html#cb26-1" aria-hidden="true" tabindex="-1"></a>y_test <span class="ot">&lt;-</span> <span class="fu">log</span>(y_test)</span></code></pre></div>
+<p><img src="resources/6_reassignmend_part_1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p>Wenn wir jetzt das Objekt zum Namen <code>y_test</code> abfragen, sehen Folgendes:</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="atomare-datentypen.html#cb27-1" aria-hidden="true" tabindex="-1"></a>y_test</span></code></pre></div>
+<pre><code>## [1] 1.609438</code></pre>
+<p>Das ursprüngliche Objekt zum Namen <code>y_test</code> steht uns nicht mehr zur Verfügung und ist somit unwiederbringlich verloren.</p>
+<p><img src="resources/7_reassignmend_part_2.png" width="30%" style="display: block; margin: auto;" /></p>
+<p>Führt man die Codezeile <code>y_test &lt;- log(y_test)</code> jetzt noch einmal aus, so wird <code>y_test</code> wieder an ein anderes Objekt gebunden. Durch dieses Verhalten können wir nie sicher vorhersagen, an welches Objekt <code>y_test</code> momentan gebunden ist. Deswegen sollte man immer neue Namen vergeben und diese nicht doppelt verwenden.</p>
+</div>
+<div id="objekte-löschen" class="section level3" number="3.2.4">
+<h3><span class="header-section-number">3.2.4</span> Objekte löschen</h3>
+<p>Wir haben mittlerweile ein paar Objekte im Speicher
+angelegt und an Namen gebunden. Mit <code>ls()</code> kann man diese abrufen:</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="atomare-datentypen.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span>()</span></code></pre></div>
+<<<<<<< HEAD
+<pre><code>## [1] &quot;x_1&quot;    &quot;x_test&quot; &quot;y_test&quot;</code></pre>
+<p>Mit <code>rm()</code> kann man unnötige Objekte über deren Namen entfernen:</p>
+=======
+<pre><code>##  [1] &quot;alter_moni&quot;         &quot;alter_tom&quot;          &quot;name_bundeskanzler&quot; &quot;p&quot;                  &quot;q&quot;                  &quot;theendoftheworld&quot;  
+##  [7] &quot;x_1&quot;                &quot;x_test&quot;             &quot;y_test&quot;             &quot;z&quot;</code></pre>
+<p>Mit <code>rm()</code> kann man unnötige Objekte entfernen:</p>
+>>>>>>> cb540add05f3f2b60c4e9c302b546d0ee77b6674
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="atomare-datentypen.html#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(y_test)</span></code></pre></div>
+<p>Wenn ihr gleich alle angelegte, referenzierbare Objekte aus dem Speicher entfernen wollt:</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="atomare-datentypen.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>())</span></code></pre></div>
+</div>
+</div>
+<div id="logische-werte-und-operationen" class="section level2" number="3.3">
+<h2><span class="header-section-number">3.3</span> Logische Werte und Operationen</h2>
+<p>Die Werte Wahr und Falsch werden in R mit <code>TRUE</code> und <code>FALSE</code> repräsentiert.
+Es stehen die elementaren Booleschen Operationen zur Verfügung.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Operator</th>
+<th>Bedeutung</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>!</code></td>
+<td>Negation</td>
+</tr>
+<tr class="even">
+<td><code>&amp;</code></td>
+<td>Und</td>
+</tr>
+<tr class="odd">
+<td><code>|</code></td>
+<td>Oder</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="atomare-datentypen.html#cb33-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
+<span id="cb33-2"><a href="atomare-datentypen.html#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="sc">!</span>p</span></code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="atomare-datentypen.html#cb35-1" aria-hidden="true" tabindex="-1"></a>q <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb35-2"><a href="atomare-datentypen.html#cb35-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-3"><a href="atomare-datentypen.html#cb35-3" aria-hidden="true" tabindex="-1"></a>(p <span class="sc">|</span> q)</span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div id="der-logische-wert-na" class="section level3" number="3.3.1">
+<h3><span class="header-section-number">3.3.1</span> Der “logische” Wert NA</h3>
+<p>Neben Wahr und Falsch existiert noch die logische Konstante <code>NA</code>, welche
+für einen unbestimmten aber bestimmbaren Wert steht (not assigned, not available
+yet).</p>
+<p>Dieser Wert wird z. B. universell für alle atomaren Datentypen für die Codierung
+von Fehlwerten (missings) verwendet.</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="atomare-datentypen.html#cb37-1" aria-hidden="true" tabindex="-1"></a>theendoftheworld <span class="ot">&lt;-</span> <span class="cn">NA</span></span></code></pre></div>
+</div>
+<div id="vergleichs-operationen" class="section level3" number="3.3.2">
+<h3><span class="header-section-number">3.3.2</span> Vergleichs-Operationen</h3>
+<p>Logische Werte spielen in R an verschiedenen Stellen eine große Rolle,
+da sie z.B. beschreiben, ob bestimmte Vergleiche wahr oder falsch sind.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Operator</th>
+<th>Bedeutung</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>==</code></td>
+<td>Gleich?</td>
+</tr>
+<tr class="even">
+<td><code>!=</code></td>
+<td>Ungleich?</td>
+</tr>
+<tr class="odd">
+<td><code>&gt; / &lt;</code></td>
+<td>Größer / Kleiner?</td>
+</tr>
+<tr class="even">
+<td><code>&gt;= / &lt;=</code></td>
+<td>Größer / Kleiner gleich?</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="atomare-datentypen.html#cb38-1" aria-hidden="true" tabindex="-1"></a>alter_tom <span class="ot">&lt;-</span> <span class="dv">21</span></span>
+<span id="cb38-2"><a href="atomare-datentypen.html#cb38-2" aria-hidden="true" tabindex="-1"></a>alter_moni <span class="ot">&lt;-</span> <span class="dv">24</span></span>
+<span id="cb38-3"><a href="atomare-datentypen.html#cb38-3" aria-hidden="true" tabindex="-1"></a>alter_tom <span class="sc">&gt;</span> alter_moni</span></code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+</div>
+</div>
+<div id="zeichenketten-character-strings" class="section level2" number="3.4">
+<h2><span class="header-section-number">3.4</span> Zeichenketten (character strings)</h2>
+<p>Neben Zahlen und logischen Werten, werden wir auch
+Zeichenketten begegnen bzw. benötigen. Diese können auf
+zweierlei Art zugewiesen werden:</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="atomare-datentypen.html#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;Tom&quot;</span></span></code></pre></div>
+<pre><code>## [1] &quot;Tom&quot;</code></pre>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="atomare-datentypen.html#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="st">&#39;Moni&#39;</span></span></code></pre></div>
+<pre><code>## [1] &quot;Moni&quot;</code></pre>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="atomare-datentypen.html#cb44-1" aria-hidden="true" tabindex="-1"></a>name_bundeskanzler <span class="ot">&lt;-</span> <span class="st">&quot;Olaf Scholz&quot;</span></span>
+<span id="cb44-2"><a href="atomare-datentypen.html#cb44-2" aria-hidden="true" tabindex="-1"></a>name_bundeskanzler</span></code></pre></div>
+<pre><code>## [1] &quot;Olaf Scholz&quot;</code></pre>
+</div>
+<div id="klasse-eines-datenobjektes" class="section level2" number="3.5">
+<h2><span class="header-section-number">3.5</span> Klasse eines Datenobjektes</h2>
+<p>Zur Erinnerung:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Datentyp</th>
+<th>Beschreibung</th>
+<th align="center">Beispiel</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>integer</td>
+<td>ganze Zahlen</td>
+<td align="center">-2L</td>
+</tr>
+<tr class="even">
+<td>numeric</td>
+<td>reelle Zahlen</td>
+<td align="center">5.2456</td>
+</tr>
+<tr class="odd">
+<td>logic</td>
+<td>logische Werte</td>
+<td align="center">TRUE</td>
+</tr>
+<tr class="even">
+<td>character</td>
+<td>Zeichengfolge</td>
+<td align="center">“Mexico”</td>
+</tr>
+<tr class="odd">
+<td>NULL,Inf,NaN</td>
+<td>Leer, Unendlich, keine Zahl</td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<p>Die Klasse bzw. der Datentyp eines Objekts lässt sich
+mit der Funktion <code>class()</code> ermitteln oder aber spezifisch/logisch prüfen.</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="atomare-datentypen.html#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(alter_moni)</span></code></pre></div>
+<pre><code>## [1] &quot;numeric&quot;</code></pre>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="atomare-datentypen.html#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">is.numeric</span>(alter_moni)</span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+</div>
+<div id="spezielle-werte" class="section level2" number="3.6">
+<h2><span class="header-section-number">3.6</span> Spezielle Werte</h2>
+<p>Die leere Menge wird in R mit dem Wert <code>NULL</code> repräsentiert und dient ganz verschiedenen Zwecken wie z.B. Initialisierung einer Variablen:</p>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="atomare-datentypen.html#cb50-1" aria-hidden="true" tabindex="-1"></a>   z <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb50-2"><a href="atomare-datentypen.html#cb50-2" aria-hidden="true" tabindex="-1"></a>   z</span></code></pre></div>
+<pre><code>## NULL</code></pre>
+<p>Division durch 0 ist “erlaubt” und liefert den speziellen Wert
+<code>Inf</code> zurück.</p>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="atomare-datentypen.html#cb52-1" aria-hidden="true" tabindex="-1"></a>  <span class="dv">100</span><span class="sc">/</span><span class="dv">0</span> </span></code></pre></div>
+<pre><code>## [1] Inf</code></pre>
+<p>In R wird ein nicht bestimmbarer Wert (vgl. unbestimmter aber bestimmbarer
+Wert ‘NA’) durch <code>NaN</code> (not a number)
+0/0</p>
+</div>
+<<<<<<< HEAD
+<div id="prüfe-dich-selbst" class="section level2" number="3.7">
+<h2><span class="header-section-number">3.7</span> Prüfe dich selbst</h2>
+=======
+<div id="prüfe-dich-selbst-1" class="section level2 hasAnchor" number="3.7">
+<h2><span class="header-section-number">3.7</span> Prüfe dich selbst<a href="atomare-datentypen.html#prüfe-dich-selbst-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+>>>>>>> cb540add05f3f2b60c4e9c302b546d0ee77b6674
+<p>Von dieser Sitzung solltest du folgendes mitgenommen haben:</p>
+<ul class="task-list">
+<li><input type="checkbox" disabled="" checked="" />
+Du solltest verstanden haben, warum man verschiedene Datentypen unterscheidet.</li>
+<li><input type="checkbox" disabled="" checked="" />
+Du solltest die drei Grundlegenden weisen Informationen zu repräsentieren nennen können und die dazugehörigen Datentypen.</li>
+<li><input type="checkbox" disabled="" checked="" />
+Du solltest verstanden haben, wie man Objekte an einen Namen bindet und warum das nützlich sein kann.</li>
+<li><input type="checkbox" disabled="" checked="" />
+Du solltest die elementaren Booleschen (logischen) Operationen in R schreiben können.</li>
+</ul>
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="2">
+<li id="fn2"><p><a href="https://de.wikipedia.org/wiki/R_%28Programmiersprache%29" class="uri">https://de.wikipedia.org/wiki/R_%28Programmiersprache%29</a><a href="atomare-datentypen.html#fnref2" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="oberfläche.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="funktionen.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/peer-schwertfeger/handout_r_kurs/edit/master/02-datentypen.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/peer-schwertfeger/handout_r_kurs/blob/master/02-datentypen.Rmd",
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

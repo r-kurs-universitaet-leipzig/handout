@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<<<<<<< HEAD
+  <title>Chapter 2 Oberfläche | Handout für R Grundkurs</title>
+  <meta name="description" content="Chapter 2 Oberfläche | Handout für R Grundkurs" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+=======
+  <title>Kapitel 2 Oberfläche | Handout für R Grundkurs</title>
+  <meta name="description" content="Kapitel 2 Oberfläche | Handout für R Grundkurs" />
+  <meta name="generator" content="bookdown 0.25 and GitBook 2.6.7" />
+>>>>>>> cb540add05f3f2b60c4e9c302b546d0ee77b6674
+
+  <meta property="og:title" content="Kapitel 2 Oberfläche | Handout für R Grundkurs" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Kapitel 2 Oberfläche | Handout für R Grundkurs" />
+  
+  
+  
+
+<meta name="author" content="Peter Kannewitz &amp; Peer Schwertfeger" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="atomare-datentypen.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Handout R Kurs</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Einführung</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#was-ist-r-und-warum-sollte-man-r-lernen"><i class="fa fa-check"></i><b>1.1</b> Was ist R und warum sollte man R lernen?</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#installation"><i class="fa fa-check"></i><b>1.2</b> Installation</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="oberfläche.html"><a href="oberfläche.html"><i class="fa fa-check"></i><b>2</b> Oberfläche</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="oberfläche.html"><a href="oberfläche.html#r-gui"><i class="fa fa-check"></i><b>2.1</b> R GUI</a></li>
+<li class="chapter" data-level="2.2" data-path="oberfläche.html"><a href="oberfläche.html#rstudio"><i class="fa fa-check"></i><b>2.2</b> RStudio</a>
+<ul>
+<<<<<<< HEAD
+<li class="chapter" data-level="2.2.1" data-path="oberfläche.html"><a href="oberfläche.html#console"><i class="fa fa-check"></i><b>2.2.1</b> Console</a></li>
+<li class="chapter" data-level="2.2.2" data-path="oberfläche.html"><a href="oberfläche.html#script-editor"><i class="fa fa-check"></i><b>2.2.2</b> Script Editor</a></li>
+=======
+<li class="chapter" data-level="2.2.1" data-path="oberfläche.html"><a href="oberfläche.html#console"><i class="fa fa-check"></i><b>2.2.1</b> Console<span></span></a></li>
+<li class="chapter" data-level="2.2.2" data-path="oberfläche.html"><a href="oberfläche.html#script-editor"><i class="fa fa-check"></i><b>2.2.2</b> Script Editor<span></span></a></li>
+<li class="chapter" data-level="2.2.3" data-path="oberfläche.html"><a href="oberfläche.html#file-editor-und-environment"><i class="fa fa-check"></i><b>2.2.3</b> File-Editor und Environment<span></span></a></li>
+>>>>>>> cb540add05f3f2b60c4e9c302b546d0ee77b6674
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="oberfläche.html"><a href="oberfläche.html#prüfe-dich-selbst"><i class="fa fa-check"></i><b>2.3</b> Prüfe dich selbst<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="atomare-datentypen.html"><a href="atomare-datentypen.html"><i class="fa fa-check"></i><b>3</b> Atomare Datentypen</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="atomare-datentypen.html"><a href="atomare-datentypen.html#arithmetische-grundoperationen-und-basisfunktionen"><i class="fa fa-check"></i><b>3.1</b> Arithmetische Grundoperationen und Basisfunktionen</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="atomare-datentypen.html"><a href="atomare-datentypen.html#funktionsaufrufe"><i class="fa fa-check"></i><b>3.1.1</b> Funktionsaufrufe</a></li>
+<li class="chapter" data-level="3.1.2" data-path="atomare-datentypen.html"><a href="atomare-datentypen.html#objekte-funktionen-und-referenzen"><i class="fa fa-check"></i><b>3.1.2</b> Objekte, Funktionen und Referenzen</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="atomare-datentypen.html"><a href="atomare-datentypen.html#erzeugung-von-referenzierbaren-objekten"><i class="fa fa-check"></i><b>3.2</b> Erzeugung von referenzierbaren Objekten</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="atomare-datentypen.html"><a href="atomare-datentypen.html#anmerkung-namen"><i class="fa fa-check"></i><b>3.2.1</b> Anmerkung Namen</a></li>
+<li class="chapter" data-level="3.2.2" data-path="atomare-datentypen.html"><a href="atomare-datentypen.html#rechnungen-mit-werten-von-objekten"><i class="fa fa-check"></i><b>3.2.2</b> Rechnungen mit Werten von Objekten</a></li>
+<li class="chapter" data-level="3.2.3" data-path="atomare-datentypen.html"><a href="atomare-datentypen.html#namen-überschreiben"><i class="fa fa-check"></i><b>3.2.3</b> Namen überschreiben</a></li>
+<li class="chapter" data-level="3.2.4" data-path="atomare-datentypen.html"><a href="atomare-datentypen.html#objekte-löschen"><i class="fa fa-check"></i><b>3.2.4</b> Objekte löschen</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="atomare-datentypen.html"><a href="atomare-datentypen.html#logische-werte-und-operationen"><i class="fa fa-check"></i><b>3.3</b> Logische Werte und Operationen</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="atomare-datentypen.html"><a href="atomare-datentypen.html#der-logische-wert-na"><i class="fa fa-check"></i><b>3.3.1</b> Der “logische” Wert NA</a></li>
+<li class="chapter" data-level="3.3.2" data-path="atomare-datentypen.html"><a href="atomare-datentypen.html#vergleichs-operationen"><i class="fa fa-check"></i><b>3.3.2</b> Vergleichs-Operationen</a></li>
+</ul></li>
+<<<<<<< HEAD
+<li class="chapter" data-level="3.4" data-path="atomare-datentypen.html"><a href="atomare-datentypen.html#zeichenketten-character-strings"><i class="fa fa-check"></i><b>3.4</b> Zeichenketten (character strings)</a></li>
+<li class="chapter" data-level="3.5" data-path="atomare-datentypen.html"><a href="atomare-datentypen.html#klasse-eines-datenobjektes"><i class="fa fa-check"></i><b>3.5</b> Klasse eines Datenobjektes</a></li>
+<li class="chapter" data-level="3.6" data-path="atomare-datentypen.html"><a href="atomare-datentypen.html#spezielle-werte"><i class="fa fa-check"></i><b>3.6</b> Spezielle Werte</a></li>
+<li class="chapter" data-level="3.7" data-path="atomare-datentypen.html"><a href="atomare-datentypen.html#prüfe-dich-selbst"><i class="fa fa-check"></i><b>3.7</b> Prüfe dich selbst</a></li>
+=======
+<li class="chapter" data-level="3.4" data-path="atomare-datentypen.html"><a href="atomare-datentypen.html#zeichen-character"><i class="fa fa-check"></i><b>3.4</b> Zeichen (character)<span></span></a></li>
+<li class="chapter" data-level="3.5" data-path="atomare-datentypen.html"><a href="atomare-datentypen.html#klasse-eines-datenobjektes"><i class="fa fa-check"></i><b>3.5</b> Klasse eines Datenobjektes<span></span></a></li>
+<li class="chapter" data-level="3.6" data-path="atomare-datentypen.html"><a href="atomare-datentypen.html#spezielle-werte"><i class="fa fa-check"></i><b>3.6</b> Spezielle Werte<span></span></a></li>
+<li class="chapter" data-level="3.7" data-path="atomare-datentypen.html"><a href="atomare-datentypen.html#prüfe-dich-selbst-1"><i class="fa fa-check"></i><b>3.7</b> Prüfe dich selbst<span></span></a></li>
+>>>>>>> cb540add05f3f2b60c4e9c302b546d0ee77b6674
+</ul></li>
+<li class="chapter" data-level="4" data-path="funktionen.html"><a href="funktionen.html"><i class="fa fa-check"></i><b>4</b> Funktionen</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Handout für R Grundkurs</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<<<<<<< HEAD
+<div id="oberfläche" class="section level1" number="2">
+<h1><span class="header-section-number">Chapter 2</span> Oberfläche</h1>
+<div id="r-gui" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> R GUI</h2>
+=======
+<div id="oberfläche" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">Kapitel 2</span> Oberfläche<a href="oberfläche.html#oberfläche" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="r-gui" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> R GUI<a href="oberfläche.html#r-gui" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+>>>>>>> cb540add05f3f2b60c4e9c302b546d0ee77b6674
+<p>Mit der Installation von R wird gleichzeitig ein <em>Graphical User Interface</em> (GUI)
+mitinstalliert. Hier können wir bereits R Code eingeben und mit <code>Enter</code> an den
+Computer übergeben. In der nächsten Zeile wird die Antwort vom Computer an uns
+zurückgegeben.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-1"></span>
+<img src="resources/GUI.png" alt="R GUI" width="80%" />
+<p class="caption">
+Figure 2.1: R GUI
+</p>
+</div>
+<p>Diese Oberfläche ist jedoch wenig “komfortabel”. Sie bietet keine zusätzlichen Editoren oder Fenster, um z.B. die gespeicherten Objekte oder Graphiken anzuzeigen.</p>
+</div>
+<div id="rstudio" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> RStudio</h2>
+<p>RStudio bietet eine nutzer:innenfreundliche (und freie) Alternative für die Nutzung von R. Hier sind zusätzliche Editoren und Übersichten enthalten. Zu nennen ist beispielsweise:</p>
+<ul>
+<li>Script-Editor</li>
+<li>Übersicht über Objekte in globaler Umgebung</li>
+<li>Übersicht über Packages</li>
+<li>Einfache Dateienhandhabung durch Projects</li>
+<li>u.v.m.</li>
+</ul>
+<p>Das Interface von RStudio besteht aus mehreren Fenstern.</p>
+<<<<<<< HEAD
+<p><img src="resources/interface.png" width="80%" style="display: block; margin: auto;" /></p>
+<div id="console" class="section level3" number="2.2.1">
+<h3><span class="header-section-number">2.2.1</span> Console</h3>
+<p><img src="resources/console.png" width="80%" style="display: block; margin: auto;" /></p>
+=======
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-2"></span>
+<img src="resources/interface.png" alt="RStudio Interface" width="80%" />
+<p class="caption">
+Figure 2.2: RStudio Interface
+</p>
+</div>
+<div id="console" class="section level3 hasAnchor" number="2.2.1">
+<h3><span class="header-section-number">2.2.1</span> Console<a href="oberfläche.html#console" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-3"></span>
+<img src="resources/console.png" alt="Console" width="80%" />
+<p class="caption">
+Figure 2.3: Console
+</p>
+</div>
+>>>>>>> cb540add05f3f2b60c4e9c302b546d0ee77b6674
+<p>Die R Console dient zur direkten Übergabe von Ausdrücken bzw. Funktionen an R
+und ist identisch mit der Anzeige in der R GUI. Diese eignet sich für für
+kleine Tasks bzw. Tests. Das Ergebnis wird direkt unterhalb des Befehls angezeigt.
+Außerderm werden Ergebnisse aus den Scripten, die keine Graphiken sind,
+hier angezeigt.</p>
+<p>Nachdem Code hier eingetippt wurde, wird die Befehlszeile mit der Taste
+<code>ENTER</code> ausgeführt.</p>
+</div>
+<div id="script-editor" class="section level3" number="2.2.2">
+<h3><span class="header-section-number">2.2.2</span> Script Editor</h3>
+<p><img src="resources/editor.png" width="80%" style="display: block; margin: auto;" /></p>
+<p>In der Console kann euer Code langfristig nicht gespeichert werden. Sogenannte R
+Scripte ermöglichen euch, euren Code zu speichern und nacheinander auszuführen.</p>
+<p>Der entsprechende Editor muss zunächst händisch geöffnet werden:</p>
+<p><code>File</code> <span class="math inline">\(\rightarrow\)</span> <code>New File</code> <span class="math inline">\(\rightarrow\)</span> <code>R Script</code></p>
+<p>Nachdem Code geschrieben wurde, kann der Code mit folgender Tastenkombination
+ausgeführt werden:</p>
+<p><code>strg + ENTER</code> (Win) bzw. <code>command + ENTER</code> (Mac)</p>
+<p>Hierzu genügt es, wenn sich der Cursor in <strong>einer</strong> der Zeilen der Befehlssequenz
+befindet. Sollen mehrere Befehlssequenzen ausgeführt werden, müssen diese vorher
+markiert werden.</p>
+<p>Mit <code>#</code> lassen sich Kommentare in das Script schreiben. Zeilen, in denen dieses
+Zeichen steht, werden von R ignoriert und nicht ausgeführt.</p>
+</div>
+<div id="file-editor-und-environment" class="section level3 hasAnchor" number="2.2.3">
+<h3><span class="header-section-number">2.2.3</span> File-Editor und Environment<a href="oberfläche.html#file-editor-und-environment" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-5"></span>
+<img src="resources/files.png" alt="File-Editor und Environment-Oberfläche" width="49%" height="20%" /><img src="resources/envi.png" alt="File-Editor und Environment-Oberfläche" width="49%" height="20%" />
+<p class="caption">
+Figure 2.4: File-Editor und Environment-Oberfläche
+</p>
+</div>
+<p>Zusätzlich zu der Console und dem Skript-Editor bietet RStudio weitere Fenster,
+die die Arbeit mit R vereinfachen sollen.</p>
+<p>Das Fenster unten rechts (Standardeinstellung, Abb. 2.4a) beinhaltet einen <strong>File-Editor</strong>
+(ähnlich zum File Browser (Win) bzw. Finder (Mac)). Hier können Dateien und
+Verzeichnisstrukturen angesehen und bearbeitet werden (neuer Ordner, Umbenennen
+von Dateien). Außerdem werden hier <strong>Graphiken angezeigt</strong>, wenn diese über Code in
+Scripten oder in der Console erzeugt werden. Des Weiteren gibt es hier eine
+<strong>Übersicht über Packages</strong> und das <strong>Help</strong> Fenster.</p>
+<p>Oben rechts (Standardeinstellung, Abb. 2.4b) existiert die <strong>Global Environment</strong>, in dem
+alle gespeicherten Objekte angezeigt werden. Schließlich kann man hier auf die
+<strong>History</strong> und <strong>Verbindungen</strong>, wie GitHub, zugegriffen werden.</p>
+</div>
+</div>
+<div id="prüfe-dich-selbst" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> Prüfe dich selbst<a href="oberfläche.html#prüfe-dich-selbst" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Von dieser Sitzung solltest du folgendes mitgenommen haben:</p>
+<ul class="task-list">
+<li><input type="checkbox" disabled="" checked="" />
+Du solltest die Wesentliche Funktionsweise von R verstanden haben.</li>
+<li><input type="checkbox" disabled="" checked="" />
+Du solltest den Aufbau von RStudio kennen.</li>
+<li><input type="checkbox" disabled="" checked="" />
+Du solltest wissen, was ein Script ist und wie es geöffnet werden kann.</li>
+<li><input type="checkbox" disabled="" checked="" />
+Du solltest wissen, wie Befehlssequenzen in der Console und in einem Script ausgeführt werden.</li>
+</ul>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="atomare-datentypen.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/peer-schwertfeger/handout_r_kurs/edit/master/index.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/peer-schwertfeger/handout_r_kurs/blob/master/index.Rmd",
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

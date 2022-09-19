@@ -1,0 +1,51 @@
+--- 
+title: "Handout für R Grundkurs"
+author: |
+  | Peter Kannewitz 
+  | peter.kannewitz@uni-leipzig.de
+  |
+  | Peer Schwertfeger
+  | peer.schwertfeger@uni-leipzig.de
+subtitle: "URZ und Academic Lab Universität Leipzig"
+date: "Stand: `r Sys.Date()`"
+bibliography: ["references.bib"]
+biblio-style: "apalike"
+link-citations: true
+nocite: |
+  @*
+site: bookdown::bookdown_site
+---
+
+# Vorwort {-}
+
+Dieses Handout ist Teil des Grundkurses in R am URZ und am Academic Lab der Uni Leipzig.
+
+Besonderem Dank gilt Stephan Poppe und dem Statistik-Team des Instituts für Soziologie
+für die Unterstützung beim Erstellen der Materialien für diesen Kurs.
+
+
+```{r, echo=FALSE, out.width='30%', fig.align='center'}
+knitr::include_graphics("resources/construction.png")
+```
+
+**Hinweis**:
+
+Dieses Handout ist ständig in Bearbeitung und erhebt keinen Anspruch auf Vollständigkeit. Bitte informiert uns,
+sollten Angaben nicht mehr aktuell sein bzw. sollten sich Fehler eingeschlichen haben. Vielen Dank!
+
+# Hinweise zur Verwendung des Handouts {-}
+
+- In den einzelnen Kapiteln wird immer wieder R Code ausgeführt. Dabei wird immer im ersten Block der jeweilige Ausdruck angegeben und im zweiten das dazugehörige Ergebnis, was wie folgt aussieht:
+
+```{r}
+1+1
+``` 
+
+- Am Ende eines jeden Kapitels gibt es eine kleine Checkliste, welche als "Prüfe dich selbst" überschrieben ist. Anhand dieser könnt ihr euch testen, ob ihr allem folgen konntet und die Sachverhalte verinnerlicht habt. Wenn nicht, habt ihr dann vielleicht einen Anhaltspunkt, was ihr später vielleicht noch einmal nachlesen könntet.
+
+- Es empfiehlt sich über die Menüleiste oben die Anzeigeeinstellungen (A) zu ändern. Wenn ihr Mal ein Kapitel durcharbeiten wollt, ist eine Schriftart mit Serifen und ein etwas dunkler Hintergrund vielleicht angenehmer. Also probiert das gerne mal aus!
+
+- Das gesamte Handout ist über GitHub Pages veröffentlicht. Wenn ihr einen Fehler entdeckt oder Anmerkungen habt, dann zögert nicht ein Issue auf zu machen und Änderungen vorzuschlagen! Über das Auge oben in der Menüleiste kommt ihr zum Repository.
+
+
+

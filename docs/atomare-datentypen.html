@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Kapitel 3 Atomare Datentypen | Handout für R Grundkurs</title>
   <meta name="description" content="Kapitel 3 Atomare Datentypen | Handout für R Grundkurs" />
-  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Kapitel 3 Atomare Datentypen | Handout für R Grundkurs" />
   <meta property="og:type" content="book" />
@@ -450,9 +450,9 @@ zugewiesen werden können:</li>
 </div>
 <div id="objekte-funktionen-und-referenzen" class="section level3 hasAnchor" number="3.1.2">
 <h3><span class="header-section-number">3.1.2</span> Objekte, Funktionen und Referenzen<a href="atomare-datentypen.html#objekte-funktionen-und-referenzen" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>“To understand computations in R, two slogans are helpful: Everything that exists is an object. Everything that happens is a function call.” (John M. Chambers) <a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p>
+<p>“To understand computations in R, two slogans are helpful: Everything that exists is an object. Everything that happens is a function call.” (John M. Chambers)<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p>
 <ul>
-<li>Funktionen haben wir gerade kennengelernt, also kennen wir auch schon “Everything that happens”.</li>
+<li>Funktionen haben wir gerade kennengelernt, also kennen wir auch schon “Everything that happens.”</li>
 <li>Objekte haben wir auch schon durchgehend verwendet.</li>
 </ul>
 <p>Geben wir etwa <code>3</code> oder <code>"password"</code> in die Konsole ein, wird ein entsprechendes Objekt im Speicher erzeugt.</p>
@@ -487,7 +487,7 @@ am Anfang stehen dürfen.</p>
 <div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="atomare-datentypen.html#cb21-1" aria-hidden="true" tabindex="-1"></a>x_1 <span class="ot">&lt;-</span> <span class="dv">3</span></span></code></pre></div>
 <p>Aber:</p>
 <div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="atomare-datentypen.html#cb22-1" aria-hidden="true" tabindex="-1"></a>_x_1 <span class="ot">&lt;-</span> <span class="dv">3</span></span></code></pre></div>
-<pre><code>## Error: &lt;text&gt;:1:2: unexpected symbol
+<pre><code>## Error: &lt;text&gt;:1:2: unerwartetes Symbol
 ## 1: _x_1
 ##      ^</code></pre>
 <p><strong>Bemerkung:</strong> Man sollte sich bei den Buchstaben nur auf a,…,z bzw. A,.., Z beschränken, auch wenn je nach lokalem Setting z.B. auch andere Buchstaben wie ä zulässig sind.</p>
@@ -527,7 +527,13 @@ Berechnungen und Operationen zur Verfügung:</p>
 <p>Wir haben mittlerweile ein paar Objekte im Speicher
 angelegt und an Namen gebunden. Mit <code>ls()</code> kann man diese abrufen:</p>
 <div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="atomare-datentypen.html#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span>()</span></code></pre></div>
-<pre><code>## [1] &quot;x_1&quot;    &quot;x_test&quot; &quot;y_test&quot;</code></pre>
+<pre><code>##  [1] &quot;alter_moni&quot;         &quot;alter_tom&quot;          &quot;countdown&quot;          &quot;D&quot;                  &quot;df_lineup&quot;         
+##  [6] &quot;DJ_Alter&quot;           &quot;DJ_Geburtsjahr&quot;     &quot;DJ_Name&quot;            &quot;DJ_Vinyl&quot;           &quot;i&quot;                 
+## [11] &quot;is.positive&quot;        &quot;M&quot;                  &quot;name&quot;               &quot;name_bundeskanzler&quot; &quot;p&quot;                 
+## [16] &quot;pow&quot;                &quot;profil_marie&quot;       &quot;q&quot;                  &quot;quadrat&quot;            &quot;starwars&quot;          
+## [21] &quot;theendoftheworld&quot;   &quot;un_lambda&quot;          &quot;v1&quot;                 &quot;v1_log&quot;             &quot;v2&quot;                
+## [26] &quot;x&quot;                  &quot;x_1&quot;                &quot;x_test&quot;             &quot;y&quot;                  &quot;y_test&quot;            
+## [31] &quot;z&quot;                  &quot;zahl&quot;</code></pre>
 <p>Mit <code>rm()</code> kann man unnötige Objekte über deren Namen entfernen:</p>
 <div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="atomare-datentypen.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(y_test)</span></code></pre></div>
 <p>Wenn ihr gleich alle angelegte, referenzierbare Objekte aus dem Speicher entfernen wollt:</p>
@@ -675,10 +681,10 @@ Du solltest die elementaren Booleschen (logischen) Operationen in R schreiben k�
 </ul>
 <!-- Referenzen  -->
 <div class="invisible" style="display:none">
-<p><span class="citation">Chambers (<a href="#ref-Chambers2014" role="doc-biblioref">2014</a>)</span>
-<span class="citation">Wickham (<a href="#ref-wickham2019advanced" role="doc-biblioref">2019</a>)</span>
+<p><span class="citation"><a href="#ref-Chambers2014" role="doc-biblioref">Chambers</a> (<a href="#ref-Chambers2014" role="doc-biblioref">2014</a>)</span>
+<span class="citation"><a href="#ref-wickham2019advanced" role="doc-biblioref">Wickham</a> (<a href="#ref-wickham2019advanced" role="doc-biblioref">2019</a>)</span>
 <span class="citation">(<a href="#ref-r-intro" role="doc-biblioref">n.d.</a>)</span>
-<span class="citation">Grolemund (<a href="#ref-grolemund2014hands" role="doc-biblioref">2014</a>)</span></p>
+<span class="citation"><a href="#ref-grolemund2014hands" role="doc-biblioref">Grolemund</a> (<a href="#ref-grolemund2014hands" role="doc-biblioref">2014</a>)</span></p>
 </div>
 
 </div>
@@ -771,7 +777,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Kapitel 5 Funktionen | Handout für R Grundkurs</title>
   <meta name="description" content="Kapitel 5 Funktionen | Handout für R Grundkurs" />
-  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Kapitel 5 Funktionen | Handout für R Grundkurs" />
   <meta property="og:type" content="book" />
@@ -318,7 +318,7 @@ div.csl-indent {
 <div id="eigenschaften" class="section level2 hasAnchor" number="5.1">
 <h2><span class="header-section-number">5.1</span> Eigenschaften<a href="funktionen.html#eigenschaften" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Die meisten Funktionen in R haben bestimmte eigenschaften:</p>
-<p><strong>1. Funktionen sind “eigenständig”.</strong></p>
+<p><strong>1. Funktionen sind “eigenständig.”</strong></p>
 <p>Der Output einer Funktion hängt lediglich von seinem Input ab. Wird eine Funktion mit den gleichen argumentativen Werten zweimal ausgeführt, ist der Output in beiden Durchgängen identisch.</p>
 <p>Ausnahmen bilden Funktionen, die auf (Pseudo-) Zufallsverfahren beruhen, wie z.B. <code>rnorm()</code>.</p>
 <p><strong>2. Funktionen helfen beim Erreichen bestimmter Ziele.</strong></p>
@@ -329,7 +329,7 @@ div.csl-indent {
 <div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="funktionen.html#cb146-1" aria-hidden="true" tabindex="-1"></a>mean</span></code></pre></div>
 <pre><code>## function (x, ...) 
 ## UseMethod(&quot;mean&quot;)
-## &lt;bytecode: 0x565089f40cb8&gt;
+## &lt;bytecode: 0x0000020d8657dca0&gt;
 ## &lt;environment: namespace:base&gt;</code></pre>
 <p>Alle anderen Funktionen bestehen aus einer Komposition dieser <em>primitiven</em> Funktionen.</p>
 <p>Beispiel:</p>
@@ -337,7 +337,7 @@ div.csl-indent {
 <pre><code>## function (x, na.rm = FALSE) 
 ## sqrt(var(if (is.vector(x) || is.factor(x)) x else as.double(x), 
 ##     na.rm = na.rm))
-## &lt;bytecode: 0x56508a90cf28&gt;
+## &lt;bytecode: 0x0000020d8f8017d8&gt;
 ## &lt;environment: namespace:stats&gt;</code></pre>
 </div>
 <div id="aufbau" class="section level2 hasAnchor" number="5.2">
@@ -386,8 +386,8 @@ div.csl-indent {
 <li>Auch diese Funktion gibt ein Objekt zurück.</li>
 <li>usw.</li>
 </ul>
-<div id="htmlwidget-2db5179f6c8fd74ef695" style="width:672px;height:192px;" class="DiagrammeR html-widget"></div>
-<script type="application/json" data-for="htmlwidget-2db5179f6c8fd74ef695">{"x":{"diagram":"\ngraph LR;\n    A(X) -->|mean| B(Mittelwert von X)\n    B -->|round| C(gerundeter Mittelwert von X)\n        "},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-735e75985f53f48d03ae" style="width:672px;height:192px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-735e75985f53f48d03ae">{"x":{"diagram":"\ngraph LR;\n    A(X) -->|mean| B(Mittelwert von X)\n    B -->|round| C(gerundeter Mittelwert von X)\n        "},"evals":[],"jsHooks":[]}</script>
 <p>Code Beispiel:</p>
 <div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="funktionen.html#cb161-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="sc">-</span><span class="dv">2</span>,<span class="sc">-</span><span class="dv">3</span>,<span class="sc">-</span><span class="dv">4</span>) <span class="sc">|&gt;</span> </span>
 <span id="cb161-2"><a href="funktionen.html#cb161-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mean</span>() <span class="sc">|&gt;</span></span>
@@ -528,7 +528,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

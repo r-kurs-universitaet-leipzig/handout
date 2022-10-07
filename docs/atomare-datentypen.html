@@ -311,7 +311,7 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="atomare-datentypen" class="section level1 hasAnchor" number="3">
 <h1><span class="header-section-number">Kapitel 3</span> Atomare Datentypen<a href="atomare-datentypen.html#atomare-datentypen" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Datentypen sind die Grundlage einer jeder Programmiersprache und somit essenziell zum Verständnis dieser. Sie dienen dazu, verschiedene Typen zu unterscheiden. Etwa Zahlen von Buchstaben. Das ist besonders wichtig, da wir mit unterschiedlichen ‘Typen’ unterschiedliche Operationen ausführen, bzw. nicht ausführen, können. Zum Beispiel können wir mit Zahlen rechnen, mit Buchstaben hingegen nicht. Mit logischen Bedingungen können wir wiederum Wahrheitswerte ermitteln, mit Zahlen hingegen nicht. Zu wissen, welche Eigenschaften die verschiedene Datentypen haben und welche Operationen mit diesen möglich sind, hilft dabei vielen potenziellen Fehlern vorzubeugen und so Frustration zu vermeiden.</p>
+<p>Datentypen sind die Grundlage einer jeden Programmiersprache und somit essenziell zum Verständnis dieser. Sie dienen dazu, verschiedene Typen zu unterscheiden, wie etwa Zahlen von Buchstaben. Das ist besonders wichtig, da wir mit unterschiedlichen ‘Typen’ unterschiedliche Operationen ausführen bzw. nicht ausführen können. Zum Beispiel können wir mit Zahlen rechnen, mit Buchstaben hingegen nicht. Mit logischen Bedingungen können wir wiederum Wahrheitswerte ermitteln, mit Zahlen hingegen nicht. Zu wissen, welche Eigenschaften die verschiedenen Datentypen haben und welche Operationen mit diesen möglich sind, hilft dabei, vielen potenziellen Fehlern vorzubeugen und so Frustration zu vermeiden.</p>
 <p>Zunächst einmal wollen wir uns die atomaren Datentypen anschauen. Diese bilden die Grundlage aller folgenden Datenstrukturen.</p>
 <table>
 <thead>
@@ -344,17 +344,17 @@ div.csl-indent {
 </tr>
 <tr class="odd">
 <td align="left">NA,NULL,NaN</td>
-<td align="left">Unbestimmt, Leer, Undefiniert</td>
+<td align="left">unbestimmt, leer, undefiniert</td>
 <td align="center"></td>
 </tr>
 <tr class="even">
 <td align="left">Inf</td>
-<td align="left">Unendlich</td>
+<td align="left">unendlich</td>
 <td align="center"></td>
 </tr>
 </tbody>
 </table>
-<p>Die numerischen Datentypen <code>integer</code> und <code>numeric</code> erlauben es numerische Informationen zu repräsentieren. Mit dem Datentyp <code>logical</code> können logische Informationen repräsentiert werden. Um symbolische Informationen zu repräsentieren, verwenden wir den Datentyp <code>character</code>. Mit numerischen-, logischen- und symbolischen Informationen ist es bereits möglich eine Vielzahl von Sachverhalten auszudrücken. Was dies sein kann, wollen wir uns im Folgenden anschauen.</p>
+<p>Die numerischen Datentypen <code>integer</code> und <code>numeric</code> erlauben es, numerische Informationen zu repräsentieren. Mit dem Datentyp <code>logical</code> können logische Informationen repräsentiert werden. Um symbolische Informationen zu repräsentieren, verwenden wir den Datentyp <code>character</code>. Mit numerischen, logischen und symbolischen Informationen ist es bereits möglich, eine Vielzahl von Sachverhalten auszudrücken. Was dies sein kann, wollen wir uns im Folgenden anschauen.</p>
 <div id="arithmetische-grundoperationen-und-basisfunktionen" class="section level2 hasAnchor" number="3.1">
 <h2><span class="header-section-number">3.1</span> Arithmetische Grundoperationen und Basisfunktionen<a href="atomare-datentypen.html#arithmetische-grundoperationen-und-basisfunktionen" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>R beherrscht für alle Zahlen die arithmetischen Grundoperationen und eignet sich somit wunderbar als Taschenrechner.</p>
@@ -527,13 +527,9 @@ Berechnungen und Operationen zur Verfügung:</p>
 <p>Wir haben mittlerweile ein paar Objekte im Speicher
 angelegt und an Namen gebunden. Mit <code>ls()</code> kann man diese abrufen:</p>
 <div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="atomare-datentypen.html#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span>()</span></code></pre></div>
-<pre><code>##  [1] &quot;alter_moni&quot;         &quot;alter_tom&quot;          &quot;countdown&quot;          &quot;D&quot;                  &quot;df_lineup&quot;         
-##  [6] &quot;DJ_Alter&quot;           &quot;DJ_Geburtsjahr&quot;     &quot;DJ_Name&quot;            &quot;DJ_Vinyl&quot;           &quot;i&quot;                 
-## [11] &quot;is.positive&quot;        &quot;M&quot;                  &quot;name&quot;               &quot;name_bundeskanzler&quot; &quot;p&quot;                 
-## [16] &quot;pow&quot;                &quot;profil_marie&quot;       &quot;q&quot;                  &quot;quadrat&quot;            &quot;starwars&quot;          
-## [21] &quot;theendoftheworld&quot;   &quot;un_lambda&quot;          &quot;v1&quot;                 &quot;v1_log&quot;             &quot;v2&quot;                
-## [26] &quot;x&quot;                  &quot;x_1&quot;                &quot;x_test&quot;             &quot;y&quot;                  &quot;y_test&quot;            
-## [31] &quot;z&quot;                  &quot;zahl&quot;</code></pre>
+<pre><code>##  [1] &quot;alter_moni&quot;         &quot;alter_tom&quot;          &quot;countdown&quot;          &quot;DJ_Alter&quot;           &quot;DJ_Name&quot;           
+##  [6] &quot;DJ_Vinyl&quot;           &quot;name_bundeskanzler&quot; &quot;p&quot;                  &quot;q&quot;                  &quot;theendoftheworld&quot;  
+## [11] &quot;x_1&quot;                &quot;x_test&quot;             &quot;y_test&quot;             &quot;z&quot;</code></pre>
 <p>Mit <code>rm()</code> kann man unnötige Objekte über deren Namen entfernen:</p>
 <div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="atomare-datentypen.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(y_test)</span></code></pre></div>
 <p>Wenn ihr gleich alle angelegte, referenzierbare Objekte aus dem Speicher entfernen wollt:</p>
@@ -578,7 +574,7 @@ Es stehen die elementaren Booleschen Operationen zur Verfügung.</p>
 <p>Neben Wahr und Falsch existiert noch die logische Konstante <code>NA</code>, welche
 für einen unbestimmten aber bestimmbaren Wert steht (not assigned, not available
 yet).</p>
-<p>Dieser Wert wird z. B. universell für alle atomaren Datentypen für die Codierung
+<p>Dieser Wert wird z.B. universell für alle atomaren Datentypen für die Codierung
 von Fehlwerten (missings) verwendet.</p>
 <div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="atomare-datentypen.html#cb39-1" aria-hidden="true" tabindex="-1"></a>theendoftheworld <span class="ot">&lt;-</span> <span class="cn">NA</span></span></code></pre></div>
 </div>
@@ -642,7 +638,7 @@ mit der Funktion <code>class()</code> ermitteln oder aber spezifisch/logisch pr�
 </div>
 <div id="spezielle-werte" class="section level2 hasAnchor" number="3.6">
 <h2><span class="header-section-number">3.6</span> Spezielle Werte<a href="atomare-datentypen.html#spezielle-werte" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Die leere Menge wird in R mit dem Wert <code>NULL</code> repräsentiert und dient ganz verschiedenen Zwecken wie z.B. Initialisierung einer Variablen:</p>
+<p>Die leere Menge wird in R mit dem Wert <code>NULL</code> repräsentiert und dient ganz verschiedenen Zwecken wie z.B. der Initialisierung einer Variablen:</p>
 <div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="atomare-datentypen.html#cb52-1" aria-hidden="true" tabindex="-1"></a>   z <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
 <span id="cb52-2"><a href="atomare-datentypen.html#cb52-2" aria-hidden="true" tabindex="-1"></a>   z</span></code></pre></div>
 <pre><code>## NULL</code></pre>
@@ -651,7 +647,7 @@ mit der Funktion <code>class()</code> ermitteln oder aber spezifisch/logisch pr�
 <div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="atomare-datentypen.html#cb54-1" aria-hidden="true" tabindex="-1"></a>  <span class="dv">100</span><span class="sc">/</span><span class="dv">0</span> </span></code></pre></div>
 <pre><code>## [1] Inf</code></pre>
 <p>In R wird ein nicht bestimmbarer Wert (vgl. unbestimmter aber bestimmbarer
-Wert ‘NA’) durch <code>NaN</code> (not a number)
+Wert ‘NA’) durch <code>NaN</code> (not a number) angegeben.
 0/0</p>
 </div>
 <div id="prüfe-dich-selbst-1" class="section level2 hasAnchor" number="3.7">
@@ -661,7 +657,7 @@ Wert ‘NA’) durch <code>NaN</code> (not a number)
 <li><input type="checkbox" disabled="" checked="" />
 Du solltest verstanden haben, warum man verschiedene Datentypen unterscheidet.</li>
 <li><input type="checkbox" disabled="" checked="" />
-Du solltest die drei grundlegenden Weisen Informationen zu repräsentieren nennen können und die dazugehörigen Datentypen.</li>
+Du solltest die drei grundlegenden Wege, Informationen zu repräsentieren, und die dazugehörigen Datentypen nennen können.</li>
 <li><input type="checkbox" disabled="" checked="" />
 Du solltest verstanden haben, wie man Objekte an einen Namen bindet und warum das nützlich sein kann.</li>
 <li><input type="checkbox" disabled="" checked="" />

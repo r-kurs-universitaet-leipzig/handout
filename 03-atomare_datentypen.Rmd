@@ -1,6 +1,6 @@
 # Atomare Datentypen 
 
-Datentypen sind die Grundlage einer jeder Programmiersprache und somit essenziell zum Verständnis dieser. Sie dienen dazu, verschiedene Typen zu unterscheiden. Etwa Zahlen von Buchstaben. Das ist besonders wichtig, da wir mit unterschiedlichen 'Typen' unterschiedliche Operationen ausführen, bzw. nicht ausführen, können. Zum Beispiel können wir mit Zahlen rechnen, mit Buchstaben hingegen nicht. Mit logischen Bedingungen können wir wiederum Wahrheitswerte ermitteln, mit Zahlen hingegen nicht. Zu wissen, welche Eigenschaften die verschiedene Datentypen haben und welche Operationen mit diesen möglich sind, hilft dabei vielen potenziellen Fehlern vorzubeugen und so Frustration zu vermeiden. 
+Datentypen sind die Grundlage einer jeden Programmiersprache und somit essenziell zum Verständnis dieser. Sie dienen dazu, verschiedene Typen zu unterscheiden, wie etwa Zahlen von Buchstaben. Das ist besonders wichtig, da wir mit unterschiedlichen 'Typen' unterschiedliche Operationen ausführen bzw. nicht ausführen können. Zum Beispiel können wir mit Zahlen rechnen, mit Buchstaben hingegen nicht. Mit logischen Bedingungen können wir wiederum Wahrheitswerte ermitteln, mit Zahlen hingegen nicht. Zu wissen, welche Eigenschaften die verschiedenen Datentypen haben und welche Operationen mit diesen möglich sind, hilft dabei, vielen potenziellen Fehlern vorzubeugen und so Frustration zu vermeiden. 
 
 
 Zunächst einmal wollen wir uns die atomaren Datentypen anschauen. Diese bilden die Grundlage aller folgenden Datenstrukturen.
@@ -11,10 +11,10 @@ integer               ganze Zahlen                            -2L
 numeric               rationale Zahlen                        5.2456   
 logical               logische Werte                          TRUE     
 character             Zeichenfolge                           "Mexico" 
-NA,NULL,NaN           Unbestimmt, Leer, Undefiniert                    
-Inf                   Unendlich                                        
+NA,NULL,NaN           unbestimmt, leer, undefiniert                    
+Inf                   unendlich                                        
 
-Die numerischen Datentypen `integer` und `numeric` erlauben es numerische Informationen zu repräsentieren. Mit dem Datentyp `logical` können logische Informationen repräsentiert werden. Um symbolische Informationen zu repräsentieren, verwenden wir den Datentyp `character`. Mit numerischen-, logischen- und symbolischen Informationen ist es bereits möglich eine Vielzahl von Sachverhalten auszudrücken. Was dies sein kann, wollen wir uns im Folgenden anschauen.
+Die numerischen Datentypen `integer` und `numeric` erlauben es, numerische Informationen zu repräsentieren. Mit dem Datentyp `logical` können logische Informationen repräsentiert werden. Um symbolische Informationen zu repräsentieren, verwenden wir den Datentyp `character`. Mit numerischen, logischen und symbolischen Informationen ist es bereits möglich, eine Vielzahl von Sachverhalten auszudrücken. Was dies sein kann, wollen wir uns im Folgenden anschauen.
 
 ## Arithmetische Grundoperationen und Basisfunktionen
 
@@ -268,7 +268,7 @@ Neben Wahr und Falsch existiert noch die logische Konstante `NA`, welche
 für einen unbestimmten aber bestimmbaren Wert steht (not assigned, not available 
 yet). 
 
-Dieser Wert wird z. B. universell für alle atomaren Datentypen für die Codierung 
+Dieser Wert wird z.B. universell für alle atomaren Datentypen für die Codierung 
 von Fehlwerten (missings) verwendet.
 
 
@@ -325,7 +325,7 @@ is.numeric(alter_moni)
 
 ## Spezielle Werte
 
- Die leere Menge wird in R mit dem Wert `NULL` repräsentiert und dient ganz verschiedenen Zwecken wie z.B. Initialisierung einer Variablen:
+ Die leere Menge wird in R mit dem Wert `NULL` repräsentiert und dient ganz verschiedenen Zwecken wie z.B. der Initialisierung einer Variablen:
  
 ```{r}
    z <- NULL
@@ -340,7 +340,7 @@ is.numeric(alter_moni)
 ```
   
  In R wird ein nicht bestimmbarer Wert (vgl. unbestimmter aber bestimmbarer
- Wert 'NA') durch `NaN` (not a number)
+ Wert 'NA') durch `NaN` (not a number) angegeben.
   0/0
 
 ## Prüfe dich selbst
@@ -348,7 +348,7 @@ is.numeric(alter_moni)
 Von dieser Sitzung solltest du folgendes mitgenommen haben: 
 
 - [x] Du solltest verstanden haben, warum man verschiedene Datentypen unterscheidet.
-- [x] Du solltest die drei grundlegenden Weisen Informationen zu repräsentieren nennen können und die dazugehörigen Datentypen.
+- [x] Du solltest die drei grundlegenden Wege, Informationen zu repräsentieren, und die dazugehörigen Datentypen nennen können.
 - [x] Du solltest verstanden haben, wie man Objekte an einen Namen bindet und warum das nützlich sein kann.
 - [x] Du solltest die elementaren Booleschen (logischen) Operationen in R schreiben können.
 

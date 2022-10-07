@@ -11,5 +11,9 @@ Wir freuen uns über jegliche Form von Anregungen und Verbesserungsvorschlägen.
 
 Aktuelle Kursleiter\*innen:
 
-- Peer Keßler ([peer.schwertfeger@uni-leipzig.de](mailto:peer.schwertfeger@uni-leipzig.de))
+- Anne Sophie Küllmer ([sophie.kuellmer@uni-leipzig.de](mailto:sophie.kuellmer@uni-leipzig.de))
 - Peter Kannewitz ([peter.kannewitz@uni-leipzig.de](mailto:peter.kannewitz@uni-leipzig.de))
+
+Ehemalige Kursleier\*innen:
+
+- Peer Keßler ([peer.schwertfeger@uni-leipzig.de](mailto:peer.schwertfeger@uni-leipzig.de))

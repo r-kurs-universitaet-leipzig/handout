@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Kapitel 9 Kontrollstrukturen | Handout für R Grundkurs</title>
   <meta name="description" content="Kapitel 9 Kontrollstrukturen | Handout für R Grundkurs" />
-  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Kapitel 9 Kontrollstrukturen | Handout für R Grundkurs" />
   <meta property="og:type" content="book" />
@@ -316,13 +316,13 @@ div.csl-indent {
 <h2><span class="header-section-number">9.1</span> Prinzipien der Programmierung<a href="kontrollstrukturen.html#prinzipien-der-programmierung" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>R setzt in großen Teilen die Ideen der funktionalen Programmierung um. Das bedeutet für uns vor allem erst mal, dass ein Großteil der Problemlösung über Funktionen erfolgt. Folgende Prinzipien gilt es zu verinnerlichen, wenn man diese Eigenschaft effizient ausnutzen will:</p>
 <ol style="list-style-type: decimal">
-<li><p>DRY-Prinzip: “Don’t repeat yourself.” Treten wiederholt gleiche oder
+<li><p>DRY-Prinzip: “Don’t repeat yourself”. Treten wiederholt gleiche oder
 ähnliche Code-Elemente auf, so sollte man diese als Funktion zusammenfassen.</p></li>
 <li><p>“Divide and Conquer”- Prinzip: Oft ist es besser, das Problem oder die Analyse
 in verschieden Teilprobleme aufzuteilen und für diese entsprechende Funktionen zu schreiben.</p></li>
 <li><p>“Abstraktion”/Blackbox-Prinzip: Anstelle explizit viele Codezeilen im
 Hauptcode zu listen, welche letztlich gemeinsam eine bestimmte Funktion
-erfüllen, ist es besser, diese Komplexität in einer Funktion zu “verstecken.”
+erfüllen, ist es besser, diese Komplexität in einer Funktion zu “verstecken”.
 Black Box: Entscheidend ist <em>was</em> die Funktion macht und nicht <em>wie</em> sie es
 macht.</p></li>
 </ol>
@@ -474,7 +474,7 @@ für die nächste Klausur.</li>
 <span id="cb239-9"><a href="kontrollstrukturen.html#cb239-9" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">&quot;other&quot;</span> <span class="co"># catch them all</span></span>
 <span id="cb239-10"><a href="kontrollstrukturen.html#cb239-10" aria-hidden="true" tabindex="-1"></a>    ) </span>
 <span id="cb239-11"><a href="kontrollstrukturen.html#cb239-11" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
-<pre><code>## # A tibble: 87 x 3
+<pre><code>## # A tibble: 87 × 3
 ##    name               birth_year age_categorized
 ##    &lt;chr&gt;                   &lt;dbl&gt; &lt;chr&gt;          
 ##  1 Luke Skywalker           19   young          
@@ -487,7 +487,7 @@ für die nächste Klausur.</li>
 ##  8 R5-D4                    NA   other          
 ##  9 Biggs Darklighter        24   mid_aged       
 ## 10 Obi-Wan Kenobi           57   mid_aged       
-## # ... with 77 more rows</code></pre>
+## # … with 77 more rows</code></pre>
 <p><em>Anmerkung:</em> Falls euch dieses Zeichen unbekannt vorkommt: <code>%&gt;%</code> dann schaut doch noch mal in das Kapitel <a href="funktionen.html#funktionen">5</a>, dort haben wir Pipes mit der analogen base-R Notation (<code>|&gt;</code>) eingeführt.</p>
 <p>Im Beispiel wird eine neue Spalte <code>age_categorized</code> angelegt, welche eine Kategorisierung des Geburtsalters darstellt. Die einzelnen Fälle, welche in <code>case_when()</code> beschrieben werden, sind dabei jeweils durch ein Komma <code>,</code> getrennt. Vor der Tilde <code>~</code> kommt immer die Bedingung. Dahinter steht, was in diesem Fall passieren soll. Die letzte Bedingung <code>TRUE</code> ist immer wahr und greift dann, wenn alle vorherigen Bedingungen zu <code>FALSE</code> evaluiert worden sind. In unserem Beispiel fallen darunter alle <code>NA</code>-Werte. Die Rückgabe ist ein character-Vektor derselben Länge wie der von der Variable <code>birth_year</code>.</p>
 </div>
@@ -671,7 +671,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/peer-schwertfeger/handout_r_kurs/edit/master/10-kontrollstrukturen.Rmd",
+"link": "https://github.com/peer-schwertfeger/handout_r_kurs/edit/master/09-kontrollstrukturen.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -679,7 +679,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/peer-schwertfeger/handout_r_kurs/blob/master/10-kontrollstrukturen.Rmd",
+"link": "https://github.com/peer-schwertfeger/handout_r_kurs/blob/master/09-kontrollstrukturen.Rmd",
 "text": null
 },
 "download": null,
@@ -701,7 +701,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

@@ -23,7 +23,7 @@ knitr::include_graphics("resources/RStudio.png")
 knitr::include_graphics("resources/interface.png")
 ```
 
-RStudio bietet eine nutzer:innenfreundliche (und freie) Alternative für die Nutzung von R. Hier sind zusätzliche Editoren und Übersichten enthalten. Zu nennen ist beispielsweise:
+RStudio bietet eine nutzer*innenfreundliche (und freie) Alternative für die Nutzung von R. Hier sind zusätzliche Editoren und Übersichten enthalten. Zu nennen ist beispielsweise:
 
 - Script-Editor
 - Übersicht über Objekte in globaler Umgebung 
@@ -40,7 +40,7 @@ knitr::include_graphics("resources/console.png")
 ```
 
 Die R Console dient zur direkten Übergabe von Ausdrücken bzw. Funktionen an R 
-und ist identisch mit der Anzeige in der R GUI. Diese eignet sich für für 
+und ist identisch mit der Anzeige in der R GUI. Diese eignet sich für 
 kleine Tasks bzw. Tests. Das Ergebnis wird direkt unterhalb des Befehls angezeigt.
 Außerderm werden Ergebnisse aus den Scripten, die keine Graphiken sind, 
 hier angezeigt.
@@ -91,14 +91,14 @@ Scripten oder in der Console erzeugt werden. Des Weiteren gibt es hier eine
 **Übersicht über Packages** und das **Help** Fenster.
 
 Oben rechts (Standardeinstellung, Abbildung \@ref(fig:editor)b) existiert die **Global Environment**, in dem 
-alle gespeicherten Objekte angezeigt werden. Schließlich kann man hier auf die 
+alle gespeicherten Objekte angezeigt werden. Schließlich kann hier auf die 
 **History** und **Verbindungen**, wie GitHub, zugegriffen werden.
 
 ## Prüfe dich selbst
 
 Von dieser Sitzung solltest du folgendes mitgenommen haben: 
 
-- [x] Du solltest die Wesentliche Funktionsweise von R verstanden haben.
+- [x] Du solltest die wesentliche Funktionsweise von R verstanden haben.
 - [x] Du solltest den Aufbau von RStudio kennen.
 - [x] Du solltest wissen, was ein Script ist und wie es geöffnet werden kann.
 - [x] Du solltest wissen, wie Befehlssequenzen in der Console und in einem Script ausgeführt werden.

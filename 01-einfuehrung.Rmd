@@ -22,7 +22,7 @@ R zum Goldstandard in der akademischen Welt und in vielen Bereichen der Wirtscha
 
 [^1]: https://analyticsindiamag.com/has-python-completely-edged-out-r-in-data-science-field/
 
-Wie auch bei Sprachen, lernt man Programmiersprachen nicht (nur) durch Kurse. Eine Aktive Auseinandersetzung mit konkreten Problemen hilft, "fließender" im Umgang mit der Sprache zu werden. Kommt man einmal nicht weiter (wird passieren... versprochen!), hilft es, sich solange mit dem Thema zu beschäftigen, bis eine Lösung gefunden wurde. 
+Wie auch bei Sprachen, lernt man Programmiersprachen nicht (nur) durch Kurse. Eine aktive Auseinandersetzung mit konkreten Problemen hilft, "fließender" im Umgang mit der Sprache zu werden. Kommt man einmal nicht weiter (wird passieren... versprochen!), hilft es, sich so lange mit dem Thema zu beschäftigen, bis eine Lösung gefunden wurde. 
 
 Warum sollte man das auf sich nehmen?
 
@@ -30,7 +30,7 @@ Warum sollte man das auf sich nehmen?
 
 1. *Open Source* und plattformübergreifend
 2. Praktisch unbegrenzter Funktionsumfang
-3. Entwickelt sich zum Standard in akademischer Welt und in der Wirtschaft
+3. Entwickelt sich zum Standard in akademischer Welt und Wirtschaft
 4. Publizierfähige Graphiken
 5. Integration von Aufbereitung, Analyse und Präsentation
 6. Internationale Community ([Stack Overflow](https://stackoverflow.com/questions/tagged/r), [RBloggers](https://www.r-bloggers.com) etc.)
@@ -42,5 +42,5 @@ Zunächst muss unser Computer R "lernen".
 Um R zu installieren, gehe auf die entsprechende [Cran Website](https://cran.r-project.org). Wähle dein Betriebssystem aus und folge 
 den Anweisungen auf der Website.
 
-Um produktiv zu arbeiten, sollte zusätzlich die open source-Version von RStudio 
+Um produktiv zu arbeiten, sollte zusätzlich die Open Source-Version von RStudio 
 installiert werden. Weitere Infos hierzu gibt es [hier](https://www.rstudio.com).

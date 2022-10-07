@@ -3,7 +3,7 @@
     "path": "~/R Studio/handout/01-einfuehrung.Rmd",
     "project_path": "01-einfuehrung.Rmd",
     "type": "r_markdown",
-    "hash": "1264214219",
+    "hash": "3841472242",
     "contents": "",
     "dirty": false,
     "created": 1665061415207.0,
@@ -12,15 +12,15 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "9,0",
-        "scrollLine": "13"
+        "cursorPosition": "44,54",
+        "scrollLine": "26"
     },
     "folds": "",
-    "lastKnownWriteTime": 1665061828,
+    "lastKnownWriteTime": 1665139670,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1665061828332,
+    "last_content_update": 1665139670922,
     "read_only": false,
     "read_only_alternatives": []
 }

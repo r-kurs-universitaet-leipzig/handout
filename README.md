@@ -14,6 +14,6 @@ Aktuelle Kursleiter\*innen:
 - Anne Sophie Küllmer ([sophie.kuellmer@uni-leipzig.de](mailto:sophie.kuellmer@uni-leipzig.de))
 - Peter Kannewitz ([peter.kannewitz@uni-leipzig.de](mailto:peter.kannewitz@uni-leipzig.de))
 
-Ehemalige Kursleier\*innen:
+Ehemalige Kursleiter\*innen:
 
 - Peer Keßler ([peer.schwertfeger@uni-leipzig.de](mailto:peer.schwertfeger@uni-leipzig.de))

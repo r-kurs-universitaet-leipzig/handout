@@ -1,0 +1,74 @@
+{
+    "sources": [
+        {
+            "DOI": "10.48550/ARXIV.1409.3531",
+            "author": [
+                {
+                    "family": "Chambers",
+                    "given": "John M."
+                }
+            ],
+            "id": "Chambers2014",
+            "issued": {
+                "date-parts": [
+                    [
+                        2014
+                    ]
+                ]
+            },
+            "keyword": "Methodology (stat.ME), Programming Languages (cs.PL), Software Engineering (cs.SE), Computation (stat.CO), FOS: Computer and information sciences",
+            "publisher": "arXiv",
+            "title": "Object-oriented programming, functional programming and r",
+            "type": "article-journal"
+        },
+        {
+            "URL": "https://adv-r.hadley.nz/",
+            "author": [
+                {
+                    "family": "Wickham",
+                    "given": "Hadley"
+                }
+            ],
+            "id": "wickham2019advanced",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019
+                    ]
+                ]
+            },
+            "publisher": "CRC press",
+            "title": "Advanced r",
+            "type": "book"
+        },
+        {
+            "URL": "https://cran.r-project.org/doc/manuals/r-release/R-intro.html",
+            "id": "r-intro",
+            "type": "book"
+        },
+        {
+            "URL": "https://rstudio-education.github.io/hopr/",
+            "author": [
+                {
+                    "family": "Grolemund",
+                    "given": "Garrett"
+                }
+            ],
+            "id": "grolemund2014hands",
+            "issued": {
+                "date-parts": [
+                    [
+                        2014
+                    ]
+                ]
+            },
+            "publisher": "\" O’Reilly Media, Inc.\"",
+            "title": "Hands-on programming with r: Write your own functions and simulations",
+            "title-short": "Hands-on programming with r",
+            "type": "book"
+        }
+    ],
+    "project_biblios": [
+        "references.bib"
+    ]
+}

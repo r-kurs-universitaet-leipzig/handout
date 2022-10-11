@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Kapitel 3 Atomare Datentypen | Handout für R Grundkurs</title>
   <meta name="description" content="Kapitel 3 Atomare Datentypen | Handout für R Grundkurs" />
-  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Kapitel 3 Atomare Datentypen | Handout für R Grundkurs" />
   <meta property="og:type" content="book" />
@@ -98,7 +98,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -111,7 +111,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -457,7 +457,7 @@ zugewiesen werden können:</li>
 </ul>
 <p>Geben wir etwa <code>3</code> oder <code>"password"</code> in die Konsole ein, wird ein entsprechendes Objekt im Speicher erzeugt.</p>
 <p><img src="resources/1_pure_memory.png" width="20%" style="display: block; margin: auto;" /></p>
-<p>Auf diese Objekte haben wir allerdings anschließend keinen Zugriff mehr. Wenn wir jetzt zum Beispiel erneut die Zeichenkette <code>"password"</code> benötigten, müssten wir sie auch erneut eintippen. Wie wir dies ändern können, sodass uns Objekte längerfristig zur Verfügung stehen, wollen wir uns jetzt anschauen.</p>
+<p>Auf diese Objekte haben wir allerdings anschließend keinen Zugriff mehr. Wenn wir jetzt zum Beispiel erneut die Zeichenkette <code>"password"</code> benötigten, müssten wir sie auch erneut eintippen. Wie es ändern können, dass uns Objekte längerfristig zur Verfügung stehen, wollen wir uns jetzt anschauen.</p>
 </div>
 </div>
 <div id="erzeugung-von-referenzierbaren-objekten" class="section level2 hasAnchor" number="3.2">
@@ -471,8 +471,8 @@ zugewiesen werden können:</li>
 <div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="atomare-datentypen.html#cb20-1" aria-hidden="true" tabindex="-1"></a> x_test <span class="ot">&lt;-</span> <span class="dv">3</span></span></code></pre></div>
 <p>ausführen, passiert formal eigentlich Folgendes:</p>
 <ol style="list-style-type: decimal">
-<li>Es wird im Speicher ein Objekt mit Wert 3 erzeugt.</li>
-<li>Es wird der Name <code>x_test</code> an dieses Objekt gebunden, sodass zu diesen Objekt
+<li>Es wird im Speicher ein Objekt mit dem Wert 3 erzeugt.</li>
+<li>Es wird der Name <code>x_test</code> an dieses Objekt gebunden, sodass zu diesem Objekt
 mit dem Namen <code>x_test</code> referiert werden kann bzw. bei Aufruf von <code>x_test</code>
 der Wert zurückgegeben wird.</li>
 </ol>
@@ -508,7 +508,7 @@ Berechnungen und Operationen zur Verfügung:</p>
 <p>Unser Speicher sieht aktuell so aus:
 </p>
 <p><img src="resources/5_calculation_left_over.png" width="40%" style="display: block; margin: auto;" /></p>
-<p>Zwar haben wir für die Berechnung auch eine Zwei im Speicher angelegt, diese ist aber nicht an einen Namen gebunden. Die Drei und die Fünf hingegen schon. Wenn wir nun <code>x_test</code> und <code>y_test</code> aufrufen, bekommen wir jeweils das entsprechende Objekt zurück.</p>
+<p>Zwar haben wir für die Berechnung auch eine zwei im Speicher angelegt, diese ist aber nicht an einen Namen gebunden. Die drei und die fünf hingegen schon. Wenn wir nun <code>x_test</code> und <code>y_test</code> aufrufen, bekommen wir jeweils das entsprechende Objekt zurück.</p>
 </div>
 <div id="namen-überschreiben" class="section level3 hasAnchor" number="3.2.3">
 <h3><span class="header-section-number">3.2.3</span> Namen überschreiben<a href="atomare-datentypen.html#namen-überschreiben" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -527,13 +527,16 @@ Berechnungen und Operationen zur Verfügung:</p>
 <p>Wir haben mittlerweile ein paar Objekte im Speicher
 angelegt und an Namen gebunden. Mit <code>ls()</code> kann man diese abrufen:</p>
 <div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="atomare-datentypen.html#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span>()</span></code></pre></div>
-<pre><code>##  [1] &quot;alter_moni&quot;         &quot;alter_tom&quot;          &quot;countdown&quot;          &quot;D&quot;                  &quot;df_lineup&quot;          &quot;DJ_Alter&quot;           &quot;DJ_Geburtsjahr&quot;     &quot;DJ_Name&quot;           
-##  [9] &quot;DJ_Vinyl&quot;           &quot;i&quot;                  &quot;is.positive&quot;        &quot;M&quot;                  &quot;name&quot;               &quot;name_bundeskanzler&quot; &quot;p&quot;                  &quot;pow&quot;               
-## [17] &quot;profil_marie&quot;       &quot;q&quot;                  &quot;quadrat&quot;            &quot;starwars&quot;           &quot;theendoftheworld&quot;   &quot;un_lambda&quot;          &quot;v1&quot;                 &quot;v1_log&quot;            
-## [25] &quot;v2&quot;                 &quot;x&quot;                  &quot;x_1&quot;                &quot;x_test&quot;             &quot;y&quot;                  &quot;y_test&quot;             &quot;z&quot;                  &quot;zahl&quot;</code></pre>
+<pre><code>##  [1] &quot;alter_moni&quot;         &quot;alter_tom&quot;          &quot;countdown&quot;          &quot;D&quot;                  &quot;df_lineup&quot;         
+##  [6] &quot;DJ_Alter&quot;           &quot;DJ_Geburtsjahr&quot;     &quot;DJ_Name&quot;            &quot;DJ_Vinyl&quot;           &quot;i&quot;                 
+## [11] &quot;is.positive&quot;        &quot;M&quot;                  &quot;name&quot;               &quot;name_bundeskanzler&quot; &quot;p&quot;                 
+## [16] &quot;pow&quot;                &quot;profil_marie&quot;       &quot;q&quot;                  &quot;quadrat&quot;            &quot;starwars&quot;          
+## [21] &quot;theendoftheworld&quot;   &quot;un_lambda&quot;          &quot;v1&quot;                 &quot;v1_log&quot;             &quot;v2&quot;                
+## [26] &quot;x&quot;                  &quot;X&quot;                  &quot;x_1&quot;                &quot;x_test&quot;             &quot;y&quot;                 
+## [31] &quot;y_test&quot;             &quot;z&quot;                  &quot;zahl&quot;</code></pre>
 <p>Mit <code>rm()</code> kann man unnötige Objekte über deren Namen entfernen:</p>
 <div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="atomare-datentypen.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(y_test)</span></code></pre></div>
-<p>Wenn ihr gleich alle angelegte, referenzierbare Objekte aus dem Speicher entfernen wollt:</p>
+<p>Wenn ihr gleich alle angelegten, referenzierbaren Objekte aus dem Speicher entfernen wollt:</p>
 <div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="atomare-datentypen.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>())</span></code></pre></div>
 </div>
 </div>
@@ -617,7 +620,7 @@ da sie z.B. beschreiben, ob bestimmte Vergleiche wahr oder falsch sind.</p>
 </div>
 <div id="zeichenketten-character-strings" class="section level2 hasAnchor" number="3.4">
 <h2><span class="header-section-number">3.4</span> Zeichenketten (character strings)<a href="atomare-datentypen.html#zeichenketten-character-strings" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Neben Zahlen und logischen Werten, werden wir auch
+<p>Neben Zahlen und logischen Werten werden wir auch
 Zeichenketten begegnen bzw. benötigen. Diese können auf
 zweierlei Art zugewiesen werden:</p>
 <div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="atomare-datentypen.html#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;Tom&quot;</span></span></code></pre></div>
@@ -648,21 +651,16 @@ mit der Funktion <code>class()</code> ermitteln oder aber spezifisch/logisch pr�
 <div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="atomare-datentypen.html#cb54-1" aria-hidden="true" tabindex="-1"></a>  <span class="dv">100</span><span class="sc">/</span><span class="dv">0</span> </span></code></pre></div>
 <pre><code>## [1] Inf</code></pre>
 <p>In R wird ein nicht bestimmbarer Wert (vgl. unbestimmter aber bestimmbarer
-Wert ‘NA’) durch <code>NaN</code> (not a number) angegeben.
-0/0</p>
+Wert ‘NA’) durch <code>NaN</code> (not a number) angegeben.</p>
 </div>
 <div id="prüfe-dich-selbst-1" class="section level2 hasAnchor" number="3.7">
 <h2><span class="header-section-number">3.7</span> Prüfe dich selbst<a href="atomare-datentypen.html#prüfe-dich-selbst-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Von dieser Sitzung solltest du folgendes mitgenommen haben:</p>
+<p>Von dieser Sitzung solltest du Folgendes mitgenommen haben:</p>
 <ul class="task-list">
-<li><input type="checkbox" disabled="" checked="" />
-Du solltest verstanden haben, warum man verschiedene Datentypen unterscheidet.</li>
-<li><input type="checkbox" disabled="" checked="" />
-Du solltest die drei grundlegenden Wege, Informationen zu repräsentieren, und die dazugehörigen Datentypen nennen können.</li>
-<li><input type="checkbox" disabled="" checked="" />
-Du solltest verstanden haben, wie man Objekte an einen Namen bindet und warum das nützlich sein kann.</li>
-<li><input type="checkbox" disabled="" checked="" />
-Du solltest die elementaren Booleschen (logischen) Operationen in R schreiben können.</li>
+<li><input type="checkbox" disabled="" checked="" />Du solltest verstanden haben, warum man verschiedene Datentypen unterscheidet.</li>
+<li><input type="checkbox" disabled="" checked="" />Du solltest die drei grundlegenden Wege, Informationen zu repräsentieren, und die dazugehörigen Datentypen nennen können.</li>
+<li><input type="checkbox" disabled="" checked="" />Du solltest verstanden haben, wie man Objekte an einen Namen bindet und warum das nützlich sein kann.</li>
+<li><input type="checkbox" disabled="" checked="" />Du solltest die elementaren Booleschen (logischen) Operationen in R schreiben können.</li>
 </ul>
 </div>
 <div id="literaturverweise" class="section level2 hasAnchor" number="3.8">
@@ -680,7 +678,7 @@ Du solltest die elementaren Booleschen (logischen) Operationen in R schreiben k�
 <div class="invisible" style="display:none">
 <p><span class="citation">Chambers (<a href="#ref-Chambers2014" role="doc-biblioref">2014</a>)</span>
 <span class="citation">Wickham (<a href="#ref-wickham2019advanced" role="doc-biblioref">2019</a>)</span>
-<span class="citation">(<a href="#ref-r-intro" role="doc-biblioref">n.d.</a>)</span>
+<span class="citation"> (<a href="#ref-r-intro" role="doc-biblioref">n.d.</a>)</span>
 <span class="citation">Grolemund (<a href="#ref-grolemund2014hands" role="doc-biblioref">2014</a>)</span></p>
 </div>
 
@@ -774,7 +772,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

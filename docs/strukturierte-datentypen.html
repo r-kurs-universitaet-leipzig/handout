@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Kapitel 4 Strukturierte Datentypen | Handout für R Grundkurs</title>
   <meta name="description" content="Kapitel 4 Strukturierte Datentypen | Handout für R Grundkurs" />
-  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Kapitel 4 Strukturierte Datentypen | Handout für R Grundkurs" />
   <meta property="og:type" content="book" />
@@ -98,7 +98,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -111,7 +111,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -314,6 +314,10 @@ div.csl-indent {
 <p>Basierend auf den einfachen (atomaren) Datentypen existieren in R
 die folgenden grundlegenden Datenstrukturen.</p>
 <table>
+<colgroup>
+<col width="23%" />
+<col width="76%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="left">Datenstruktur</th>
@@ -331,7 +335,7 @@ die folgenden grundlegenden Datenstrukturen.</p>
 </tr>
 <tr class="odd">
 <td align="left">array</td>
-<td align="left">Verallg. mit Vektor beliebigen Dimensionen</td>
+<td align="left">Verallg. Vektor mit beliebigen Dimensionen</td>
 </tr>
 <tr class="even">
 <td align="left">list</td>
@@ -339,7 +343,7 @@ die folgenden grundlegenden Datenstrukturen.</p>
 </tr>
 <tr class="odd">
 <td align="left">data frame</td>
-<td align="left">Spezieller Hybrid Liste/Matrix</td>
+<td align="left">Spezielle Liste mit Vektoren gleicher Länge</td>
 </tr>
 </tbody>
 </table>
@@ -370,13 +374,13 @@ die folgenden grundlegenden Datenstrukturen.</p>
 </tr>
 </tbody>
 </table>
-<p>Vektoren und Matrizen sind eine strukturierte Zusammenstellung von Daten gleichen Typs. Ein Vektor kann zum Beispiele eine Reihe von integer Werten bündeln, dann aber keine zusätzlichen logischen Werte oder Zeichenketten aufnehmen. Im Gegensatz dazu erlauben Listen und Data Frames es uns auch Daten unterschiedlichen Typs zu bündeln. In diesem Kapitel wollen wir uns damit auseinandersetzen, was für Implikationen die hier skizzierten Eigenschaften der verschiedenen Datenstrukturen auf deren Anwendung haben.</p>
-<p>Damit die Datenstruktur für euch auch visuell an Gestalt gewinnen, habe ich hier mal eine vereinfachte Darstellung mit den zentralen Eigenschaften der Datenstrukturen gewagt. Sie ist nicht in allen Hinsichten korrekt, soll aber dazu dienen, die grundlegenden Unterschiede der verschiedenen Datenstrukturen zu veranschaulichen.</p>
+<p>Vektoren und Matrizen sind eine strukturierte Zusammenstellung von Daten gleichen Typs. Ein Vektor kann zum Beispiele eine Reihe von integer Werten bündeln, dann aber keine zusätzlichen logischen Werte oder Zeichenketten aufnehmen. Im Gegensatz dazu erlauben es uns Listen und Data Frames, auch Daten unterschiedlichen Typs zu bündeln. In diesem Kapitel wollen wir uns damit auseinandersetzen, was für Implikationen die hier skizzierten Eigenschaften der verschiedenen Datenstrukturen auf deren Anwendung haben.</p>
+<p>Damit die Datenstruktur für euch auch visuell an Gestalt gewinnt, hier eine vereinfachte Darstellung mit den zentralen Eigenschaften der Datenstrukturen. Sie ist nicht in allen Hinsichten korrekt, soll aber dazu dienen, die grundlegenden Unterschiede der verschiedenen Datenstrukturen zu veranschaulichen.</p>
 <p><img src="resources/data_structures.png" width="70%" style="display: block; margin: auto;" /></p>
 <div id="vektoren" class="section level2 hasAnchor" number="4.1">
 <h2><span class="header-section-number">4.1</span> Vektoren<a href="strukturierte-datentypen.html#vektoren" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Vektoren sind sequentiell geordnete Folgen von Werten <em>gleichen Typs</em>. Vektoren können auf ganz unterschiedliche Art erzeugt werden.</p>
-<p>Beispiel: Informationen zum Lineup für die Clubnacht heute. Mit der Funktion <code>c()</code> (kurz für ‘concatenate’).</p>
+<p>Beispiel: Informationen zum Lineup für die Clubnacht heute. Mit der Funktion <code>c()</code> (kurz für ‘concatenate’ / ‘combine’).</p>
 <div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="strukturierte-datentypen.html#cb56-1" aria-hidden="true" tabindex="-1"></a>DJ_Alter <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">34</span>,<span class="dv">45</span>,<span class="dv">28</span>,<span class="dv">25</span>,<span class="dv">20</span>)</span>
 <span id="cb56-2"><a href="strukturierte-datentypen.html#cb56-2" aria-hidden="true" tabindex="-1"></a>DJ_Name <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;DJ Puma&quot;</span>,<span class="st">&quot;Cabanne&quot;</span>,<span class="st">&quot;Molly&quot;</span>,<span class="st">&quot;Echoton&quot;</span>,<span class="st">&quot;cv313&quot;</span>)</span>
 <span id="cb56-3"><a href="strukturierte-datentypen.html#cb56-3" aria-hidden="true" tabindex="-1"></a>DJ_Vinyl <span class="ot">&lt;-</span> <span class="fu">c</span>(F,T,T,F,F)</span>
@@ -387,7 +391,7 @@ die folgenden grundlegenden Datenstrukturen.</p>
 <pre><code>## [1] &quot;DJ Puma&quot; &quot;Cabanne&quot; &quot;Molly&quot;   &quot;Echoton&quot; &quot;cv313&quot;</code></pre>
 <div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="strukturierte-datentypen.html#cb60-1" aria-hidden="true" tabindex="-1"></a>DJ_Vinyl</span></code></pre></div>
 <pre><code>## [1] FALSE  TRUE  TRUE FALSE FALSE</code></pre>
-<p><strong>Anmerkung:</strong> Die DJs gibt es wirklich und es lohnt sich mal rein zu hören :). Das Alter und ob die Personen mit Vinyl auflegen oder nicht ist allerdings frei erfunden.</p>
+<p><strong>Anmerkung:</strong> Die DJs gibt es wirklich und es lohnt sich mal reinzuhören :). Das Alter und ob die Personen mit Vinyl auflegen oder nicht, ist allerdings frei erfunden.</p>
 <p>Ganz einfach können wir Vektoren auch mit dem Colon-Operator <code>:</code> erzeugen, welcher Zahlenfolgen mit Inkrement 1/-1 generiert.</p>
 <div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="strukturierte-datentypen.html#cb62-1" aria-hidden="true" tabindex="-1"></a>  <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span></span></code></pre></div>
 <pre><code>## [1] 1 2 3 4</code></pre>
@@ -444,7 +448,7 @@ korrespondierenden “wahren” Elemente eines Vektors ermittelt.</p>
 <div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="strukturierte-datentypen.html#cb88-1" aria-hidden="true" tabindex="-1"></a>  <span class="fu">length</span>(name)</span></code></pre></div>
 <pre><code>## [1] 1</code></pre>
 <p>Analog agieren dann (fast) alle Operationen, welche für
-atomare Datentypen definiert sind als vektorisierte Operation, d.h. elementweise:</p>
+atomare Datentypen definiert sind, als vektorisierte Operation, d.h. elementweise:</p>
 <div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="strukturierte-datentypen.html#cb90-1" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span>
 <span id="cb90-2"><a href="strukturierte-datentypen.html#cb90-2" aria-hidden="true" tabindex="-1"></a>  y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">3</span>)</span>
 <span id="cb90-3"><a href="strukturierte-datentypen.html#cb90-3" aria-hidden="true" tabindex="-1"></a>  </span>
@@ -457,7 +461,7 @@ atomare Datentypen definiert sind als vektorisierte Operation, d.h. elementweise
 <div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="strukturierte-datentypen.html#cb96-1" aria-hidden="true" tabindex="-1"></a>  DJ_Alter <span class="sc">&gt;</span> <span class="dv">21</span></span></code></pre></div>
 <pre><code>## [1]  TRUE  TRUE  TRUE  TRUE FALSE</code></pre>
 <p>Der letzte Ausdruck wertet elementweise aus, ob das jeweilige Alter größer als 21 ist und bildet das Ergebnis anschließend auf einen logischen Vektor mit korrespondierender Länge ab.</p>
-<p>Zur Illustration der folgenden Beispiele brauchen wir noch einen weiteren numerischen Vektor. Da wir jetzt wissen, wie man vektorisierte Operation vollführt, können wir ganz einfach einen Vektor mit den annäherenden Geburtsjahren der Personen aus deren Alter berechnen:</p>
+<p>Zur Illustration der folgenden Beispiele brauchen wir noch einen weiteren numerischen Vektor. Da wir jetzt wissen, wie man vektorisierte Operationen vollführt, können wir ganz einfach einen Vektor mit den annäherenden Geburtsjahren der Personen aus deren Alter berechnen:</p>
 <div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="strukturierte-datentypen.html#cb98-1" aria-hidden="true" tabindex="-1"></a>  DJ_Geburtsjahr <span class="ot">&lt;-</span> <span class="dv">2022</span> <span class="sc">-</span> DJ_Alter</span>
 <span id="cb98-2"><a href="strukturierte-datentypen.html#cb98-2" aria-hidden="true" tabindex="-1"></a>  DJ_Geburtsjahr</span></code></pre></div>
 <pre><code>## [1] 1988 1977 1994 1997 2002</code></pre>
@@ -514,7 +518,7 @@ einen Vektor mit dem Befehl <code>matrix()</code> generiert werden:</p>
 ## [1,]    1    2    3
 ## [2,]    4    5    6
 ## [3,]    7    8    9</code></pre>
-<p>Das Ergebnis gibt uns schon einen Hinweis darauf, wie wir die Matrix “subsetten” können. In den eckigen Klammern ist jeweils der Index vermerkt welche Zeile bzw. Spalte dargestellt wird.</p>
+<p>Das Ergebnis gibt uns schon einen Hinweis darauf, wie wir die Matrix “subsetten” können. In den eckigen Klammern ist jeweils der Index vermerkt, welche Zeile bzw. Spalte dargestellt wird.</p>
 <p>Die Indizierung erfolgt dann ähnlich zu Vektoren:</p>
 <div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="strukturierte-datentypen.html#cb106-1" aria-hidden="true" tabindex="-1"></a> M[<span class="dv">1</span>,<span class="dv">2</span>]</span></code></pre></div>
 <pre><code>## [1] 2</code></pre>
@@ -526,8 +530,8 @@ einen Vektor mit dem Befehl <code>matrix()</code> generiert werden:</p>
 <pre><code>## [1] 1 4 7</code></pre>
 <div id="benennung-von-spalten" class="section level3 hasAnchor" number="4.2.1">
 <h3><span class="header-section-number">4.2.1</span> Benennung von Spalten<a href="strukturierte-datentypen.html#benennung-von-spalten" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Mit der Funktion <code>colnames()</code> lassen sich einerseits die Spalten
-(columns) einer Matrix benennen/ändern, als auch abrufen.</p>
+<p>Mit der Funktion <code>colnames()</code> lassen sich die Spalten
+(columns) einer Matrix benennen/ändern sowie auch abrufen.</p>
 <div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="strukturierte-datentypen.html#cb112-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">colnames</span>(M) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;A&quot;</span>,<span class="st">&quot;B&quot;</span>,<span class="st">&quot;C&quot;</span>)</span>
 <span id="cb112-2"><a href="strukturierte-datentypen.html#cb112-2" aria-hidden="true" tabindex="-1"></a>    M</span></code></pre></div>
 <pre><code>##      A B C
@@ -589,8 +593,8 @@ beliebige Werte oder Datenstrukturen zu:</p>
 <p>Mit diesem Aufruf erhalten wir einen Verweis, welcher auf einen Vektor zeigt, welcher die Zeichenketten “Daphne” und “Peter” beinhaltet.</p>
 <div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb128-1"><a href="strukturierte-datentypen.html#cb128-1" aria-hidden="true" tabindex="-1"></a>profil_marie[[<span class="dv">2</span>]][<span class="dv">1</span>]</span></code></pre></div>
 <pre><code>## [1] &quot;Daphne&quot;</code></pre>
-<p>Diese Funktion evaluiert im ersten Teil <code>profil_marie[[2]]</code> nun tatsächlich zu dem Vektor, auf welchen die Referenz zeigt. Auf diesen wird anschließend nun noch mal der Subset-Operator für die erste Position angewandt (<code>Unser_Vektor[1]</code>). So erhalten wir das erste Element des Vektors. (Was wiederum ein ein-elementiger Vektor ist.)</p>
-<p>Deutlich einfacher ist hingegen die Indizierung mithilfe des Dollar-Operators und den Namen der Objekte. Damit kommen wir deutlich lesbarer zum selben Ergebnis:</p>
+<p>Diese Funktion bezieht sich im ersten Teil <code>profil_marie[[2]]</code> nun tatsächlichn auf den Vektor, auf welchen die Referenz zeigt. Auf diesen wird anschließend nun noch mal der Subset-Operator für die erste Position angewandt (<code>Unser_Vektor[1]</code>). So erhalten wir das erste Element des Vektors (was wiederum ein ein-elementiger Vektor ist).</p>
+<p>Deutlich einfacher ist hingegen die Indizierung mithilfe des Dollar-Operators und den Namen der Objekte. Damit kommen wir viel lesbarer zum selben Ergebnis:</p>
 <div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb130-1"><a href="strukturierte-datentypen.html#cb130-1" aria-hidden="true" tabindex="-1"></a>profil_marie<span class="sc">$</span>Freunde[<span class="dv">1</span>]</span></code></pre></div>
 <pre><code>## [1] &quot;Daphne&quot;</code></pre>
 <p>Falls ihr noch tiefer in das Subsetting von Listen einsteigen wollt, empfiehlt sich das Kapitel “Subsetting” aus dem Buch <a href="https://adv-r.hadley.nz/subsetting.html">Advanced R</a>.</p>
@@ -634,7 +638,7 @@ Datenstruktur ist die einer Datentabelle, ein sogenanntes <code>dataframe</code>
 ## 3   Molly    28     TRUE
 ## 4 Echoton    25    FALSE
 ## 5   cv313    20    FALSE</code></pre>
-<p>Alternativ können wir eine Spalte anwählen, welche es noch nicht gibt und anschließend diese an einen Vektor binden.</p>
+<p>Alternativ können wir eine Spalte anwählen, welche es noch nicht gibt und diese anschließend an einen Vektor binden.</p>
 <div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="strukturierte-datentypen.html#cb142-1" aria-hidden="true" tabindex="-1"></a>  df_lineup<span class="sc">$</span>Geburtsjahr <span class="ot">&lt;-</span> DJ_Geburtsjahr</span>
 <span id="cb142-2"><a href="strukturierte-datentypen.html#cb142-2" aria-hidden="true" tabindex="-1"></a>  df_lineup</span></code></pre></div>
 <pre><code>##      Name Alter DJ_Vinyl Geburtsjahr
@@ -646,7 +650,7 @@ Datenstruktur ist die einer Datentabelle, ein sogenanntes <code>dataframe</code>
 </div>
 <div id="operationen-auf-datentabellen" class="section level3 hasAnchor" number="4.4.3">
 <h3><span class="header-section-number">4.4.3</span> Operationen auf Datentabellen<a href="strukturierte-datentypen.html#operationen-auf-datentabellen" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Die Objekt, welche in einer Datentabelle gespeichert sind, können wir, wie alle anderen Objekte auch, in Funktionsaufrufen weiter verwenden.</p>
+<p>Die Objekte, welche in einer Datentabelle gespeichert sind, können wir, wie alle anderen Objekte auch, in Funktionsaufrufen weiterverwenden.</p>
 <div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="strukturierte-datentypen.html#cb144-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(df_lineup<span class="sc">$</span>Alter)</span></code></pre></div>
 <pre><code>## [1] 30.4</code></pre>
 </div>
@@ -654,12 +658,9 @@ Datenstruktur ist die einer Datentabelle, ein sogenanntes <code>dataframe</code>
 <div id="prüfe-dich-selbst-2" class="section level2 hasAnchor" number="4.5">
 <h2><span class="header-section-number">4.5</span> Prüfe dich selbst<a href="strukturierte-datentypen.html#prüfe-dich-selbst-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul class="task-list">
-<li><input type="checkbox" disabled="" checked="" />
-Du solltest die vier grundlegenden strukturierten Datentypen nennen und unterscheiden können.</li>
-<li><input type="checkbox" disabled="" checked="" />
-Du solltest wissen, auf welche Weisen du auf die Elemente der unterschiedlichen strukturierten Datentypen zugreifen kannst.</li>
-<li><input type="checkbox" disabled="" checked="" />
-Du solltest verstanden haben, welche Möglichkeiten es gibt, verschiedene Teilmengen eines strukturierten Datentyps abzufragen.</li>
+<li><input type="checkbox" disabled="" checked="" />Du solltest die vier grundlegenden strukturierten Datentypen nennen und unterscheiden können.</li>
+<li><input type="checkbox" disabled="" checked="" />Du solltest wissen, auf welche Weisen du auf die Elemente der unterschiedlichen strukturierten Datentypen zugreifen kannst.</li>
+<li><input type="checkbox" disabled="" checked="" />Du solltest verstanden haben, welche Möglichkeiten es gibt, verschiedene Teilmengen eines strukturierten Datentyps abzufragen.</li>
 </ul>
 
 </div>
@@ -731,7 +732,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

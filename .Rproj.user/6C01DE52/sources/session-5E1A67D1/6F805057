@@ -3,7 +3,7 @@
     "path": "~/R Studio/handout/05-funktionen.Rmd",
     "project_path": "05-funktionen.Rmd",
     "type": "r_markdown",
-    "hash": "3939385959",
+    "hash": "4251108401",
     "contents": "",
     "dirty": false,
     "created": 1665498768473.0,
@@ -12,15 +12,15 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "115,15",
+        "cursorPosition": "115,6",
         "scrollLine": "109"
     },
     "folds": "",
-    "lastKnownWriteTime": 1665501777,
+    "lastKnownWriteTime": 1665502226,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1665501777124,
+    "last_content_update": 1665502226929,
     "read_only": false,
     "read_only_alternatives": []
 }

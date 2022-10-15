@@ -5,6 +5,7 @@ fig:unnamed-chunk-6
 fig:unnamed-chunk-7
 fig:unnamed-chunk-8
 fig:editor
+fig:unnamed-chunk-40
 fig:unnamed-chunk-80
 fig:unnamed-chunk-88
 fig:unnamed-chunk-93

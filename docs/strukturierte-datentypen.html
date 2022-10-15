@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Kapitel 4 Strukturierte Datentypen | Handout für R Grundkurs</title>
   <meta name="description" content="Kapitel 4 Strukturierte Datentypen | Handout für R Grundkurs" />
-  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Kapitel 4 Strukturierte Datentypen | Handout für R Grundkurs" />
   <meta property="og:type" content="book" />
@@ -98,7 +98,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
+code span.bu { } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -111,7 +111,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.im { } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -376,7 +376,12 @@ die folgenden grundlegenden Datenstrukturen.</p>
 </table>
 <p>Vektoren und Matrizen sind eine strukturierte Zusammenstellung von Daten gleichen Typs. Ein Vektor kann zum Beispiele eine Reihe von integer Werten bündeln, dann aber keine zusätzlichen logischen Werte oder Zeichenketten aufnehmen. Im Gegensatz dazu erlauben es uns Listen und Data Frames, auch Daten unterschiedlichen Typs zu bündeln. In diesem Kapitel wollen wir uns damit auseinandersetzen, was für Implikationen die hier skizzierten Eigenschaften der verschiedenen Datenstrukturen auf deren Anwendung haben.</p>
 <p>Damit die Datenstruktur für euch auch visuell an Gestalt gewinnt, hier eine vereinfachte Darstellung mit den zentralen Eigenschaften der Datenstrukturen. Sie ist nicht in allen Hinsichten korrekt, soll aber dazu dienen, die grundlegenden Unterschiede der verschiedenen Datenstrukturen zu veranschaulichen.</p>
-<p><img src="resources/data_structures.png" width="70%" style="display: block; margin: auto;" /></p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-40"></span>
+<img src="resources/data_structures.png" alt="Strukturierte Datentypen" width="70%" />
+<p class="caption">
+Abb. 4.1: Strukturierte Datentypen
+</p>
+</div>
 <div id="vektoren" class="section level2 hasAnchor" number="4.1">
 <h2><span class="header-section-number">4.1</span> Vektoren<a href="strukturierte-datentypen.html#vektoren" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Vektoren sind sequentiell geordnete Folgen von Werten <em>gleichen Typs</em>. Vektoren können auf ganz unterschiedliche Art erzeugt werden.</p>
@@ -565,7 +570,7 @@ einen Vektor mit dem Befehl <code>matrix()</code> generiert werden:</p>
 <p>Eine Liste ist ein “verallgemeinerter Vektor” und lässt als Elemente
 beliebige Werte oder Datenstrukturen zu:</p>
 <div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="strukturierte-datentypen.html#cb120-1" aria-hidden="true" tabindex="-1"></a>  profil_marie <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">Name =</span> <span class="st">&quot;Marie&quot;</span>, </span>
-<span id="cb120-2"><a href="strukturierte-datentypen.html#cb120-2" aria-hidden="true" tabindex="-1"></a>                       <span class="at">Freunde =</span> <span class="fu">c</span>(<span class="st">&quot;Daphne&quot;</span>,<span class="st">&quot;Peter&quot;</span>),</span>
+<span id="cb120-2"><a href="strukturierte-datentypen.html#cb120-2" aria-hidden="true" tabindex="-1"></a>                       <span class="at">Freunde =</span> <span class="fu">c</span>(<span class="st">&quot;Daphne&quot;</span>,<span class="st">&quot;Peer&quot;</span>),</span>
 <span id="cb120-3"><a href="strukturierte-datentypen.html#cb120-3" aria-hidden="true" tabindex="-1"></a>                       <span class="at">Alter =</span> <span class="dv">24</span></span>
 <span id="cb120-4"><a href="strukturierte-datentypen.html#cb120-4" aria-hidden="true" tabindex="-1"></a>                       )</span>
 <span id="cb120-5"><a href="strukturierte-datentypen.html#cb120-5" aria-hidden="true" tabindex="-1"></a>  profil_marie</span></code></pre></div>
@@ -573,7 +578,7 @@ beliebige Werte oder Datenstrukturen zu:</p>
 ## [1] &quot;Marie&quot;
 ## 
 ## $Freunde
-## [1] &quot;Daphne&quot; &quot;Peter&quot; 
+## [1] &quot;Daphne&quot; &quot;Peer&quot;  
 ## 
 ## $Alter
 ## [1] 24</code></pre>
@@ -584,13 +589,13 @@ beliebige Werte oder Datenstrukturen zu:</p>
 <div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="strukturierte-datentypen.html#cb122-1" aria-hidden="true" tabindex="-1"></a>profil_marie<span class="sc">$</span>Name</span></code></pre></div>
 <pre><code>## [1] &quot;Marie&quot;</code></pre>
 <div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb124-1"><a href="strukturierte-datentypen.html#cb124-1" aria-hidden="true" tabindex="-1"></a>profil_marie<span class="sc">$</span>Freunde</span></code></pre></div>
-<pre><code>## [1] &quot;Daphne&quot; &quot;Peter&quot;</code></pre>
+<pre><code>## [1] &quot;Daphne&quot; &quot;Peer&quot;</code></pre>
 <p>Die Verwendung des mittlerweile altbekannten Subset-Operators ist auch möglich. Allerdings müssen wir hier die verschachtelte Struktur der Liste immer mitdenken, was es deutlich komplizierter macht.</p>
 <p>Hier ein Beispiel:</p>
 <div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb126-1"><a href="strukturierte-datentypen.html#cb126-1" aria-hidden="true" tabindex="-1"></a>profil_marie[<span class="dv">2</span>]</span></code></pre></div>
 <pre><code>## $Freunde
-## [1] &quot;Daphne&quot; &quot;Peter&quot;</code></pre>
-<p>Mit diesem Aufruf erhalten wir einen Verweis, welcher auf einen Vektor zeigt, welcher die Zeichenketten “Daphne” und “Peter” beinhaltet.</p>
+## [1] &quot;Daphne&quot; &quot;Peer&quot;</code></pre>
+<p>Mit diesem Aufruf erhalten wir einen Verweis, welcher auf einen Vektor zeigt, welcher die Zeichenketten “Daphne” und “Peer” beinhaltet.</p>
 <div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb128-1"><a href="strukturierte-datentypen.html#cb128-1" aria-hidden="true" tabindex="-1"></a>profil_marie[[<span class="dv">2</span>]][<span class="dv">1</span>]</span></code></pre></div>
 <pre><code>## [1] &quot;Daphne&quot;</code></pre>
 <p>Diese Funktion bezieht sich im ersten Teil <code>profil_marie[[2]]</code> nun tatsächlichn auf den Vektor, auf welchen die Referenz zeigt. Auf diesen wird anschließend nun noch mal der Subset-Operator für die erste Position angewandt (<code>Unser_Vektor[1]</code>). So erhalten wir das erste Element des Vektors (was wiederum ein ein-elementiger Vektor ist).</p>
@@ -658,9 +663,12 @@ Datenstruktur ist die einer Datentabelle, ein sogenanntes <code>dataframe</code>
 <div id="prüfe-dich-selbst-2" class="section level2 hasAnchor" number="4.5">
 <h2><span class="header-section-number">4.5</span> Prüfe dich selbst<a href="strukturierte-datentypen.html#prüfe-dich-selbst-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul class="task-list">
-<li><input type="checkbox" disabled="" checked="" />Du solltest die vier grundlegenden strukturierten Datentypen nennen und unterscheiden können.</li>
-<li><input type="checkbox" disabled="" checked="" />Du solltest wissen, auf welche Weisen du auf die Elemente der unterschiedlichen strukturierten Datentypen zugreifen kannst.</li>
-<li><input type="checkbox" disabled="" checked="" />Du solltest verstanden haben, welche Möglichkeiten es gibt, verschiedene Teilmengen eines strukturierten Datentyps abzufragen.</li>
+<li><input type="checkbox" disabled="" checked="" />
+Du solltest die vier grundlegenden strukturierten Datentypen nennen und unterscheiden können.</li>
+<li><input type="checkbox" disabled="" checked="" />
+Du solltest wissen, auf welche Weisen du auf die Elemente der unterschiedlichen strukturierten Datentypen zugreifen kannst.</li>
+<li><input type="checkbox" disabled="" checked="" />
+Du solltest verstanden haben, welche Möglichkeiten es gibt, verschiedene Teilmengen eines strukturierten Datentyps abzufragen.</li>
 </ul>
 
 </div>
@@ -732,7 +740,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

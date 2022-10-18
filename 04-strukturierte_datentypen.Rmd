@@ -24,7 +24,7 @@ Vektoren und Matrizen sind eine strukturierte Zusammenstellung von Daten gleiche
 Damit die Datenstruktur für euch auch visuell an Gestalt gewinnt, hier eine vereinfachte Darstellung mit den zentralen Eigenschaften der Datenstrukturen. Sie ist nicht in allen Hinsichten korrekt, soll aber dazu dienen, die grundlegenden Unterschiede der verschiedenen Datenstrukturen zu veranschaulichen.
 
  
-```{r, echo=FALSE, out.width='70%', fig.align='center'}
+```{r, echo=FALSE, out.width='70%', fig.align='center', fig.cap="Strukturierte Datentypen"}
 knitr::include_graphics("resources/data_structures.png")
 ```
 
@@ -235,7 +235,7 @@ beliebige Werte oder Datenstrukturen zu:
 
 ```{r}
   profil_marie <- list(Name = "Marie", 
-                       Freunde = c("Daphne","Peter"),
+                       Freunde = c("Daphne","Peer"),
                        Alter = 24
                        )
   profil_marie
@@ -260,7 +260,7 @@ Hier ein Beispiel:
 profil_marie[2]
 ```
 
-Mit diesem Aufruf erhalten wir einen Verweis, welcher auf einen Vektor zeigt, welcher die Zeichenketten "Daphne" und "Peter" beinhaltet.
+Mit diesem Aufruf erhalten wir einen Verweis, welcher auf einen Vektor zeigt, welcher die Zeichenketten "Daphne" und "Peer" beinhaltet.
  
 
 ```{r}

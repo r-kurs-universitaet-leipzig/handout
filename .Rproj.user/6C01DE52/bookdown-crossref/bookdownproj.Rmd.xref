@@ -1,0 +1,81 @@
+h1:vorwort Vorwort
+h1:einführung Einführung
+h2:was-ist-r-und-warum-sollte-man-r-lernen Was ist R und warum sollte man R lernen?
+h2:installation Installation
+h1:oberfläche Oberfläche
+h2:r-gui R GUI
+h2:rstudio RStudio
+h3:console Console
+h3:script-editor Script Editor
+h3:file-editor-und-environment File-Editor und Environment
+h2:prüfe-dich-selbst Prüfe dich selbst
+h1:atomare-datentypen Atomare Datentypen
+h2:arithmetische-grundoperationen-und-basisfunktionen Arithmetische Grundoperationen und Basisfunktionen
+h3:funktionsaufrufe Funktionsaufrufe
+h3:objekte-funktionen-und-referenzen Objekte, Funktionen und Referenzen
+h2:erzeugung-von-referenzierbaren-objekten Erzeugung von referenzierbaren Objekten
+h3:anmerkung-namen Anmerkung Namen
+h3:rechnungen-mit-werten-von-objekten Rechnungen mit Werten von Objekten
+h3:namen-überschreiben Namen überschreiben
+h3:objekte-löschen Objekte löschen
+h2:logische-werte-und-operationen Logische Werte und Operationen
+h3:der-logische-wert-na Der  Wert NA
+h3:vergleichs-operationen Vergleichs-Operationen
+h2:zeichenketten-character-strings Zeichenketten (character strings)
+h2:klasse-eines-datenobjektes Klasse eines Datenobjektes
+h2:spezielle-werte Spezielle Werte
+h2:prüfe-dich-selbst-1 Prüfe dich selbst
+h2:literaturverweise Literaturverweise
+h1:strukturierte-datentypen Strukturierte Datentypen
+h2:vektoren Vektoren
+h3:abfragen-von-werten-durch-subsetting-von-vektoren Abfragen von Werten durch Subsetting von Vektoren
+h3:vektorisierte-operationen Vektorisierte Operationen
+h3:operationen-auf-vektoren Operationen auf Vektoren
+h2:matrizen Matrizen
+h3:benennung-von-spalten Benennung von Spalten
+h3:erzeugung-von-matrizen-aus-vektoren Erzeugung von Matrizen aus Vektoren
+h2:listen Listen
+h3:indizierung-von-listen Indizierung von Listen
+h2:data-frames Data Frames
+h3:indizierung-von-datentabellen Indizierung von Datentabellen
+h3:aufname-weiterer-variablenspalten Aufname weiterer Variablen/Spalten
+h3:operationen-auf-datentabellen Operationen auf Datentabellen
+h2:prüfe-dich-selbst-2 Prüfe dich selbst
+h1:funktionen Funktionen
+h2:eigenschaften Eigenschaften
+h2:aufbau Aufbau
+h2:verschachtelungen Verschachtelungen
+h2:pipes Pipes
+h2:default-werte Default Werte
+h2:help-fenster Help Fenster
+h2:prüfe-dich-selbst-3 Prüfe dich selbst
+h1:packages Packages
+h2:packages-installieren-und-laden Packages installieren und Laden
+h2:needs needs()
+h1:dateimanagement Dateimanagement
+h2:absolute-und-relative-dateipfade-exkurs Absolute und relative Dateipfade (Exkurs)
+h2:r-projects R Projects
+h2:dateien-einlesen Dateien einlesen
+h3:r-interne-dateien R-interne Dateien
+h3:r-externe-dateien R-externe Dateien
+h4:haven-package Haven Package
+h1:tidyverse Tidyverse
+h2:das-tidyverse Das 
+h3:tidyverse-laden Tidyverse laden
+h2:dplyr 
+h3:daten-verfügbar-machen Daten verfügbar machen
+h2:variablen-manipulieren Variablen Manipulieren
+h3:neue-variablen-erstellen Neue Variablen erstellen
+h3:variablen-umbennen Variablen umbennen
+h2:fälle-manipulieren Fälle Manipulieren
+h3:fälle-gruppieren Fälle Gruppieren
+h2:prüfe-dich-selbst-4 Prüfe dich selbst
+h1:kontrollstrukturen Kontrollstrukturen
+h2:prinzipien-der-programmierung Prinzipien der Programmierung
+h2:funktionen-selber-schreiben Funktionen selber schreiben
+h2:kontrollstrukturen-1 Kontrollstrukturen
+h3:vektorisierte-fallunterscheidungen Vektorisierte Fallunterscheidungen
+h2:schleifen Schleifen
+h2:vektorisiertes-programmieren Vektorisiertes Programmieren
+h2:prüfe-dich-selbst-5 Prüfe dich selbst
+

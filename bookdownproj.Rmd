@@ -1,3 +1,166 @@
+--- 
+title: "Handout für R Grundkurs"
+author: |
+  | Anne Sophie Küllmer
+  | sophie.kuellmer@uni-leipzig.de
+  |
+  | Peter Kannewitz 
+  | peter.kannewitz@uni-leipzig.de
+  |
+  | Peer Keßler
+subtitle: "URZ und Academic Lab Universität Leipzig"
+date: "Stand: `r Sys.Date()`"
+bibliography: ["references.bib"]
+biblio-style: "apalike"
+link-citations: true
+nocite: |
+  @*
+site: bookdown::bookdown_site
+---
+
+# Vorwort {-}
+
+Placeholder
+
+
+
+<!--chapter:end:index.Rmd-->
+
+
+# Einführung
+
+Placeholder
+
+
+## Was ist R und warum sollte man R lernen?
+## Installation 
+
+<!--chapter:end:01-einfuehrung.Rmd-->
+
+
+# Oberfläche
+
+Placeholder
+
+
+## R GUI
+## RStudio
+### Console
+### Script Editor
+### File-Editor und Environment
+## Prüfe dich selbst
+
+<!--chapter:end:02-oberflache.Rmd-->
+
+
+# Atomare Datentypen 
+
+Placeholder
+
+
+## Arithmetische Grundoperationen und Basisfunktionen
+### Funktionsaufrufe  
+### Objekte, Funktionen und Referenzen
+## Erzeugung von referenzierbaren Objekten
+### Anmerkung Namen
+### Rechnungen mit Werten von Objekten
+### Namen überschreiben
+### Objekte löschen
+## Logische Werte und Operationen
+### Der "logische" Wert NA
+### Vergleichs-Operationen
+## Zeichenketten (character strings)
+## Klasse eines Datenobjektes
+## Spezielle Werte
+## Prüfe dich selbst
+## Literaturverweise 
+
+<!--chapter:end:03-atomare_datentypen.Rmd-->
+
+
+# Strukturierte Datentypen 
+
+Placeholder
+
+
+## Vektoren
+### Abfragen von Werten durch Subsetting von Vektoren
+### Vektorisierte Operationen
+### Operationen auf Vektoren
+## Matrizen
+### Benennung von Spalten
+### Erzeugung von Matrizen aus Vektoren
+## Listen
+### Indizierung von Listen
+## Data Frames
+### Indizierung von Datentabellen                  
+### Aufname weiterer Variablen/Spalten
+### Operationen auf Datentabellen
+## Prüfe dich selbst
+
+<!--chapter:end:04-strukturierte_datentypen.Rmd-->
+
+
+# Funktionen{#funktionen}
+
+Placeholder
+
+
+## Eigenschaften
+## Aufbau{#aufbau}
+## Verschachtelungen
+## Pipes
+## Default Werte
+## Help Fenster
+## Prüfe dich selbst
+
+<!--chapter:end:05-funktionen.Rmd-->
+
+
+# Packages
+
+Placeholder
+
+
+## Packages installieren und Laden
+## needs()
+
+<!--chapter:end:06-Packages.Rmd-->
+
+
+# Dateimanagement
+
+Placeholder
+
+
+## Absolute und relative Dateipfade (Exkurs)
+## R Projects
+## Dateien einlesen
+### R-interne Dateien
+### R-externe Dateien
+#### Haven Package
+
+<!--chapter:end:07-Dateimanagement.Rmd-->
+
+
+# Tidyverse
+
+Placeholder
+
+
+## Das "Tidyverse"
+### Tidyverse laden
+## `dplyr::`
+### Daten verfügbar machen
+## Variablen Manipulieren
+### Neue Variablen erstellen
+### Variablen umbennen
+## Fälle Manipulieren
+### Fälle Gruppieren
+## Prüfe dich selbst
+
+<!--chapter:end:08-tidyverse.Rmd-->
+
 # Kontrollstrukturen{#kontrollstrukturen}
 
 In diesem Kapitel sollen einige Prinzipien der Programmierung vorgestellt werden und gezeigt werden, wie sich diese in R umsetzen lassen. R bietet dabei eine Vielzahl an Möglichkeiten, von welchen einige besprochen werden sollen. 
@@ -341,4 +504,7 @@ Von dieser Sitzung solltest du olgendes mitgenommen haben:
   - [x] Du solltest mindestens zwei Möglichkeiten nennen können, wie man in R iterative Probleme lösen kann. 
   - [x] Du solltest verstanden haben, wie vektorisierte Funktionen ausgewertet werden.
 
+
+
+<!--chapter:end:09-kontrollstrukturen.Rmd-->
 

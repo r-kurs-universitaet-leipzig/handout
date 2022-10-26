@@ -326,12 +326,12 @@ Abb. 8.1: Tidyverse Components Logo
 <h3><span class="header-section-number">8.1.1</span> Tidyverse laden<a href="tidyverse.html#tidyverse-laden" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Das Tidyverse ladet ihr wie jedes andere Package auch, also zum Beispiel mit <code>library()</code> oder <code>needs()</code>. Im Prinzip ladet ihr dabei aber gleich mehrere verschiedene Packages, welche ihr dann nicht im einzelnen nochmal nachladen müsst.</p>
 <div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="tidyverse.html#cb185-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
-<pre><code>## ── Attaching packages ──────────────────────────────── tidyverse 1.3.2 ──
+<pre><code>## ── Attaching packages ─────────── tidyverse 1.3.2 ──
 ## ✔ ggplot2 3.3.6     ✔ purrr   0.3.4
 ## ✔ tibble  3.1.8     ✔ dplyr   1.0.9
 ## ✔ tidyr   1.2.0     ✔ stringr 1.4.0
 ## ✔ readr   2.1.2     ✔ forcats 0.5.1
-## ── Conflicts ─────────────────────────────────── tidyverse_conflicts() ──
+## ── Conflicts ────────────── tidyverse_conflicts() ──
 ## ✖ dplyr::filter() masks stats::filter()
 ## ✖ dplyr::lag()    masks stats::lag()</code></pre>
 <p>Die geladenen Packages werden hier mit der geladenen Version gelistet, sowie potenzielle Konflikte.</p>
@@ -354,21 +354,24 @@ Abb. 8.2: dplyr Logo
 <div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb187-1"><a href="tidyverse.html#cb187-1" aria-hidden="true" tabindex="-1"></a>starwars <span class="ot">&lt;-</span> dplyr<span class="sc">::</span>starwars</span>
 <span id="cb187-2"><a href="tidyverse.html#cb187-2" aria-hidden="true" tabindex="-1"></a>starwars</span></code></pre></div>
 <pre><code>## # A tibble: 87 × 14
-##    name         height  mass hair_…¹ skin_…² eye_c…³ birth…⁴ sex   gender
-##    &lt;chr&gt;         &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; 
-##  1 Luke Skywal…    172    77 blond   fair    blue       19   male  mascu…
-##  2 C-3PO           167    75 &lt;NA&gt;    gold    yellow    112   none  mascu…
-##  3 R2-D2            96    32 &lt;NA&gt;    white,… red        33   none  mascu…
-##  4 Darth Vader     202   136 none    white   yellow     41.9 male  mascu…
-##  5 Leia Organa     150    49 brown   light   brown      19   fema… femin…
-##  6 Owen Lars       178   120 brown,… light   blue       52   male  mascu…
-##  7 Beru Whites…    165    75 brown   light   blue       47   fema… femin…
-##  8 R5-D4            97    32 &lt;NA&gt;    white,… red        NA   none  mascu…
-##  9 Biggs Darkl…    183    84 black   light   brown      24   male  mascu…
-## 10 Obi-Wan Ken…    182    77 auburn… fair    blue-g…    57   male  mascu…
-## # … with 77 more rows, 5 more variables: homeworld &lt;chr&gt;, species &lt;chr&gt;,
-## #   films &lt;list&gt;, vehicles &lt;list&gt;, starships &lt;list&gt;, and abbreviated
-## #   variable names ¹​hair_color, ²​skin_color, ³​eye_color, ⁴​birth_year
+##    name         height  mass hair_…¹ skin_…² eye_c…³
+##    &lt;chr&gt;         &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;  
+##  1 Luke Skywal…    172    77 blond   fair    blue   
+##  2 C-3PO           167    75 &lt;NA&gt;    gold    yellow 
+##  3 R2-D2            96    32 &lt;NA&gt;    white,… red    
+##  4 Darth Vader     202   136 none    white   yellow 
+##  5 Leia Organa     150    49 brown   light   brown  
+##  6 Owen Lars       178   120 brown,… light   blue   
+##  7 Beru Whites…    165    75 brown   light   blue   
+##  8 R5-D4            97    32 &lt;NA&gt;    white,… red    
+##  9 Biggs Darkl…    183    84 black   light   brown  
+## 10 Obi-Wan Ken…    182    77 auburn… fair    blue-g…
+## # … with 77 more rows, 8 more variables:
+## #   birth_year &lt;dbl&gt;, sex &lt;chr&gt;, gender &lt;chr&gt;,
+## #   homeworld &lt;chr&gt;, species &lt;chr&gt;, films &lt;list&gt;,
+## #   vehicles &lt;list&gt;, starships &lt;list&gt;, and
+## #   abbreviated variable names ¹​hair_color,
+## #   ²​skin_color, ³​eye_color
 ## # ℹ Use `print(n = ...)` to see more rows, and `colnames()` to see all variable names</code></pre>
 </div>
 </div>
@@ -432,9 +435,10 @@ Im Prinzip könnt ihr in fast jedem Fall die native Pipe und die Tidyverse Pipe 
 <span id="cb199-2"><a href="tidyverse.html#cb199-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="st">&quot;height_in_cm&quot;</span> <span class="ot">=</span> <span class="st">&quot;height&quot;</span>,</span>
 <span id="cb199-3"><a href="tidyverse.html#cb199-3" aria-hidden="true" tabindex="-1"></a>         <span class="st">&quot;mass_in_kg&quot;</span> <span class="ot">=</span> <span class="st">&quot;mass&quot;</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb199-4"><a href="tidyverse.html#cb199-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">names</span>() <span class="co"># Gibt die Namen aller Variablen aus</span></span></code></pre></div>
-<pre><code>##  [1] &quot;name&quot;         &quot;height_in_cm&quot; &quot;mass_in_kg&quot;   &quot;hair_color&quot;  
-##  [5] &quot;skin_color&quot;   &quot;eye_color&quot;    &quot;birth_year&quot;   &quot;sex&quot;         
-##  [9] &quot;gender&quot;       &quot;homeworld&quot;    &quot;species&quot;      &quot;films&quot;       
+<pre><code>##  [1] &quot;name&quot;         &quot;height_in_cm&quot; &quot;mass_in_kg&quot;  
+##  [4] &quot;hair_color&quot;   &quot;skin_color&quot;   &quot;eye_color&quot;   
+##  [7] &quot;birth_year&quot;   &quot;sex&quot;          &quot;gender&quot;      
+## [10] &quot;homeworld&quot;    &quot;species&quot;      &quot;films&quot;       
 ## [13] &quot;vehicles&quot;     &quot;starships&quot;</code></pre>
 <p>Wie man sehen kann, wurden die Namen <code>"height"</code> und <code>"mass"</code> geändert, in die von uns angegebenen neuen Namen.</p>
 </div>
@@ -445,29 +449,33 @@ Im Prinzip könnt ihr in fast jedem Fall die native Pipe und die Tidyverse Pipe 
 <div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb201-1"><a href="tidyverse.html#cb201-1" aria-hidden="true" tabindex="-1"></a>starwars <span class="sc">%&gt;%</span></span>
 <span id="cb201-2"><a href="tidyverse.html#cb201-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(hair_color <span class="sc">==</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 4 × 14
-##   name  height  mass hair_…¹ skin_…² eye_c…³ birth…⁴ sex   gender homew…⁵
-##   &lt;chr&gt;  &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;  
-## 1 Yoda      66    17 white   green   brown       896 male  mascu… &lt;NA&gt;   
-## 2 Ki-A…    198    82 white   pale    yellow       92 male  mascu… Cerea  
-## 3 Dooku    193    80 white   fair    brown       102 male  mascu… Serenno
-## 4 Joca…    167    NA white   fair    blue         NA fema… femin… Corusc…
-## # … with 4 more variables: species &lt;chr&gt;, films &lt;list&gt;, vehicles &lt;list&gt;,
-## #   starships &lt;list&gt;, and abbreviated variable names ¹​hair_color,
-## #   ²​skin_color, ³​eye_color, ⁴​birth_year, ⁵​homeworld
+##   name  height  mass hair_…¹ skin_…² eye_c…³ birth…⁴
+##   &lt;chr&gt;  &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;     &lt;dbl&gt;
+## 1 Yoda      66    17 white   green   brown       896
+## 2 Ki-A…    198    82 white   pale    yellow       92
+## 3 Dooku    193    80 white   fair    brown       102
+## 4 Joca…    167    NA white   fair    blue         NA
+## # … with 7 more variables: sex &lt;chr&gt;, gender &lt;chr&gt;,
+## #   homeworld &lt;chr&gt;, species &lt;chr&gt;, films &lt;list&gt;,
+## #   vehicles &lt;list&gt;, starships &lt;list&gt;, and
+## #   abbreviated variable names ¹​hair_color,
+## #   ²​skin_color, ³​eye_color, ⁴​birth_year
 ## # ℹ Use `colnames()` to see all variable names</code></pre>
 <p>Wie auch in anderen Funktionen, die wir bereits kennengelernt haben, können wir auch logische Konjunktoren verwenden, um bestimmte Bedingungen auszudrücken:</p>
 <div class="sourceCode" id="cb203"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb203-1"><a href="tidyverse.html#cb203-1" aria-hidden="true" tabindex="-1"></a>starwars <span class="sc">%&gt;%</span></span>
 <span id="cb203-2"><a href="tidyverse.html#cb203-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(homeworld <span class="sc">==</span> <span class="st">&quot;Tatooine&quot;</span> <span class="sc">&amp;</span> sex <span class="sc">!=</span> <span class="st">&quot;male&quot;</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 4 × 14
-##   name  height  mass hair_…¹ skin_…² eye_c…³ birth…⁴ sex   gender homew…⁵
-##   &lt;chr&gt;  &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;  
-## 1 C-3PO    167    75 &lt;NA&gt;    gold    yellow      112 none  mascu… Tatooi…
-## 2 Beru…    165    75 brown   light   blue         47 fema… femin… Tatooi…
-## 3 R5-D4     97    32 &lt;NA&gt;    white,… red          NA none  mascu… Tatooi…
-## 4 Shmi…    163    NA black   fair    brown        72 fema… femin… Tatooi…
-## # … with 4 more variables: species &lt;chr&gt;, films &lt;list&gt;, vehicles &lt;list&gt;,
-## #   starships &lt;list&gt;, and abbreviated variable names ¹​hair_color,
-## #   ²​skin_color, ³​eye_color, ⁴​birth_year, ⁵​homeworld
+##   name  height  mass hair_…¹ skin_…² eye_c…³ birth…⁴
+##   &lt;chr&gt;  &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;     &lt;dbl&gt;
+## 1 C-3PO    167    75 &lt;NA&gt;    gold    yellow      112
+## 2 Beru…    165    75 brown   light   blue         47
+## 3 R5-D4     97    32 &lt;NA&gt;    white,… red          NA
+## 4 Shmi…    163    NA black   fair    brown        72
+## # … with 7 more variables: sex &lt;chr&gt;, gender &lt;chr&gt;,
+## #   homeworld &lt;chr&gt;, species &lt;chr&gt;, films &lt;list&gt;,
+## #   vehicles &lt;list&gt;, starships &lt;list&gt;, and
+## #   abbreviated variable names ¹​hair_color,
+## #   ²​skin_color, ³​eye_color, ⁴​birth_year
 ## # ℹ Use `colnames()` to see all variable names</code></pre>
 <p>Hier zum Beispiel erhalten wir einen Dataframe, der nur die Fälle beinhaltet, welche aus Tatooine stammen und nicht männlich sind.</p>
 <p><strong>Achtung!</strong>
@@ -480,16 +488,18 @@ Im Prinzip könnt ihr in fast jedem Fall die native Pipe und die Tidyverse Pipe 
 <span id="cb205-3"><a href="tidyverse.html#cb205-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>(<span class="dv">5</span>) <span class="co"># nimm die ersten fünf Fälle</span></span></code></pre></div>
 <pre><code>## # A tibble: 5 × 14
 ## # Groups:   homeworld [3]
-##   name  height  mass hair_…¹ skin_…² eye_c…³ birth…⁴ sex   gender homew…⁵
-##   &lt;chr&gt;  &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;  
-## 1 Luke…    172    77 blond   fair    blue       19   male  mascu… Tatooi…
-## 2 C-3PO    167    75 &lt;NA&gt;    gold    yellow    112   none  mascu… Tatooi…
-## 3 R2-D2     96    32 &lt;NA&gt;    white,… red        33   none  mascu… Naboo  
-## 4 Dart…    202   136 none    white   yellow     41.9 male  mascu… Tatooi…
-## 5 Leia…    150    49 brown   light   brown      19   fema… femin… Aldera…
-## # … with 4 more variables: species &lt;chr&gt;, films &lt;list&gt;, vehicles &lt;list&gt;,
-## #   starships &lt;list&gt;, and abbreviated variable names ¹​hair_color,
-## #   ²​skin_color, ³​eye_color, ⁴​birth_year, ⁵​homeworld
+##   name  height  mass hair_…¹ skin_…² eye_c…³ birth…⁴
+##   &lt;chr&gt;  &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;     &lt;dbl&gt;
+## 1 Luke…    172    77 blond   fair    blue       19  
+## 2 C-3PO    167    75 &lt;NA&gt;    gold    yellow    112  
+## 3 R2-D2     96    32 &lt;NA&gt;    white,… red        33  
+## 4 Dart…    202   136 none    white   yellow     41.9
+## 5 Leia…    150    49 brown   light   brown      19  
+## # … with 7 more variables: sex &lt;chr&gt;, gender &lt;chr&gt;,
+## #   homeworld &lt;chr&gt;, species &lt;chr&gt;, films &lt;list&gt;,
+## #   vehicles &lt;list&gt;, starships &lt;list&gt;, and
+## #   abbreviated variable names ¹​hair_color,
+## #   ²​skin_color, ³​eye_color, ⁴​birth_year
 ## # ℹ Use `colnames()` to see all variable names</code></pre>
 <p>Im Hintergrund haben wir unseren Tibble aber um das Attribut <code>group</code> ergänzt, welches jeweils die Zeilennummern für die Fälle einer Gruppe als integer Vector speichert.</p>
 <div class="sourceCode" id="cb207"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb207-1"><a href="tidyverse.html#cb207-1" aria-hidden="true" tabindex="-1"></a>starwars <span class="sc">%&gt;%</span></span>

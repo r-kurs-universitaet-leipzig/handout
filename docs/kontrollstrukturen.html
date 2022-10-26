@@ -461,7 +461,8 @@ für die nächste Klausur.</li>
 <span id="cb238-5"><a href="kontrollstrukturen.html#cb238-5" aria-hidden="true" tabindex="-1"></a><span class="fu">if_else</span>(<span class="at">condition =</span> x <span class="sc">&gt;=</span> <span class="dv">1981</span> <span class="sc">&amp;</span> x <span class="sc">&lt;=</span> <span class="dv">1996</span>,</span>
 <span id="cb238-6"><a href="kontrollstrukturen.html#cb238-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">true      =</span> <span class="st">&quot;Millennial&quot;</span>,</span>
 <span id="cb238-7"><a href="kontrollstrukturen.html#cb238-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">false     =</span> <span class="st">&quot;kein Millennial&quot;</span>)</span></code></pre></div>
-<pre><code>## [1] &quot;Millennial&quot;      &quot;kein Millennial&quot; &quot;Millennial&quot;</code></pre>
+<pre><code>## [1] &quot;Millennial&quot;      &quot;kein Millennial&quot;
+## [3] &quot;Millennial&quot;</code></pre>
 <p>Wenn ihr mehr als zwei Fälle (<code>TRUE</code> und <code>FALSE</code>) unterscheiden wollt, bietet sich die ebenfalls vektorisierte <code>dplyr::case_when()</code> Funktion an. Eine Beispielanwendung dafür könnte die Kategorisierung einer stetigen Variable sein:</p>
 <div class="sourceCode" id="cb240"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb240-1"><a href="kontrollstrukturen.html#cb240-1" aria-hidden="true" tabindex="-1"></a>starwars <span class="sc">%&gt;%</span></span>
 <span id="cb240-2"><a href="kontrollstrukturen.html#cb240-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(name, birth_year) <span class="sc">%&gt;%</span></span>
@@ -542,8 +543,8 @@ Iteration) und <code>break</code> (bricht die Schleife ab).</p>
 <span id="cb244-6"><a href="kontrollstrukturen.html#cb244-6" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb244-7"><a href="kontrollstrukturen.html#cb244-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb244-8"><a href="kontrollstrukturen.html#cb244-8" aria-hidden="true" tabindex="-1"></a>v2</span></code></pre></div>
-<pre><code>##  [1] 1.000000 1.414214 1.732051 2.000000 2.236068 2.449490 2.645751
-##  [8] 2.828427 3.000000 3.162278</code></pre>
+<pre><code>##  [1] 1.000000 1.414214 1.732051 2.000000 2.236068
+##  [6] 2.449490 2.645751 2.828427 3.000000 3.162278</code></pre>
 <p>Da die meisten Funktionen in R bereits vektorisiert sind (<code>sqrt(v1)</code>) ist ein <code>for-loop</code> nicht immer die beste Variante, manchmal kann er allerdings sehr hilfreich sein.</p>
 </div>
 <div id="vektorisiertes-programmieren" class="section level2 hasAnchor" number="9.5">
@@ -554,8 +555,8 @@ Iteration) und <code>break</code> (bricht die Schleife ab).</p>
 <div class="sourceCode" id="cb247"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb247-1"><a href="kontrollstrukturen.html#cb247-1" aria-hidden="true" tabindex="-1"></a>v1 <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span></span>
 <span id="cb247-2"><a href="kontrollstrukturen.html#cb247-2" aria-hidden="true" tabindex="-1"></a><span class="fu">map_dbl</span>(<span class="at">.x =</span> v1,</span>
 <span id="cb247-3"><a href="kontrollstrukturen.html#cb247-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">.f =</span> sqrt)</span></code></pre></div>
-<pre><code>##  [1] 1.000000 1.414214 1.732051 2.000000 2.236068 2.449490 2.645751
-##  [8] 2.828427 3.000000 3.162278</code></pre>
+<pre><code>##  [1] 1.000000 1.414214 1.732051 2.000000 2.236068
+##  [6] 2.449490 2.645751 2.828427 3.000000 3.162278</code></pre>
 <p>Dabei passiert Folgendes (<code>fun steht für function</code>):</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-129"></span>
 <img src="resources/map.png" alt="Quelle: https://tutorials.shinyapps.io/map-intro/_w_543ccdaf/www/images/map.png" width="80%" />
@@ -584,11 +585,13 @@ Abb. 9.1: Quelle: <a href="https://tutorials.shinyapps.io/map-intro/_w_543ccdaf/
 <span id="cb252-3"><a href="kontrollstrukturen.html#cb252-3" aria-hidden="true" tabindex="-1"></a><span class="fu">map_dbl</span>(<span class="at">.x =</span> v1_log, </span>
 <span id="cb252-4"><a href="kontrollstrukturen.html#cb252-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">.f =</span> round, </span>
 <span id="cb252-5"><a href="kontrollstrukturen.html#cb252-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">digits =</span> <span class="dv">2</span>)</span></code></pre></div>
-<pre><code>##  [1] 0.00 0.69 1.10 1.39 1.61 1.79 1.95 2.08 2.20 2.30</code></pre>
+<pre><code>##  [1] 0.00 0.69 1.10 1.39 1.61 1.79 1.95 2.08 2.20
+## [10] 2.30</code></pre>
 <p>Über sogenannte anonyme Funktionen (welche keinen Namen haben), können wir gleich in der Argumentstelle von <code>map()</code>, welche die Funktion entgegennimmt, eigene Funktionen schreiben.</p>
 <p>Beispiel:</p>
 <div class="sourceCode" id="cb254"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb254-1"><a href="kontrollstrukturen.html#cb254-1" aria-hidden="true" tabindex="-1"></a><span class="fu">map_dbl</span>(v1, <span class="sc">~</span> <span class="fu">log</span>(.x) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">2</span>))</span></code></pre></div>
-<pre><code>##  [1] 0.00 0.69 1.10 1.39 1.61 1.79 1.95 2.08 2.20 2.30</code></pre>
+<pre><code>##  [1] 0.00 0.69 1.10 1.39 1.61 1.79 1.95 2.08 2.20
+## [10] 2.30</code></pre>
 <p>Die Tilde (<code>~</code>) zeigt dabei an, dass eine Funktion folgt. Mit <code>.x</code> kann man das aktuelle Listenelement ansprechen. Ausgeschrieben könnte die Funktion so ausschauen:</p>
 <div class="sourceCode" id="cb256"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb256-1"><a href="kontrollstrukturen.html#cb256-1" aria-hidden="true" tabindex="-1"></a>un_lambda <span class="ot">&lt;-</span> <span class="cf">function</span> (x) {</span>
 <span id="cb256-2"><a href="kontrollstrukturen.html#cb256-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">round</span>(<span class="fu">log</span>(x), <span class="dv">2</span>)</span>
@@ -596,7 +599,8 @@ Abb. 9.1: Quelle: <a href="https://tutorials.shinyapps.io/map-intro/_w_543ccdaf/
 <p>Natürlich könnt ihr die Funktionen auch erst schreiben und dann nur noch über den Namen <code>map()</code> als Argument weiter reichen.</p>
 <p>Dem Beispiel folgend:</p>
 <div class="sourceCode" id="cb257"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb257-1"><a href="kontrollstrukturen.html#cb257-1" aria-hidden="true" tabindex="-1"></a><span class="fu">map_dbl</span>(v1, un_lambda)</span></code></pre></div>
-<pre><code>##  [1] 0.00 0.69 1.10 1.39 1.61 1.79 1.95 2.08 2.20 2.30</code></pre>
+<pre><code>##  [1] 0.00 0.69 1.10 1.39 1.61 1.79 1.95 2.08 2.20
+## [10] 2.30</code></pre>
 <p>Bei diesem Vorgehen empfiehlt es sich, einen aussagekräftigeren Namen für die Funktion zu wählen, welcher auch andeutet, was die Funktion macht.</p>
 </div>
 <div id="prüfe-dich-selbst-5" class="section level2 hasAnchor" number="9.6">

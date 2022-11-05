@@ -1,26 +1,26 @@
 {
-    "id": "060262C0",
-    "path": "~/R Studio/handout/06-Packages.Rmd",
-    "project_path": "06-Packages.Rmd",
+    "id": "B3750DD7",
+    "path": "~/R Studio/handout/08-tidyverse.Rmd",
+    "project_path": "08-tidyverse.Rmd",
     "type": "r_markdown",
-    "hash": "4072397085",
+    "hash": "3128304297",
     "contents": "",
     "dirty": false,
-    "created": 1666451087818.0,
+    "created": 1667661140757.0,
     "source_on_save": false,
     "relative_order": 1,
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "12,16",
-        "scrollLine": "1"
+        "cursorPosition": "214,0",
+        "scrollLine": "205"
     },
     "folds": "",
-    "lastKnownWriteTime": 1666452503,
+    "lastKnownWriteTime": 1667663162,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1666452503834,
+    "last_content_update": 1667663162737,
     "read_only": false,
     "read_only_alternatives": []
 }

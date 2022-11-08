@@ -334,7 +334,7 @@ Bei diesem Vorgehen empfiehlt es sich, einen aussagekräftigeren Namen für die 
 
 ## Prüfe dich selbst
 
-Von dieser Sitzung solltest du olgendes mitgenommen haben:
+Von dieser Sitzung solltest du folgendes mitgenommen haben:
 
   - [x] Du solltest Funktionen in R selber schreiben können.
   - [x] Du solltest Kontrollstrukturen dazu nutzen können, eigene Probleme zu lösen.

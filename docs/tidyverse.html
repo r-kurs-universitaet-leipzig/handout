@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Kapitel 8 Tidyverse | Handout für R Grundkurs</title>
   <meta name="description" content="Kapitel 8 Tidyverse | Handout für R Grundkurs" />
-  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Kapitel 8 Tidyverse | Handout für R Grundkurs" />
   <meta property="og:type" content="book" />
@@ -29,7 +29,7 @@
   
   
 <link rel="prev" href="dateimanagement.html"/>
-<link rel="next" href="kontrollstrukturen.html"/>
+<link rel="next" href="plots.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -98,7 +98,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
+code span.bu { } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -111,7 +111,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.im { } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -278,17 +278,51 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="8.5" data-path="tidyverse.html"><a href="tidyverse.html#prüfe-dich-selbst-4"><i class="fa fa-check"></i><b>8.5</b> Prüfe dich selbst</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="kontrollstrukturen.html"><a href="kontrollstrukturen.html"><i class="fa fa-check"></i><b>9</b> Kontrollstrukturen</a>
+<li class="chapter" data-level="9" data-path="plots.html"><a href="plots.html"><i class="fa fa-check"></i><b>9</b> Plots und Grafiken</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="kontrollstrukturen.html"><a href="kontrollstrukturen.html#prinzipien-der-programmierung"><i class="fa fa-check"></i><b>9.1</b> Prinzipien der Programmierung</a></li>
-<li class="chapter" data-level="9.2" data-path="kontrollstrukturen.html"><a href="kontrollstrukturen.html#funktionen-selber-schreiben"><i class="fa fa-check"></i><b>9.2</b> Funktionen selber schreiben</a></li>
-<li class="chapter" data-level="9.3" data-path="kontrollstrukturen.html"><a href="kontrollstrukturen.html#kontrollstrukturen-1"><i class="fa fa-check"></i><b>9.3</b> Kontrollstrukturen</a>
+<li class="chapter" data-level="9.1" data-path="plots.html"><a href="plots.html#r-base-plots-mit-plot"><i class="fa fa-check"></i><b>9.1</b> R Base Plots mit <code>plot()</code></a>
 <ul>
-<li class="chapter" data-level="9.3.1" data-path="kontrollstrukturen.html"><a href="kontrollstrukturen.html#vektorisierte-fallunterscheidungen"><i class="fa fa-check"></i><b>9.3.1</b> Vektorisierte Fallunterscheidungen</a></li>
+<li class="chapter" data-level="9.1.1" data-path="plots.html"><a href="plots.html#speichern-von-base-grafiken"><i class="fa fa-check"></i><b>9.1.1</b> Speichern von Base Grafiken</a></li>
 </ul></li>
-<li class="chapter" data-level="9.4" data-path="kontrollstrukturen.html"><a href="kontrollstrukturen.html#schleifen"><i class="fa fa-check"></i><b>9.4</b> Schleifen</a></li>
-<li class="chapter" data-level="9.5" data-path="kontrollstrukturen.html"><a href="kontrollstrukturen.html#vektorisiertes-programmieren"><i class="fa fa-check"></i><b>9.5</b> Vektorisiertes Programmieren</a></li>
-<li class="chapter" data-level="9.6" data-path="kontrollstrukturen.html"><a href="kontrollstrukturen.html#prüfe-dich-selbst-5"><i class="fa fa-check"></i><b>9.6</b> Prüfe dich selbst</a></li>
+<li class="chapter" data-level="9.2" data-path="plots.html"><a href="plots.html#ggplot"><i class="fa fa-check"></i><b>9.2</b> GGPlot</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="plots.html"><a href="plots.html#daten"><i class="fa fa-check"></i><b>9.2.1</b> Daten</a></li>
+<li class="chapter" data-level="9.2.2" data-path="plots.html"><a href="plots.html#wichtiger-hinweis"><i class="fa fa-check"></i><b>9.2.2</b> Wichtiger Hinweis!</a></li>
+<li class="chapter" data-level="9.2.3" data-path="plots.html"><a href="plots.html#aesthetics"><i class="fa fa-check"></i><b>9.2.3</b> Aesthetics</a></li>
+<li class="chapter" data-level="9.2.4" data-path="plots.html"><a href="plots.html#geome"><i class="fa fa-check"></i><b>9.2.4</b> Geome</a></li>
+<li class="chapter" data-level="9.2.5" data-path="plots.html"><a href="plots.html#achsenbeschriftung-und-themes"><i class="fa fa-check"></i><b>9.2.5</b> Achsenbeschriftung und Themes</a></li>
+<li class="chapter" data-level="9.2.6" data-path="plots.html"><a href="plots.html#globale-einstellungen"><i class="fa fa-check"></i><b>9.2.6</b> Globale Einstellungen</a></li>
+<li class="chapter" data-level="9.2.7" data-path="plots.html"><a href="plots.html#plots-als-objekte"><i class="fa fa-check"></i><b>9.2.7</b> Plots als Objekte</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="plots.html"><a href="plots.html#plots-als-objekte-1"><i class="fa fa-check"></i><b>9.3</b> Plots als Objekte</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="plots.html"><a href="plots.html#facets"><i class="fa fa-check"></i><b>9.3.1</b> Facets</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="plots.html"><a href="plots.html#facets-1"><i class="fa fa-check"></i><b>9.4</b> Facets</a></li>
+<li class="chapter" data-level="9.5" data-path="plots.html"><a href="plots.html#speichern-von-grafiken-mit-ggsave"><i class="fa fa-check"></i><b>9.5</b> Speichern von Grafiken mit GGSave</a></li>
+<li class="chapter" data-level="9.6" data-path="plots.html"><a href="plots.html#speichern-von-grafiken-mit-ggsave-1"><i class="fa fa-check"></i><b>9.6</b> Speichern von Grafiken mit GGSave</a></li>
+<li class="chapter" data-level="9.7" data-path="plots.html"><a href="plots.html#aufgabe"><i class="fa fa-check"></i><b>9.7</b> Aufgabe</a></li>
+<li class="chapter" data-level="9.8" data-path="plots.html"><a href="plots.html#lösungen"><i class="fa fa-check"></i><b>9.8</b> Lösungen</a></li>
+<li class="chapter" data-level="9.9" data-path="plots.html"><a href="plots.html#erweiterungen"><i class="fa fa-check"></i><b>9.9</b> Erweiterungen</a></li>
+<li class="chapter" data-level="9.10" data-path="plots.html"><a href="plots.html#ggforce"><i class="fa fa-check"></i><b>9.10</b> GGForce</a></li>
+<li class="chapter" data-level="9.11" data-path="plots.html"><a href="plots.html#ggforce-1"><i class="fa fa-check"></i><b>9.11</b> GGForce</a></li>
+<li class="chapter" data-level="9.12" data-path="plots.html"><a href="plots.html#viridis"><i class="fa fa-check"></i><b>9.12</b> Viridis</a></li>
+<li class="chapter" data-level="9.13" data-path="plots.html"><a href="plots.html#aufgabe-1"><i class="fa fa-check"></i><b>9.13</b> Aufgabe</a></li>
+<li class="chapter" data-level="9.14" data-path="plots.html"><a href="plots.html#lösung"><i class="fa fa-check"></i><b>9.14</b> Lösung</a></li>
+<li class="chapter" data-level="9.15" data-path="plots.html"><a href="plots.html#letzter-hinweis"><i class="fa fa-check"></i><b>9.15</b> Letzter Hinweis</a></li>
+<li class="chapter" data-level="9.16" data-path="plots.html"><a href="plots.html#code-für-die-einstiegs-grafik"><i class="fa fa-check"></i><b>9.16</b> Code für die Einstiegs-Grafik</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="kontrollstrukturen.html"><a href="kontrollstrukturen.html"><i class="fa fa-check"></i><b>10</b> Kontrollstrukturen</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="kontrollstrukturen.html"><a href="kontrollstrukturen.html#prinzipien-der-programmierung"><i class="fa fa-check"></i><b>10.1</b> Prinzipien der Programmierung</a></li>
+<li class="chapter" data-level="10.2" data-path="kontrollstrukturen.html"><a href="kontrollstrukturen.html#funktionen-selber-schreiben"><i class="fa fa-check"></i><b>10.2</b> Funktionen selber schreiben</a></li>
+<li class="chapter" data-level="10.3" data-path="kontrollstrukturen.html"><a href="kontrollstrukturen.html#kontrollstrukturen-1"><i class="fa fa-check"></i><b>10.3</b> Kontrollstrukturen</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="kontrollstrukturen.html"><a href="kontrollstrukturen.html#vektorisierte-fallunterscheidungen"><i class="fa fa-check"></i><b>10.3.1</b> Vektorisierte Fallunterscheidungen</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="kontrollstrukturen.html"><a href="kontrollstrukturen.html#schleifen"><i class="fa fa-check"></i><b>10.4</b> Schleifen</a></li>
+<li class="chapter" data-level="10.5" data-path="kontrollstrukturen.html"><a href="kontrollstrukturen.html#vektorisiertes-programmieren"><i class="fa fa-check"></i><b>10.5</b> Vektorisiertes Programmieren</a></li>
+<li class="chapter" data-level="10.6" data-path="kontrollstrukturen.html"><a href="kontrollstrukturen.html#prüfe-dich-selbst-5"><i class="fa fa-check"></i><b>10.6</b> Prüfe dich selbst</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -346,22 +380,20 @@ Abb. 8.2: dplyr Logo
 <div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="tidyverse.html#cb186-1" aria-hidden="true" tabindex="-1"></a>starwars <span class="ot">&lt;-</span> dplyr<span class="sc">::</span>starwars</span>
 <span id="cb186-2"><a href="tidyverse.html#cb186-2" aria-hidden="true" tabindex="-1"></a>starwars</span></code></pre></div>
 <pre><code>## # A tibble: 87 × 14
-##    name       height  mass hair_…¹ skin_…² eye_c…³ birth…⁴ sex   gender
-##    &lt;chr&gt;       &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; 
-##  1 Luke Skyw…    172    77 blond   fair    blue       19   male  mascu…
-##  2 C-3PO         167    75 &lt;NA&gt;    gold    yellow    112   none  mascu…
-##  3 R2-D2          96    32 &lt;NA&gt;    white,… red        33   none  mascu…
-##  4 Darth Vad…    202   136 none    white   yellow     41.9 male  mascu…
-##  5 Leia Orga…    150    49 brown   light   brown      19   fema… femin…
-##  6 Owen Lars     178   120 brown,… light   blue       52   male  mascu…
-##  7 Beru Whit…    165    75 brown   light   blue       47   fema… femin…
-##  8 R5-D4          97    32 &lt;NA&gt;    white,… red        NA   none  mascu…
-##  9 Biggs Dar…    183    84 black   light   brown      24   male  mascu…
-## 10 Obi-Wan K…    182    77 auburn… fair    blue-g…    57   male  mascu…
-## # … with 77 more rows, 5 more variables: homeworld &lt;chr&gt;,
-## #   species &lt;chr&gt;, films &lt;list&gt;, vehicles &lt;list&gt;, starships &lt;list&gt;,
-## #   and abbreviated variable names ¹​hair_color, ²​skin_color,
-## #   ³​eye_color, ⁴​birth_year</code></pre>
+##    name         height  mass hair_color skin_color eye_color birth_year sex   gender homeworld
+##    &lt;chr&gt;         &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;    
+##  1 Luke Skywal…    172    77 blond      fair       blue            19   male  mascu… Tatooine 
+##  2 C-3PO           167    75 &lt;NA&gt;       gold       yellow         112   none  mascu… Tatooine 
+##  3 R2-D2            96    32 &lt;NA&gt;       white, bl… red             33   none  mascu… Naboo    
+##  4 Darth Vader     202   136 none       white      yellow          41.9 male  mascu… Tatooine 
+##  5 Leia Organa     150    49 brown      light      brown           19   fema… femin… Alderaan 
+##  6 Owen Lars       178   120 brown, gr… light      blue            52   male  mascu… Tatooine 
+##  7 Beru Whites…    165    75 brown      light      blue            47   fema… femin… Tatooine 
+##  8 R5-D4            97    32 &lt;NA&gt;       white, red red             NA   none  mascu… Tatooine 
+##  9 Biggs Darkl…    183    84 black      light      brown           24   male  mascu… Tatooine 
+## 10 Obi-Wan Ken…    182    77 auburn, w… fair       blue-gray       57   male  mascu… Stewjon  
+## # … with 77 more rows, and 4 more variables: species &lt;chr&gt;, films &lt;list&gt;, vehicles &lt;list&gt;,
+## #   starships &lt;list&gt;</code></pre>
 </div>
 </div>
 <div id="variablen-manipulieren" class="section level2 hasAnchor" number="8.3">
@@ -424,9 +456,8 @@ Im Prinzip könnt ihr in fast jedem Fall die native Pipe und die Tidyverse Pipe 
 <span id="cb198-2"><a href="tidyverse.html#cb198-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="st">&quot;height_in_cm&quot;</span> <span class="ot">=</span> <span class="st">&quot;height&quot;</span>,</span>
 <span id="cb198-3"><a href="tidyverse.html#cb198-3" aria-hidden="true" tabindex="-1"></a>         <span class="st">&quot;mass_in_kg&quot;</span> <span class="ot">=</span> <span class="st">&quot;mass&quot;</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb198-4"><a href="tidyverse.html#cb198-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">names</span>() <span class="co"># Gibt die Namen aller Variablen aus</span></span></code></pre></div>
-<pre><code>##  [1] &quot;name&quot;         &quot;height_in_cm&quot; &quot;mass_in_kg&quot;   &quot;hair_color&quot;  
-##  [5] &quot;skin_color&quot;   &quot;eye_color&quot;    &quot;birth_year&quot;   &quot;sex&quot;         
-##  [9] &quot;gender&quot;       &quot;homeworld&quot;    &quot;species&quot;      &quot;films&quot;       
+<pre><code>##  [1] &quot;name&quot;         &quot;height_in_cm&quot; &quot;mass_in_kg&quot;   &quot;hair_color&quot;   &quot;skin_color&quot;   &quot;eye_color&quot;   
+##  [7] &quot;birth_year&quot;   &quot;sex&quot;          &quot;gender&quot;       &quot;homeworld&quot;    &quot;species&quot;      &quot;films&quot;       
 ## [13] &quot;vehicles&quot;     &quot;starships&quot;</code></pre>
 <p>Wie man sehen kann, wurden die Namen <code>"height"</code> und <code>"mass"</code> in die von uns angegebenen neuen Namen geändert.</p>
 </div>
@@ -437,28 +468,24 @@ Im Prinzip könnt ihr in fast jedem Fall die native Pipe und die Tidyverse Pipe 
 <div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb200-1"><a href="tidyverse.html#cb200-1" aria-hidden="true" tabindex="-1"></a>starwars <span class="sc">%&gt;%</span></span>
 <span id="cb200-2"><a href="tidyverse.html#cb200-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(hair_color <span class="sc">==</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 4 × 14
-##   name        height  mass hair_…¹ skin_…² eye_c…³ birth…⁴ sex   gender
-##   &lt;chr&gt;        &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; 
-## 1 Yoda            66    17 white   green   brown       896 male  mascu…
-## 2 Ki-Adi-Mun…    198    82 white   pale    yellow       92 male  mascu…
-## 3 Dooku          193    80 white   fair    brown       102 male  mascu…
-## 4 Jocasta Nu     167    NA white   fair    blue         NA fema… femin…
-## # … with 5 more variables: homeworld &lt;chr&gt;, species &lt;chr&gt;,
-## #   films &lt;list&gt;, vehicles &lt;list&gt;, starships &lt;list&gt;, and abbreviated
-## #   variable names ¹​hair_color, ²​skin_color, ³​eye_color, ⁴​birth_year</code></pre>
+##   name  height  mass hair_color skin_color eye_color birth_year sex   gender homeworld species
+##   &lt;chr&gt;  &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;     &lt;chr&gt;  
+## 1 Yoda      66    17 white      green      brown            896 male  mascu… &lt;NA&gt;      Yoda&#39;s…
+## 2 Ki-A…    198    82 white      pale       yellow            92 male  mascu… Cerea     Cerean 
+## 3 Dooku    193    80 white      fair       brown            102 male  mascu… Serenno   Human  
+## 4 Joca…    167    NA white      fair       blue              NA fema… femin… Coruscant Human  
+## # … with 3 more variables: films &lt;list&gt;, vehicles &lt;list&gt;, starships &lt;list&gt;</code></pre>
 <p>Wie auch in anderen Funktionen, die wir bereits kennengelernt haben, können wir auch logische Konjunktoren verwenden, um bestimmte Bedingungen auszudrücken:</p>
 <div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb202-1"><a href="tidyverse.html#cb202-1" aria-hidden="true" tabindex="-1"></a>starwars <span class="sc">%&gt;%</span></span>
 <span id="cb202-2"><a href="tidyverse.html#cb202-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(homeworld <span class="sc">==</span> <span class="st">&quot;Tatooine&quot;</span> <span class="sc">&amp;</span> sex <span class="sc">!=</span> <span class="st">&quot;male&quot;</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 4 × 14
-##   name        height  mass hair_…¹ skin_…² eye_c…³ birth…⁴ sex   gender
-##   &lt;chr&gt;        &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; 
-## 1 C-3PO          167    75 &lt;NA&gt;    gold    yellow      112 none  mascu…
-## 2 Beru White…    165    75 brown   light   blue         47 fema… femin…
-## 3 R5-D4           97    32 &lt;NA&gt;    white,… red          NA none  mascu…
-## 4 Shmi Skywa…    163    NA black   fair    brown        72 fema… femin…
-## # … with 5 more variables: homeworld &lt;chr&gt;, species &lt;chr&gt;,
-## #   films &lt;list&gt;, vehicles &lt;list&gt;, starships &lt;list&gt;, and abbreviated
-## #   variable names ¹​hair_color, ²​skin_color, ³​eye_color, ⁴​birth_year</code></pre>
+##   name  height  mass hair_color skin_color eye_color birth_year sex   gender homeworld species
+##   &lt;chr&gt;  &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;     &lt;chr&gt;  
+## 1 C-3PO    167    75 &lt;NA&gt;       gold       yellow           112 none  mascu… Tatooine  Droid  
+## 2 Beru…    165    75 brown      light      blue              47 fema… femin… Tatooine  Human  
+## 3 R5-D4     97    32 &lt;NA&gt;       white, red red               NA none  mascu… Tatooine  Droid  
+## 4 Shmi…    163    NA black      fair       brown             72 fema… femin… Tatooine  Human  
+## # … with 3 more variables: films &lt;list&gt;, vehicles &lt;list&gt;, starships &lt;list&gt;</code></pre>
 <p>Hier zum Beispiel erhalten wir einen Dataframe, der nur die Fälle beinhaltet, welche aus Tatooine stammen und nicht männlich sind.</p>
 <p><strong>Achtung!</strong>
 <code>filter()</code> behält nur diejenigen Zeilen (Fälle), über welche definitiv gesagt werden kann, dass sie der angegebenen Bedingung entsprechen und somit “wahr” sind. Alle <code>NA</code>-Werte, für welche wir nicht wissen, ob sie wahr wären, werden nicht mit aufgenommen!</p>
@@ -470,16 +497,14 @@ Im Prinzip könnt ihr in fast jedem Fall die native Pipe und die Tidyverse Pipe 
 <span id="cb204-3"><a href="tidyverse.html#cb204-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>(<span class="dv">5</span>) <span class="co"># nimm die ersten fünf Fälle</span></span></code></pre></div>
 <pre><code>## # A tibble: 5 × 14
 ## # Groups:   homeworld [3]
-##   name        height  mass hair_…¹ skin_…² eye_c…³ birth…⁴ sex   gender
-##   &lt;chr&gt;        &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; 
-## 1 Luke Skywa…    172    77 blond   fair    blue       19   male  mascu…
-## 2 C-3PO          167    75 &lt;NA&gt;    gold    yellow    112   none  mascu…
-## 3 R2-D2           96    32 &lt;NA&gt;    white,… red        33   none  mascu…
-## 4 Darth Vader    202   136 none    white   yellow     41.9 male  mascu…
-## 5 Leia Organa    150    49 brown   light   brown      19   fema… femin…
-## # … with 5 more variables: homeworld &lt;chr&gt;, species &lt;chr&gt;,
-## #   films &lt;list&gt;, vehicles &lt;list&gt;, starships &lt;list&gt;, and abbreviated
-## #   variable names ¹​hair_color, ²​skin_color, ³​eye_color, ⁴​birth_year</code></pre>
+##   name  height  mass hair_color skin_color eye_color birth_year sex   gender homeworld species
+##   &lt;chr&gt;  &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;     &lt;chr&gt;  
+## 1 Luke…    172    77 blond      fair       blue            19   male  mascu… Tatooine  Human  
+## 2 C-3PO    167    75 &lt;NA&gt;       gold       yellow         112   none  mascu… Tatooine  Droid  
+## 3 R2-D2     96    32 &lt;NA&gt;       white, bl… red             33   none  mascu… Naboo     Droid  
+## 4 Dart…    202   136 none       white      yellow          41.9 male  mascu… Tatooine  Human  
+## 5 Leia…    150    49 brown      light      brown           19   fema… femin… Alderaan  Human  
+## # … with 3 more variables: films &lt;list&gt;, vehicles &lt;list&gt;, starships &lt;list&gt;</code></pre>
 <p>Im Hintergrund haben wir unseren Tibble aber um das Attribut <code>group</code> ergänzt, welches jeweils die Zeilennummern für die Fälle einer Gruppe als integer Vektor speichert.</p>
 <div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb206-1"><a href="tidyverse.html#cb206-1" aria-hidden="true" tabindex="-1"></a>starwars <span class="sc">%&gt;%</span></span>
 <span id="cb206-2"><a href="tidyverse.html#cb206-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(homeworld) <span class="sc">%&gt;%</span></span>
@@ -515,10 +540,14 @@ Im Prinzip könnt ihr in fast jedem Fall die native Pipe und die Tidyverse Pipe 
 <h2><span class="header-section-number">8.5</span> Prüfe dich selbst<a href="tidyverse.html#prüfe-dich-selbst-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Von dieser Sitzung solltest du Folgendes mitgenommen haben:</p>
 <ul class="task-list">
-<li><input type="checkbox" disabled="" checked="" />Du solltest wissen, was das Tidyverse ist.</li>
-<li><input type="checkbox" disabled="" checked="" />Du solltest wissen, was “tidy-data” auszeichnet (siehe 8.2).</li>
-<li><input type="checkbox" disabled="" checked="" />Du solltest unterscheiden können, mit welchen Funktionen man Fälle und mit welchen man Variablen manipuliert.</li>
-<li><input type="checkbox" disabled="" checked="" />Du solltest verstanden haben, was die Funktion <code>group_by()</code> macht und wann diese nützlich sein könnte.</li>
+<li><input type="checkbox" disabled="" checked="" />
+Du solltest wissen, was das Tidyverse ist.</li>
+<li><input type="checkbox" disabled="" checked="" />
+Du solltest wissen, was “tidy-data” auszeichnet (siehe 8.2).</li>
+<li><input type="checkbox" disabled="" checked="" />
+Du solltest unterscheiden können, mit welchen Funktionen man Fälle und mit welchen man Variablen manipuliert.</li>
+<li><input type="checkbox" disabled="" checked="" />
+Du solltest verstanden haben, was die Funktion <code>group_by()</code> macht und wann diese nützlich sein könnte.</li>
 </ul>
 
 </div>
@@ -529,7 +558,7 @@ Im Prinzip könnt ihr in fast jedem Fall die native Pipe und die Tidyverse Pipe 
         </div>
       </div>
 <a href="dateimanagement.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="kontrollstrukturen.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="plots.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -590,7 +619,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

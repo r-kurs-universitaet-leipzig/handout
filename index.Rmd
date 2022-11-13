@@ -22,7 +22,7 @@ site: bookdown::bookdown_site
 
 Dieses Handout ist Teil des Grundkurses in R am URZ und am Academic Lab der Uni Leipzig.
 
-Besonderem Dank gilt Stephan Poppe und dem Statistik-Team des Instituts für Soziologie
+Besonderer Dank gilt Stephan Poppe und dem Statistik-Team des Instituts für Soziologie
 für die Unterstützung beim Erstellen der Materialien für diesen Kurs.
 
 

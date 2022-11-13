@@ -110,4 +110,3 @@ vektorisierte-fallunterscheidungen
 schleifen
 vektorisiertes-programmieren
 prüfe-dich-selbst-6
-quellen

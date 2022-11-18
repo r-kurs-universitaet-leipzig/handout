@@ -1,0 +1,19 @@
+h1:plots Plots und Grafiken
+h2:r-base-plots-mit-plot R Base Plots mit 
+h3:speichern-von-base-grafiken Speichern von Base Grafiken
+h2:ggplot GGPlot
+h3:daten Daten
+h3:wichtiger-hinweis Wichtiger Hinweis!
+h3:aesthetics Aesthetics
+h3:geome Geome
+h3:achsenbeschriftung-und-themes Achsenbeschriftung und Themes
+h3:plots-als-objekte Plots als Objekte
+h3:facets Facets
+h3:speichern-von-grafiken-mit-ggsave Speichern von Grafiken mit GGSave
+h3:erweiterungen Erweiterungen
+h4:ggforce GGForce
+h4:viridis Viridis
+h3:letzter-hinweis Letzter Hinweis
+h4:code-für-die-einstiegs-grafik Code für die Einstiegs-Grafik
+h2:prüfe-dich-selbst Prüfe dich selbst
+

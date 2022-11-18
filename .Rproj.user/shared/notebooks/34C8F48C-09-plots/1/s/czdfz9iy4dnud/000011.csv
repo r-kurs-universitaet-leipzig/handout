@@ -1,0 +1,6 @@
+"0","library(needs)"
+"0","needs(gapminder,"
+"0","      ggforce,"
+"0","      viridis)"
+"0",""
+"0","df_countries <- gapminder"

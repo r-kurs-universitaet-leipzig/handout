@@ -1,0 +1,2 @@
+"0","plot(x = df_regio$Region,"
+"0","     y = df_regio$Europawahl_Beteiligung_percent)"

@@ -392,12 +392,9 @@ ausführliche Informationen zu GGForce.
 Zu Vorbereitung werden die benötigten Packages geladen:
 
 ```{r}
-library(needs)
-needs(gapminder,
-      ggforce,
-      viridis)
-
-df_countries <- gapminder
+library(gapminder)
+library(ggforce)
+library(viridis)
 ```
 
 #### GGForce

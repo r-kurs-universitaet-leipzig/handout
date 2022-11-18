@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Kapitel 9 Plots und Grafiken | Handout für R Grundkurs</title>
   <meta name="description" content="Kapitel 9 Plots und Grafiken | Handout für R Grundkurs" />
-  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Kapitel 9 Plots und Grafiken | Handout für R Grundkurs" />
   <meta property="og:type" content="book" />
@@ -50,6 +50,14 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="libs/d3-3.3.8/d3.min.js"></script>
+<script src="libs/dagre-0.4.0/dagre-d3.min.js"></script>
+<link href="libs/mermaid-0.3.0/dist/mermaid.css" rel="stylesheet" />
+<script src="libs/mermaid-0.3.0/dist/mermaid.slim.min.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/chromatography-0.1/chromatography.js"></script>
+<script src="libs/DiagrammeR-binding-1.0.9/DiagrammeR.js"></script>
 
 
 <style type="text/css">
@@ -157,6 +165,7 @@ div.csl-indent {
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Vorwort</a></li>
+<li class="chapter" data-level="" data-path="hinweise-zur-verwendung-des-handouts.html"><a href="hinweise-zur-verwendung-des-handouts.html"><i class="fa fa-check"></i>Hinweise zur Verwendung des Handouts</a></li>
 <li class="chapter" data-level="1" data-path="einführung.html"><a href="einführung.html"><i class="fa fa-check"></i><b>1</b> Einführung</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="einführung.html"><a href="einführung.html#was-ist-r-und-warum-sollte-man-r-lernen"><i class="fa fa-check"></i><b>1.1</b> Was ist R und warum sollte man R lernen?</a></li>
@@ -340,46 +349,46 @@ Grafiken von Grund auf aufbauen und können sehr individuell gestaltet werden.</
 <p>Mit der generischen Funktion <code>plot()</code> lassen sich die elementarsten High-Level
 Grafiken erstellen. Die Art des Plots wird implizit entsprechend der Skalen der übergebenen Merkmale festgelegt. Kombinationen aus Merkmalen verschiedener Skalenniveaus führen dabei zu unterschiedlichen Darstellungen. Wem der Begriff Skalenniveau nichts sagt, findet hier eine Referenz: <a href="https://de.wikipedia.org/wiki/Skalenniveau">https://de.wikipedia.org/wiki/Skalenniveau</a>.</p>
 <p>Zur Vorbereitung legen wir mit <code>dplyr::mutate()</code> noch zwei neue Variablen an:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="plots.html#cb1-1" aria-hidden="true" tabindex="-1"></a>df_regio <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="at">file =</span> <span class="st">&quot;data/regio.rds&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb1-2"><a href="plots.html#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Region =</span> <span class="fu">if_else</span>(<span class="at">condition =</span> Regio_Code <span class="sc">&lt;</span> <span class="dv">11000</span>,</span>
-<span id="cb1-3"><a href="plots.html#cb1-3" aria-hidden="true" tabindex="-1"></a>                            <span class="at">true =</span> <span class="st">&quot;Alte Bundesländer&quot;</span>,</span>
-<span id="cb1-4"><a href="plots.html#cb1-4" aria-hidden="true" tabindex="-1"></a>                            <span class="at">false =</span> <span class="st">&quot;Neue Bundesländer&quot;</span></span>
-<span id="cb1-5"><a href="plots.html#cb1-5" aria-hidden="true" tabindex="-1"></a>                          ),</span>
-<span id="cb1-6"><a href="plots.html#cb1-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">Region =</span> <span class="fu">as_factor</span>(Region),</span>
-<span id="cb1-7"><a href="plots.html#cb1-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">Durchschnittsalter_cat =</span> <span class="fu">cut_interval</span>(Durchschnittsalter, <span class="at">n =</span> <span class="dv">3</span>)</span>
-<span id="cb1-8"><a href="plots.html#cb1-8" aria-hidden="true" tabindex="-1"></a>         )</span></code></pre></div>
+<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb210-1"><a href="plots.html#cb210-1" aria-hidden="true" tabindex="-1"></a>df_regio <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="at">file =</span> <span class="st">&quot;data/regio.rds&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb210-2"><a href="plots.html#cb210-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Region =</span> <span class="fu">if_else</span>(<span class="at">condition =</span> Regio_Code <span class="sc">&lt;</span> <span class="dv">11000</span>,</span>
+<span id="cb210-3"><a href="plots.html#cb210-3" aria-hidden="true" tabindex="-1"></a>                            <span class="at">true =</span> <span class="st">&quot;Alte Bundesländer&quot;</span>,</span>
+<span id="cb210-4"><a href="plots.html#cb210-4" aria-hidden="true" tabindex="-1"></a>                            <span class="at">false =</span> <span class="st">&quot;Neue Bundesländer&quot;</span></span>
+<span id="cb210-5"><a href="plots.html#cb210-5" aria-hidden="true" tabindex="-1"></a>                          ),</span>
+<span id="cb210-6"><a href="plots.html#cb210-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">Region =</span> <span class="fu">as_factor</span>(Region),</span>
+<span id="cb210-7"><a href="plots.html#cb210-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">Durchschnittsalter_cat =</span> <span class="fu">cut_interval</span>(Durchschnittsalter, <span class="at">n =</span> <span class="dv">3</span>)</span>
+<span id="cb210-8"><a href="plots.html#cb210-8" aria-hidden="true" tabindex="-1"></a>         )</span></code></pre></div>
 <p>Zunächst übergeben wir nur <strong>eine metrische</strong> Variable als <code>x</code>.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="plots.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x =</span> df_regio<span class="sc">$</span>Europawahl_Beteiligung_percent)</span></code></pre></div>
+<div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb211-1"><a href="plots.html#cb211-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x =</span> df_regio<span class="sc">$</span>Europawahl_Beteiligung_percent)</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/Index%20Plot-1.png" width="\textwidth" /></p>
 <p>Die resultierende Darstellung ist aufgrund der metrischen Variable ein <strong>Index-Plot</strong>, wobei unser Merkmal <code>x</code> auf der y-Achse abgetragen ist und durch Index auf der x-Achse eine künstliche Streuung eingeführt wird. Diese Art der Darstellung ist nicht besonders informativ.</p>
 <p>Als nächstes übergeben wir <strong>eine kategoriale/diskrete</strong> Variable:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="plots.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x =</span> df_regio<span class="sc">$</span>Region)</span></code></pre></div>
+<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb212-1"><a href="plots.html#cb212-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x =</span> df_regio<span class="sc">$</span>Region)</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/Balken%20Plot-1.png" width="\textwidth" />
 Das erzeugt <strong>Balkendiagramm</strong> ist schon wesentlich informativer als der vorhergehende Indexplot. Aufgetragen ist die absolute Anzahl an Fällen pro Kategorie, wobei bei unserer Variable nur zwei Ausprägungen vorkommen.</p>
 <p>Nun wollen wir uns den bivariaten Plots zuwenden. Als erstes übergeben wir der Funktion <code>plot()</code> <strong>zwei</strong> quasi <strong>metrische</strong> Variablen.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="plots.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x =</span> df_regio<span class="sc">$</span>Europawahl_Beteiligung_percent,</span>
-<span id="cb4-2"><a href="plots.html#cb4-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">y =</span> df_regio<span class="sc">$</span>Europawahl_AFD_percent)</span></code></pre></div>
+<div class="sourceCode" id="cb213"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb213-1"><a href="plots.html#cb213-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x =</span> df_regio<span class="sc">$</span>Europawahl_Beteiligung_percent,</span>
+<span id="cb213-2"><a href="plots.html#cb213-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">y =</span> df_regio<span class="sc">$</span>Europawahl_AFD_percent)</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/Streu%20Plot-1.png" width="\textwidth" /></p>
 <p>Die daraus resultierende Darstellung ist ein <strong>Streuplot</strong>.</p>
 <p>Interessanter wird es, wenn wir <strong>eine diskrete und eine stetige</strong> Variable kombinieren.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="plots.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x =</span> df_regio<span class="sc">$</span>Region,</span>
-<span id="cb5-2"><a href="plots.html#cb5-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">y =</span> df_regio<span class="sc">$</span>Europawahl_Beteiligung_percent)</span></code></pre></div>
+<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb214-1"><a href="plots.html#cb214-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x =</span> df_regio<span class="sc">$</span>Region,</span>
+<span id="cb214-2"><a href="plots.html#cb214-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">y =</span> df_regio<span class="sc">$</span>Europawahl_Beteiligung_percent)</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/Boxplot-1.png" width="\textwidth" /></p>
 <p>Hier wird nämlich für jede Kategorie die Verteilung der dazugehörigen metrischen Werte als Fünf-Punkte-Zusammenfassung oder auch <strong>Boxplot</strong> dargestellt. Der Strich in der Mitte der Box ist dabei der Median. Die Box an sich erstreckt sich vom 25%- zum 75%-Quantil und zeigt damit an, wo die zentralen 50% der Daten liegen (Vergleich auch: <a href="https://de.wikipedia.org/wiki/Box-Plot" class="uri">https://de.wikipedia.org/wiki/Box-Plot</a>).</p>
 <p>Als letztes bleibt uns noch die Kombination von <strong>zwei diskreten</strong> Variablen.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="plots.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x =</span> df_regio<span class="sc">$</span>Region,</span>
-<span id="cb6-2"><a href="plots.html#cb6-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">y =</span> df_regio<span class="sc">$</span>Durchschnittsalter_cat)</span></code></pre></div>
+<div class="sourceCode" id="cb215"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb215-1"><a href="plots.html#cb215-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x =</span> df_regio<span class="sc">$</span>Region,</span>
+<span id="cb215-2"><a href="plots.html#cb215-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">y =</span> df_regio<span class="sc">$</span>Durchschnittsalter_cat)</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/Mosaikplot-1.png" width="\textwidth" />
 Bei dem erzeugten <strong>Mosaikplot</strong> entspricht die Fläche den Anteilswerten, weshalb auch an der rechten y-Achse die Prozentwert abgetragen sind. Auffällig ist hier zum Beispiel, dass in den neuen Bundesländern anteilig viel mehr Personen in die untere Durchschnittsalterkategorie fallen als bei den alten Bundesländern (rund 70% der Personen).</p>
 <p>Plots, welche mit der Funktion <code>plot()</code> erstellt wurden, lassen sich mit verschiedenen Parametern anpassen.</p>
 <p>Ein Beispiel:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="plots.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x =</span> df_regio<span class="sc">$</span>Europawahl_Beteiligung_percent, </span>
-<span id="cb7-2"><a href="plots.html#cb7-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">y =</span> df_regio<span class="sc">$</span>Europawahl_AFD_percent,</span>
-<span id="cb7-3"><a href="plots.html#cb7-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Wahlstimmen für die AfD in Abhängigkeit der Wahlbeteiligung&quot;</span>,</span>
-<span id="cb7-4"><a href="plots.html#cb7-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Wahlbeteiligung (in Prozent)&quot;</span>, </span>
-<span id="cb7-5"><a href="plots.html#cb7-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">&quot;Wahlstimmen für die AfD (in Prozent)&quot;</span>,</span>
-<span id="cb7-6"><a href="plots.html#cb7-6" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">50</span>,<span class="dv">70</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">30</span>))</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-3-1.png" width="\textwidth" /></p>
+<div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb216-1"><a href="plots.html#cb216-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x =</span> df_regio<span class="sc">$</span>Europawahl_Beteiligung_percent, </span>
+<span id="cb216-2"><a href="plots.html#cb216-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">y =</span> df_regio<span class="sc">$</span>Europawahl_AFD_percent,</span>
+<span id="cb216-3"><a href="plots.html#cb216-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Wahlstimmen für die AfD in Abhängigkeit der Wahlbeteiligung&quot;</span>,</span>
+<span id="cb216-4"><a href="plots.html#cb216-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Wahlbeteiligung (in Prozent)&quot;</span>, </span>
+<span id="cb216-5"><a href="plots.html#cb216-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">&quot;Wahlstimmen für die AfD (in Prozent)&quot;</span>,</span>
+<span id="cb216-6"><a href="plots.html#cb216-6" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">50</span>,<span class="dv">70</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">30</span>))</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-115-1.png" width="\textwidth" /></p>
 <p>Mit anderen Base R Funktionen kann auch ein bestimmter Typ von Plot erzwungen werden.</p>
 <table>
 <thead>
@@ -425,17 +434,17 @@ Bei dem erzeugten <strong>Mosaikplot</strong> entspricht die Fläche den Anteils
 <li><p>Mit <code>dev.off()</code> werden die Grafiken in die PDF-Datei geschrieben.</p></li>
 </ol>
 <p><strong>Beispiel:</strong></p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="plots.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># PDF-Device öffnen</span></span>
-<span id="cb8-2"><a href="plots.html#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">pdf</span>(<span class="at">file =</span> <span class="st">&quot;plots/erste_Grafik.pdf&quot;</span>)</span>
-<span id="cb8-3"><a href="plots.html#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-4"><a href="plots.html#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Plots ausführen</span></span>
-<span id="cb8-5"><a href="plots.html#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x =</span> df_regio<span class="sc">$</span>Europawahl_Beteiligung_percent,</span>
-<span id="cb8-6"><a href="plots.html#cb8-6" aria-hidden="true" tabindex="-1"></a>     <span class="at">y =</span> df_regio<span class="sc">$</span>Europawahl_AFD_percent)</span>
-<span id="cb8-7"><a href="plots.html#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x =</span> df_regio<span class="sc">$</span>Region,</span>
-<span id="cb8-8"><a href="plots.html#cb8-8" aria-hidden="true" tabindex="-1"></a>     <span class="at">y =</span> df_regio<span class="sc">$</span>Durchschnittsalter_cat)</span>
-<span id="cb8-9"><a href="plots.html#cb8-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-10"><a href="plots.html#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="co"># PDF-Device schließen</span></span>
-<span id="cb8-11"><a href="plots.html#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb217"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb217-1"><a href="plots.html#cb217-1" aria-hidden="true" tabindex="-1"></a><span class="co"># PDF-Device öffnen</span></span>
+<span id="cb217-2"><a href="plots.html#cb217-2" aria-hidden="true" tabindex="-1"></a><span class="fu">pdf</span>(<span class="at">file =</span> <span class="st">&quot;plots/erste_Grafik.pdf&quot;</span>)</span>
+<span id="cb217-3"><a href="plots.html#cb217-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb217-4"><a href="plots.html#cb217-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Plots ausführen</span></span>
+<span id="cb217-5"><a href="plots.html#cb217-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x =</span> df_regio<span class="sc">$</span>Europawahl_Beteiligung_percent,</span>
+<span id="cb217-6"><a href="plots.html#cb217-6" aria-hidden="true" tabindex="-1"></a>     <span class="at">y =</span> df_regio<span class="sc">$</span>Europawahl_AFD_percent)</span>
+<span id="cb217-7"><a href="plots.html#cb217-7" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x =</span> df_regio<span class="sc">$</span>Region,</span>
+<span id="cb217-8"><a href="plots.html#cb217-8" aria-hidden="true" tabindex="-1"></a>     <span class="at">y =</span> df_regio<span class="sc">$</span>Durchschnittsalter_cat)</span>
+<span id="cb217-9"><a href="plots.html#cb217-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb217-10"><a href="plots.html#cb217-10" aria-hidden="true" tabindex="-1"></a><span class="co"># PDF-Device schließen</span></span>
+<span id="cb217-11"><a href="plots.html#cb217-11" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code></pre></div>
 <p>Nun sollte bei euch im Verzeichnis <code>plots/</code> eine PDF-Datei liegen, welche die beiden ausgeführten Plots beinhaltet.</p>
 </div>
 </div>
@@ -446,7 +455,7 @@ Bei dem erzeugten <strong>Mosaikplot</strong> entspricht die Fläche den Anteils
 <p><code>GGPlot2</code> ist ein mächtiges Grafik Package, um mit mittlerem
 Aufwand sehr ansprechende Plots zu produzieren.</p>
 <p>Die Logik des Aufbaus von Grafiken lehnt sich an die Ideen von Leland Wilkinson (<strong>The Grammar of Graphics</strong>) an.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-6"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-118"></span>
 <img src="resources/gglayers.png" alt="Quelle: http://r.qcbs.ca/workshop03/book-en/grammar-of-graphics-gg-basics.html" width="50%" />
 <p class="caption">
 Abb. 9.1: Quelle: <a href="http://r.qcbs.ca/workshop03/book-en/grammar-of-graphics-gg-basics.html" class="uri">http://r.qcbs.ca/workshop03/book-en/grammar-of-graphics-gg-basics.html</a>
@@ -458,15 +467,15 @@ Abb. 9.1: Quelle: <a href="http://r.qcbs.ca/workshop03/book-en/grammar-of-graphi
 <p>Zunächst übergeben wir den ersten “Layer” der Grafik: die <strong>Daten</strong>.</p>
 <p>Es passiert augenscheinlich noch nichts. Tatsächlich werden aber die Daten
 bereits hinterlegt.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="plots.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> df_regio)</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-7-1.png" width="\textwidth" /></p>
+<div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb218-1"><a href="plots.html#cb218-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> df_regio)</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-119-1.png" width="\textwidth" /></p>
 </div>
 <div id="wichtiger-hinweis" class="section level3 hasAnchor" number="9.2.2">
 <h3><span class="header-section-number">9.2.2</span> Wichtiger Hinweis!<a href="plots.html#wichtiger-hinweis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Alternativ können die Daten an <code>ggplot()</code> auch gepiped werden:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="plots.html#cb10-1" aria-hidden="true" tabindex="-1"></a>df_regio <span class="sc">%&gt;%</span> </span>
-<span id="cb10-2"><a href="plots.html#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>()</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-8-1.png" width="\textwidth" /></p>
+<div class="sourceCode" id="cb219"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb219-1"><a href="plots.html#cb219-1" aria-hidden="true" tabindex="-1"></a>df_regio <span class="sc">%&gt;%</span> </span>
+<span id="cb219-2"><a href="plots.html#cb219-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>()</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-120-1.png" width="\textwidth" /></p>
 <p>Diese Vorgehensweise macht euren Code noch übersichtlicher und ihr überfüllt
 nicht euer Global Environment.</p>
 </div>
@@ -474,38 +483,38 @@ nicht euer Global Environment.</p>
 <h3><span class="header-section-number">9.2.3</span> Aesthetics<a href="plots.html#aesthetics" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Im nächsten Schritt werden über das sogenannte <em>Mapping</em> die <strong>Aesthetics</strong>
 festgelegt. Hierbei wird definiert, welche Merkmale der Daten worauf projiziert werden sollen (z.B. Achsen, Farbe, Größe, etc.).</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="plots.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> df_regio,</span>
-<span id="cb11-2"><a href="plots.html#cb11-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Europawahl_Beteiligung_percent,</span>
-<span id="cb11-3"><a href="plots.html#cb11-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">y =</span> Europawahl_AFD_percent))</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-9-1.png" width="\textwidth" /></p>
+<div class="sourceCode" id="cb220"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb220-1"><a href="plots.html#cb220-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> df_regio,</span>
+<span id="cb220-2"><a href="plots.html#cb220-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Europawahl_Beteiligung_percent,</span>
+<span id="cb220-3"><a href="plots.html#cb220-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">y =</span> Europawahl_AFD_percent))</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-121-1.png" width="\textwidth" /></p>
 </div>
 <div id="geome" class="section level3 hasAnchor" number="9.2.4">
 <h3><span class="header-section-number">9.2.4</span> Geome<a href="plots.html#geome" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Wie die Daten in Form der Aesthetics nun konkret dargestellt (besser: repräsentiert) werden sollen, wird über sogenannte “Geome” bestimmt. Die Geome werden mit <code>+</code> an die Basislayer gebunden. Damit wird deutlich, dass es sich um <em>zusätzliche</em> Layer handelt. Außerdem wird klar, dass die Reihenfolge der Geome relevant ist, da später hinzugefügte Geome die vorher hinzugefügten überdecken können.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="plots.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> df_regio,</span>
-<span id="cb12-2"><a href="plots.html#cb12-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Europawahl_Beteiligung_percent,</span>
-<span id="cb12-3"><a href="plots.html#cb12-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">y =</span> Europawahl_AFD_percent)) <span class="sc">+</span></span>
-<span id="cb12-4"><a href="plots.html#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb12-5"><a href="plots.html#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_rug</span>()</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-10-1.png" width="\textwidth" /></p>
+<div class="sourceCode" id="cb221"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb221-1"><a href="plots.html#cb221-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> df_regio,</span>
+<span id="cb221-2"><a href="plots.html#cb221-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Europawahl_Beteiligung_percent,</span>
+<span id="cb221-3"><a href="plots.html#cb221-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">y =</span> Europawahl_AFD_percent)) <span class="sc">+</span></span>
+<span id="cb221-4"><a href="plots.html#cb221-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb221-5"><a href="plots.html#cb221-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_rug</span>()</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-122-1.png" width="\textwidth" /></p>
 <p>Ein kleiner Clou: manchmal sollen die Aesthetics (z.B. die Farbe) nur für ein
 bestimmtes Geom angepasst werden. Wir können dadurch eine zusätzliche Abbildungsebene (mapping) zu dem bereits definierten Geom hinzufügen, ohne dies “global” zu tun.</p>
 <p>Beispiel: Die Farbe der Punkte soll sich nach alten und neuen Bundesländern unterscheiden, aber nur für die Punkte, nicht für die Randverteilung.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="plots.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> df_regio,</span>
-<span id="cb13-2"><a href="plots.html#cb13-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Europawahl_Beteiligung_percent,</span>
-<span id="cb13-3"><a href="plots.html#cb13-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">y =</span> Europawahl_AFD_percent)) <span class="sc">+</span></span>
-<span id="cb13-4"><a href="plots.html#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">color =</span> Region)) <span class="sc">+</span></span>
-<span id="cb13-5"><a href="plots.html#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_rug</span>()</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-11-1.png" width="\textwidth" /></p>
+<div class="sourceCode" id="cb222"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb222-1"><a href="plots.html#cb222-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> df_regio,</span>
+<span id="cb222-2"><a href="plots.html#cb222-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Europawahl_Beteiligung_percent,</span>
+<span id="cb222-3"><a href="plots.html#cb222-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">y =</span> Europawahl_AFD_percent)) <span class="sc">+</span></span>
+<span id="cb222-4"><a href="plots.html#cb222-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">color =</span> Region)) <span class="sc">+</span></span>
+<span id="cb222-5"><a href="plots.html#cb222-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_rug</span>()</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-123-1.png" width="\textwidth" /></p>
 <p>Gleichzeitig können auch statische ästhetische Eigenschaften festgelegt werden, die nicht an Daten geknüpft sind. Die Randverteilung im Plot soll lila (<code>color</code>) dargestellt werden und die Punkte sollen durchsichtiger (<code>alpha</code>) und größer (<code>size</code>) werden. Dazu übergeben wir den Geom <code>geom_point()</code> die entsprechenden Argumente:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="plots.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> df_regio,</span>
-<span id="cb14-2"><a href="plots.html#cb14-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Europawahl_Beteiligung_percent,</span>
-<span id="cb14-3"><a href="plots.html#cb14-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">y =</span> Europawahl_AFD_percent)) <span class="sc">+</span></span>
-<span id="cb14-4"><a href="plots.html#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">color =</span> Region), </span>
-<span id="cb14-5"><a href="plots.html#cb14-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">alpha =</span> <span class="fl">0.6</span>, </span>
-<span id="cb14-6"><a href="plots.html#cb14-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb14-7"><a href="plots.html#cb14-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_rug</span>(<span class="at">color =</span> <span class="st">&quot;purple&quot;</span>)</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-12-1.png" width="\textwidth" /></p>
+<div class="sourceCode" id="cb223"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb223-1"><a href="plots.html#cb223-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> df_regio,</span>
+<span id="cb223-2"><a href="plots.html#cb223-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Europawahl_Beteiligung_percent,</span>
+<span id="cb223-3"><a href="plots.html#cb223-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">y =</span> Europawahl_AFD_percent)) <span class="sc">+</span></span>
+<span id="cb223-4"><a href="plots.html#cb223-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">color =</span> Region), </span>
+<span id="cb223-5"><a href="plots.html#cb223-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">alpha =</span> <span class="fl">0.6</span>, </span>
+<span id="cb223-6"><a href="plots.html#cb223-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb223-7"><a href="plots.html#cb223-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_rug</span>(<span class="at">color =</span> <span class="st">&quot;purple&quot;</span>)</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-124-1.png" width="\textwidth" /></p>
 <p>Es existieren eine Vielzahl von Geomen. Hier eine kleine Übersicht über die wichtigsten:</p>
 <table>
 <thead>
@@ -557,42 +566,42 @@ bestimmtes Geom angepasst werden. Wir können dadurch eine zusätzliche Abbildun
 </summary>
 <p>Weitere Eigenschaften lassen sich über <code>theme()</code> manipulieren. Diese Vorgehensweise ist aber deutlich komplizierter und erfordert ein wenig Erfahrung im Umgang mit diversen Online-Suchmaschinen ;-).</p>
 </details>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="plots.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggthemes)</span>
-<span id="cb15-2"><a href="plots.html#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-3"><a href="plots.html#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> df_regio,</span>
-<span id="cb15-4"><a href="plots.html#cb15-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Europawahl_Beteiligung_percent,</span>
-<span id="cb15-5"><a href="plots.html#cb15-5" aria-hidden="true" tabindex="-1"></a>                     <span class="at">y =</span> Europawahl_AFD_percent)) <span class="sc">+</span></span>
-<span id="cb15-6"><a href="plots.html#cb15-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">color =</span> Region)) <span class="sc">+</span></span>
-<span id="cb15-7"><a href="plots.html#cb15-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_rug</span>() <span class="sc">+</span></span>
-<span id="cb15-8"><a href="plots.html#cb15-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Wahlerfolg der AfD in Abhängigkeit von der Wahlbeteiligung&quot;</span>,</span>
-<span id="cb15-9"><a href="plots.html#cb15-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&quot;Europawahl 2019, Alle Angaben in %&quot;</span>,</span>
-<span id="cb15-10"><a href="plots.html#cb15-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Wahlbeteiligung&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Wählerstimmen der AfD&quot;</span>,</span>
-<span id="cb15-11"><a href="plots.html#cb15-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">&quot;Bundesländer&quot;</span>) <span class="sc">+</span></span>
-<span id="cb15-12"><a href="plots.html#cb15-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_economist</span>()</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-13-1.png" width="\textwidth" /></p>
+<div class="sourceCode" id="cb224"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb224-1"><a href="plots.html#cb224-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggthemes)</span>
+<span id="cb224-2"><a href="plots.html#cb224-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb224-3"><a href="plots.html#cb224-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> df_regio,</span>
+<span id="cb224-4"><a href="plots.html#cb224-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Europawahl_Beteiligung_percent,</span>
+<span id="cb224-5"><a href="plots.html#cb224-5" aria-hidden="true" tabindex="-1"></a>                     <span class="at">y =</span> Europawahl_AFD_percent)) <span class="sc">+</span></span>
+<span id="cb224-6"><a href="plots.html#cb224-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">color =</span> Region)) <span class="sc">+</span></span>
+<span id="cb224-7"><a href="plots.html#cb224-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_rug</span>() <span class="sc">+</span></span>
+<span id="cb224-8"><a href="plots.html#cb224-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Wahlerfolg der AfD in Abhängigkeit von der Wahlbeteiligung&quot;</span>,</span>
+<span id="cb224-9"><a href="plots.html#cb224-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&quot;Europawahl 2019, Alle Angaben in %&quot;</span>,</span>
+<span id="cb224-10"><a href="plots.html#cb224-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Wahlbeteiligung&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Wählerstimmen der AfD&quot;</span>,</span>
+<span id="cb224-11"><a href="plots.html#cb224-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">&quot;Bundesländer&quot;</span>) <span class="sc">+</span></span>
+<span id="cb224-12"><a href="plots.html#cb224-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_economist</span>()</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-125-1.png" width="\textwidth" /></p>
 </div>
 <div id="plots-als-objekte" class="section level3 hasAnchor" number="9.2.6">
 <h3><span class="header-section-number">9.2.6</span> Plots als Objekte<a href="plots.html#plots-als-objekte" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>GGPlot Plots sind in R nichts anderes als umfangreiche Listen vom Typ “ggplot”.</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="plots.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> df_regio) <span class="sc">%&gt;%</span> <span class="fu">class</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb225"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb225-1"><a href="plots.html#cb225-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> df_regio) <span class="sc">%&gt;%</span> <span class="fu">class</span>()</span></code></pre></div>
 <pre><code>## [1] &quot;gg&quot;     &quot;ggplot&quot;</code></pre>
 <p>Daher können wir auch Plots an Namen binden und im Nachhinein entsprechend aufrufen:</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="plots.html#cb18-1" aria-hidden="true" tabindex="-1"></a>base_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> df_regio,</span>
-<span id="cb18-2"><a href="plots.html#cb18-2" aria-hidden="true" tabindex="-1"></a>                    <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Europawahl_Beteiligung_percent,</span>
-<span id="cb18-3"><a href="plots.html#cb18-3" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">y =</span> Europawahl_AFD_percent))</span></code></pre></div>
+<div class="sourceCode" id="cb227"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb227-1"><a href="plots.html#cb227-1" aria-hidden="true" tabindex="-1"></a>base_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> df_regio,</span>
+<span id="cb227-2"><a href="plots.html#cb227-2" aria-hidden="true" tabindex="-1"></a>                    <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Europawahl_Beteiligung_percent,</span>
+<span id="cb227-3"><a href="plots.html#cb227-3" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">y =</span> Europawahl_AFD_percent))</span></code></pre></div>
 <p>Sollen viele Plots nacheinander “durchprobiert” werden, bietet sich diese
 Vorgehensweise entsprechend an:</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="plots.html#cb19-1" aria-hidden="true" tabindex="-1"></a>base_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> df_regio,</span>
-<span id="cb19-2"><a href="plots.html#cb19-2" aria-hidden="true" tabindex="-1"></a>                    <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Europawahl_Beteiligung_percent,</span>
-<span id="cb19-3"><a href="plots.html#cb19-3" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">y =</span> Europawahl_AFD_percent</span>
-<span id="cb19-4"><a href="plots.html#cb19-4" aria-hidden="true" tabindex="-1"></a>                                  )</span>
-<span id="cb19-5"><a href="plots.html#cb19-5" aria-hidden="true" tabindex="-1"></a>                    )</span></code></pre></div>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="plots.html#cb20-1" aria-hidden="true" tabindex="-1"></a>base_plot <span class="sc">+</span></span>
-<span id="cb20-2"><a href="plots.html#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-17-1.png" width="\textwidth" /></p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="plots.html#cb21-1" aria-hidden="true" tabindex="-1"></a>base_plot <span class="sc">+</span></span>
-<span id="cb21-2"><a href="plots.html#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>)</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-18-1.png" width="\textwidth" /></p>
+<div class="sourceCode" id="cb228"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb228-1"><a href="plots.html#cb228-1" aria-hidden="true" tabindex="-1"></a>base_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> df_regio,</span>
+<span id="cb228-2"><a href="plots.html#cb228-2" aria-hidden="true" tabindex="-1"></a>                    <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Europawahl_Beteiligung_percent,</span>
+<span id="cb228-3"><a href="plots.html#cb228-3" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">y =</span> Europawahl_AFD_percent</span>
+<span id="cb228-4"><a href="plots.html#cb228-4" aria-hidden="true" tabindex="-1"></a>                                  )</span>
+<span id="cb228-5"><a href="plots.html#cb228-5" aria-hidden="true" tabindex="-1"></a>                    )</span></code></pre></div>
+<div class="sourceCode" id="cb229"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb229-1"><a href="plots.html#cb229-1" aria-hidden="true" tabindex="-1"></a>base_plot <span class="sc">+</span></span>
+<span id="cb229-2"><a href="plots.html#cb229-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-129-1.png" width="\textwidth" /></p>
+<div class="sourceCode" id="cb230"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb230-1"><a href="plots.html#cb230-1" aria-hidden="true" tabindex="-1"></a>base_plot <span class="sc">+</span></span>
+<span id="cb230-2"><a href="plots.html#cb230-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>)</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-130-1.png" width="\textwidth" /></p>
 </div>
 <div id="facets" class="section level3 hasAnchor" number="9.2.7">
 <h3><span class="header-section-number">9.2.7</span> Facets<a href="plots.html#facets" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -605,31 +614,31 @@ Vorgehensweise entsprechend an:</p>
 <p>Die an <code>facet_grid()</code> übergebenen Variablen müssen erst als Variable expliziert
 werden. Dies erfolgt mit <code>vars()</code>.</p>
 </details>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="plots.html#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> df_regio,</span>
-<span id="cb22-2"><a href="plots.html#cb22-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Europawahl_Beteiligung_percent,</span>
-<span id="cb22-3"><a href="plots.html#cb22-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">y =</span> Europawahl_AFD_percent)) <span class="sc">+</span></span>
-<span id="cb22-4"><a href="plots.html#cb22-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb22-5"><a href="plots.html#cb22-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>,</span>
-<span id="cb22-6"><a href="plots.html#cb22-6" aria-hidden="true" tabindex="-1"></a>              <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb22-7"><a href="plots.html#cb22-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="at">cols =</span> <span class="fu">vars</span>(Region))</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-19-1.png" width="\textwidth" /></p>
+<div class="sourceCode" id="cb231"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb231-1"><a href="plots.html#cb231-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> df_regio,</span>
+<span id="cb231-2"><a href="plots.html#cb231-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Europawahl_Beteiligung_percent,</span>
+<span id="cb231-3"><a href="plots.html#cb231-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">y =</span> Europawahl_AFD_percent)) <span class="sc">+</span></span>
+<span id="cb231-4"><a href="plots.html#cb231-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb231-5"><a href="plots.html#cb231-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>,</span>
+<span id="cb231-6"><a href="plots.html#cb231-6" aria-hidden="true" tabindex="-1"></a>              <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb231-7"><a href="plots.html#cb231-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="at">cols =</span> <span class="fu">vars</span>(Region))</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-131-1.png" width="\textwidth" /></p>
 </div>
 <div id="speichern-von-grafiken-mit-ggsave" class="section level3 hasAnchor" number="9.2.8">
 <h3><span class="header-section-number">9.2.8</span> Speichern von Grafiken mit GGSave<a href="plots.html#speichern-von-grafiken-mit-ggsave" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Auch das Speichern ist mit <code>GGPlot</code> komfortabler.</p>
 <p>Hierzu wurde die Funktion <code>ggsave()</code> entwickelt. Vor dem Speichern muss die Grafik als Objekt an einen Namen gebunden werden (oder entsprechend gepiped werden). Im Anschluss können wir die Grafik an die Funktion übergeben. Die Endung des Files gibt dabei das Dateiformat vor, in dem die Grafik gespeichert werden soll. Außerdem können wir in der Funktion weitere Argumente wie die gewünschte Größe des Bildes festlegen.</p>
 <p>Am Beispiel:</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="plots.html#cb23-1" aria-hidden="true" tabindex="-1"></a>plot_save <span class="ot">&lt;-</span> </span>
-<span id="cb23-2"><a href="plots.html#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="at">data =</span> df_regio,</span>
-<span id="cb23-3"><a href="plots.html#cb23-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Europawahl_Beteiligung_percent,</span>
-<span id="cb23-4"><a href="plots.html#cb23-4" aria-hidden="true" tabindex="-1"></a>                       <span class="at">y =</span> Europawahl_AFD_percent)) <span class="sc">+</span></span>
-<span id="cb23-5"><a href="plots.html#cb23-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() </span>
-<span id="cb23-6"><a href="plots.html#cb23-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-7"><a href="plots.html#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">plot =</span> plot_save,</span>
-<span id="cb23-8"><a href="plots.html#cb23-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">filename =</span> <span class="st">&quot;plots/plot.pdf&quot;</span>,</span>
-<span id="cb23-9"><a href="plots.html#cb23-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">height =</span> <span class="dv">7</span>,</span>
-<span id="cb23-10"><a href="plots.html#cb23-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">width =</span> <span class="dv">8</span>,</span>
-<span id="cb23-11"><a href="plots.html#cb23-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">units =</span> <span class="st">&quot;in&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb232"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb232-1"><a href="plots.html#cb232-1" aria-hidden="true" tabindex="-1"></a>plot_save <span class="ot">&lt;-</span> </span>
+<span id="cb232-2"><a href="plots.html#cb232-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="at">data =</span> df_regio,</span>
+<span id="cb232-3"><a href="plots.html#cb232-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Europawahl_Beteiligung_percent,</span>
+<span id="cb232-4"><a href="plots.html#cb232-4" aria-hidden="true" tabindex="-1"></a>                       <span class="at">y =</span> Europawahl_AFD_percent)) <span class="sc">+</span></span>
+<span id="cb232-5"><a href="plots.html#cb232-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() </span>
+<span id="cb232-6"><a href="plots.html#cb232-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb232-7"><a href="plots.html#cb232-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">plot =</span> plot_save,</span>
+<span id="cb232-8"><a href="plots.html#cb232-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">filename =</span> <span class="st">&quot;plots/plot.pdf&quot;</span>,</span>
+<span id="cb232-9"><a href="plots.html#cb232-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">height =</span> <span class="dv">7</span>,</span>
+<span id="cb232-10"><a href="plots.html#cb232-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">width =</span> <span class="dv">8</span>,</span>
+<span id="cb232-11"><a href="plots.html#cb232-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">units =</span> <span class="st">&quot;in&quot;</span>)</span></code></pre></div>
 </div>
 <div id="erweiterungen" class="section level3 hasAnchor" number="9.2.9">
 <h3><span class="header-section-number">9.2.9</span> Erweiterungen<a href="plots.html#erweiterungen" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -638,39 +647,36 @@ ihr <a href="https://exts.ggplot2.tidyverse.org/gallery/">hier</a>.</p>
 <p>Wir wollen uns noch kurz mit der Erweiterung <strong>GGForce</strong> und <strong>Viridis</strong> beschäftigen. <a href="https://ggforce.data-imaginist.com">Hier</a> findet ihr
 ausführliche Informationen zu GGForce.</p>
 <p>Zu Vorbereitung werden die benötigten Packages geladen:</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="plots.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(needs)</span>
-<span id="cb24-2"><a href="plots.html#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">needs</span>(gapminder,</span>
-<span id="cb24-3"><a href="plots.html#cb24-3" aria-hidden="true" tabindex="-1"></a>      ggforce,</span>
-<span id="cb24-4"><a href="plots.html#cb24-4" aria-hidden="true" tabindex="-1"></a>      viridis)</span>
-<span id="cb24-5"><a href="plots.html#cb24-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-6"><a href="plots.html#cb24-6" aria-hidden="true" tabindex="-1"></a>df_countries <span class="ot">&lt;-</span> gapminder</span></code></pre></div>
+<div class="sourceCode" id="cb233"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb233-1"><a href="plots.html#cb233-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gapminder)</span>
+<span id="cb233-2"><a href="plots.html#cb233-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggforce)</span>
+<span id="cb233-3"><a href="plots.html#cb233-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(viridis)</span></code></pre></div>
 <div id="ggforce" class="section level4 hasAnchor" number="9.2.9.1">
 <h4><span class="header-section-number">9.2.9.1</span> GGForce<a href="plots.html#ggforce" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Bei Darstellung mit extrem ungleich verteilten Daten hilft und das Package GGForce. Schauen wir uns zum Beispiel folgenden Plot an:</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="plots.html#cb25-1" aria-hidden="true" tabindex="-1"></a>gapminder <span class="sc">%&gt;%</span> </span>
-<span id="cb25-2"><a href="plots.html#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(country <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;Burundi&quot;</span>, <span class="st">&quot;Germany&quot;</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb25-3"><a href="plots.html#cb25-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> lifeExp, <span class="at">y =</span> gdpPercap, <span class="at">color =</span> country)) <span class="sc">+</span> </span>
-<span id="cb25-4"><a href="plots.html#cb25-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.8</span>, <span class="at">shape =</span> <span class="dv">16</span>, <span class="at">size =</span> <span class="fl">1.7</span>)</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-22-1.png" width="\textwidth" /></p>
+<div class="sourceCode" id="cb234"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb234-1"><a href="plots.html#cb234-1" aria-hidden="true" tabindex="-1"></a>gapminder <span class="sc">%&gt;%</span> </span>
+<span id="cb234-2"><a href="plots.html#cb234-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(country <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;Burundi&quot;</span>, <span class="st">&quot;Germany&quot;</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb234-3"><a href="plots.html#cb234-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> lifeExp, <span class="at">y =</span> gdpPercap, <span class="at">color =</span> country)) <span class="sc">+</span> </span>
+<span id="cb234-4"><a href="plots.html#cb234-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.8</span>, <span class="at">shape =</span> <span class="dv">16</span>, <span class="at">size =</span> <span class="fl">1.7</span>)</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-134-1.png" width="\textwidth" /></p>
 <p>Das Problem, welches dabei augenscheinlich wird, ist, dass die Werte für Burundi am Boden der Grafik “kleben” und somit praktisch nicht interpretierbar sind.</p>
 <p>GGForce bietet uns eine bessere Möglichkeit der Darstellung:</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="plots.html#cb26-1" aria-hidden="true" tabindex="-1"></a>gapminder <span class="sc">%&gt;%</span> </span>
-<span id="cb26-2"><a href="plots.html#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(country <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;Burundi&quot;</span>,<span class="st">&quot;Germany&quot;</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb26-3"><a href="plots.html#cb26-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> lifeExp, <span class="at">y =</span> gdpPercap, <span class="at">color =</span> country)) <span class="sc">+</span> </span>
-<span id="cb26-4"><a href="plots.html#cb26-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.8</span>, <span class="at">shape =</span> <span class="dv">16</span>, <span class="at">size =</span> <span class="fl">1.7</span>) <span class="sc">+</span></span>
-<span id="cb26-5"><a href="plots.html#cb26-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_zoom</span>(<span class="at">xy =</span> country <span class="sc">==</span> <span class="st">&quot;Burundi&quot;</span>)</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-23-1.png" width="\textwidth" /></p>
+<div class="sourceCode" id="cb235"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb235-1"><a href="plots.html#cb235-1" aria-hidden="true" tabindex="-1"></a>gapminder <span class="sc">%&gt;%</span> </span>
+<span id="cb235-2"><a href="plots.html#cb235-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(country <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;Burundi&quot;</span>,<span class="st">&quot;Germany&quot;</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb235-3"><a href="plots.html#cb235-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> lifeExp, <span class="at">y =</span> gdpPercap, <span class="at">color =</span> country)) <span class="sc">+</span> </span>
+<span id="cb235-4"><a href="plots.html#cb235-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.8</span>, <span class="at">shape =</span> <span class="dv">16</span>, <span class="at">size =</span> <span class="fl">1.7</span>) <span class="sc">+</span></span>
+<span id="cb235-5"><a href="plots.html#cb235-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_zoom</span>(<span class="at">xy =</span> country <span class="sc">==</span> <span class="st">&quot;Burundi&quot;</span>)</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-135-1.png" width="\textwidth" /></p>
 </div>
 <div id="viridis" class="section level4 hasAnchor" number="9.2.9.2">
 <h4><span class="header-section-number">9.2.9.2</span> Viridis<a href="plots.html#viridis" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Für viele nicht sichtbar: die Standardfarben von GGPlot sind nicht geeignet für Personen mit Farbenblindheit. Hier hilft das Package <code>viridis</code>.</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="plots.html#cb27-1" aria-hidden="true" tabindex="-1"></a>gapminder <span class="sc">%&gt;%</span> </span>
-<span id="cb27-2"><a href="plots.html#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2007</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb27-3"><a href="plots.html#cb27-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> gdpPercap, <span class="at">y =</span> lifeExp, </span>
-<span id="cb27-4"><a href="plots.html#cb27-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">size =</span> pop, <span class="at">color =</span> continent)) <span class="sc">+</span> </span>
-<span id="cb27-5"><a href="plots.html#cb27-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
-<span id="cb27-6"><a href="plots.html#cb27-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_viridis_d</span>() </span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-24-1.png" width="\textwidth" /></p>
+<div class="sourceCode" id="cb236"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb236-1"><a href="plots.html#cb236-1" aria-hidden="true" tabindex="-1"></a>gapminder <span class="sc">%&gt;%</span> </span>
+<span id="cb236-2"><a href="plots.html#cb236-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2007</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb236-3"><a href="plots.html#cb236-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> gdpPercap, <span class="at">y =</span> lifeExp, </span>
+<span id="cb236-4"><a href="plots.html#cb236-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">size =</span> pop, <span class="at">color =</span> continent)) <span class="sc">+</span> </span>
+<span id="cb236-5"><a href="plots.html#cb236-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb236-6"><a href="plots.html#cb236-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_viridis_d</span>() </span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-136-1.png" width="\textwidth" /></p>
 <p>Die Viridis Color-Scales gibt es sowohl für diskrete Daten (<code>scale_color_viridis_d()</code>) als auch für stetige (continuous) Daten (<code>scale_color_viridis_c()</code>.</p>
 </div>
 </div>
@@ -681,28 +687,28 @@ ausführliche Informationen zu GGForce.</p>
 <p><strong>Viel Spaß beim Ausprobieren! :-)</strong></p>
 <div id="code-für-die-einstiegs-grafik" class="section level4 hasAnchor" number="9.2.10.1">
 <h4><span class="header-section-number">9.2.10.1</span> Code für die Einstiegs-Grafik<a href="plots.html#code-für-die-einstiegs-grafik" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="plots.html#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">readRDS</span>(<span class="at">file =</span> <span class="st">&quot;data/regio.rds&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb28-2"><a href="plots.html#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Region =</span> <span class="fu">if_else</span>(<span class="at">condition =</span> Regio_Code <span class="sc">&lt;</span> <span class="dv">11000</span>,</span>
-<span id="cb28-3"><a href="plots.html#cb28-3" aria-hidden="true" tabindex="-1"></a>                          <span class="at">true =</span> <span class="st">&quot;Alte Bundesländer&quot;</span>,</span>
-<span id="cb28-4"><a href="plots.html#cb28-4" aria-hidden="true" tabindex="-1"></a>                          <span class="at">false =</span><span class="st">&quot;Neue Bundesländer&quot;</span>)</span>
-<span id="cb28-5"><a href="plots.html#cb28-5" aria-hidden="true" tabindex="-1"></a>         ) <span class="sc">%&gt;%</span> </span>
-<span id="cb28-6"><a href="plots.html#cb28-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Europawahl_Beteiligung_percent,</span>
-<span id="cb28-7"><a href="plots.html#cb28-7" aria-hidden="true" tabindex="-1"></a>                       <span class="at">y =</span> Europawahl_AFD_percent,</span>
-<span id="cb28-8"><a href="plots.html#cb28-8" aria-hidden="true" tabindex="-1"></a>                       <span class="at">color =</span> Region</span>
-<span id="cb28-9"><a href="plots.html#cb28-9" aria-hidden="true" tabindex="-1"></a>                       )</span>
-<span id="cb28-10"><a href="plots.html#cb28-10" aria-hidden="true" tabindex="-1"></a>         ) <span class="sc">+</span></span>
-<span id="cb28-11"><a href="plots.html#cb28-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">size =</span> Durchschnittsalter),</span>
-<span id="cb28-12"><a href="plots.html#cb28-12" aria-hidden="true" tabindex="-1"></a>             <span class="at">alpha =</span> <span class="fl">0.4</span>) <span class="sc">+</span></span>
-<span id="cb28-13"><a href="plots.html#cb28-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>,</span>
-<span id="cb28-14"><a href="plots.html#cb28-14" aria-hidden="true" tabindex="-1"></a>              <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb28-15"><a href="plots.html#cb28-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_rug</span>() <span class="sc">+</span></span>
-<span id="cb28-16"><a href="plots.html#cb28-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Wahlbeteiligung (in Prozent)&quot;</span>,</span>
-<span id="cb28-17"><a href="plots.html#cb28-17" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Wahlstimmen für die AfD (in Prozent)&quot;</span>,</span>
-<span id="cb28-18"><a href="plots.html#cb28-18" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Wahlerfolg der AfD in Abhängigkeit von der Wahlbeteiligung&quot;</span>,</span>
-<span id="cb28-19"><a href="plots.html#cb28-19" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&quot;Europawahl 2019&quot;</span>) <span class="sc">+</span></span>
-<span id="cb28-20"><a href="plots.html#cb28-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_viridis_d</span>(<span class="at">option =</span> <span class="st">&quot;D&quot;</span>) <span class="sc">+</span></span>
-<span id="cb28-21"><a href="plots.html#cb28-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb28-22"><a href="plots.html#cb28-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">family =</span> <span class="st">&quot;serif&quot;</span>)) </span></code></pre></div>
+<div class="sourceCode" id="cb237"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb237-1"><a href="plots.html#cb237-1" aria-hidden="true" tabindex="-1"></a><span class="fu">readRDS</span>(<span class="at">file =</span> <span class="st">&quot;data/regio.rds&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb237-2"><a href="plots.html#cb237-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Region =</span> <span class="fu">if_else</span>(<span class="at">condition =</span> Regio_Code <span class="sc">&lt;</span> <span class="dv">11000</span>,</span>
+<span id="cb237-3"><a href="plots.html#cb237-3" aria-hidden="true" tabindex="-1"></a>                          <span class="at">true =</span> <span class="st">&quot;Alte Bundesländer&quot;</span>,</span>
+<span id="cb237-4"><a href="plots.html#cb237-4" aria-hidden="true" tabindex="-1"></a>                          <span class="at">false =</span><span class="st">&quot;Neue Bundesländer&quot;</span>)</span>
+<span id="cb237-5"><a href="plots.html#cb237-5" aria-hidden="true" tabindex="-1"></a>         ) <span class="sc">%&gt;%</span> </span>
+<span id="cb237-6"><a href="plots.html#cb237-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Europawahl_Beteiligung_percent,</span>
+<span id="cb237-7"><a href="plots.html#cb237-7" aria-hidden="true" tabindex="-1"></a>                       <span class="at">y =</span> Europawahl_AFD_percent,</span>
+<span id="cb237-8"><a href="plots.html#cb237-8" aria-hidden="true" tabindex="-1"></a>                       <span class="at">color =</span> Region</span>
+<span id="cb237-9"><a href="plots.html#cb237-9" aria-hidden="true" tabindex="-1"></a>                       )</span>
+<span id="cb237-10"><a href="plots.html#cb237-10" aria-hidden="true" tabindex="-1"></a>         ) <span class="sc">+</span></span>
+<span id="cb237-11"><a href="plots.html#cb237-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">size =</span> Durchschnittsalter),</span>
+<span id="cb237-12"><a href="plots.html#cb237-12" aria-hidden="true" tabindex="-1"></a>             <span class="at">alpha =</span> <span class="fl">0.4</span>) <span class="sc">+</span></span>
+<span id="cb237-13"><a href="plots.html#cb237-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>,</span>
+<span id="cb237-14"><a href="plots.html#cb237-14" aria-hidden="true" tabindex="-1"></a>              <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb237-15"><a href="plots.html#cb237-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_rug</span>() <span class="sc">+</span></span>
+<span id="cb237-16"><a href="plots.html#cb237-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Wahlbeteiligung (in Prozent)&quot;</span>,</span>
+<span id="cb237-17"><a href="plots.html#cb237-17" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Wahlstimmen für die AfD (in Prozent)&quot;</span>,</span>
+<span id="cb237-18"><a href="plots.html#cb237-18" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Wahlerfolg der AfD in Abhängigkeit von der Wahlbeteiligung&quot;</span>,</span>
+<span id="cb237-19"><a href="plots.html#cb237-19" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&quot;Europawahl 2019&quot;</span>) <span class="sc">+</span></span>
+<span id="cb237-20"><a href="plots.html#cb237-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_viridis_d</span>(<span class="at">option =</span> <span class="st">&quot;D&quot;</span>) <span class="sc">+</span></span>
+<span id="cb237-21"><a href="plots.html#cb237-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb237-22"><a href="plots.html#cb237-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">family =</span> <span class="st">&quot;serif&quot;</span>)) </span></code></pre></div>
 </div>
 </div>
 </div>
@@ -710,9 +716,12 @@ ausführliche Informationen zu GGForce.</p>
 <h2><span class="header-section-number">9.3</span> Prüfe dich selbst<a href="plots.html#prüfe-dich-selbst-5" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Von dieser Sitzung solltest du folgendes mitgenommen haben:</p>
 <ul class="task-list">
-<li><input type="checkbox" disabled="" checked="" />Du solltest wissen, wie die generische <code>plot()</code> Funktion in R funktioniert.</li>
-<li><input type="checkbox" disabled="" checked="" />Du solltest mindestens zwei Möglichkeiten nennen können, wie man in R Grafiken erzeugen kann.</li>
-<li><input type="checkbox" disabled="" checked="" />Du solltest verstanden haben, wie man ggplot Grafiken aufbaut. (Stichwort: Layer)</li>
+<li><input type="checkbox" disabled="" checked="" />
+Du solltest wissen, wie die generische <code>plot()</code> Funktion in R funktioniert.</li>
+<li><input type="checkbox" disabled="" checked="" />
+Du solltest mindestens zwei Möglichkeiten nennen können, wie man in R Grafiken erzeugen kann.</li>
+<li><input type="checkbox" disabled="" checked="" />
+Du solltest verstanden haben, wie man ggplot Grafiken aufbaut. (Stichwort: Layer)</li>
 </ul>
 
 </div>
@@ -778,6 +787,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

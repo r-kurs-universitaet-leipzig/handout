@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Kapitel 4 Strukturierte Datentypen | Handout für R Grundkurs</title>
   <meta name="description" content="Kapitel 4 Strukturierte Datentypen | Handout für R Grundkurs" />
-  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Kapitel 4 Strukturierte Datentypen | Handout für R Grundkurs" />
   <meta property="og:type" content="book" />
@@ -98,7 +98,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -111,7 +111,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -415,8 +415,7 @@ Abb. 4.1: Strukturierte Datentypen
 <span id="cb56-5"><a href="strukturierte-datentypen.html#cb56-5" aria-hidden="true" tabindex="-1"></a>DJ_Alter</span></code></pre></div>
 <pre><code>## [1] 34 45 28 25 20</code></pre>
 <div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="strukturierte-datentypen.html#cb58-1" aria-hidden="true" tabindex="-1"></a>DJ_Name</span></code></pre></div>
-<pre><code>## [1] &quot;DJ Puma&quot; &quot;Cabanne&quot; &quot;Molly&quot;   &quot;Echoton&quot;
-## [5] &quot;cv313&quot;</code></pre>
+<pre><code>## [1] &quot;DJ Puma&quot; &quot;Cabanne&quot; &quot;Molly&quot;   &quot;Echoton&quot; &quot;cv313&quot;</code></pre>
 <div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="strukturierte-datentypen.html#cb60-1" aria-hidden="true" tabindex="-1"></a>DJ_Vinyl</span></code></pre></div>
 <pre><code>## [1] FALSE  TRUE  TRUE FALSE FALSE</code></pre>
 <p><strong>Anmerkung:</strong> Die DJs gibt es wirklich und es lohnt sich mal reinzuhören :). Das Alter und ob die Personen mit Vinyl auflegen oder nicht, ist allerdings frei erfunden.</p>
@@ -438,8 +437,7 @@ Abb. 4.1: Strukturierte Datentypen
 <div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="strukturierte-datentypen.html#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rep</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="st">&quot;Nein!&quot;</span>,<span class="st">&quot;Doch!&quot;</span>),</span>
 <span id="cb70-2"><a href="strukturierte-datentypen.html#cb70-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">times =</span> <span class="dv">3</span></span>
 <span id="cb70-3"><a href="strukturierte-datentypen.html#cb70-3" aria-hidden="true" tabindex="-1"></a>    )</span></code></pre></div>
-<pre><code>## [1] &quot;Nein!&quot; &quot;Doch!&quot; &quot;Nein!&quot; &quot;Doch!&quot; &quot;Nein!&quot;
-## [6] &quot;Doch!&quot;</code></pre>
+<pre><code>## [1] &quot;Nein!&quot; &quot;Doch!&quot; &quot;Nein!&quot; &quot;Doch!&quot; &quot;Nein!&quot; &quot;Doch!&quot;</code></pre>
 <div id="abfragen-von-werten-durch-subsetting-von-vektoren" class="section level3 hasAnchor" number="4.1.1">
 <h3><span class="header-section-number">4.1.1</span> Abfragen von Werten durch Subsetting von Vektoren<a href="strukturierte-datentypen.html#abfragen-von-werten-durch-subsetting-von-vektoren" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Mit dem Operator <code>[]</code> können einzelne Elemente eines Vektors abgefragt werden. Hier zum Beispiel die Indexposition 2:</p>
@@ -457,8 +455,7 @@ links auf einen Vektor angewendet wird.</p>
 korrespondierenden “wahren” Elemente eines Vektors ermittelt.</p>
 <p>Dies ist tatsächlich eine der häufigsten Verwendungen von <code>[]</code>:</p>
 <div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="strukturierte-datentypen.html#cb78-1" aria-hidden="true" tabindex="-1"></a>  DJ_Name</span></code></pre></div>
-<pre><code>## [1] &quot;DJ Puma&quot; &quot;Cabanne&quot; &quot;Molly&quot;   &quot;Echoton&quot;
-## [5] &quot;cv313&quot;</code></pre>
+<pre><code>## [1] &quot;DJ Puma&quot; &quot;Cabanne&quot; &quot;Molly&quot;   &quot;Echoton&quot; &quot;cv313&quot;</code></pre>
 <div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="strukturierte-datentypen.html#cb80-1" aria-hidden="true" tabindex="-1"></a>  DJ_Vinyl</span></code></pre></div>
 <pre><code>## [1] FALSE  TRUE  TRUE FALSE FALSE</code></pre>
 <div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="strukturierte-datentypen.html#cb82-1" aria-hidden="true" tabindex="-1"></a>  DJ_Name[DJ_Vinyl]</span></code></pre></div>
@@ -655,8 +652,7 @@ Datenstruktur ist die einer Datentabelle, ein sogenanntes <code>dataframe</code>
 <pre><code>## [1] 34 45 28 25 20</code></pre>
 <p>Analog zu Listen können wir die Spalten auch über ihren Namen anwählen.</p>
 <div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="strukturierte-datentypen.html#cb138-1" aria-hidden="true" tabindex="-1"></a>  df_lineup<span class="sc">$</span>Name</span></code></pre></div>
-<pre><code>## [1] &quot;DJ Puma&quot; &quot;Cabanne&quot; &quot;Molly&quot;   &quot;Echoton&quot;
-## [5] &quot;cv313&quot;</code></pre>
+<pre><code>## [1] &quot;DJ Puma&quot; &quot;Cabanne&quot; &quot;Molly&quot;   &quot;Echoton&quot; &quot;cv313&quot;</code></pre>
 </div>
 <div id="aufname-weiterer-variablenspalten" class="section level3 hasAnchor" number="4.4.2">
 <h3><span class="header-section-number">4.4.2</span> Aufname weiterer Variablen/Spalten<a href="strukturierte-datentypen.html#aufname-weiterer-variablenspalten" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -766,7 +762,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

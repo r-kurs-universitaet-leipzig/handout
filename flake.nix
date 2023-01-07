@@ -11,8 +11,10 @@
     pkgs = inputs.nixpkgs.legacyPackages.${system};
     env = pkgs.rstudioWrapper.override {
       packages = with pkgs.rPackages; [ 
+        bookdown
         cowplot # anotations for ggplot
         curl
+        DiagrammeR
         gapminder # data
         gganimate # make animated plots
         ggmosaic # mosaic plots
@@ -22,6 +24,7 @@
         gifski # default renderer for gganimate
         gridExtra # arrange multiple plot objects
         haven # load SPSS und STATA data
+        hrbrthemes
         janitor # clean names
         lubridate # date fromat
         magrittr # extended pipes

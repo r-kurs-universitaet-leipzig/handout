@@ -3,8 +3,10 @@ title: "Handout für R Grundkurs"
 author: |
   | Anne Sophie Küllmer
   | sophie.kuellmer@uni-leipzig.de
+  |
   | Peter Kannewitz 
   | peter.kannewitz@uni-leipzig.de
+  |
   | Peer Keßler
 subtitle: "URZ und Academic Lab Universität Leipzig"
 date: "Stand: `r Sys.Date()`"

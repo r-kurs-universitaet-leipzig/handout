@@ -351,7 +351,7 @@ div.csl-indent {
 <div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="funktionen.html#cb146-1" aria-hidden="true" tabindex="-1"></a>mean</span></code></pre></div>
 <pre><code>## function (x, ...) 
 ## UseMethod(&quot;mean&quot;)
-## &lt;bytecode: 0x5633f409bd88&gt;
+## &lt;bytecode: 0x561430a718d8&gt;
 ## &lt;environment: namespace:base&gt;</code></pre>
 <p>Alle anderen Funktionen bestehen aus einer Komposition dieser <em>primitiven</em> Funktionen.</p>
 <p>Beispiel:</p>
@@ -394,7 +394,7 @@ div.csl-indent {
 ##     class(f) &lt;- c(if (ordered) &quot;ordered&quot;, &quot;factor&quot;)
 ##     f
 ## }
-## &lt;bytecode: 0x5633f430acf8&gt;
+## &lt;bytecode: 0x561435b65878&gt;
 ## &lt;environment: namespace:base&gt;</code></pre>
 </div>
 <div id="aufbau" class="section level2 hasAnchor" number="5.2">
@@ -443,8 +443,8 @@ div.csl-indent {
 <li>Auch diese Funktion gibt ein Objekt zurück.</li>
 <li>usw.</li>
 </ul>
-<div id="htmlwidget-0f173c0687ac235d52ed" style="width:672px;height:192px;" class="DiagrammeR html-widget"></div>
-<script type="application/json" data-for="htmlwidget-0f173c0687ac235d52ed">{"x":{"diagram":"\ngraph LR;\n    A(X) -->|mean| B(mean of X)\n    B -->|abs| C(absolute of mean of X)\n    C -->|...| D(result)\n        "},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-402d18afa3e26e3eef32" style="width:672px;height:192px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-402d18afa3e26e3eef32">{"x":{"diagram":"\ngraph LR;\n    A(X) -->|mean| B(mean of X)\n    B -->|abs| C(absolute of mean of X)\n    C -->|...| D(result)\n        "},"evals":[],"jsHooks":[]}</script>
 <p>Code Beispiel:</p>
 <div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="funktionen.html#cb161-1" aria-hidden="true" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="sc">-</span><span class="dv">2</span>,<span class="sc">-</span><span class="dv">3</span>,<span class="sc">-</span><span class="dv">4</span>)</span>
 <span id="cb161-2"><a href="funktionen.html#cb161-2" aria-hidden="true" tabindex="-1"></a></span>

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Kapitel 3 Atomare Datentypen | Handout für R Grundkurs</title>
   <meta name="description" content="Kapitel 3 Atomare Datentypen | Handout für R Grundkurs" />
-  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Kapitel 3 Atomare Datentypen | Handout für R Grundkurs" />
   <meta property="og:type" content="book" />
@@ -549,20 +549,15 @@ Berechnungen und Operationen zur Verfügung:</p>
 <p>Wir haben mittlerweile ein paar Objekte im Speicher
 angelegt und an Namen gebunden. Mit <code>ls()</code> kann man diese abrufen:</p>
 <div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="atomare-datentypen.html#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span>()</span></code></pre></div>
-<pre><code>##  [1] &quot;alter_moni&quot;         &quot;alter_tom&quot;         
-##  [3] &quot;base_plot&quot;          &quot;countdown&quot;         
-##  [5] &quot;D&quot;                  &quot;df_lineup&quot;         
-##  [7] &quot;df_regio&quot;           &quot;DJ_Alter&quot;          
-##  [9] &quot;DJ_Geburtsjahr&quot;     &quot;DJ_Name&quot;           
-## [11] &quot;DJ_Vinyl&quot;           &quot;M&quot;                 
-## [13] &quot;name&quot;               &quot;name_bundeskanzler&quot;
-## [15] &quot;p&quot;                  &quot;profil_marie&quot;      
-## [17] &quot;q&quot;                  &quot;starwars&quot;          
-## [19] &quot;theendoftheworld&quot;   &quot;x&quot;                 
-## [21] &quot;X&quot;                  &quot;x_1&quot;               
-## [23] &quot;x_test&quot;             &quot;y&quot;                 
-## [25] &quot;y_test&quot;             &quot;z&quot;                 
-## [27] &quot;zahl&quot;</code></pre>
+<pre><code>##  [1] &quot;alter_moni&quot;         &quot;alter_tom&quot;          &quot;base_plot&quot;          &quot;countdown&quot;         
+##  [5] &quot;D&quot;                  &quot;df_lineup&quot;          &quot;df_regio&quot;           &quot;DJ_Alter&quot;          
+##  [9] &quot;DJ_Geburtsjahr&quot;     &quot;DJ_Name&quot;            &quot;DJ_Vinyl&quot;           &quot;i&quot;                 
+## [13] &quot;is.positive&quot;        &quot;M&quot;                  &quot;name&quot;               &quot;name_bundeskanzler&quot;
+## [17] &quot;p&quot;                  &quot;pow&quot;                &quot;profil_marie&quot;       &quot;q&quot;                 
+## [21] &quot;quadrat&quot;            &quot;starwars&quot;           &quot;theendoftheworld&quot;   &quot;un_lambda&quot;         
+## [25] &quot;v1&quot;                 &quot;v1_log&quot;             &quot;v2&quot;                 &quot;x&quot;                 
+## [29] &quot;X&quot;                  &quot;x_1&quot;                &quot;x_test&quot;             &quot;y&quot;                 
+## [33] &quot;y_test&quot;             &quot;z&quot;                  &quot;zahl&quot;</code></pre>
 <p>Mit <code>rm()</code> kann man unnötige Objekte über deren Namen entfernen:</p>
 <div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="atomare-datentypen.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(y_test)</span></code></pre></div>
 <p>Wenn ihr gleich alle angelegten, referenzierbaren Objekte aus dem Speicher entfernen wollt:</p>
@@ -686,14 +681,10 @@ Wert ‘NA’) durch <code>NaN</code> (not a number) angegeben.</p>
 <h2><span class="header-section-number">3.7</span> Prüfe dich selbst<a href="atomare-datentypen.html#prüfe-dich-selbst-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Von dieser Sitzung solltest du Folgendes mitgenommen haben:</p>
 <ul class="task-list">
-<li><input type="checkbox" disabled="" checked="" />
-Du solltest verstanden haben, warum man verschiedene Datentypen unterscheidet.</li>
-<li><input type="checkbox" disabled="" checked="" />
-Du solltest die drei grundlegenden Wege, Informationen zu repräsentieren, und die dazugehörigen Datentypen nennen können.</li>
-<li><input type="checkbox" disabled="" checked="" />
-Du solltest verstanden haben, wie man Objekte an einen Namen bindet und warum das nützlich sein kann.</li>
-<li><input type="checkbox" disabled="" checked="" />
-Du solltest die elementaren Booleschen (logischen) Operationen in R schreiben können.</li>
+<li><input type="checkbox" disabled="" checked="" />Du solltest verstanden haben, warum man verschiedene Datentypen unterscheidet.</li>
+<li><input type="checkbox" disabled="" checked="" />Du solltest die drei grundlegenden Wege, Informationen zu repräsentieren, und die dazugehörigen Datentypen nennen können.</li>
+<li><input type="checkbox" disabled="" checked="" />Du solltest verstanden haben, wie man Objekte an einen Namen bindet und warum das nützlich sein kann.</li>
+<li><input type="checkbox" disabled="" checked="" />Du solltest die elementaren Booleschen (logischen) Operationen in R schreiben können.</li>
 </ul>
 </div>
 <div id="literaturverweise" class="section level2 hasAnchor" number="3.8">
@@ -711,7 +702,7 @@ Du solltest die elementaren Booleschen (logischen) Operationen in R schreiben k�
 <div class="invisible" style="display:none">
 <p><span class="citation">Chambers (<a href="#ref-Chambers2014" role="doc-biblioref">2014</a>)</span>
 <span class="citation">Wickham (<a href="#ref-wickham2019advanced" role="doc-biblioref">2019</a>)</span>
-<span class="citation">(<a href="#ref-r-intro" role="doc-biblioref">n.d.</a>)</span>
+<span class="citation"> (<a href="#ref-r-intro" role="doc-biblioref">n.d.</a>)</span>
 <span class="citation">Grolemund (<a href="#ref-grolemund2014hands" role="doc-biblioref">2014</a>)</span></p>
 </div>
 

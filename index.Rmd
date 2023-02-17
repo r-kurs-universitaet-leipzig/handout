@@ -35,6 +35,15 @@ knitr::include_graphics("resources/construction.png")
 Dieses Handout ist ständig in Bearbeitung und erhebt keinen Anspruch auf Vollständigkeit. Bitte informiert uns,
 sollten Angaben nicht mehr aktuell sein bzw. sollten sich Fehler eingeschlichen haben. Vielen Dank!
 
+```{r, echo=FALSE, out.width='30%',  fig.show='hold'}
+knitr::include_graphics(
+  c("resources/Logo_URZ.jpg",
+    "resources/Logo_SMWK.jpg",
+    "resources/logo_lizenz_cc_by_nc_sa.png")
+)
+```
+
+
 # Hinweise zur Verwendung des Handouts {-}
 
 - In den einzelnen Kapiteln wird immer wieder **R Code** ausgeführt. Dabei wird immer im ersten Block der jeweilige Ausdruck angegeben und im zweiten das dazugehörige Ergebnis, was wie folgt aussieht:

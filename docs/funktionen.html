@@ -361,7 +361,11 @@ div.csl-indent {
 <div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="funktionen.html#cb146-1" aria-hidden="true" tabindex="-1"></a>mean</span></code></pre></div>
 <pre><code>## function (x, ...) 
 ## UseMethod(&quot;mean&quot;)
+<<<<<<< HEAD
 ## &lt;bytecode: 0x561e9d8894b8&gt;
+=======
+## &lt;bytecode: 0x561430a718d8&gt;
+>>>>>>> eac98ff6b31d2a043b1573727ff9c633405e2136
 ## &lt;environment: namespace:base&gt;</code></pre>
 <p>Alle anderen Funktionen bestehen aus einer Komposition dieser <em>primitiven</em> Funktionen.</p>
 <p>Beispiel:</p>
@@ -404,7 +408,11 @@ div.csl-indent {
 ##     class(f) &lt;- c(if (ordered) &quot;ordered&quot;, &quot;factor&quot;)
 ##     f
 ## }
+<<<<<<< HEAD
 ## &lt;bytecode: 0x561e9f6d8e50&gt;
+=======
+## &lt;bytecode: 0x561435b65878&gt;
+>>>>>>> eac98ff6b31d2a043b1573727ff9c633405e2136
 ## &lt;environment: namespace:base&gt;</code></pre>
 </div>
 <div id="aufbau" class="section level2 hasAnchor" number="5.2">
@@ -453,8 +461,13 @@ div.csl-indent {
 <li>Auch diese Funktion gibt ein Objekt zurück.</li>
 <li>usw.</li>
 </ul>
+<<<<<<< HEAD
 <div id="htmlwidget-52f31a57864e61da6775" style="width:672px;height:192px;" class="DiagrammeR html-widget"></div>
 <script type="application/json" data-for="htmlwidget-52f31a57864e61da6775">{"x":{"diagram":"\ngraph LR;\n    A(X) -->|mean| B(mean of X)\n    B -->|abs| C(absolute of mean of X)\n    C -->|...| D(result)\n        "},"evals":[],"jsHooks":[]}</script>
+=======
+<div id="htmlwidget-402d18afa3e26e3eef32" style="width:672px;height:192px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-402d18afa3e26e3eef32">{"x":{"diagram":"\ngraph LR;\n    A(X) -->|mean| B(mean of X)\n    B -->|abs| C(absolute of mean of X)\n    C -->|...| D(result)\n        "},"evals":[],"jsHooks":[]}</script>
+>>>>>>> eac98ff6b31d2a043b1573727ff9c633405e2136
 <p>Code Beispiel:</p>
 <div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="funktionen.html#cb161-1" aria-hidden="true" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="sc">-</span><span class="dv">2</span>,<span class="sc">-</span><span class="dv">3</span>,<span class="sc">-</span><span class="dv">4</span>)</span>
 <span id="cb161-2"><a href="funktionen.html#cb161-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -492,7 +505,7 @@ div.csl-indent {
 <h2><span class="header-section-number">5.6</span> Help Fenster<a href="funktionen.html#help-fenster" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Natürlich muss und soll niemand alle Argumente zu allen Funktionen auswendig lernen. R stellt hierzu bereits intern ein hilfreiches Hilfe-Fenster zur Verfügung.</p>
 <p>Für jede Funktion kann dieses über <code>?Funktionsaufruf</code> aufgerufen werden.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-80"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-81"></span>
 <img src="resources/Help.png" alt="Help Fenster" width="80%" />
 <p class="caption">
 Abb. 5.1: Help Fenster
@@ -512,14 +525,10 @@ Abb. 5.1: Help Fenster
 <h2><span class="header-section-number">5.7</span> Prüfe dich selbst<a href="funktionen.html#prüfe-dich-selbst-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Von dieser Sitzung solltest du folgendes mitgenommen haben:</p>
 <ul class="task-list">
-<li><input type="checkbox" disabled="" checked="" />
-Du solltest den typischen Aufbau von Funktionen kennen.</li>
-<li><input type="checkbox" disabled="" checked="" />
-Du solltest Pipes kennen, verstehen und rudimentär anwenden können.</li>
-<li><input type="checkbox" disabled="" checked="" />
-Du solltest wissen, dass es Default Werte gibt und wie du herausfindest, welche Werte als solche hinterlegt sind.</li>
-<li><input type="checkbox" disabled="" checked="" />
-Du solltest dich im Hilfefenster zurechtfinden.</li>
+<li><input type="checkbox" disabled="" checked="" />Du solltest den typischen Aufbau von Funktionen kennen.</li>
+<li><input type="checkbox" disabled="" checked="" />Du solltest Pipes kennen, verstehen und rudimentär anwenden können.</li>
+<li><input type="checkbox" disabled="" checked="" />Du solltest wissen, dass es Default Werte gibt und wie du herausfindest, welche Werte als solche hinterlegt sind.</li>
+<li><input type="checkbox" disabled="" checked="" />Du solltest dich im Hilfefenster zurechtfinden.</li>
 </ul>
 
 </div>

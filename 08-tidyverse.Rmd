@@ -17,7 +17,7 @@ Die Logos der wichtigsten Packages könnt ihr in der Abbildung sehen. Wir werden
 
 Das Tidyverse ladet ihr wie jedes andere Package auch, also zum Beispiel mit `library()` oder `needs()`. Im Prinzip ladet ihr dabei aber gleich mehrere verschiedene Packages, welche ihr dann nicht im Einzelnen nochmal nachladen müsst.
 
-```{r, message=T}
+```{r, message=T, warning=FALSE}
 library(tidyverse)
 ```
 

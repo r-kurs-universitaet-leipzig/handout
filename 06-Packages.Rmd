@@ -25,7 +25,7 @@ von neuen Vokabeln verstehen.
 Die Installation erfolgt über die Funktion `install.packages()`. Das einzige 
 Argument ist der Name des zu ladenden Packages als Character.
 
-```{r eval = FALSE}
+```{r eval = FALSE, warning=FALSE, message=FALSE}
 install.packages("tidyverse")
 ```
 

@@ -175,7 +175,7 @@ Unter **Usage** sind die verschiedenen Argumente und ihre interne Reihenfolge (s
 
 Unter **Arguments** können die Beschreibungen der einzelnen Argumente gefunden werden. Hier sollte besonders darauf geachtet werden, welcher Datentyp als Wert übergeben werden muss.
 
-**Details** enthält Hinweise zur internen Berechnung von Werten, Verfahren, etc. Das ist dann besonder relevant, wenn es für die Berechnung von Kennwerten keine einheitlichen Konventionen gibt.
+**Details** enthält Hinweise zur internen Berechnung von Werten, Verfahren, etc. Das ist dann besonders relevant, wenn es für die Berechnung von Kennwerten keine einheitlichen Konventionen gibt.
 
 In der Sektion **See also** sind Verweise zu anderen Funktionen oder Literaturhinweise vermerkt.
 

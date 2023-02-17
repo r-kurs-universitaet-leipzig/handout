@@ -1,6 +1,6 @@
 # Tidyverse
 
-In diesem Kapitel wollen wir uns damit auseinandersetzen, was das Tidyverse ist und was für Funktionen die einzelnen Packages des Tidyverse uns bereitstellen. Einen besonderen Fokus wollen wir vor allem erstmal auf die Datenverarbeitung legen, die diese im Regelfall auch die meiste Zeit beansprucht.
+In diesem Kapitel wollen wir uns damit auseinandersetzen, was das Tidyverse ist und was für Funktionen die einzelnen Packages des Tidyverse uns bereitstellen. Einen besonderen Fokus wollen wir vor allem erst mal auf die Datenverarbeitung legen, die diese im Regelfall auch die meiste Zeit beansprucht.
 
 ## Das "Tidyverse"
 

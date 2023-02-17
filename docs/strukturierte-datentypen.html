@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Kapitel 4 Strukturierte Datentypen | Handout für R Grundkurs</title>
   <meta name="description" content="Kapitel 4 Strukturierte Datentypen | Handout für R Grundkurs" />
-  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Kapitel 4 Strukturierte Datentypen | Handout für R Grundkurs" />
   <meta property="og:type" content="book" />
@@ -205,7 +205,12 @@ div.csl-indent {
 <li class="chapter" data-level="3.5" data-path="atomare-datentypen.html"><a href="atomare-datentypen.html#klasse-eines-datenobjektes"><i class="fa fa-check"></i><b>3.5</b> Klasse eines Datenobjektes</a></li>
 <li class="chapter" data-level="3.6" data-path="atomare-datentypen.html"><a href="atomare-datentypen.html#spezielle-werte"><i class="fa fa-check"></i><b>3.6</b> Spezielle Werte</a></li>
 <li class="chapter" data-level="3.7" data-path="atomare-datentypen.html"><a href="atomare-datentypen.html#prüfe-dich-selbst-1"><i class="fa fa-check"></i><b>3.7</b> Prüfe dich selbst</a></li>
-<li class="chapter" data-level="3.8" data-path="atomare-datentypen.html"><a href="atomare-datentypen.html#literaturverweise"><i class="fa fa-check"></i><b>3.8</b> Literaturverweise</a></li>
+<li class="chapter" data-level="3.8" data-path="atomare-datentypen.html"><a href="atomare-datentypen.html#videos-zum-kapitel"><i class="fa fa-check"></i><b>3.8</b> Videos zum Kapitel</a>
+<ul>
+<li class="chapter" data-level="3.8.1" data-path="atomare-datentypen.html"><a href="atomare-datentypen.html#atomare-datentypen-1"><i class="fa fa-check"></i><b>3.8.1</b> Atomare Datentypen</a></li>
+<li class="chapter" data-level="3.8.2" data-path="atomare-datentypen.html"><a href="atomare-datentypen.html#objektzuweisungen"><i class="fa fa-check"></i><b>3.8.2</b> Objektzuweisungen</a></li>
+</ul></li>
+<li class="chapter" data-level="3.9" data-path="atomare-datentypen.html"><a href="atomare-datentypen.html#literaturverweise"><i class="fa fa-check"></i><b>3.9</b> Literaturverweise</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="strukturierte-datentypen.html"><a href="strukturierte-datentypen.html"><i class="fa fa-check"></i><b>4</b> Strukturierte Datentypen</a>
 <ul>
@@ -227,10 +232,15 @@ div.csl-indent {
 <li class="chapter" data-level="4.4" data-path="strukturierte-datentypen.html"><a href="strukturierte-datentypen.html#data-frames"><i class="fa fa-check"></i><b>4.4</b> Data Frames</a>
 <ul>
 <li class="chapter" data-level="4.4.1" data-path="strukturierte-datentypen.html"><a href="strukturierte-datentypen.html#indizierung-von-datentabellen"><i class="fa fa-check"></i><b>4.4.1</b> Indizierung von Datentabellen</a></li>
-<li class="chapter" data-level="4.4.2" data-path="strukturierte-datentypen.html"><a href="strukturierte-datentypen.html#aufname-weiterer-variablenspalten"><i class="fa fa-check"></i><b>4.4.2</b> Aufname weiterer Variablen/Spalten</a></li>
+<li class="chapter" data-level="4.4.2" data-path="strukturierte-datentypen.html"><a href="strukturierte-datentypen.html#aufnahme-weiterer-variablenspalten"><i class="fa fa-check"></i><b>4.4.2</b> Aufnahme weiterer Variablen/Spalten</a></li>
 <li class="chapter" data-level="4.4.3" data-path="strukturierte-datentypen.html"><a href="strukturierte-datentypen.html#operationen-auf-datentabellen"><i class="fa fa-check"></i><b>4.4.3</b> Operationen auf Datentabellen</a></li>
 </ul></li>
 <li class="chapter" data-level="4.5" data-path="strukturierte-datentypen.html"><a href="strukturierte-datentypen.html#prüfe-dich-selbst-2"><i class="fa fa-check"></i><b>4.5</b> Prüfe dich selbst</a></li>
+<li class="chapter" data-level="4.6" data-path="strukturierte-datentypen.html"><a href="strukturierte-datentypen.html#videos-zum-kapitel-1"><i class="fa fa-check"></i><b>4.6</b> Videos zum Kapitel</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="strukturierte-datentypen.html"><a href="strukturierte-datentypen.html#homogene-strukturierte-datentypen"><i class="fa fa-check"></i><b>4.6.1</b> Homogene Strukturierte Datentypen</a></li>
+<li class="chapter" data-level="4.6.2" data-path="strukturierte-datentypen.html"><a href="strukturierte-datentypen.html#heterogene-strukturierte-datentypen"><i class="fa fa-check"></i><b>4.6.2</b> Heterogene Strukturierte Datentypen</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="funktionen.html"><a href="funktionen.html"><i class="fa fa-check"></i><b>5</b> Funktionen</a>
 <ul>
@@ -620,7 +630,7 @@ beliebige Werte oder Datenstrukturen zu:</p>
 <p>Mit diesem Aufruf erhalten wir einen Verweis, welcher auf einen Vektor zeigt, welcher die Zeichenketten “Daphne” und “Peer” beinhaltet.</p>
 <div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb128-1"><a href="strukturierte-datentypen.html#cb128-1" aria-hidden="true" tabindex="-1"></a>profil_marie[[<span class="dv">2</span>]][<span class="dv">1</span>]</span></code></pre></div>
 <pre><code>## [1] &quot;Daphne&quot;</code></pre>
-<p>Diese Funktion bezieht sich im ersten Teil <code>profil_marie[[2]]</code> nun tatsächlichn auf den Vektor, auf welchen die Referenz zeigt. Auf diesen wird anschließend nun noch mal der Subset-Operator für die erste Position angewandt (<code>Unser_Vektor[1]</code>). So erhalten wir das erste Element des Vektors (was wiederum ein ein-elementiger Vektor ist).</p>
+<p>Diese Funktion bezieht sich im ersten Teil <code>profil_marie[[2]]</code> nun tatsächlich auf den Vektor, auf welchen die Referenz zeigt. Auf diesen wird anschließend nun noch mal der Subset-Operator für die erste Position angewandt (<code>Unser_Vektor[1]</code>). So erhalten wir das erste Element des Vektors (was wiederum ein einelementiger Vektor ist).</p>
 <p>Deutlich einfacher ist hingegen die Indizierung mithilfe des Dollar-Operators und den Namen der Objekte. Damit kommen wir viel lesbarer zum selben Ergebnis:</p>
 <div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb130-1"><a href="strukturierte-datentypen.html#cb130-1" aria-hidden="true" tabindex="-1"></a>profil_marie<span class="sc">$</span>Freunde[<span class="dv">1</span>]</span></code></pre></div>
 <pre><code>## [1] &quot;Daphne&quot;</code></pre>
@@ -654,8 +664,8 @@ Datenstruktur ist die einer Datentabelle, ein sogenanntes <code>dataframe</code>
 <div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="strukturierte-datentypen.html#cb138-1" aria-hidden="true" tabindex="-1"></a>  df_lineup<span class="sc">$</span>Name</span></code></pre></div>
 <pre><code>## [1] &quot;DJ Puma&quot; &quot;Cabanne&quot; &quot;Molly&quot;   &quot;Echoton&quot; &quot;cv313&quot;</code></pre>
 </div>
-<div id="aufname-weiterer-variablenspalten" class="section level3 hasAnchor" number="4.4.2">
-<h3><span class="header-section-number">4.4.2</span> Aufname weiterer Variablen/Spalten<a href="strukturierte-datentypen.html#aufname-weiterer-variablenspalten" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="aufnahme-weiterer-variablenspalten" class="section level3 hasAnchor" number="4.4.2">
+<h3><span class="header-section-number">4.4.2</span> Aufnahme weiterer Variablen/Spalten<a href="strukturierte-datentypen.html#aufnahme-weiterer-variablenspalten" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Analog zu Matrizen können wir mit der Funktion <code>cbind()</code> Vektoren als Spalten eines bereits bestehenden Data Frames aufnehmen.</p>
 <div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="strukturierte-datentypen.html#cb140-1" aria-hidden="true" tabindex="-1"></a>   df_lineup <span class="ot">&lt;-</span> <span class="fu">cbind</span>(df_lineup,DJ_Vinyl)</span>
 <span id="cb140-2"><a href="strukturierte-datentypen.html#cb140-2" aria-hidden="true" tabindex="-1"></a>   df_lineup</span></code></pre></div>
@@ -692,7 +702,18 @@ Du solltest wissen, auf welche Weisen du auf die Elemente der unterschiedlichen 
 <li><input type="checkbox" disabled="" checked="" />
 Du solltest verstanden haben, welche Möglichkeiten es gibt, verschiedene Teilmengen eines strukturierten Datentyps abzufragen.</li>
 </ul>
+</div>
+<div id="videos-zum-kapitel-1" class="section level2 hasAnchor" number="4.6">
+<h2><span class="header-section-number">4.6</span> Videos zum Kapitel<a href="strukturierte-datentypen.html#videos-zum-kapitel-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="homogene-strukturierte-datentypen" class="section level3 hasAnchor" number="4.6.1">
+<h3><span class="header-section-number">4.6.1</span> Homogene Strukturierte Datentypen<a href="strukturierte-datentypen.html#homogene-strukturierte-datentypen" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><embed src="https://videocampus.urz.uni-leipzig.de/paella/ui/watch.html?id=e63004b5-4ef2-46fc-ba20-a60348063d26" width="820" height="640" /></p>
+</div>
+<div id="heterogene-strukturierte-datentypen" class="section level3 hasAnchor" number="4.6.2">
+<h3><span class="header-section-number">4.6.2</span> Heterogene Strukturierte Datentypen<a href="strukturierte-datentypen.html#heterogene-strukturierte-datentypen" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><embed src="https://videocampus.urz.uni-leipzig.de/paella/ui/watch.html?id=a092a446-32c5-4a56-85bb-5f0115e73fd3" width="820" height="640" /></p>
 
+</div>
 </div>
 </div>
             </section>

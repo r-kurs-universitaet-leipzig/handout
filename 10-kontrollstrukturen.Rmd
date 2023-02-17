@@ -341,4 +341,3 @@ Von dieser Sitzung solltest du folgendes mitgenommen haben:
   - [x] Du solltest mindestens zwei Möglichkeiten nennen können, wie man in R iterative Probleme lösen kann. 
   - [x] Du solltest verstanden haben, wie vektorisierte Funktionen ausgewertet werden.
 
-

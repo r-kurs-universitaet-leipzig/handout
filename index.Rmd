@@ -37,17 +37,19 @@ sollten Angaben nicht mehr aktuell sein bzw. sollten sich Fehler eingeschlichen 
 
 # Hinweise zur Verwendung des Handouts {-}
 
-- In den einzelnen Kapiteln wird immer wieder R Code ausgeführt. Dabei wird immer im ersten Block der jeweilige Ausdruck angegeben und im zweiten das dazugehörige Ergebnis, was wie folgt aussieht:
+- In den einzelnen Kapiteln wird immer wieder **R Code** ausgeführt. Dabei wird immer im ersten Block der jeweilige Ausdruck angegeben und im zweiten das dazugehörige Ergebnis, was wie folgt aussieht:
 
 ```{r}
 1+1
 ``` 
 
-- Am Ende eines jeden Kapitels gibt es eine kleine Checkliste, welche als "Prüfe dich selbst" überschrieben ist. Anhand dieser könnt ihr euch testen, ob ihr allem folgen konntet und die Sachverhalte verinnerlicht habt. Wenn nicht, habt ihr dann vielleicht einen Anhaltspunkt, was ihr später vielleicht noch einmal nachlesen könntet.
+- Am Ende eines jeden Kapitels gibt es eine kleine Checkliste, welche als "**Prüfe dich selbst**" überschrieben ist. Anhand dieser könnt ihr euch testen, ob ihr allem folgen konntet und die Sachverhalte verinnerlicht habt. Wenn nicht, habt ihr dann vielleicht einen Anhaltspunkt, was ihr später vielleicht noch einmal nachlesen könntet.
 
-- Es empfiehlt sich über die Menüleiste oben die Anzeigeeinstellungen (A) zu ändern. Wenn ihr Mal ein Kapitel durcharbeiten wollt, ist eine Schriftart mit Serifen und ein etwas dunkler Hintergrund vielleicht angenehmer. Also probiert das gerne mal aus!
+- Es empfiehlt sich über die Menüleiste oben die **Anzeigeeinstellungen** (A) zu ändern. Wenn ihr Mal ein Kapitel durcharbeiten wollt, ist eine Schriftart mit Serifen und ein etwas dunkler Hintergrund vielleicht angenehmer. Also probiert das gerne mal aus!
 
-- Das gesamte Handout ist über GitHub Pages veröffentlicht. Wenn ihr einen Fehler entdeckt oder Anmerkungen habt, dann zögert nicht ein Issue auf zu machen und Änderungen vorzuschlagen! Über das Auge oben in der Menüleiste kommt ihr zum Repository.
+- Zu einzelnen Kapiteln stehen ergänzende Lehrvideos zur Verfügung, welche einzelne Schwerpunkte des Kapitels kurz zusammenfassen. Um die **Videos im Vollbild** anzuschauen, kann man den rechts im Video eingeblendeten Pop-Up nutzen. Über diesen kann das Videofenster dann entsprechend vergrößert werden. 
+
+- Das gesamte Handout ist über GitHub Pages veröffentlicht. Wenn ihr einen Fehler entdeckt oder **Anmerkungen** habt, dann zögert nicht ein Issue auf zu machen und Änderungen vorzuschlagen! Über das Auge oben in der Menüleiste kommt ihr zum Repository.
 
 
 

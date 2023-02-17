@@ -341,16 +341,27 @@ is.numeric(alter_moni)
   
  In R wird ein nicht bestimmbarer Wert (vgl. unbestimmter aber bestimmbarer
  Wert 'NA') durch `NaN` (not a number) angegeben.
-  
-
+ 
 ## Prüfe dich selbst
 
 Von dieser Sitzung solltest du Folgendes mitgenommen haben: 
 
 - [x] Du solltest verstanden haben, warum man verschiedene Datentypen unterscheidet.
-- [x] Du solltest die drei grundlegenden Wege, Informationen zu repräsentieren, und die dazugehörigen Datentypen nennen können.
+- [x] Du solltest die drei grundlegenden Wege in R Informationen zu repräsentieren kennen, und die dazugehörigen Datentypen nennen können.
 - [x] Du solltest verstanden haben, wie man Objekte an einen Namen bindet und warum das nützlich sein kann.
 - [x] Du solltest die elementaren Booleschen (logischen) Operationen in R schreiben können.
+
+## Videos zum Kapitel
+
+### Atomare Datentypen
+
+![](https://videocampus.urz.uni-leipzig.de/paella/ui/watch.html?id=8ceb0e8a-1966-4616-94e1-b2fbca29d2c9){width="820" height="640"}
+
+### Objektzuweisungen
+
+![](https://videocampus.urz.uni-leipzig.de/paella/ui/watch.html?id=04c9530b-d697-43a1-9884-219e6a3f69a9){width="820" height="640"}
+
+
 
 
 ## Literaturverweise 

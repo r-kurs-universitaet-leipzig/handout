@@ -6,7 +6,7 @@ fortgeschritten wird, desto komplexer werden jedoch die Probleme. Wiederkehrende
 Probleme lassen sich oft lösen, indem selber Funktionen geschrieben werden. Bei
 vielen Programmiersprachen sind hierbei vor allem zwei Optionen der Fall:
 
-- (Fast) Alle Probleme waren schonmal da.
+- (Fast) Alle Probleme waren schon mal da.
 - (Fast) Alle Probleme treten wiederholt auf.
 
 Damit sind andere User:innen (wahrscheinlich) bereits auf das gleiche Problem gestoßen und haben entsprechende Funktionen geschrieben, um das Problem zu lösen.

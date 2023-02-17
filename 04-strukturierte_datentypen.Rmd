@@ -267,7 +267,7 @@ Mit diesem Aufruf erhalten wir einen Verweis, welcher auf einen Vektor zeigt, we
 profil_marie[[2]][1]
 ```
 
-Diese Funktion bezieht sich im ersten Teil `profil_marie[[2]]` nun tatsächlichn auf den Vektor, auf welchen die Referenz zeigt. Auf diesen wird anschließend nun noch mal der Subset-Operator für die erste Position angewandt (`Unser_Vektor[1]`). So erhalten wir das erste Element des Vektors (was wiederum ein ein-elementiger Vektor ist).
+Diese Funktion bezieht sich im ersten Teil `profil_marie[[2]]` nun tatsächlich auf den Vektor, auf welchen die Referenz zeigt. Auf diesen wird anschließend nun noch mal der Subset-Operator für die erste Position angewandt (`Unser_Vektor[1]`). So erhalten wir das erste Element des Vektors (was wiederum ein einelementiger Vektor ist).
 
 Deutlich einfacher ist hingegen die Indizierung mithilfe des Dollar-Operators und den Namen der Objekte. Damit kommen wir viel lesbarer zum selben Ergebnis:
 
@@ -308,7 +308,7 @@ Diese können wir ganz einfach aus Vektoren erzeugen:
 ```
  
  
-### Aufname weiterer Variablen/Spalten
+### Aufnahme weiterer Variablen/Spalten
  
  Analog zu Matrizen können wir mit der Funktion `cbind()` Vektoren als Spalten eines bereits bestehenden Data Frames aufnehmen.
 
@@ -339,3 +339,14 @@ mean(df_lineup$Alter)
 - [x] Du solltest die vier grundlegenden strukturierten Datentypen nennen und unterscheiden können.
 - [x] Du solltest wissen, auf welche Weisen du auf die Elemente der unterschiedlichen strukturierten Datentypen zugreifen kannst.
 - [x] Du solltest verstanden haben, welche Möglichkeiten es gibt, verschiedene Teilmengen eines strukturierten Datentyps abzufragen.
+
+## Videos zum Kapitel
+
+### Homogene Strukturierte Datentypen
+
+![](https://videocampus.urz.uni-leipzig.de/paella/ui/watch.html?id=e63004b5-4ef2-46fc-ba20-a60348063d26){width="820" height="640"}
+
+### Heterogene Strukturierte Datentypen
+
+![](https://videocampus.urz.uni-leipzig.de/paella/ui/watch.html?id=a092a446-32c5-4a56-85bb-5f0115e73fd3){width="820" height="640"}
+

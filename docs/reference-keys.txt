@@ -39,6 +39,9 @@ zeichenketten-character-strings
 klasse-eines-datenobjektes
 spezielle-werte
 prüfe-dich-selbst-1
+videos-zum-kapitel
+atomare-datentypen-1
+objektzuweisungen
 literaturverweise
 strukturierte-datentypen
 vektoren
@@ -52,9 +55,12 @@ listen
 indizierung-von-listen
 data-frames
 indizierung-von-datentabellen
-aufname-weiterer-variablenspalten
+aufnahme-weiterer-variablenspalten
 operationen-auf-datentabellen
 prüfe-dich-selbst-2
+videos-zum-kapitel-1
+homogene-strukturierte-datentypen
+heterogene-strukturierte-datentypen
 funktionen
 eigenschaften
 aufbau

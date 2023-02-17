@@ -347,12 +347,12 @@ div.csl-indent {
 <div id="absolute-und-relative-dateipfade-exkurs" class="section level2 hasAnchor" number="7.1">
 <h2><span class="header-section-number">7.1</span> Absolute und relative Dateipfade (Exkurs)<a href="dateimanagement.html#absolute-und-relative-dateipfade-exkurs" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Um Dateien in R zu laden, muss zumeist ein Datenpfad angegeben werden, der zu der zu ladenden Datei führt. Der Datenpfad ist dabei zunächst entsprechen lang:</p>
-<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="dateimanagement.html#cb177-1" aria-hidden="true" tabindex="-1"></a>df_example <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">&quot;/Users/username/Documents/GitHub/r-kurs/sitzung/data/strata.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="dateimanagement.html#cb178-1" aria-hidden="true" tabindex="-1"></a>df_example <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">&quot;/Users/username/Documents/GitHub/r-kurs/sitzung/data/strata.csv&quot;</span>)</span></code></pre></div>
 <p>Diese langen Datenpfade können mithilfe von <em>Working Directories</em> (WD) gelöst werden. Diese können mit der Funktion <code>setwd()</code> eingerichtet werden.</p>
-<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="dateimanagement.html#cb178-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="at">dir =</span> <span class="st">&quot;/Users/username/Documents/GitHub/r-kurs/sitzung&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="dateimanagement.html#cb179-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="at">dir =</span> <span class="st">&quot;/Users/username/Documents/GitHub/r-kurs/sitzung&quot;</span>)</span></code></pre></div>
 <p>Im Zweifel kann die WD dann mithilfe von <code>getwd()</code> abgerufen werden.</p>
 <p>Wurde eine WD festgelegt, kann der Datenpfad nun bei dem Ort beginnen, der über die <code>setwd()</code> Funktion festgelegt wurde.</p>
-<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="dateimanagement.html#cb179-1" aria-hidden="true" tabindex="-1"></a>df_example <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">&quot;data/strata.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="dateimanagement.html#cb180-1" aria-hidden="true" tabindex="-1"></a>df_example <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">&quot;data/strata.csv&quot;</span>)</span></code></pre></div>
 <p>Der Nachteil dieser Herangehensweise ist, dass die WD global für alle Arbeitsschritte festgelegt wird. Sollen aber WDs für einzelne “Projekte” festgelegt werden, <strong>sollten</strong> RProjects genutzt werden.</p>
 </div>
 <div id="r-projects" class="section level2 hasAnchor" number="7.2">
@@ -434,15 +434,15 @@ Abb. 7.1: R Project Logo
 Hierzu gibt es zwei mögliche Datei-Formate:</p>
 <p><strong><code>.Rda</code> (R Data)</strong></p>
 <p>Mithilfe der Funktion <code>save()</code> können R Objekte gespeichert werden.</p>
-<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="dateimanagement.html#cb180-1" aria-hidden="true" tabindex="-1"></a>df_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,   <span class="co"># Objekte anlegen</span></span>
-<span id="cb180-2"><a href="dateimanagement.html#cb180-2" aria-hidden="true" tabindex="-1"></a>                      <span class="at">y =</span> <span class="dv">10</span><span class="sc">:</span><span class="dv">1</span>)</span>
-<span id="cb180-3"><a href="dateimanagement.html#cb180-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-4"><a href="dateimanagement.html#cb180-4" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">4</span></span>
-<span id="cb180-5"><a href="dateimanagement.html#cb180-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-6"><a href="dateimanagement.html#cb180-6" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(<span class="at">list =</span> <span class="fu">c</span>(<span class="st">&quot;df_data&quot;</span>,<span class="st">&quot;x&quot;</span>),     <span class="co"># Objekt speichern (als Liste)</span></span>
-<span id="cb180-7"><a href="dateimanagement.html#cb180-7" aria-hidden="true" tabindex="-1"></a>     <span class="at">file =</span> <span class="st">&quot;data/example.Rda&quot;</span>)   <span class="co"># Datenpfad</span></span></code></pre></div>
+<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="dateimanagement.html#cb181-1" aria-hidden="true" tabindex="-1"></a>df_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,   <span class="co"># Objekte anlegen</span></span>
+<span id="cb181-2"><a href="dateimanagement.html#cb181-2" aria-hidden="true" tabindex="-1"></a>                      <span class="at">y =</span> <span class="dv">10</span><span class="sc">:</span><span class="dv">1</span>)</span>
+<span id="cb181-3"><a href="dateimanagement.html#cb181-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb181-4"><a href="dateimanagement.html#cb181-4" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">4</span></span>
+<span id="cb181-5"><a href="dateimanagement.html#cb181-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb181-6"><a href="dateimanagement.html#cb181-6" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(<span class="at">list =</span> <span class="fu">c</span>(<span class="st">&quot;df_data&quot;</span>,<span class="st">&quot;x&quot;</span>),     <span class="co"># Objekt speichern (als Liste)</span></span>
+<span id="cb181-7"><a href="dateimanagement.html#cb181-7" aria-hidden="true" tabindex="-1"></a>     <span class="at">file =</span> <span class="st">&quot;data/example.Rda&quot;</span>)   <span class="co"># Datenpfad</span></span></code></pre></div>
 <p>Die Funktion <code>load</code> lädt die gespeicherten Objekte wieder in die Umgebung.</p>
-<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="dateimanagement.html#cb181-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="at">file =</span> <span class="st">&quot;data/example.Rda&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="dateimanagement.html#cb182-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="at">file =</span> <span class="st">&quot;data/example.Rda&quot;</span>)</span></code></pre></div>
 <p><em>Vorteil</em></p>
 <ul>
 <li>Mehrere Objekte speicherbar</li>
@@ -454,10 +454,10 @@ Hierzu gibt es zwei mögliche Datei-Formate:</p>
 <p><strong><code>.Rds</code> (R Data Single)</strong></p>
 <p>Das <code>.Rds</code>-Format erlaubt das speichern <em>eines</em> Objektes. Das Speichern erfolgt
 ähnlich wie bei den <code>.Rda</code>-Formaten.</p>
-<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="dateimanagement.html#cb182-1" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(df_data,</span>
-<span id="cb182-2"><a href="dateimanagement.html#cb182-2" aria-hidden="true" tabindex="-1"></a>        <span class="at">file =</span> <span class="st">&quot;data/example.Rds&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="dateimanagement.html#cb183-1" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(df_data,</span>
+<span id="cb183-2"><a href="dateimanagement.html#cb183-2" aria-hidden="true" tabindex="-1"></a>        <span class="at">file =</span> <span class="st">&quot;data/example.Rds&quot;</span>)</span></code></pre></div>
 <p>Beim Laden wird ein neuer Name für das Objekt festgelegt.</p>
-<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="dateimanagement.html#cb183-1" aria-hidden="true" tabindex="-1"></a>df_new <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">&quot;data/example.Rds&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="dateimanagement.html#cb184-1" aria-hidden="true" tabindex="-1"></a>df_new <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">&quot;data/example.Rds&quot;</span>)</span></code></pre></div>
 <p><em>Vorteil</em></p>
 <ul>
 <li>An neuen Namen bindbar</li>
@@ -481,15 +481,15 @@ Abb. 7.2: haven Package Logo
 <p>Das <code>haven</code>-Package ist ein mächtiges Package, um Dateien in anderen gängigen
 Statistik-Formaten (<code>.sav</code>, <code>.dta</code>) einzulesen.</p>
 <p>Die Funktionen funktionieren weitestgehend selbsterklärend:</p>
-<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="dateimanagement.html#cb184-1" aria-hidden="true" tabindex="-1"></a><span class="fu">needs</span>(haven)</span>
-<span id="cb184-2"><a href="dateimanagement.html#cb184-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb184-3"><a href="dateimanagement.html#cb184-3" aria-hidden="true" tabindex="-1"></a>df_example_spss <span class="ot">&lt;-</span> </span>
-<span id="cb184-4"><a href="dateimanagement.html#cb184-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">read_spss</span>(<span class="at">file =</span> <span class="st">&quot;data/example.sav&quot;</span>,  <span class="co"># Dateipfad</span></span>
-<span id="cb184-5"><a href="dateimanagement.html#cb184-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">encoding =</span> <span class="st">&quot;UTF-8&quot;</span>)         <span class="co"># Optional</span></span>
-<span id="cb184-6"><a href="dateimanagement.html#cb184-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb184-7"><a href="dateimanagement.html#cb184-7" aria-hidden="true" tabindex="-1"></a>df_example_stata <span class="ot">&lt;-</span> </span>
-<span id="cb184-8"><a href="dateimanagement.html#cb184-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">read_stata</span>(<span class="at">file =</span> <span class="st">&quot;data/example.dta&quot;</span>, <span class="co"># Dateipfad</span></span>
-<span id="cb184-9"><a href="dateimanagement.html#cb184-9" aria-hidden="true" tabindex="-1"></a>             <span class="at">encoding =</span> <span class="st">&quot;UTF-8&quot;</span>)        <span class="co"># Optional</span></span></code></pre></div>
+<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="dateimanagement.html#cb185-1" aria-hidden="true" tabindex="-1"></a><span class="fu">needs</span>(haven)</span>
+<span id="cb185-2"><a href="dateimanagement.html#cb185-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb185-3"><a href="dateimanagement.html#cb185-3" aria-hidden="true" tabindex="-1"></a>df_example_spss <span class="ot">&lt;-</span> </span>
+<span id="cb185-4"><a href="dateimanagement.html#cb185-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">read_spss</span>(<span class="at">file =</span> <span class="st">&quot;data/example.sav&quot;</span>,  <span class="co"># Dateipfad</span></span>
+<span id="cb185-5"><a href="dateimanagement.html#cb185-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">encoding =</span> <span class="st">&quot;UTF-8&quot;</span>)         <span class="co"># Optional</span></span>
+<span id="cb185-6"><a href="dateimanagement.html#cb185-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb185-7"><a href="dateimanagement.html#cb185-7" aria-hidden="true" tabindex="-1"></a>df_example_stata <span class="ot">&lt;-</span> </span>
+<span id="cb185-8"><a href="dateimanagement.html#cb185-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">read_stata</span>(<span class="at">file =</span> <span class="st">&quot;data/example.dta&quot;</span>, <span class="co"># Dateipfad</span></span>
+<span id="cb185-9"><a href="dateimanagement.html#cb185-9" aria-hidden="true" tabindex="-1"></a>             <span class="at">encoding =</span> <span class="st">&quot;UTF-8&quot;</span>)        <span class="co"># Optional</span></span></code></pre></div>
 
 </div>
 </div>

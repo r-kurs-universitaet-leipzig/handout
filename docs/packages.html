@@ -364,7 +364,7 @@ auf dem Computer installiert werden. Analog könnte man darunter auch das Lernen
 von neuen Vokabeln verstehen.</p>
 <p>Die Installation erfolgt über die Funktion <code>install.packages()</code>. Das einzige
 Argument ist der Name des zu ladenden Packages als Character.</p>
-<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="packages.html#cb173-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="packages.html#cb174-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</span></code></pre></div>
 <p>Ist das Package installiert, muss es zunächst noch geladen werden, bevor es
 benutzt werden kann. Hierfür gibt es zwei Funktionen:</p>
 <ul>
@@ -376,10 +376,10 @@ Das einzige Argument ist bei beiden Funktionen der Name des Packages als Name (o
 <p><code>require()</code> wurde für die Anwendung in Funktionen entwickelt. Wird ein Package
 hiermit geladen, wird ein <code>FALSE</code> zurückgegeben, wenn das Package nicht
 installiert ist.</p>
-<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="packages.html#cb174-1" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(tidyverse)</span></code></pre></div>
+<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="packages.html#cb175-1" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(tidyverse)</span></code></pre></div>
 <p><code>library()</code> gibt eine Fehlermeldung zurück, wenn das Package nicht installiert
 ist. Im Alltagsgebrauch wird diese Funktion empfohlen.</p>
-<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="packages.html#cb175-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="packages.html#cb176-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
 </div>
 <div id="needs" class="section level2 hasAnchor" number="6.2">
 <h2><span class="header-section-number">6.2</span> needs()<a href="packages.html#needs" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -391,12 +391,12 @@ heißt (sehr passend) <code>Needs</code> und lädt nur eine Funktionen: <code>ne
 Anführungszeichen) übergeben werden. Beim Ausführen wird zunächst überprüft,
 ob das Package installiert ist. Ist es installiert, wird es geladen. Ist es nicht
 installiert, wird es installiert und anschließend geladen.</p>
-<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="packages.html#cb176-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages(&quot;needs&quot;)</span></span>
-<span id="cb176-2"><a href="packages.html#cb176-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(needs)</span>
-<span id="cb176-3"><a href="packages.html#cb176-3" aria-hidden="true" tabindex="-1"></a><span class="fu">needs</span>(haven,</span>
-<span id="cb176-4"><a href="packages.html#cb176-4" aria-hidden="true" tabindex="-1"></a>      tidyverse,</span>
-<span id="cb176-5"><a href="packages.html#cb176-5" aria-hidden="true" tabindex="-1"></a>      lubridate</span>
-<span id="cb176-6"><a href="packages.html#cb176-6" aria-hidden="true" tabindex="-1"></a>      )</span></code></pre></div>
+<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="packages.html#cb177-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages(&quot;needs&quot;)</span></span>
+<span id="cb177-2"><a href="packages.html#cb177-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(needs)</span>
+<span id="cb177-3"><a href="packages.html#cb177-3" aria-hidden="true" tabindex="-1"></a><span class="fu">needs</span>(haven,</span>
+<span id="cb177-4"><a href="packages.html#cb177-4" aria-hidden="true" tabindex="-1"></a>      tidyverse,</span>
+<span id="cb177-5"><a href="packages.html#cb177-5" aria-hidden="true" tabindex="-1"></a>      lubridate</span>
+<span id="cb177-6"><a href="packages.html#cb177-6" aria-hidden="true" tabindex="-1"></a>      )</span></code></pre></div>
 <p>Im Arbeitsfluss kann dann ein Package, was benötigt wird, einfach in die Funktion
 geschrieben und ausgeführt werden.</p>
 <p><strong>Hinweis!</strong></p>

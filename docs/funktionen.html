@@ -361,7 +361,7 @@ div.csl-indent {
 <div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="funktionen.html#cb146-1" aria-hidden="true" tabindex="-1"></a>mean</span></code></pre></div>
 <pre><code>## function (x, ...) 
 ## UseMethod(&quot;mean&quot;)
-## &lt;bytecode: 0x55afd0c796b8&gt;
+## &lt;bytecode: 0x5582baf56aa0&gt;
 ## &lt;environment: namespace:base&gt;</code></pre>
 <p>Alle anderen Funktionen bestehen aus einer Komposition dieser <em>primitiven</em> Funktionen.</p>
 <p>Beispiel:</p>
@@ -404,7 +404,7 @@ div.csl-indent {
 ##     class(f) &lt;- c(if (ordered) &quot;ordered&quot;, &quot;factor&quot;)
 ##     f
 ## }
-## &lt;bytecode: 0x55afd2ffe7b8&gt;
+## &lt;bytecode: 0x5582bef01788&gt;
 ## &lt;environment: namespace:base&gt;</code></pre>
 </div>
 <div id="aufbau" class="section level2 hasAnchor" number="5.2">
@@ -453,8 +453,8 @@ div.csl-indent {
 <li>Auch diese Funktion gibt ein Objekt zurück.</li>
 <li>usw.</li>
 </ul>
-<div id="htmlwidget-809dcc2849c9dfb27c53" style="width:672px;height:192px;" class="DiagrammeR html-widget"></div>
-<script type="application/json" data-for="htmlwidget-809dcc2849c9dfb27c53">{"x":{"diagram":"\ngraph LR;\n    A(X) -->|mean| B(mean of X)\n    B -->|abs| C(absolute of mean of X)\n    C -->|...| D(result)\n        "},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-05c0c95e789f8fed38bb" style="width:672px;height:192px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-05c0c95e789f8fed38bb">{"x":{"diagram":"\ngraph LR;\n    A(X) -->|mean| B(mean of X)\n    B -->|abs| C(absolute of mean of X)\n    C -->|...| D(result)\n        "},"evals":[],"jsHooks":[]}</script>
 <p>Code Beispiel:</p>
 <div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="funktionen.html#cb161-1" aria-hidden="true" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="sc">-</span><span class="dv">2</span>,<span class="sc">-</span><span class="dv">3</span>,<span class="sc">-</span><span class="dv">4</span>)</span>
 <span id="cb161-2"><a href="funktionen.html#cb161-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -467,6 +467,8 @@ div.csl-indent {
 <p>An dem Code Beispiel werden die Vorteile von Pipes nochmal deutlich. Die Code-Sequenz kann von oben nach unten gelesen werden (wie eine Geschichte). Außerdem wird deutlicher, was mit den Daten Passiert und der Vorgang kann schnell, Durch das Anpassen von Argumenten abgewandelt werden.</p>
 <p><strong>Pro Tipp</strong></p>
 <p>Um einen Pipe-Operator einzufügen, kann die Tastenkombination <code>Str + Umschalt + m</code> bzw. <code>CMD + Umschalt + m</code> genutzt werden. Will man statt des nativen Operators den Operator aus dem Tidyverse nutzen, kann das über <code>Tools</code> <span class="math inline">\(\rightarrow\)</span> <code>Global Options</code> <span class="math inline">\(\rightarrow\)</span> <code>Code</code> <span class="math inline">\(\rightarrow\)</span> <code>Use native pipe operator</code> geändert werden.</p>
+<p><em>Video zum Thema Pipes:</em></p>
+<p><embed src="https://videocampus.urz.uni-leipzig.de/paella/ui/watch.html?id=cfc2918f-9bac-4844-8e27-e062d2d04fe2" width="820" height="640" /></p>
 </div>
 <div id="default-werte" class="section level2 hasAnchor" number="5.5">
 <h2><span class="header-section-number">5.5</span> Default Werte<a href="funktionen.html#default-werte" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -492,7 +494,7 @@ div.csl-indent {
 <h2><span class="header-section-number">5.6</span> Help Fenster<a href="funktionen.html#help-fenster" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Natürlich muss und soll niemand alle Argumente zu allen Funktionen auswendig lernen. R stellt hierzu bereits intern ein hilfreiches Hilfe-Fenster zur Verfügung.</p>
 <p>Für jede Funktion kann dieses über <code>?Funktionsaufruf</code> aufgerufen werden.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-82"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-81"></span>
 <img src="resources/Help.png" alt="Help Fenster" width="80%" />
 <p class="caption">
 Abb. 5.1: Help Fenster
@@ -512,14 +514,10 @@ Abb. 5.1: Help Fenster
 <h2><span class="header-section-number">5.7</span> Prüfe dich selbst<a href="funktionen.html#prüfe-dich-selbst-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Von dieser Sitzung solltest du folgendes mitgenommen haben:</p>
 <ul class="task-list">
-<li><input type="checkbox" disabled="" checked="" />
-Du solltest den typischen Aufbau von Funktionen kennen.</li>
-<li><input type="checkbox" disabled="" checked="" />
-Du solltest Pipes kennen, verstehen und rudimentär anwenden können.</li>
-<li><input type="checkbox" disabled="" checked="" />
-Du solltest wissen, dass es Default Werte gibt und wie du herausfindest, welche Werte als solche hinterlegt sind.</li>
-<li><input type="checkbox" disabled="" checked="" />
-Du solltest dich im Hilfefenster zurechtfinden.</li>
+<li><input type="checkbox" disabled="" checked="" />Du solltest den typischen Aufbau von Funktionen kennen.</li>
+<li><input type="checkbox" disabled="" checked="" />Du solltest Pipes kennen, verstehen und rudimentär anwenden können.</li>
+<li><input type="checkbox" disabled="" checked="" />Du solltest wissen, dass es Default Werte gibt und wie du herausfindest, welche Werte als solche hinterlegt sind.</li>
+<li><input type="checkbox" disabled="" checked="" />Du solltest dich im Hilfefenster zurechtfinden.</li>
 </ul>
 
 </div>

@@ -17,6 +17,7 @@
         DiagrammeR
         gapminder # data
         gganimate # make animated plots
+        ggforce
         ggmosaic # mosaic plots
         ggplot2 # graphic library
         ggrepel

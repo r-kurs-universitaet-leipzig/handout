@@ -26,6 +26,11 @@ df_example <- read.csv(file = "data/strata.csv")
 
 Der Nachteil dieser Herangehensweise ist, dass die WD global für alle Arbeitsschritte festgelegt wird. Sollen aber WDs für einzelne "Projekte" festgelegt werden, **sollten** RProjects genutzt werden.
 
+
+*Video zum Thema Pfadangaben:*
+
+![](https://videocampus.urz.uni-leipzig.de/paella/ui/watch.html?id=5c6f7375-c590-4156-931f-a58eb8bc7dc1){width="820" height="640"}
+
 ## R Projects
 
 ```{r, echo=FALSE, out.width='40%', fig.align='center', fig.cap="R Project Logo"}

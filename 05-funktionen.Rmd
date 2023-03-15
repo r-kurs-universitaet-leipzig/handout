@@ -135,6 +135,10 @@ An dem Code Beispiel werden die Vorteile von Pipes nochmal deutlich. Die Code-Se
 
 Um einen Pipe-Operator einzufügen, kann die Tastenkombination `Str + Umschalt + m` bzw. `CMD + Umschalt + m` genutzt werden. Will man statt des nativen Operators den Operator aus dem Tidyverse nutzen, kann das über `Tools` $\rightarrow$ `Global Options` $\rightarrow$ `Code` $\rightarrow$ `Use native pipe operator` geändert werden.
 
+*Video zum Thema Pipes:*
+
+![](https://videocampus.urz.uni-leipzig.de/paella/ui/watch.html?id=cfc2918f-9bac-4844-8e27-e062d2d04fe2){width="820" height="640"}
+
 ## Default Werte
 
 Die meisten Funktionen in R verfügen über sogenannte *Default Werte*. Hierbei handelt es sich um voreingestellte Werte, die für bestimmte Argumente verwendet werden, wenn bei diesen kein Wert übergeben wird.

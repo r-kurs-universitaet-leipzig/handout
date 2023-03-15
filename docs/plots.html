@@ -398,7 +398,7 @@ Bei dem erzeugten <strong>Mosaikplot</strong> entspricht die Fläche den Anteils
 <span id="cb216-4"><a href="plots.html#cb216-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Wahlbeteiligung (in Prozent)&quot;</span>, </span>
 <span id="cb216-5"><a href="plots.html#cb216-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">&quot;Wahlstimmen für die AfD (in Prozent)&quot;</span>,</span>
 <span id="cb216-6"><a href="plots.html#cb216-6" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">50</span>,<span class="dv">70</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">30</span>))</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-117-1.png" width="\textwidth" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-116-1.png" width="\textwidth" /></p>
 <p>Mit anderen Base R Funktionen kann auch ein bestimmter Typ von Plot erzwungen werden.</p>
 <table>
 <thead>
@@ -465,7 +465,7 @@ Bei dem erzeugten <strong>Mosaikplot</strong> entspricht die Fläche den Anteils
 <p><code>GGPlot2</code> ist ein mächtiges Grafik Package, um mit mittlerem
 Aufwand sehr ansprechende Plots zu produzieren.</p>
 <p>Die Logik des Aufbaus von Grafiken lehnt sich an die Ideen von Leland Wilkinson (<strong>The Grammar of Graphics</strong>) an.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-120"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-119"></span>
 <img src="resources/gglayers.png" alt="Quelle: http://r.qcbs.ca/workshop03/book-en/grammar-of-graphics-gg-basics.html" width="50%" />
 <p class="caption">
 Abb. 9.1: Quelle: <a href="http://r.qcbs.ca/workshop03/book-en/grammar-of-graphics-gg-basics.html" class="uri">http://r.qcbs.ca/workshop03/book-en/grammar-of-graphics-gg-basics.html</a>
@@ -478,14 +478,14 @@ Abb. 9.1: Quelle: <a href="http://r.qcbs.ca/workshop03/book-en/grammar-of-graphi
 <p>Es passiert augenscheinlich noch nichts. Tatsächlich werden aber die Daten
 bereits hinterlegt.</p>
 <div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb218-1"><a href="plots.html#cb218-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> df_regio)</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-121-1.png" width="\textwidth" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-120-1.png" width="\textwidth" /></p>
 </div>
 <div id="wichtiger-hinweis" class="section level3 hasAnchor" number="9.2.2">
 <h3><span class="header-section-number">9.2.2</span> Wichtiger Hinweis!<a href="plots.html#wichtiger-hinweis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Alternativ können die Daten an <code>ggplot()</code> auch gepiped werden:</p>
 <div class="sourceCode" id="cb219"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb219-1"><a href="plots.html#cb219-1" aria-hidden="true" tabindex="-1"></a>df_regio <span class="sc">%&gt;%</span> </span>
 <span id="cb219-2"><a href="plots.html#cb219-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>()</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-122-1.png" width="\textwidth" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-121-1.png" width="\textwidth" /></p>
 <p>Diese Vorgehensweise macht euren Code noch übersichtlicher und ihr überfüllt
 nicht euer Global Environment.</p>
 </div>
@@ -496,7 +496,7 @@ festgelegt. Hierbei wird definiert, welche Merkmale der Daten worauf projiziert 
 <div class="sourceCode" id="cb220"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb220-1"><a href="plots.html#cb220-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> df_regio,</span>
 <span id="cb220-2"><a href="plots.html#cb220-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Europawahl_Beteiligung_percent,</span>
 <span id="cb220-3"><a href="plots.html#cb220-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">y =</span> Europawahl_AFD_percent))</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-123-1.png" width="\textwidth" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-122-1.png" width="\textwidth" /></p>
 </div>
 <div id="geome" class="section level3 hasAnchor" number="9.2.4">
 <h3><span class="header-section-number">9.2.4</span> Geome<a href="plots.html#geome" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -506,7 +506,7 @@ festgelegt. Hierbei wird definiert, welche Merkmale der Daten worauf projiziert 
 <span id="cb221-3"><a href="plots.html#cb221-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">y =</span> Europawahl_AFD_percent)) <span class="sc">+</span></span>
 <span id="cb221-4"><a href="plots.html#cb221-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
 <span id="cb221-5"><a href="plots.html#cb221-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_rug</span>()</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-124-1.png" width="\textwidth" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-123-1.png" width="\textwidth" /></p>
 <p>Ein kleiner Clou: manchmal sollen die Aesthetics (z.B. die Farbe) nur für ein
 bestimmtes Geom angepasst werden. Wir können dadurch eine zusätzliche Abbildungsebene (mapping) zu dem bereits definierten Geom hinzufügen, ohne dies “global” zu tun.</p>
 <p>Beispiel: Die Farbe der Punkte soll sich nach alten und neuen Bundesländern unterscheiden, aber nur für die Punkte, nicht für die Randverteilung.</p>
@@ -515,7 +515,7 @@ bestimmtes Geom angepasst werden. Wir können dadurch eine zusätzliche Abbildun
 <span id="cb222-3"><a href="plots.html#cb222-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">y =</span> Europawahl_AFD_percent)) <span class="sc">+</span></span>
 <span id="cb222-4"><a href="plots.html#cb222-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">color =</span> Region)) <span class="sc">+</span></span>
 <span id="cb222-5"><a href="plots.html#cb222-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_rug</span>()</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-125-1.png" width="\textwidth" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-124-1.png" width="\textwidth" /></p>
 <p>Gleichzeitig können auch statische ästhetische Eigenschaften festgelegt werden, die nicht an Daten geknüpft sind. Die Randverteilung im Plot soll lila (<code>color</code>) dargestellt werden und die Punkte sollen durchsichtiger (<code>alpha</code>) und größer (<code>size</code>) werden. Dazu übergeben wir den Geom <code>geom_point()</code> die entsprechenden Argumente:</p>
 <div class="sourceCode" id="cb223"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb223-1"><a href="plots.html#cb223-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> df_regio,</span>
 <span id="cb223-2"><a href="plots.html#cb223-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Europawahl_Beteiligung_percent,</span>
@@ -524,7 +524,7 @@ bestimmtes Geom angepasst werden. Wir können dadurch eine zusätzliche Abbildun
 <span id="cb223-5"><a href="plots.html#cb223-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">alpha =</span> <span class="fl">0.6</span>, </span>
 <span id="cb223-6"><a href="plots.html#cb223-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
 <span id="cb223-7"><a href="plots.html#cb223-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_rug</span>(<span class="at">color =</span> <span class="st">&quot;purple&quot;</span>)</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-126-1.png" width="\textwidth" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-125-1.png" width="\textwidth" /></p>
 <p>Es existieren eine Vielzahl von Geomen. Hier eine kleine Übersicht über die wichtigsten:</p>
 <table>
 <thead>
@@ -588,7 +588,7 @@ bestimmtes Geom angepasst werden. Wir können dadurch eine zusätzliche Abbildun
 <span id="cb224-10"><a href="plots.html#cb224-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Wahlbeteiligung&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Wählerstimmen der AfD&quot;</span>,</span>
 <span id="cb224-11"><a href="plots.html#cb224-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">&quot;Bundesländer&quot;</span>) <span class="sc">+</span></span>
 <span id="cb224-12"><a href="plots.html#cb224-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_economist</span>()</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-127-1.png" width="\textwidth" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-126-1.png" width="\textwidth" /></p>
 </div>
 <div id="plots-als-objekte" class="section level3 hasAnchor" number="9.2.6">
 <h3><span class="header-section-number">9.2.6</span> Plots als Objekte<a href="plots.html#plots-als-objekte" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -608,10 +608,10 @@ Vorgehensweise entsprechend an:</p>
 <span id="cb228-5"><a href="plots.html#cb228-5" aria-hidden="true" tabindex="-1"></a>                    )</span></code></pre></div>
 <div class="sourceCode" id="cb229"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb229-1"><a href="plots.html#cb229-1" aria-hidden="true" tabindex="-1"></a>base_plot <span class="sc">+</span></span>
 <span id="cb229-2"><a href="plots.html#cb229-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-131-1.png" width="\textwidth" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-130-1.png" width="\textwidth" /></p>
 <div class="sourceCode" id="cb230"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb230-1"><a href="plots.html#cb230-1" aria-hidden="true" tabindex="-1"></a>base_plot <span class="sc">+</span></span>
 <span id="cb230-2"><a href="plots.html#cb230-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>)</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-132-1.png" width="\textwidth" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-131-1.png" width="\textwidth" /></p>
 </div>
 <div id="facets" class="section level3 hasAnchor" number="9.2.7">
 <h3><span class="header-section-number">9.2.7</span> Facets<a href="plots.html#facets" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -631,7 +631,7 @@ werden. Dies erfolgt mit <code>vars()</code>.</p>
 <span id="cb231-5"><a href="plots.html#cb231-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>,</span>
 <span id="cb231-6"><a href="plots.html#cb231-6" aria-hidden="true" tabindex="-1"></a>              <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
 <span id="cb231-7"><a href="plots.html#cb231-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="at">cols =</span> <span class="fu">vars</span>(Region))</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-133-1.png" width="\textwidth" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-132-1.png" width="\textwidth" /></p>
 </div>
 <div id="speichern-von-grafiken-mit-ggsave" class="section level3 hasAnchor" number="9.2.8">
 <h3><span class="header-section-number">9.2.8</span> Speichern von Grafiken mit GGSave<a href="plots.html#speichern-von-grafiken-mit-ggsave" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -667,7 +667,7 @@ ausführliche Informationen zu GGForce.</p>
 <span id="cb234-2"><a href="plots.html#cb234-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(country <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;Burundi&quot;</span>, <span class="st">&quot;Germany&quot;</span>)) <span class="sc">%&gt;%</span> </span>
 <span id="cb234-3"><a href="plots.html#cb234-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> lifeExp, <span class="at">y =</span> gdpPercap, <span class="at">color =</span> country)) <span class="sc">+</span> </span>
 <span id="cb234-4"><a href="plots.html#cb234-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.8</span>, <span class="at">shape =</span> <span class="dv">16</span>, <span class="at">size =</span> <span class="fl">1.7</span>)</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-136-1.png" width="\textwidth" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-135-1.png" width="\textwidth" /></p>
 <p>Das Problem, welches dabei augenscheinlich wird, ist, dass die Werte für Burundi am Boden der Grafik “kleben” und somit praktisch nicht interpretierbar sind.</p>
 <p>GGForce bietet uns eine bessere Möglichkeit der Darstellung:</p>
 <div class="sourceCode" id="cb235"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb235-1"><a href="plots.html#cb235-1" aria-hidden="true" tabindex="-1"></a>gapminder <span class="sc">%&gt;%</span> </span>
@@ -675,7 +675,7 @@ ausführliche Informationen zu GGForce.</p>
 <span id="cb235-3"><a href="plots.html#cb235-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> lifeExp, <span class="at">y =</span> gdpPercap, <span class="at">color =</span> country)) <span class="sc">+</span> </span>
 <span id="cb235-4"><a href="plots.html#cb235-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.8</span>, <span class="at">shape =</span> <span class="dv">16</span>, <span class="at">size =</span> <span class="fl">1.7</span>) <span class="sc">+</span></span>
 <span id="cb235-5"><a href="plots.html#cb235-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_zoom</span>(<span class="at">xy =</span> country <span class="sc">==</span> <span class="st">&quot;Burundi&quot;</span>)</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-137-1.png" width="\textwidth" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-136-1.png" width="\textwidth" /></p>
 </div>
 <div id="viridis" class="section level4 hasAnchor" number="9.2.9.2">
 <h4><span class="header-section-number">9.2.9.2</span> Viridis<a href="plots.html#viridis" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -686,7 +686,7 @@ ausführliche Informationen zu GGForce.</p>
 <span id="cb236-4"><a href="plots.html#cb236-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">size =</span> pop, <span class="at">color =</span> continent)) <span class="sc">+</span> </span>
 <span id="cb236-5"><a href="plots.html#cb236-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
 <span id="cb236-6"><a href="plots.html#cb236-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_viridis_d</span>() </span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-138-1.png" width="\textwidth" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-137-1.png" width="\textwidth" /></p>
 <p>Die Viridis Color-Scales gibt es sowohl für diskrete Daten (<code>scale_color_viridis_d()</code>) als auch für stetige (continuous) Daten (<code>scale_color_viridis_c()</code>.</p>
 </div>
 </div>
@@ -726,12 +726,9 @@ ausführliche Informationen zu GGForce.</p>
 <h2><span class="header-section-number">9.3</span> Prüfe dich selbst<a href="plots.html#prüfe-dich-selbst-5" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Von dieser Sitzung solltest du folgendes mitgenommen haben:</p>
 <ul class="task-list">
-<li><input type="checkbox" disabled="" checked="" />
-Du solltest wissen, wie die generische <code>plot()</code> Funktion in R funktioniert.</li>
-<li><input type="checkbox" disabled="" checked="" />
-Du solltest mindestens zwei Möglichkeiten nennen können, wie man in R Grafiken erzeugen kann.</li>
-<li><input type="checkbox" disabled="" checked="" />
-Du solltest verstanden haben, wie man ggplot Grafiken aufbaut. (Stichwort: Layer)</li>
+<li><input type="checkbox" disabled="" checked="" />Du solltest wissen, wie die generische <code>plot()</code> Funktion in R funktioniert.</li>
+<li><input type="checkbox" disabled="" checked="" />Du solltest mindestens zwei Möglichkeiten nennen können, wie man in R Grafiken erzeugen kann.</li>
+<li><input type="checkbox" disabled="" checked="" />Du solltest verstanden haben, wie man ggplot Grafiken aufbaut. (Stichwort: Layer)</li>
 </ul>
 
 </div>

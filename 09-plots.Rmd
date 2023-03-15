@@ -50,7 +50,9 @@ In dieser Sitzung werden wir uns zunächst mit Variante 1 (High-Level-Grafiken) 
 ## R Base Plots mit `plot()`
 
 Mit der generischen Funktion `plot()` lassen sich die elementarsten High-Level
-Grafiken erstellen. Die Art des Plots wird implizit entsprechend der Skalen der übergebenen Merkmale festgelegt. Kombinationen aus Merkmalen verschiedener Skalenniveaus  führen dabei zu unterschiedlichen Darstellungen. Wem der Begriff Skalenniveau nichts sagt, findet hier eine Referenz: [https://de.wikipedia.org/wiki/Skalenniveau](https://de.wikipedia.org/wiki/Skalenniveau).
+Grafiken erstellen. Die Art des Plots wird implizit entsprechend der Skalen der übergebenen Merkmale festgelegt. Kombinationen aus Merkmalen verschiedener Skalenniveaus  führen dabei zu unterschiedlichen Darstellungen. Wem der Begriff Skalenniveau nichts sagt, findet [hier](https://de.wikipedia.org/wiki/Skalenniveau) eine Referenz oder kann sich das folgende Video anschauen: 
+
+![](https://videocampus.urz.uni-leipzig.de/paella/ui/watch.html?id=1036ed95-e951-4d96-9b40-f004b426a3ee){width="820" height="640"}
 
 Zur Vorbereitung legen wir mit `dplyr::mutate()` noch zwei neue Variablen an:
 
@@ -118,6 +120,11 @@ plot(x = df_regio$Europawahl_Beteiligung_percent,
      ylab = "Wahlstimmen für die AfD (in Prozent)",
      xlim = c(50,70), ylim = c(5,30))
 ```
+
+*Video zu der Funktion `plot()`:*
+
+![](https://videocampus.urz.uni-leipzig.de/paella/ui/watch.html?id=c8caa390-729f-4986-b26c-c351fe67ca42){width="820" height="640"}
+
 
 Mit anderen Base R Funktionen kann auch ein bestimmter Typ von Plot erzwungen werden.
 

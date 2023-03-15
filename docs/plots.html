@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Kapitel 9 Plots und Grafiken | Handout für R Grundkurs</title>
   <meta name="description" content="Kapitel 9 Plots und Grafiken | Handout für R Grundkurs" />
-  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Kapitel 9 Plots und Grafiken | Handout für R Grundkurs" />
   <meta property="og:type" content="book" />
@@ -50,7 +50,7 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="libs/htmlwidgets-1.6.1/htmlwidgets.js"></script>
 <script src="libs/d3-3.3.8/d3.min.js"></script>
 <script src="libs/dagre-0.4.0/dagre-d3.min.js"></script>
 <link href="libs/mermaid-0.3.0/dist/mermaid.css" rel="stylesheet" />
@@ -357,7 +357,8 @@ Grafiken von Grund auf aufbauen und können sehr individuell gestaltet werden.</
 <div id="r-base-plots-mit-plot" class="section level2 hasAnchor" number="9.1">
 <h2><span class="header-section-number">9.1</span> R Base Plots mit <code>plot()</code><a href="plots.html#r-base-plots-mit-plot" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Mit der generischen Funktion <code>plot()</code> lassen sich die elementarsten High-Level
-Grafiken erstellen. Die Art des Plots wird implizit entsprechend der Skalen der übergebenen Merkmale festgelegt. Kombinationen aus Merkmalen verschiedener Skalenniveaus führen dabei zu unterschiedlichen Darstellungen. Wem der Begriff Skalenniveau nichts sagt, findet hier eine Referenz: <a href="https://de.wikipedia.org/wiki/Skalenniveau">https://de.wikipedia.org/wiki/Skalenniveau</a>.</p>
+Grafiken erstellen. Die Art des Plots wird implizit entsprechend der Skalen der übergebenen Merkmale festgelegt. Kombinationen aus Merkmalen verschiedener Skalenniveaus führen dabei zu unterschiedlichen Darstellungen. Wem der Begriff Skalenniveau nichts sagt, findet <a href="https://de.wikipedia.org/wiki/Skalenniveau">hier</a> eine Referenz oder kann sich das folgende Video anschauen:</p>
+<p><embed src="https://videocampus.urz.uni-leipzig.de/paella/ui/watch.html?id=1036ed95-e951-4d96-9b40-f004b426a3ee" width="820" height="640" /></p>
 <p>Zur Vorbereitung legen wir mit <code>dplyr::mutate()</code> noch zwei neue Variablen an:</p>
 <div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb210-1"><a href="plots.html#cb210-1" aria-hidden="true" tabindex="-1"></a>df_regio <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="at">file =</span> <span class="st">&quot;data/regio.rds&quot;</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb210-2"><a href="plots.html#cb210-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Region =</span> <span class="fu">if_else</span>(<span class="at">condition =</span> Regio_Code <span class="sc">&lt;</span> <span class="dv">11000</span>,</span>
@@ -399,6 +400,8 @@ Bei dem erzeugten <strong>Mosaikplot</strong> entspricht die Fläche den Anteils
 <span id="cb216-5"><a href="plots.html#cb216-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">&quot;Wahlstimmen für die AfD (in Prozent)&quot;</span>,</span>
 <span id="cb216-6"><a href="plots.html#cb216-6" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">50</span>,<span class="dv">70</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">30</span>))</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/unnamed-chunk-116-1.png" width="\textwidth" /></p>
+<p><em>Video zu der Funktion <code>plot()</code>:</em></p>
+<p><embed src="https://videocampus.urz.uni-leipzig.de/paella/ui/watch.html?id=c8caa390-729f-4986-b26c-c351fe67ca42" width="820" height="640" /></p>
 <p>Mit anderen Base R Funktionen kann auch ein bestimmter Typ von Plot erzwungen werden.</p>
 <table>
 <thead>

@@ -1,4 +1,0 @@
-"0","gapminder %>% "
-"0","  filter(country %in% c(""Burundi"", ""Germany"")) %>% "
-"0","  ggplot(aes(x = lifeExp, y = gdpPercap, color = country)) + "
-"0","  geom_point(alpha = 0.8, shape = 16, size = 1.7)"

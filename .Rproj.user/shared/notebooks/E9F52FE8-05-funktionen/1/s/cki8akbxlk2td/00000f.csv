@@ -1,0 +1,11 @@
+"0","library(DiagrammeR)"
+"2","Registered S3 method overwritten by 'htmlwidgets':
+  method           from         
+  print.htmlwidget tools:rstudio
+"
+"0","mermaid("""
+"0","graph LR;"
+"0","    A(X) -->|mean| B(mean of X)"
+"0","    B -->|abs| C(absolute of mean of X)"
+"0","    C -->|...| D(result)"
+"0","        "")"

@@ -53,6 +53,10 @@ ist. Im Alltagsgebrauch wird diese Funktion empfohlen.
 library(tidyverse)
 ```
 
+*Video zum Installieren und Laden von Packages:*
+
+![](https://videocampus.urz.uni-leipzig.de/paella/ui/watch.html?id=6ccedf02-f692-4d65-8889-a50394da4c38){width="820" height="640"}
+
 ## needs()
 
 Gerade im Arbeitsfluss ist die oben beschriebene Vorgehensweise lästig. Auf 
@@ -85,9 +89,6 @@ Diese Funktionsweise ist ein wenig "buggy"; heißt: manchmal funktioniert das
 nicht. Wir empfehlen, einfach das Package zu Beginn zu laden und sich nicht 
 hierauf zu verlassen.
 
+*Video zu needs:*
 
-
-
-
-
-
+![](https://videocampus.urz.uni-leipzig.de/paella/ui/watch.html?id=e6740984-4865-4f4e-8d4d-eaf62fcc9823){width="820" height="640"}

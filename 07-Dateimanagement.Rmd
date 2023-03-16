@@ -29,7 +29,9 @@ Der Nachteil dieser Herangehensweise ist, dass die WD global für alle Arbeitssc
 
 *Video zum Thema Pfadangaben:*
 
-![](https://videocampus.urz.uni-leipzig.de/paella/ui/watch.html?id=5c6f7375-c590-4156-931f-a58eb8bc7dc1){width="820" height="640"}
+```{r, echo=FALSE}
+knitr::include_url("https://videocampus.urz.uni-leipzig.de/paella/ui/watch.html?id=5c6f7375-c590-4156-931f-a58eb8bc7dc1")
+```
 
 ## R Projects
 

@@ -55,7 +55,10 @@ library(tidyverse)
 
 *Video zum Installieren und Laden von Packages:*
 
-![](https://videocampus.urz.uni-leipzig.de/paella/ui/watch.html?id=6ccedf02-f692-4d65-8889-a50394da4c38){width="820" height="640"}
+```{r, echo=FALSE}
+knitr::include_url("https://videocampus.urz.uni-leipzig.de/paella/ui/watch.html?id=6ccedf02-f692-4d65-8889-a50394da4c38")
+```
+
 
 ## needs()
 
@@ -91,4 +94,7 @@ hierauf zu verlassen.
 
 *Video zu needs:*
 
-![](https://videocampus.urz.uni-leipzig.de/paella/ui/watch.html?id=e6740984-4865-4f4e-8d4d-eaf62fcc9823){width="820" height="640"}
+```{r, echo=FALSE}
+knitr::include_url("https://videocampus.urz.uni-leipzig.de/paella/ui/watch.html?id=e6740984-4865-4f4e-8d4d-eaf62fcc9823")
+```
+

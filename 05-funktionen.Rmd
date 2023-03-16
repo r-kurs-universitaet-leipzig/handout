@@ -137,7 +137,10 @@ Um einen Pipe-Operator einzufügen, kann die Tastenkombination `Str + Umschalt +
 
 *Video zum Thema Pipes:*
 
-![](https://videocampus.urz.uni-leipzig.de/paella/ui/watch.html?id=cfc2918f-9bac-4844-8e27-e062d2d04fe2){width="820" height="640"}
+```{r, echo=FALSE}
+knitr::include_url("https://videocampus.urz.uni-leipzig.de/paella/ui/watch.html?id=cfc2918f-9bac-4844-8e27-e062d2d04fe2")
+```
+
 
 ## Default Werte
 

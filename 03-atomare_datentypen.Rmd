@@ -355,12 +355,15 @@ Von dieser Sitzung solltest du Folgendes mitgenommen haben:
 
 ### Atomare Datentypen
 
-![](https://videocampus.urz.uni-leipzig.de/paella/ui/watch.html?id=8ceb0e8a-1966-4616-94e1-b2fbca29d2c9){width="820" height="640"}
+```{r, echo=FALSE}
+knitr::include_url("https://videocampus.urz.uni-leipzig.de/paella/ui/watch.html?id=8ceb0e8a-1966-4616-94e1-b2fbca29d2c9")
+```
 
 ### Objektzuweisungen
 
-![](https://videocampus.urz.uni-leipzig.de/paella/ui/watch.html?id=04c9530b-d697-43a1-9884-219e6a3f69a9){width="820" height="640"}
-
+```{r, echo=FALSE}
+knitr::include_url("https://videocampus.urz.uni-leipzig.de/paella/ui/watch.html?id=04c9530b-d697-43a1-9884-219e6a3f69a9")
+```
 
 
 

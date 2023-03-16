@@ -344,9 +344,14 @@ mean(df_lineup$Alter)
 
 ### Homogene Strukturierte Datentypen
 
-![](https://videocampus.urz.uni-leipzig.de/paella/ui/watch.html?id=e63004b5-4ef2-46fc-ba20-a60348063d26){width="820" height="640"}
+```{r, echo=FALSE}
+knitr::include_url("https://videocampus.urz.uni-leipzig.de/paella/ui/watch.html?id=e63004b5-4ef2-46fc-ba20-a60348063d26")
+```
 
 ### Heterogene Strukturierte Datentypen
 
-![](https://videocampus.urz.uni-leipzig.de/paella/ui/watch.html?id=a092a446-32c5-4a56-85bb-5f0115e73fd3){width="820" height="640"}
+```{r, echo=FALSE}
+knitr::include_url("https://videocampus.urz.uni-leipzig.de/paella/ui/watch.html?id=a092a446-32c5-4a56-85bb-5f0115e73fd3")
+```
+
 

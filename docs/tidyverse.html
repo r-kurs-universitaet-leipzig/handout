@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Kapitel 8 Tidyverse | Handout für R Grundkurs</title>
   <meta name="description" content="Kapitel 8 Tidyverse | Handout für R Grundkurs" />
-  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Kapitel 8 Tidyverse | Handout für R Grundkurs" />
   <meta property="og:type" content="book" />
@@ -50,7 +50,7 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.6.1/htmlwidgets.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
 <script src="libs/d3-3.3.8/d3.min.js"></script>
 <script src="libs/dagre-0.4.0/dagre-d3.min.js"></script>
 <link href="libs/mermaid-0.3.0/dist/mermaid.css" rel="stylesheet" />
@@ -347,7 +347,7 @@ div.csl-indent {
 <div id="das-tidyverse" class="section level2 hasAnchor" number="8.1">
 <h2><span class="header-section-number">8.1</span> Das “Tidyverse”<a href="tidyverse.html#das-tidyverse" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Das Tidyverse ist eine Sammlung von Packages, welche einer gemeinsamen Grammatik folgen. Im Folgenden wird ein Package immer durch die doppelten Punkte gekennzeichnet sein, zum Beispiel: <code>dplyr::</code>. Das entspricht in R der Syntax, um eine Funktion aus einem bestimmten Package-Scope abzurufen. So können zwei Funktionen zwar den gleichen Namen haben, aber unterschiedlich implementiert sein, wie etwa <code>dplyr::filter()</code> und <code>stats::filter()</code>, welche in eurem Skript uneindeutig einfach nur <code>filter()</code> heißen könnten. Bei solchen Konflikten, ist es ratsam des jeweilige Package, aus welchem man die Funktion aufrufen will <em>explizit</em> zu deklarieren, also samt <code>dplyr::</code>.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-96"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-104"></span>
 <img src="resources/tidyverse_components_new.png" alt="Tidyverse Components Logo" width="70%" />
 <p class="caption">
 Abb. 8.1: Tidyverse Components Logo
@@ -364,7 +364,7 @@ Abb. 8.1: Tidyverse Components Logo
 <div id="dplyr" class="section level2 hasAnchor" number="8.2">
 <h2><span class="header-section-number">8.2</span> <code>dplyr::</code><a href="tidyverse.html#dplyr" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>In dieser Sitzung werden wir uns vornehmlich mit dem Package <code>dplyr::</code> beschäftigen. Auf dem entsprechenden <a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-transformation.pdf">Cheatsheet</a> findet ihr alle Funktionen übersichtlich dargestellt, welche wir jetzt im Detail besprechen wollen.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-98"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-106"></span>
 <img src="resources/dplyr_new.png" alt="dplyr Logo" width="30%" />
 <p class="caption">
 Abb. 8.2: dplyr Logo
@@ -378,20 +378,19 @@ Abb. 8.2: dplyr Logo
 <div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="tidyverse.html#cb186-1" aria-hidden="true" tabindex="-1"></a>starwars <span class="ot">&lt;-</span> dplyr<span class="sc">::</span>starwars</span>
 <span id="cb186-2"><a href="tidyverse.html#cb186-2" aria-hidden="true" tabindex="-1"></a>starwars</span></code></pre></div>
 <pre><code>## # A tibble: 87 × 14
-##    name               height  mass hair_color skin_…¹ eye_c…² birth…³ sex   gender homew…⁴ species films vehic…⁵ stars…⁶
-##    &lt;chr&gt;               &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;   &lt;chr&gt;   &lt;lis&gt; &lt;list&gt;  &lt;list&gt; 
-##  1 Luke Skywalker        172    77 blond      fair    blue       19   male  mascu… Tatooi… Human   &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;  
-##  2 C-3PO                 167    75 &lt;NA&gt;       gold    yellow    112   none  mascu… Tatooi… Droid   &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;  
-##  3 R2-D2                  96    32 &lt;NA&gt;       white,… red        33   none  mascu… Naboo   Droid   &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;  
-##  4 Darth Vader           202   136 none       white   yellow     41.9 male  mascu… Tatooi… Human   &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;  
-##  5 Leia Organa           150    49 brown      light   brown      19   fema… femin… Aldera… Human   &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;  
-##  6 Owen Lars             178   120 brown, gr… light   blue       52   male  mascu… Tatooi… Human   &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;  
-##  7 Beru Whitesun lars    165    75 brown      light   blue       47   fema… femin… Tatooi… Human   &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;  
-##  8 R5-D4                  97    32 &lt;NA&gt;       white,… red        NA   none  mascu… Tatooi… Droid   &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;  
-##  9 Biggs Darklighter     183    84 black      light   brown      24   male  mascu… Tatooi… Human   &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;  
-## 10 Obi-Wan Kenobi        182    77 auburn, w… fair    blue-g…    57   male  mascu… Stewjon Human   &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;  
-## # … with 77 more rows, and abbreviated variable names ¹​skin_color, ²​eye_color, ³​birth_year, ⁴​homeworld, ⁵​vehicles,
-## #   ⁶​starships</code></pre>
+##    name               height  mass hair_color    skin_color  eye_color birth…¹ sex   gender homew…² species films vehic…³ stars…⁴
+##    &lt;chr&gt;               &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;         &lt;chr&gt;       &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;   &lt;chr&gt;   &lt;lis&gt; &lt;list&gt;  &lt;list&gt; 
+##  1 Luke Skywalker        172    77 blond         fair        blue         19   male  mascu… Tatooi… Human   &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;  
+##  2 C-3PO                 167    75 &lt;NA&gt;          gold        yellow      112   none  mascu… Tatooi… Droid   &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;  
+##  3 R2-D2                  96    32 &lt;NA&gt;          white, blue red          33   none  mascu… Naboo   Droid   &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;  
+##  4 Darth Vader           202   136 none          white       yellow       41.9 male  mascu… Tatooi… Human   &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;  
+##  5 Leia Organa           150    49 brown         light       brown        19   fema… femin… Aldera… Human   &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;  
+##  6 Owen Lars             178   120 brown, grey   light       blue         52   male  mascu… Tatooi… Human   &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;  
+##  7 Beru Whitesun lars    165    75 brown         light       blue         47   fema… femin… Tatooi… Human   &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;  
+##  8 R5-D4                  97    32 &lt;NA&gt;          white, red  red          NA   none  mascu… Tatooi… Droid   &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;  
+##  9 Biggs Darklighter     183    84 black         light       brown        24   male  mascu… Tatooi… Human   &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;  
+## 10 Obi-Wan Kenobi        182    77 auburn, white fair        blue-gray    57   male  mascu… Stewjon Human   &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;  
+## # … with 77 more rows, and abbreviated variable names ¹​birth_year, ²​homeworld, ³​vehicles, ⁴​starships</code></pre>
 </div>
 </div>
 <div id="variablen-manipulieren" class="section level2 hasAnchor" number="8.3">
@@ -454,8 +453,8 @@ Im Prinzip könnt ihr in fast jedem Fall die native Pipe und die Tidyverse Pipe 
 <span id="cb198-2"><a href="tidyverse.html#cb198-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="st">&quot;height_in_cm&quot;</span> <span class="ot">=</span> <span class="st">&quot;height&quot;</span>,</span>
 <span id="cb198-3"><a href="tidyverse.html#cb198-3" aria-hidden="true" tabindex="-1"></a>         <span class="st">&quot;mass_in_kg&quot;</span> <span class="ot">=</span> <span class="st">&quot;mass&quot;</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb198-4"><a href="tidyverse.html#cb198-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">names</span>() <span class="co"># Gibt die Namen aller Variablen aus</span></span></code></pre></div>
-<pre><code>##  [1] &quot;name&quot;         &quot;height_in_cm&quot; &quot;mass_in_kg&quot;   &quot;hair_color&quot;   &quot;skin_color&quot;   &quot;eye_color&quot;    &quot;birth_year&quot;  
-##  [8] &quot;sex&quot;          &quot;gender&quot;       &quot;homeworld&quot;    &quot;species&quot;      &quot;films&quot;        &quot;vehicles&quot;     &quot;starships&quot;</code></pre>
+<pre><code>##  [1] &quot;name&quot;         &quot;height_in_cm&quot; &quot;mass_in_kg&quot;   &quot;hair_color&quot;   &quot;skin_color&quot;   &quot;eye_color&quot;    &quot;birth_year&quot;   &quot;sex&quot;         
+##  [9] &quot;gender&quot;       &quot;homeworld&quot;    &quot;species&quot;      &quot;films&quot;        &quot;vehicles&quot;     &quot;starships&quot;</code></pre>
 <p>Wie man sehen kann, wurden die Namen <code>"height"</code> und <code>"mass"</code> in die von uns angegebenen neuen Namen geändert.</p>
 </div>
 </div>
@@ -465,24 +464,24 @@ Im Prinzip könnt ihr in fast jedem Fall die native Pipe und die Tidyverse Pipe 
 <div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb200-1"><a href="tidyverse.html#cb200-1" aria-hidden="true" tabindex="-1"></a>starwars <span class="sc">%&gt;%</span></span>
 <span id="cb200-2"><a href="tidyverse.html#cb200-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(hair_color <span class="sc">==</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 4 × 14
-##   name         height  mass hair_color skin_color eye_color birth_y…¹ sex   gender homew…² species films vehic…³ stars…⁴
-##   &lt;chr&gt;         &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;         &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;   &lt;chr&gt;   &lt;lis&gt; &lt;list&gt;  &lt;list&gt; 
-## 1 Yoda             66    17 white      green      brown           896 male  mascu… &lt;NA&gt;    Yoda&#39;s… &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;  
-## 2 Ki-Adi-Mundi    198    82 white      pale       yellow           92 male  mascu… Cerea   Cerean  &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;  
-## 3 Dooku           193    80 white      fair       brown           102 male  mascu… Serenno Human   &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;  
-## 4 Jocasta Nu      167    NA white      fair       blue             NA fema… femin… Corusc… Human   &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;  
-## # … with abbreviated variable names ¹​birth_year, ²​homeworld, ³​vehicles, ⁴​starships</code></pre>
+##   name         height  mass hair_color skin_color eye_color birth_year sex    gender    homeworld species   films vehic…¹ stars…²
+##   &lt;chr&gt;         &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     &lt;chr&gt;     &lt;chr&gt;     &lt;lis&gt; &lt;list&gt;  &lt;list&gt; 
+## 1 Yoda             66    17 white      green      brown            896 male   masculine &lt;NA&gt;      Yoda&#39;s s… &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;  
+## 2 Ki-Adi-Mundi    198    82 white      pale       yellow            92 male   masculine Cerea     Cerean    &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;  
+## 3 Dooku           193    80 white      fair       brown            102 male   masculine Serenno   Human     &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;  
+## 4 Jocasta Nu      167    NA white      fair       blue              NA female feminine  Coruscant Human     &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;  
+## # … with abbreviated variable names ¹​vehicles, ²​starships</code></pre>
 <p>Wie auch in anderen Funktionen, die wir bereits kennengelernt haben, können wir auch logische Konjunktoren verwenden, um bestimmte Bedingungen auszudrücken:</p>
 <div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb202-1"><a href="tidyverse.html#cb202-1" aria-hidden="true" tabindex="-1"></a>starwars <span class="sc">%&gt;%</span></span>
 <span id="cb202-2"><a href="tidyverse.html#cb202-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(homeworld <span class="sc">==</span> <span class="st">&quot;Tatooine&quot;</span> <span class="sc">&amp;</span> sex <span class="sc">!=</span> <span class="st">&quot;male&quot;</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 4 × 14
-##   name               height  mass hair_color skin_c…¹ eye_c…² birth…³ sex   gender homew…⁴ species films vehic…⁵ stars…⁶
-##   &lt;chr&gt;               &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;    &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;   &lt;chr&gt;   &lt;lis&gt; &lt;list&gt;  &lt;list&gt; 
-## 1 C-3PO                 167    75 &lt;NA&gt;       gold     yellow      112 none  mascu… Tatooi… Droid   &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;  
-## 2 Beru Whitesun lars    165    75 brown      light    blue         47 fema… femin… Tatooi… Human   &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;  
-## 3 R5-D4                  97    32 &lt;NA&gt;       white, … red          NA none  mascu… Tatooi… Droid   &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;  
-## 4 Shmi Skywalker        163    NA black      fair     brown        72 fema… femin… Tatooi… Human   &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;  
-## # … with abbreviated variable names ¹​skin_color, ²​eye_color, ³​birth_year, ⁴​homeworld, ⁵​vehicles, ⁶​starships</code></pre>
+##   name               height  mass hair_color skin_color eye_color birth_year sex    gender  homew…¹ species films vehic…² stars…³
+##   &lt;chr&gt;               &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;lis&gt; &lt;list&gt;  &lt;list&gt; 
+## 1 C-3PO                 167    75 &lt;NA&gt;       gold       yellow           112 none   mascul… Tatooi… Droid   &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;  
+## 2 Beru Whitesun lars    165    75 brown      light      blue              47 female femini… Tatooi… Human   &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;  
+## 3 R5-D4                  97    32 &lt;NA&gt;       white, red red               NA none   mascul… Tatooi… Droid   &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;  
+## 4 Shmi Skywalker        163    NA black      fair       brown             72 female femini… Tatooi… Human   &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;  
+## # … with abbreviated variable names ¹​homeworld, ²​vehicles, ³​starships</code></pre>
 <p>Hier zum Beispiel erhalten wir einen Dataframe, der nur die Fälle beinhaltet, welche aus Tatooine stammen und nicht männlich sind.</p>
 <p><strong>Achtung!</strong>
 <code>filter()</code> behält nur diejenigen Zeilen (Fälle), über welche definitiv gesagt werden kann, dass sie der angegebenen Bedingung entsprechen und somit “wahr” sind. Alle <code>NA</code>-Werte, für welche wir nicht wissen, ob sie wahr wären, werden nicht mit aufgenommen!</p>
@@ -494,14 +493,14 @@ Im Prinzip könnt ihr in fast jedem Fall die native Pipe und die Tidyverse Pipe 
 <span id="cb204-3"><a href="tidyverse.html#cb204-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>(<span class="dv">5</span>) <span class="co"># nimm die ersten fünf Fälle</span></span></code></pre></div>
 <pre><code>## # A tibble: 5 × 14
 ## # Groups:   homeworld [3]
-##   name           height  mass hair_color skin_color  eye_co…¹ birth…² sex   gender homew…³ species films vehic…⁴ stars…⁵
-##   &lt;chr&gt;           &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;       &lt;chr&gt;      &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;   &lt;chr&gt;   &lt;lis&gt; &lt;list&gt;  &lt;list&gt; 
-## 1 Luke Skywalker    172    77 blond      fair        blue        19   male  mascu… Tatooi… Human   &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;  
-## 2 C-3PO             167    75 &lt;NA&gt;       gold        yellow     112   none  mascu… Tatooi… Droid   &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;  
-## 3 R2-D2              96    32 &lt;NA&gt;       white, blue red         33   none  mascu… Naboo   Droid   &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;  
-## 4 Darth Vader       202   136 none       white       yellow      41.9 male  mascu… Tatooi… Human   &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;  
-## 5 Leia Organa       150    49 brown      light       brown       19   fema… femin… Aldera… Human   &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;  
-## # … with abbreviated variable names ¹​eye_color, ²​birth_year, ³​homeworld, ⁴​vehicles, ⁵​starships</code></pre>
+##   name           height  mass hair_color skin_color  eye_color birth_year sex    gender    homewo…¹ species films vehic…² stars…³
+##   &lt;chr&gt;           &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;       &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     &lt;chr&gt;    &lt;chr&gt;   &lt;lis&gt; &lt;list&gt;  &lt;list&gt; 
+## 1 Luke Skywalker    172    77 blond      fair        blue            19   male   masculine Tatooine Human   &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;  
+## 2 C-3PO             167    75 &lt;NA&gt;       gold        yellow         112   none   masculine Tatooine Droid   &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;  
+## 3 R2-D2              96    32 &lt;NA&gt;       white, blue red             33   none   masculine Naboo    Droid   &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;  
+## 4 Darth Vader       202   136 none       white       yellow          41.9 male   masculine Tatooine Human   &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;  
+## 5 Leia Organa       150    49 brown      light       brown           19   female feminine  Alderaan Human   &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;  
+## # … with abbreviated variable names ¹​homeworld, ²​vehicles, ³​starships</code></pre>
 <p>Im Hintergrund haben wir unseren Tibble aber um das Attribut <code>group</code> ergänzt, welches jeweils die Zeilennummern für die Fälle einer Gruppe als integer Vektor speichert.</p>
 <div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb206-1"><a href="tidyverse.html#cb206-1" aria-hidden="true" tabindex="-1"></a>starwars <span class="sc">%&gt;%</span></span>
 <span id="cb206-2"><a href="tidyverse.html#cb206-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(homeworld) <span class="sc">%&gt;%</span></span>

@@ -363,7 +363,7 @@ macht.</p></li>
 <div id="funktionen-selber-schreiben" class="section level2 hasAnchor" number="10.2">
 <h2><span class="header-section-number">10.2</span> Funktionen selber schreiben<a href="kontrollstrukturen.html#funktionen-selber-schreiben" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Funktionen waren schon oft unser Thema. Jetzt wollen wir uns anschauen, wie man selbst eine Funktion schreiben kann. Dies geschieht im Allgemeinen über dieses generelle Schema einer Funktionszuweisung:</p>
-<div class="sourceCode" id="cb238"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb238-1"><a href="kontrollstrukturen.html#cb238-1" aria-hidden="true" tabindex="-1"></a>name_function <span class="ot">&lt;-</span> <span class="cf">function</span>(arg1, ...) {body}</span></code></pre></div>
+<div class="sourceCode" id="cb239"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb239-1"><a href="kontrollstrukturen.html#cb239-1" aria-hidden="true" tabindex="-1"></a>name_function <span class="ot">&lt;-</span> <span class="cf">function</span>(arg1, ...) {body}</span></code></pre></div>
 <ul>
 <li>Mit der Funktion <code>function()</code> können wir Funktionen erzeugen. :) Man beachte allerdings, dass nach den Klammern <code>()</code> noch etwas folgt.</li>
 <li>Funktionen sind auch Objekte und können wie alle anderen Objekte auch an Namen gebunden werden.</li>
@@ -371,62 +371,62 @@ macht.</p></li>
 <li>Der <code>body</code> oder auch Rumpf der Funktion enthält den Code, welcher beim Funktionsaufruf ausgeführt werden soll.</li>
 </ul>
 <p>Eine konkrete Funktionszuweisung könnte dann so aussehen:</p>
-<div class="sourceCode" id="cb239"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb239-1"><a href="kontrollstrukturen.html#cb239-1" aria-hidden="true" tabindex="-1"></a>quadrat <span class="ot">&lt;-</span> <span class="cf">function</span> (x) {x<span class="sc">^</span><span class="dv">2</span>}</span>
-<span id="cb239-2"><a href="kontrollstrukturen.html#cb239-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb239-3"><a href="kontrollstrukturen.html#cb239-3" aria-hidden="true" tabindex="-1"></a><span class="fu">quadrat</span>(<span class="dv">2</span>) </span></code></pre></div>
+<div class="sourceCode" id="cb240"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb240-1"><a href="kontrollstrukturen.html#cb240-1" aria-hidden="true" tabindex="-1"></a>quadrat <span class="ot">&lt;-</span> <span class="cf">function</span> (x) {x<span class="sc">^</span><span class="dv">2</span>}</span>
+<span id="cb240-2"><a href="kontrollstrukturen.html#cb240-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb240-3"><a href="kontrollstrukturen.html#cb240-3" aria-hidden="true" tabindex="-1"></a><span class="fu">quadrat</span>(<span class="dv">2</span>) </span></code></pre></div>
 <pre><code>## [1] 4</code></pre>
 <p>Die erzeugte Funktion nimmt eine Zahl <code>x</code> als Parameter entgegen und berechnet das Quadrat dieser. Da im <code>body</code> nichts Abweichendes definiert ist, wird das letzte Objekt zurückgegeben, also das Ergebnis unserer Berechnung. Unser Rückgabewert entspricht also dem Ergebnis der funktion <code>x^2</code>.</p>
 <p>Optional kann man eine Rückgabe innerhalb des Rumpfes der Funktion auch erzwingen. Dazu verwendet man die Funktion <code>return()</code>. Zu beachten gilt es, dass die Ausführung der Funktion beim ersten Aufruf der <code>return()</code> Funktion abbricht und folgender Code nicht mehr berücksichtigt wird.</p>
-<div class="sourceCode" id="cb241"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb241-1"><a href="kontrollstrukturen.html#cb241-1" aria-hidden="true" tabindex="-1"></a>quadrat <span class="ot">&lt;-</span> <span class="cf">function</span> (x) {</span>
-<span id="cb241-2"><a href="kontrollstrukturen.html#cb241-2" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb241-3"><a href="kontrollstrukturen.html#cb241-3" aria-hidden="true" tabindex="-1"></a>  y <span class="ot">&lt;-</span> x<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb241-4"><a href="kontrollstrukturen.html#cb241-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(y)</span>
-<span id="cb241-5"><a href="kontrollstrukturen.html#cb241-5" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb241-6"><a href="kontrollstrukturen.html#cb241-6" aria-hidden="true" tabindex="-1"></a>  y <span class="ot">&lt;-</span> y <span class="sc">+</span> <span class="dv">1</span> </span>
-<span id="cb241-7"><a href="kontrollstrukturen.html#cb241-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(y)</span>
-<span id="cb241-8"><a href="kontrollstrukturen.html#cb241-8" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb241-9"><a href="kontrollstrukturen.html#cb241-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb241-10"><a href="kontrollstrukturen.html#cb241-10" aria-hidden="true" tabindex="-1"></a><span class="fu">quadrat</span>(<span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb242"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb242-1"><a href="kontrollstrukturen.html#cb242-1" aria-hidden="true" tabindex="-1"></a>quadrat <span class="ot">&lt;-</span> <span class="cf">function</span> (x) {</span>
+<span id="cb242-2"><a href="kontrollstrukturen.html#cb242-2" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb242-3"><a href="kontrollstrukturen.html#cb242-3" aria-hidden="true" tabindex="-1"></a>  y <span class="ot">&lt;-</span> x<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb242-4"><a href="kontrollstrukturen.html#cb242-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(y)</span>
+<span id="cb242-5"><a href="kontrollstrukturen.html#cb242-5" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb242-6"><a href="kontrollstrukturen.html#cb242-6" aria-hidden="true" tabindex="-1"></a>  y <span class="ot">&lt;-</span> y <span class="sc">+</span> <span class="dv">1</span> </span>
+<span id="cb242-7"><a href="kontrollstrukturen.html#cb242-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(y)</span>
+<span id="cb242-8"><a href="kontrollstrukturen.html#cb242-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb242-9"><a href="kontrollstrukturen.html#cb242-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb242-10"><a href="kontrollstrukturen.html#cb242-10" aria-hidden="true" tabindex="-1"></a><span class="fu">quadrat</span>(<span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## [1] 4</code></pre>
 <p>Im gegebenen Beispiel wird alles nach dem ersten <code>return(y)</code> nicht mehr ausgeführt. Der Rückgabewert der Funktion entspricht dem Wert des Objektes, welches mit dem Namen <code>y</code> verknüpft ist.</p>
 <p>Wie wir gerade schon gesehen haben, können wir auch innerhalb von Funktionen Objekte an Namen binden. Dabei gilt es aber zu berücksichtigen, dass wir dabei <strong>kein</strong> Objekt in unserem <em>Global Environment</em> anlegen. Die Zuweisung gilt lediglich für den jeweiligen Wirkungsbereich (Scope) der Funktion, also alles, was in den geschweiften Klammern <code>{...}</code> steht.</p>
-<div class="sourceCode" id="cb243"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb243-1"><a href="kontrollstrukturen.html#cb243-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">2</span></span>
-<span id="cb243-2"><a href="kontrollstrukturen.html#cb243-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb243-3"><a href="kontrollstrukturen.html#cb243-3" aria-hidden="true" tabindex="-1"></a>quadrat <span class="ot">&lt;-</span> <span class="cf">function</span> (x) {</span>
-<span id="cb243-4"><a href="kontrollstrukturen.html#cb243-4" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb243-5"><a href="kontrollstrukturen.html#cb243-5" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> x<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb243-6"><a href="kontrollstrukturen.html#cb243-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(x)</span>
-<span id="cb243-7"><a href="kontrollstrukturen.html#cb243-7" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb243-8"><a href="kontrollstrukturen.html#cb243-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb243-9"><a href="kontrollstrukturen.html#cb243-9" aria-hidden="true" tabindex="-1"></a><span class="fu">quadrat</span>(x) </span></code></pre></div>
+<div class="sourceCode" id="cb244"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb244-1"><a href="kontrollstrukturen.html#cb244-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb244-2"><a href="kontrollstrukturen.html#cb244-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb244-3"><a href="kontrollstrukturen.html#cb244-3" aria-hidden="true" tabindex="-1"></a>quadrat <span class="ot">&lt;-</span> <span class="cf">function</span> (x) {</span>
+<span id="cb244-4"><a href="kontrollstrukturen.html#cb244-4" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb244-5"><a href="kontrollstrukturen.html#cb244-5" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> x<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb244-6"><a href="kontrollstrukturen.html#cb244-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(x)</span>
+<span id="cb244-7"><a href="kontrollstrukturen.html#cb244-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb244-8"><a href="kontrollstrukturen.html#cb244-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb244-9"><a href="kontrollstrukturen.html#cb244-9" aria-hidden="true" tabindex="-1"></a><span class="fu">quadrat</span>(x) </span></code></pre></div>
 <pre><code>## [1] 4</code></pre>
-<div class="sourceCode" id="cb245"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb245-1"><a href="kontrollstrukturen.html#cb245-1" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
+<div class="sourceCode" id="cb246"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb246-1"><a href="kontrollstrukturen.html#cb246-1" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
 <pre><code>## [1] 2</code></pre>
 <p>Wie wir hier sehen können, bleibt die globale Zuweisung für den Namen <code>x</code> erhalten, trotz der erneuten Zuweisung eines Namens <code>x</code> innerhalb der Funktion.</p>
 <p><em>Anmerkung:</em></p>
 <p>Um den “Fluss” eurer Funktion nachzuverfolgen, könnt ihr euch Nachrichten auf der Konsole im Funktionsablauf ausgeben lassen. Das ist vor allem praktisch, wenn ihr euch nicht sicher seid, welchen Werte welches Objekt zu welchem Zeitpunkt hat.</p>
-<div class="sourceCode" id="cb247"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb247-1"><a href="kontrollstrukturen.html#cb247-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">2</span></span>
-<span id="cb247-2"><a href="kontrollstrukturen.html#cb247-2" aria-hidden="true" tabindex="-1"></a>quadrat <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
-<span id="cb247-3"><a href="kontrollstrukturen.html#cb247-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">message</span>(<span class="st">&quot;Funktion beginnt mir ihrer Arbeit, x ist: &quot;</span>, x)</span>
-<span id="cb247-4"><a href="kontrollstrukturen.html#cb247-4" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> x<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb247-5"><a href="kontrollstrukturen.html#cb247-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">message</span>(<span class="st">&quot;Erste Berechnung erfolgreich, x ist: &quot;</span>, x)</span>
-<span id="cb247-6"><a href="kontrollstrukturen.html#cb247-6" aria-hidden="true" tabindex="-1"></a>  x</span>
-<span id="cb247-7"><a href="kontrollstrukturen.html#cb247-7" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb247-8"><a href="kontrollstrukturen.html#cb247-8" aria-hidden="true" tabindex="-1"></a><span class="fu">quadrat</span>(x)</span></code></pre></div>
+<div class="sourceCode" id="cb248"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb248-1"><a href="kontrollstrukturen.html#cb248-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb248-2"><a href="kontrollstrukturen.html#cb248-2" aria-hidden="true" tabindex="-1"></a>quadrat <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb248-3"><a href="kontrollstrukturen.html#cb248-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">message</span>(<span class="st">&quot;Funktion beginnt mir ihrer Arbeit, x ist: &quot;</span>, x)</span>
+<span id="cb248-4"><a href="kontrollstrukturen.html#cb248-4" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> x<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb248-5"><a href="kontrollstrukturen.html#cb248-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">message</span>(<span class="st">&quot;Erste Berechnung erfolgreich, x ist: &quot;</span>, x)</span>
+<span id="cb248-6"><a href="kontrollstrukturen.html#cb248-6" aria-hidden="true" tabindex="-1"></a>  x</span>
+<span id="cb248-7"><a href="kontrollstrukturen.html#cb248-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb248-8"><a href="kontrollstrukturen.html#cb248-8" aria-hidden="true" tabindex="-1"></a><span class="fu">quadrat</span>(x)</span></code></pre></div>
 <pre><code>## [1] 4</code></pre>
 <p>Alternativ könnt ihr eurer Variablen <code>x</code> einen konstanten Wert zuweisen, zum Beispiel <code>x &lt;- 2</code>, und den <code>{body}</code> der Funktion Schritt für Schritt ausführen.</p>
 <p>Wenn man einen sogenannten Default-Wert hinterlegt, dann kann eure Funktion auch ohne eine Belegung der entsprechenden Argumentstelle aufgerufen werden:</p>
-<div class="sourceCode" id="cb249"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb249-1"><a href="kontrollstrukturen.html#cb249-1" aria-hidden="true" tabindex="-1"></a>quadrat <span class="ot">&lt;-</span> <span class="cf">function</span> (<span class="at">x =</span> <span class="dv">10</span>) { x<span class="sc">^</span><span class="dv">2</span> }</span>
-<span id="cb249-2"><a href="kontrollstrukturen.html#cb249-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb249-3"><a href="kontrollstrukturen.html#cb249-3" aria-hidden="true" tabindex="-1"></a><span class="fu">quadrat</span>(<span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb250"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb250-1"><a href="kontrollstrukturen.html#cb250-1" aria-hidden="true" tabindex="-1"></a>quadrat <span class="ot">&lt;-</span> <span class="cf">function</span> (<span class="at">x =</span> <span class="dv">10</span>) { x<span class="sc">^</span><span class="dv">2</span> }</span>
+<span id="cb250-2"><a href="kontrollstrukturen.html#cb250-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb250-3"><a href="kontrollstrukturen.html#cb250-3" aria-hidden="true" tabindex="-1"></a><span class="fu">quadrat</span>(<span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## [1] 4</code></pre>
-<div class="sourceCode" id="cb251"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb251-1"><a href="kontrollstrukturen.html#cb251-1" aria-hidden="true" tabindex="-1"></a><span class="fu">quadrat</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb252"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb252-1"><a href="kontrollstrukturen.html#cb252-1" aria-hidden="true" tabindex="-1"></a><span class="fu">quadrat</span>()</span></code></pre></div>
 <pre><code>## [1] 100</code></pre>
 <p>Defaults können sehr nützlich sein, um Komplexität zu verstecken.</p>
 <p>Seit R 4.1.0 gibt es in R einen Shortcut um anonyme Funktionen zu deklarieren:</p>
-<div class="sourceCode" id="cb253"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb253-1"><a href="kontrollstrukturen.html#cb253-1" aria-hidden="true" tabindex="-1"></a>pow <span class="ot">&lt;-</span> \(x, <span class="at">y =</span> <span class="dv">2</span>) x<span class="sc">^</span>y</span>
-<span id="cb253-2"><a href="kontrollstrukturen.html#cb253-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb253-3"><a href="kontrollstrukturen.html#cb253-3" aria-hidden="true" tabindex="-1"></a><span class="fu">pow</span>(<span class="dv">2</span>,<span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb254"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb254-1"><a href="kontrollstrukturen.html#cb254-1" aria-hidden="true" tabindex="-1"></a>pow <span class="ot">&lt;-</span> \(x, <span class="at">y =</span> <span class="dv">2</span>) x<span class="sc">^</span>y</span>
+<span id="cb254-2"><a href="kontrollstrukturen.html#cb254-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb254-3"><a href="kontrollstrukturen.html#cb254-3" aria-hidden="true" tabindex="-1"></a><span class="fu">pow</span>(<span class="dv">2</span>,<span class="dv">3</span>)</span></code></pre></div>
 <pre><code>## [1] 8</code></pre>
 <p>Statt <code>function</code> schreibt man einfach <code>\</code> und die Klammern des Rumpfes <code>{}</code> werden einfach weggelassen. Das ist vor allem dann sinnvoll, wenn man eine Funktion <em>ad hoc</em> deklarieren will, zum Beispiel als Argument einer anderen Funktion. Darauf kommen wir später noch einmal zurück. Allerdings kann diese verkürzte Schreibweise auch zur schlechteren Lesbarkeit eures Codes führen.</p>
 </div>
@@ -449,61 +449,61 @@ für die nächste Klausur.</li>
 <li><p>Bestimme alle Quadratzahlen von <span class="math inline">\(1^2\)</span> bis <span class="math inline">\(100^2\)</span>.</p></li>
 </ul>
 <p>Ein klassische Fallunterscheidung können wir in R mit einer <code>if-else</code> Abfolge umsetzen:</p>
-<div class="sourceCode" id="cb255"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb255-1"><a href="kontrollstrukturen.html#cb255-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb255-2"><a href="kontrollstrukturen.html#cb255-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb255-3"><a href="kontrollstrukturen.html#cb255-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (x <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
-<span id="cb255-4"><a href="kontrollstrukturen.html#cb255-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">paste</span>(x, <span class="st">&quot;ist positiv&quot;</span>))</span>
-<span id="cb255-5"><a href="kontrollstrukturen.html#cb255-5" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
-<span id="cb255-6"><a href="kontrollstrukturen.html#cb255-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="fu">paste</span>(x, <span class="st">&quot;ist nicht-positiv&quot;</span>))</span>
-<span id="cb255-7"><a href="kontrollstrukturen.html#cb255-7" aria-hidden="true" tabindex="-1"></a>  }</span></code></pre></div>
+<div class="sourceCode" id="cb256"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb256-1"><a href="kontrollstrukturen.html#cb256-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb256-2"><a href="kontrollstrukturen.html#cb256-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb256-3"><a href="kontrollstrukturen.html#cb256-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (x <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb256-4"><a href="kontrollstrukturen.html#cb256-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">paste</span>(x, <span class="st">&quot;ist positiv&quot;</span>))</span>
+<span id="cb256-5"><a href="kontrollstrukturen.html#cb256-5" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb256-6"><a href="kontrollstrukturen.html#cb256-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="fu">paste</span>(x, <span class="st">&quot;ist nicht-positiv&quot;</span>))</span>
+<span id="cb256-7"><a href="kontrollstrukturen.html#cb256-7" aria-hidden="true" tabindex="-1"></a>  }</span></code></pre></div>
 <pre><code>## [1] &quot;1 ist positiv&quot;</code></pre>
 <p>Wir setzen hier zunächst x als 1. Danach kommt die logische Abfrage, welche entweder <code>TRUE</code> oder <code>FALSE</code> sein muss. Ist das Ergebnis <code>TRUE</code>, dann wird der Code in den ersten geschweiften Klammern <code>{print(paste(x, "ist positiv"))}</code> ausgeführt und die Auswertung bricht ab. Falls das Ergebnis <code>FALSE</code> ist, wird der Code in den ersten geschweiften Klammern übersprungen und der <code>else</code> Fall wird ausgeführt.</p>
 <p>Alternativ können wir <code>if-else</code> auch ohne geschweift Klammern schreiben:</p>
-<div class="sourceCode" id="cb257"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb257-1"><a href="kontrollstrukturen.html#cb257-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb257-2"><a href="kontrollstrukturen.html#cb257-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb257-3"><a href="kontrollstrukturen.html#cb257-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (x <span class="sc">&gt;</span> <span class="dv">0</span>) </span>
-<span id="cb257-4"><a href="kontrollstrukturen.html#cb257-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">paste</span>(x, <span class="st">&quot;ist positiv&quot;</span>)) <span class="cf">else</span></span>
-<span id="cb257-5"><a href="kontrollstrukturen.html#cb257-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="fu">paste</span>(x, <span class="st">&quot;ist nicht-positiv&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb258"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb258-1"><a href="kontrollstrukturen.html#cb258-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb258-2"><a href="kontrollstrukturen.html#cb258-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb258-3"><a href="kontrollstrukturen.html#cb258-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (x <span class="sc">&gt;</span> <span class="dv">0</span>) </span>
+<span id="cb258-4"><a href="kontrollstrukturen.html#cb258-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">paste</span>(x, <span class="st">&quot;ist positiv&quot;</span>)) <span class="cf">else</span></span>
+<span id="cb258-5"><a href="kontrollstrukturen.html#cb258-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="fu">paste</span>(x, <span class="st">&quot;ist nicht-positiv&quot;</span>))</span></code></pre></div>
 <pre><code>## [1] &quot;1 ist positiv&quot;</code></pre>
 <p>Hierbei gilt es allerdings zu beachten, dass, wenn wir nur die erste Zeile (<code>if (x &gt; 0)</code>) ausführen, der restliche Code erst mal nicht berücksichtigt wird. Wir erhalten eine <em>partiell</em> ausgeführte Funktion zurück, welche noch weitere Eingaben erwartet. Führen wir die folgenden beiden Zeilen aus, kommen wir zum selben Ergebnis. Was zunächst umständlich erscheint, ist im <code>body</code> einer Funktion kein Problem, da dieser sowieso von oben nach unten durchläuft.</p>
 <p>Ein Beispiel für eine Funktion mit Fallunterscheidung könnte so aussehen:</p>
-<div class="sourceCode" id="cb259"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb259-1"><a href="kontrollstrukturen.html#cb259-1" aria-hidden="true" tabindex="-1"></a>is.positive <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
-<span id="cb259-2"><a href="kontrollstrukturen.html#cb259-2" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb259-3"><a href="kontrollstrukturen.html#cb259-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (x <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
-<span id="cb259-4"><a href="kontrollstrukturen.html#cb259-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="cn">TRUE</span>)</span>
-<span id="cb259-5"><a href="kontrollstrukturen.html#cb259-5" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
-<span id="cb259-6"><a href="kontrollstrukturen.html#cb259-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="cn">FALSE</span>)</span>
-<span id="cb259-7"><a href="kontrollstrukturen.html#cb259-7" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb259-8"><a href="kontrollstrukturen.html#cb259-8" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb259-9"><a href="kontrollstrukturen.html#cb259-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb259-10"><a href="kontrollstrukturen.html#cb259-10" aria-hidden="true" tabindex="-1"></a><span class="fu">is.positive</span>(<span class="sc">-</span><span class="fl">1.1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb260"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb260-1"><a href="kontrollstrukturen.html#cb260-1" aria-hidden="true" tabindex="-1"></a>is.positive <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb260-2"><a href="kontrollstrukturen.html#cb260-2" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb260-3"><a href="kontrollstrukturen.html#cb260-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (x <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb260-4"><a href="kontrollstrukturen.html#cb260-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="cn">TRUE</span>)</span>
+<span id="cb260-5"><a href="kontrollstrukturen.html#cb260-5" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb260-6"><a href="kontrollstrukturen.html#cb260-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="cn">FALSE</span>)</span>
+<span id="cb260-7"><a href="kontrollstrukturen.html#cb260-7" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb260-8"><a href="kontrollstrukturen.html#cb260-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb260-9"><a href="kontrollstrukturen.html#cb260-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb260-10"><a href="kontrollstrukturen.html#cb260-10" aria-hidden="true" tabindex="-1"></a><span class="fu">is.positive</span>(<span class="sc">-</span><span class="fl">1.1</span>)</span></code></pre></div>
 <pre><code>## [1] FALSE</code></pre>
-<div class="sourceCode" id="cb261"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb261-1"><a href="kontrollstrukturen.html#cb261-1" aria-hidden="true" tabindex="-1"></a><span class="fu">is.positive</span>(<span class="dv">11</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb262"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb262-1"><a href="kontrollstrukturen.html#cb262-1" aria-hidden="true" tabindex="-1"></a><span class="fu">is.positive</span>(<span class="dv">11</span>)</span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
 <p>Es mal ohne geschweifte Klammern umzuschreiben wäre eine gute Übung!</p>
 <div id="vektorisierte-fallunterscheidungen" class="section level3 hasAnchor" number="10.3.1">
 <h3><span class="header-section-number">10.3.1</span> Vektorisierte Fallunterscheidungen<a href="kontrollstrukturen.html#vektorisierte-fallunterscheidungen" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Wollen wir <code>if-else</code> auf einen Vektor anwenden und erwarten einen Vektor als Ergebnis, müssen wir keine eigene Funktion schreiben. Es existieren bereits vektorisierte <code>if-else</code> Funktionen, zum Beispiel aus dem Package <code>dplyr::</code>:</p>
-<div class="sourceCode" id="cb263"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb263-1"><a href="kontrollstrukturen.html#cb263-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb263-2"><a href="kontrollstrukturen.html#cb263-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb263-3"><a href="kontrollstrukturen.html#cb263-3" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1991</span>, <span class="dv">2004</span>, <span class="dv">1988</span>)</span>
-<span id="cb263-4"><a href="kontrollstrukturen.html#cb263-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb263-5"><a href="kontrollstrukturen.html#cb263-5" aria-hidden="true" tabindex="-1"></a><span class="fu">if_else</span>(<span class="at">condition =</span> x <span class="sc">&gt;=</span> <span class="dv">1981</span> <span class="sc">&amp;</span> x <span class="sc">&lt;=</span> <span class="dv">1996</span>,</span>
-<span id="cb263-6"><a href="kontrollstrukturen.html#cb263-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">true      =</span> <span class="st">&quot;Millennial&quot;</span>,</span>
-<span id="cb263-7"><a href="kontrollstrukturen.html#cb263-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">false     =</span> <span class="st">&quot;kein Millennial&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb264"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb264-1"><a href="kontrollstrukturen.html#cb264-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb264-2"><a href="kontrollstrukturen.html#cb264-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb264-3"><a href="kontrollstrukturen.html#cb264-3" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1991</span>, <span class="dv">2004</span>, <span class="dv">1988</span>)</span>
+<span id="cb264-4"><a href="kontrollstrukturen.html#cb264-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb264-5"><a href="kontrollstrukturen.html#cb264-5" aria-hidden="true" tabindex="-1"></a><span class="fu">if_else</span>(<span class="at">condition =</span> x <span class="sc">&gt;=</span> <span class="dv">1981</span> <span class="sc">&amp;</span> x <span class="sc">&lt;=</span> <span class="dv">1996</span>,</span>
+<span id="cb264-6"><a href="kontrollstrukturen.html#cb264-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">true      =</span> <span class="st">&quot;Millennial&quot;</span>,</span>
+<span id="cb264-7"><a href="kontrollstrukturen.html#cb264-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">false     =</span> <span class="st">&quot;kein Millennial&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;Millennial&quot;      &quot;kein Millennial&quot; &quot;Millennial&quot;</code></pre>
 <p>Wenn ihr mehr als zwei Fälle (<code>TRUE</code> und <code>FALSE</code>) unterscheiden wollt, bietet sich die ebenfalls vektorisierte <code>dplyr::case_when()</code> Funktion an. Eine Beispielanwendung dafür könnte die Kategorisierung einer stetigen Variable sein:</p>
-<div class="sourceCode" id="cb265"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb265-1"><a href="kontrollstrukturen.html#cb265-1" aria-hidden="true" tabindex="-1"></a>starwars <span class="sc">%&gt;%</span></span>
-<span id="cb265-2"><a href="kontrollstrukturen.html#cb265-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(name, birth_year) <span class="sc">%&gt;%</span></span>
-<span id="cb265-3"><a href="kontrollstrukturen.html#cb265-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb265-4"><a href="kontrollstrukturen.html#cb265-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">age_categorized =</span> <span class="fu">case_when</span>(</span>
-<span id="cb265-5"><a href="kontrollstrukturen.html#cb265-5" aria-hidden="true" tabindex="-1"></a>      birth_year <span class="sc">&gt;</span> <span class="dv">200</span>                     <span class="sc">~</span> <span class="st">&quot;stone_old&quot;</span>,</span>
-<span id="cb265-6"><a href="kontrollstrukturen.html#cb265-6" aria-hidden="true" tabindex="-1"></a>      birth_year <span class="sc">&lt;=</span> <span class="dv">200</span> <span class="sc">&amp;</span> birth_year <span class="sc">&gt;</span> <span class="dv">100</span> <span class="sc">~</span> <span class="st">&quot;old&quot;</span>,</span>
-<span id="cb265-7"><a href="kontrollstrukturen.html#cb265-7" aria-hidden="true" tabindex="-1"></a>      birth_year <span class="sc">&lt;=</span> <span class="dv">100</span> <span class="sc">&amp;</span> birth_year <span class="sc">&gt;</span> <span class="dv">20</span>  <span class="sc">~</span> <span class="st">&quot;mid_aged&quot;</span>,</span>
-<span id="cb265-8"><a href="kontrollstrukturen.html#cb265-8" aria-hidden="true" tabindex="-1"></a>      birth_year <span class="sc">&lt;=</span> <span class="dv">20</span>                     <span class="sc">~</span> <span class="st">&quot;young&quot;</span>,</span>
-<span id="cb265-9"><a href="kontrollstrukturen.html#cb265-9" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">&quot;other&quot;</span> <span class="co"># catch them all</span></span>
-<span id="cb265-10"><a href="kontrollstrukturen.html#cb265-10" aria-hidden="true" tabindex="-1"></a>    ) </span>
-<span id="cb265-11"><a href="kontrollstrukturen.html#cb265-11" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb266"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb266-1"><a href="kontrollstrukturen.html#cb266-1" aria-hidden="true" tabindex="-1"></a>starwars <span class="sc">%&gt;%</span></span>
+<span id="cb266-2"><a href="kontrollstrukturen.html#cb266-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(name, birth_year) <span class="sc">%&gt;%</span></span>
+<span id="cb266-3"><a href="kontrollstrukturen.html#cb266-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb266-4"><a href="kontrollstrukturen.html#cb266-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">age_categorized =</span> <span class="fu">case_when</span>(</span>
+<span id="cb266-5"><a href="kontrollstrukturen.html#cb266-5" aria-hidden="true" tabindex="-1"></a>      birth_year <span class="sc">&gt;</span> <span class="dv">200</span>                     <span class="sc">~</span> <span class="st">&quot;stone_old&quot;</span>,</span>
+<span id="cb266-6"><a href="kontrollstrukturen.html#cb266-6" aria-hidden="true" tabindex="-1"></a>      birth_year <span class="sc">&lt;=</span> <span class="dv">200</span> <span class="sc">&amp;</span> birth_year <span class="sc">&gt;</span> <span class="dv">100</span> <span class="sc">~</span> <span class="st">&quot;old&quot;</span>,</span>
+<span id="cb266-7"><a href="kontrollstrukturen.html#cb266-7" aria-hidden="true" tabindex="-1"></a>      birth_year <span class="sc">&lt;=</span> <span class="dv">100</span> <span class="sc">&amp;</span> birth_year <span class="sc">&gt;</span> <span class="dv">20</span>  <span class="sc">~</span> <span class="st">&quot;mid_aged&quot;</span>,</span>
+<span id="cb266-8"><a href="kontrollstrukturen.html#cb266-8" aria-hidden="true" tabindex="-1"></a>      birth_year <span class="sc">&lt;=</span> <span class="dv">20</span>                     <span class="sc">~</span> <span class="st">&quot;young&quot;</span>,</span>
+<span id="cb266-9"><a href="kontrollstrukturen.html#cb266-9" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">&quot;other&quot;</span> <span class="co"># catch them all</span></span>
+<span id="cb266-10"><a href="kontrollstrukturen.html#cb266-10" aria-hidden="true" tabindex="-1"></a>    ) </span>
+<span id="cb266-11"><a href="kontrollstrukturen.html#cb266-11" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
 <pre><code>## # A tibble: 87 × 3
 ##    name               birth_year age_categorized
 ##    &lt;chr&gt;                   &lt;dbl&gt; &lt;chr&gt;          
@@ -548,9 +548,9 @@ body). Es gibt sie in verschiedenen Varianten:</p>
 <p><em>Anmerkung:</em> Zusätzlich lassen sich diese Loops steuern mit <code>next</code> (springt zur nächsten
 Iteration) und <code>break</code> (bricht die Schleife ab).</p>
 <p>Wir werden uns hier nur noch der wohl gängigsten Methode, nämlich des <code>for-loops</code>, widmen. Schauen wir uns zunächst das einfachste Beispiel für einen <code>for-loop</code> an:</p>
-<div class="sourceCode" id="cb267"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb267-1"><a href="kontrollstrukturen.html#cb267-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>){</span>
-<span id="cb267-2"><a href="kontrollstrukturen.html#cb267-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(i)</span>
-<span id="cb267-3"><a href="kontrollstrukturen.html#cb267-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb268"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb268-1"><a href="kontrollstrukturen.html#cb268-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>){</span>
+<span id="cb268-2"><a href="kontrollstrukturen.html#cb268-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(i)</span>
+<span id="cb268-3"><a href="kontrollstrukturen.html#cb268-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <pre><code>## [1] 1
 ## [1] 2
 ## [1] 3
@@ -563,39 +563,41 @@ Iteration) und <code>break</code> (bricht die Schleife ab).</p>
 ## [1] 10</code></pre>
 <p>Der <code>for-loop</code> iteriert über einen Vektor mit den Zahlen 1 bis 10 und führt den Code in den geschweiften Klammern in jeder Iteration aus. Der Index <code>i</code> wird nach jedem Schleifendurchlauf um eine Position inkrementiert.</p>
 <p>Mit diesem Wissen können wir nun einen <code>for-loop</code> schreiben, welcher über die Werte eines Vektors iteriert und jeweils den Wert der i’ten Position im Quadrat in einen neuen Vektor schreibt.</p>
-<div class="sourceCode" id="cb269"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb269-1"><a href="kontrollstrukturen.html#cb269-1" aria-hidden="true" tabindex="-1"></a>v1 <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span></span>
-<span id="cb269-2"><a href="kontrollstrukturen.html#cb269-2" aria-hidden="true" tabindex="-1"></a>v2 <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="at">length =</span> <span class="dv">10</span>) <span class="co"># leeren Vektor anlegen</span></span>
-<span id="cb269-3"><a href="kontrollstrukturen.html#cb269-3" aria-hidden="true" tabindex="-1"></a>     </span>
-<span id="cb269-4"><a href="kontrollstrukturen.html#cb269-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>){</span>
-<span id="cb269-5"><a href="kontrollstrukturen.html#cb269-5" aria-hidden="true" tabindex="-1"></a>  v2[i] <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(v1[i])</span>
-<span id="cb269-6"><a href="kontrollstrukturen.html#cb269-6" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb269-7"><a href="kontrollstrukturen.html#cb269-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb269-8"><a href="kontrollstrukturen.html#cb269-8" aria-hidden="true" tabindex="-1"></a>v2</span></code></pre></div>
-<pre><code>##  [1] 1.000000 1.414214 1.732051 2.000000 2.236068 2.449490 2.645751 2.828427 3.000000 3.162278</code></pre>
+<div class="sourceCode" id="cb270"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb270-1"><a href="kontrollstrukturen.html#cb270-1" aria-hidden="true" tabindex="-1"></a>v1 <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span></span>
+<span id="cb270-2"><a href="kontrollstrukturen.html#cb270-2" aria-hidden="true" tabindex="-1"></a>v2 <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="at">length =</span> <span class="dv">10</span>) <span class="co"># leeren Vektor anlegen</span></span>
+<span id="cb270-3"><a href="kontrollstrukturen.html#cb270-3" aria-hidden="true" tabindex="-1"></a>     </span>
+<span id="cb270-4"><a href="kontrollstrukturen.html#cb270-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>){</span>
+<span id="cb270-5"><a href="kontrollstrukturen.html#cb270-5" aria-hidden="true" tabindex="-1"></a>  v2[i] <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(v1[i])</span>
+<span id="cb270-6"><a href="kontrollstrukturen.html#cb270-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb270-7"><a href="kontrollstrukturen.html#cb270-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb270-8"><a href="kontrollstrukturen.html#cb270-8" aria-hidden="true" tabindex="-1"></a>v2</span></code></pre></div>
+<pre><code>##  [1] 1.000000 1.414214 1.732051 2.000000 2.236068 2.449490
+##  [7] 2.645751 2.828427 3.000000 3.162278</code></pre>
 <p>Da die meisten Funktionen in R bereits vektorisiert sind (<code>sqrt(v1)</code>) ist ein <code>for-loop</code> nicht immer die beste Variante, manchmal kann er allerdings sehr hilfreich sein.</p>
 </div>
 <div id="vektorisiertes-programmieren" class="section level2 hasAnchor" number="10.5">
 <h2><span class="header-section-number">10.5</span> Vektorisiertes Programmieren<a href="kontrollstrukturen.html#vektorisiertes-programmieren" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Vektorisiertes Programmieren bedeutet, dass wir Operationen auf einem Vektor ausführen und dementsprechenden einen Vektor zurückbekommen. Dabei wird eine Funktion auf jedes Element eines Vektors angewandt, was auch eine Möglichkeit ist, iterative Probleme zu lösen. Im letzten Teil wollen wir uns jetzt noch die <code>purrr::map()</code> Funktionsfamilie anschauen, welche vektorbasiert funktioniert. Alternativ dazu gibt es im <code>base</code>-R die <code>lapply()</code> Funktionsfamilie, welche eine ähnliche Intention verfolgt, die wir uns aber nicht mehr anschauen werden können.</p>
 <p>Die Aufgabe, welche wir gerade mit einem <code>for-loop</code> gelöst haben, kann man alternativ auch vektorbasiert mit <code>map()</code> lösen:</p>
-<div class="sourceCode" id="cb271"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb271-1"><a href="kontrollstrukturen.html#cb271-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(purrr)</span></code></pre></div>
-<div class="sourceCode" id="cb272"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb272-1"><a href="kontrollstrukturen.html#cb272-1" aria-hidden="true" tabindex="-1"></a>v1 <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span></span>
-<span id="cb272-2"><a href="kontrollstrukturen.html#cb272-2" aria-hidden="true" tabindex="-1"></a><span class="fu">map_dbl</span>(<span class="at">.x =</span> v1,</span>
-<span id="cb272-3"><a href="kontrollstrukturen.html#cb272-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">.f =</span> sqrt)</span></code></pre></div>
-<pre><code>##  [1] 1.000000 1.414214 1.732051 2.000000 2.236068 2.449490 2.645751 2.828427 3.000000 3.162278</code></pre>
+<div class="sourceCode" id="cb272"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb272-1"><a href="kontrollstrukturen.html#cb272-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(purrr)</span></code></pre></div>
+<div class="sourceCode" id="cb273"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb273-1"><a href="kontrollstrukturen.html#cb273-1" aria-hidden="true" tabindex="-1"></a>v1 <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span></span>
+<span id="cb273-2"><a href="kontrollstrukturen.html#cb273-2" aria-hidden="true" tabindex="-1"></a><span class="fu">map_dbl</span>(<span class="at">.x =</span> v1,</span>
+<span id="cb273-3"><a href="kontrollstrukturen.html#cb273-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">.f =</span> sqrt)</span></code></pre></div>
+<pre><code>##  [1] 1.000000 1.414214 1.732051 2.000000 2.236068 2.449490
+##  [7] 2.645751 2.828427 3.000000 3.162278</code></pre>
 <p>Dabei passiert Folgendes (<code>fun steht für function</code>):</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-164"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-165"></span>
 <img src="resources/map.png" alt="Quelle: https://tutorials.shinyapps.io/map-intro/_w_543ccdaf/www/images/map.png" width="80%" />
 <p class="caption">
 Abb. 10.1: Quelle: <a href="https://tutorials.shinyapps.io/map-intro/_w_543ccdaf/www/images/map.png" class="uri">https://tutorials.shinyapps.io/map-intro/_w_543ccdaf/www/images/map.png</a>
 </p>
 </div>
 <p>Generell sind die <code>map()</code> Funktionen nach diesem Schema aufgebaut:</p>
-<div class="sourceCode" id="cb274"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb274-1"><a href="kontrollstrukturen.html#cb274-1" aria-hidden="true" tabindex="-1"></a><span class="fu">map_rueckgabetyp</span>(liste, funktion) </span></code></pre></div>
+<div class="sourceCode" id="cb275"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb275-1"><a href="kontrollstrukturen.html#cb275-1" aria-hidden="true" tabindex="-1"></a><span class="fu">map_rueckgabetyp</span>(liste, funktion) </span></code></pre></div>
 <p><em>Wichtig!</em>: Wenn wir eine Funktion als Objekt übergeben, setzen wir keine Klammern.</p>
 <p>Der Rückgabetyp, welchen wir oben im Beispiel verwendet haben, war <code>dbl</code>, was einer Fließkommazahl, also im Prinzip <code>numeric</code> entspricht. Als erstes Argument übergibt man eine Liste oder besser gesagt einen Vektor. Die Liste ist eigentlich nur ein Sonderfall von verschachtelten Vektoren, weshalb wir auch einen Vektor übergeben können. Richtig nützlich wird <code>map()</code> aber erst, wenn man es mit Listen zu tun hat. Das zweite Argument ist eine Funktion, welche über ihren Namen als an <code>map()</code> übergeben wird.</p>
 <p>Benutzen wir die <code>map()</code> Funktion ohne Rückgabetyp, bekommen wir immer eine Liste zurück:</p>
-<div class="sourceCode" id="cb275"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb275-1"><a href="kontrollstrukturen.html#cb275-1" aria-hidden="true" tabindex="-1"></a><span class="fu">map</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, log) <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb276"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb276-1"><a href="kontrollstrukturen.html#cb276-1" aria-hidden="true" tabindex="-1"></a><span class="fu">map</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, log) <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">3</span>)</span></code></pre></div>
 <pre><code>## [[1]]
 ## [1] 0
 ## 
@@ -606,23 +608,23 @@ Abb. 10.1: Quelle: <a href="https://tutorials.shinyapps.io/map-intro/_w_543ccdaf
 ## [1] 1.098612</code></pre>
 <p>Was für Funktionen es alles gibt, ist unter anderem auf dem <a href="https://github.com/rstudio/cheatsheets/blob/main/purrr.pdf">Cheatsheet</a> zu <code>purrr::</code> sehr übersichtlich dargestellt.</p>
 <p>Es ist auch möglich, der <code>map()</code> übergebenen Funktion noch weitere Argumente zu übergeben. Diese werden <code>map()</code> einfach als weitere Argumente übergeben:</p>
-<div class="sourceCode" id="cb277"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb277-1"><a href="kontrollstrukturen.html#cb277-1" aria-hidden="true" tabindex="-1"></a>v1_log <span class="ot">&lt;-</span> <span class="fu">map_dbl</span>(v1, log)</span>
-<span id="cb277-2"><a href="kontrollstrukturen.html#cb277-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb277-3"><a href="kontrollstrukturen.html#cb277-3" aria-hidden="true" tabindex="-1"></a><span class="fu">map_dbl</span>(<span class="at">.x =</span> v1_log, </span>
-<span id="cb277-4"><a href="kontrollstrukturen.html#cb277-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">.f =</span> round, </span>
-<span id="cb277-5"><a href="kontrollstrukturen.html#cb277-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">digits =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb278"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb278-1"><a href="kontrollstrukturen.html#cb278-1" aria-hidden="true" tabindex="-1"></a>v1_log <span class="ot">&lt;-</span> <span class="fu">map_dbl</span>(v1, log)</span>
+<span id="cb278-2"><a href="kontrollstrukturen.html#cb278-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb278-3"><a href="kontrollstrukturen.html#cb278-3" aria-hidden="true" tabindex="-1"></a><span class="fu">map_dbl</span>(<span class="at">.x =</span> v1_log, </span>
+<span id="cb278-4"><a href="kontrollstrukturen.html#cb278-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">.f =</span> round, </span>
+<span id="cb278-5"><a href="kontrollstrukturen.html#cb278-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">digits =</span> <span class="dv">2</span>)</span></code></pre></div>
 <pre><code>##  [1] 0.00 0.69 1.10 1.39 1.61 1.79 1.95 2.08 2.20 2.30</code></pre>
 <p>Über sogenannte anonyme Funktionen (welche keinen Namen haben), können wir gleich in der Argumentstelle von <code>map()</code>, welche die Funktion entgegennimmt, eigene Funktionen schreiben.</p>
 <p>Beispiel:</p>
-<div class="sourceCode" id="cb279"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb279-1"><a href="kontrollstrukturen.html#cb279-1" aria-hidden="true" tabindex="-1"></a><span class="fu">map_dbl</span>(v1, <span class="sc">~</span> <span class="fu">log</span>(.x) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">2</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb280"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb280-1"><a href="kontrollstrukturen.html#cb280-1" aria-hidden="true" tabindex="-1"></a><span class="fu">map_dbl</span>(v1, <span class="sc">~</span> <span class="fu">log</span>(.x) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">2</span>))</span></code></pre></div>
 <pre><code>##  [1] 0.00 0.69 1.10 1.39 1.61 1.79 1.95 2.08 2.20 2.30</code></pre>
 <p>Die Tilde (<code>~</code>) zeigt dabei an, dass eine Funktion folgt. Mit <code>.x</code> kann man das aktuelle Listenelement ansprechen. Ausgeschrieben könnte die Funktion so ausschauen:</p>
-<div class="sourceCode" id="cb281"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb281-1"><a href="kontrollstrukturen.html#cb281-1" aria-hidden="true" tabindex="-1"></a>un_lambda <span class="ot">&lt;-</span> <span class="cf">function</span> (x) {</span>
-<span id="cb281-2"><a href="kontrollstrukturen.html#cb281-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">round</span>(<span class="fu">log</span>(x), <span class="dv">2</span>)</span>
-<span id="cb281-3"><a href="kontrollstrukturen.html#cb281-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb282"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb282-1"><a href="kontrollstrukturen.html#cb282-1" aria-hidden="true" tabindex="-1"></a>un_lambda <span class="ot">&lt;-</span> <span class="cf">function</span> (x) {</span>
+<span id="cb282-2"><a href="kontrollstrukturen.html#cb282-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">round</span>(<span class="fu">log</span>(x), <span class="dv">2</span>)</span>
+<span id="cb282-3"><a href="kontrollstrukturen.html#cb282-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <p>Natürlich könnt ihr die Funktionen auch erst schreiben und dann nur noch über den Namen <code>map()</code> als Argument weiter reichen.</p>
 <p>Dem Beispiel folgend:</p>
-<div class="sourceCode" id="cb282"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb282-1"><a href="kontrollstrukturen.html#cb282-1" aria-hidden="true" tabindex="-1"></a><span class="fu">map_dbl</span>(v1, un_lambda)</span></code></pre></div>
+<div class="sourceCode" id="cb283"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb283-1"><a href="kontrollstrukturen.html#cb283-1" aria-hidden="true" tabindex="-1"></a><span class="fu">map_dbl</span>(v1, un_lambda)</span></code></pre></div>
 <pre><code>##  [1] 0.00 0.69 1.10 1.39 1.61 1.79 1.95 2.08 2.20 2.30</code></pre>
 <p>Bei diesem Vorgehen empfiehlt es sich, einen aussagekräftigeren Namen für die Funktion zu wählen, welcher auch andeutet, was die Funktion macht.</p>
 </div>

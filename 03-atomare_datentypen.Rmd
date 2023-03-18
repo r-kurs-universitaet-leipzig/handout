@@ -1,6 +1,6 @@
 # Atomare Datentypen 
 
-Datentypen sind die Grundlage einer jeden Programmiersprache und somit essenziell zum Verständnis dieser. Sie dienen dazu, verschiedene Typen zu unterscheiden, wie etwa Zahlen von Buchstaben. Das ist besonders wichtig, da wir mit unterschiedlichen 'Typen' unterschiedliche Operationen ausführen bzw. nicht ausführen können. Zum Beispiel können wir mit Zahlen rechnen, mit Buchstaben hingegen nicht. Mit logischen Bedingungen können wir wiederum Wahrheitswerte ermitteln, mit Zahlen hingegen nicht. Zu wissen, welche Eigenschaften die verschiedenen Datentypen haben und welche Operationen mit diesen möglich sind, hilft dabei, vielen potenziellen Fehlern vorzubeugen und so Frustration zu vermeiden. 
+Datentypen sind die Grundlage einer jeden Programmiersprache und daher für deren Verständnis unerlässlich. Sie dienen dazu, verschiedene Typen zu unterscheiden, wie etwa Zahlen von Buchstaben. Das ist besonders wichtig, da wir mit unterschiedlichen 'Typen' unterschiedliche Operationen ausführen bzw. nicht ausführen können. Zum Beispiel können wir mit Zahlen rechnen, mit Buchstaben hingegen nicht. Mit logischen Bedingungen können wir wiederum Wahrheitswerte ermitteln, mit Zahlenwerten hingegen nicht. Zu wissen, welche Eigenschaften die verschiedenen Datentypen haben und welche Operationen mit diesen möglich sind, hilft dabei, vielen potenziellen Fehlern vorzubeugen und daraus entstehende Frustration zu vermeiden. 
 
 
 Zunächst einmal wollen wir uns die atomaren Datentypen anschauen. Diese bilden die Grundlage aller folgenden Datenstrukturen.
@@ -14,11 +14,11 @@ character             Zeichenfolge                           "Mexico"
 NA,NULL,NaN           unbestimmt, leer, undefiniert                    
 Inf                   unendlich                                        
 
-Die numerischen Datentypen `integer` und `numeric` erlauben es, numerische Informationen zu repräsentieren. Mit dem Datentyp `logical` können logische Informationen repräsentiert werden. Um symbolische Informationen zu repräsentieren, verwenden wir den Datentyp `character`. Mit numerischen, logischen und symbolischen Informationen ist es bereits möglich, eine Vielzahl von Sachverhalten auszudrücken. Was dies sein kann, wollen wir uns im Folgenden anschauen.
+Die numerischen Datentypen `integer` und `numeric` ermöglichen die Repräsentation numerischer Informationen. Mit dem Datentyp `logical` können logische Informationen dargestellt werden. Um symbolische Informationen zu repräsentieren, verwenden wir den Datentyp `character`. Mit numerischen, logischen und symbolischen Informationen ist es bereits möglich, eine Vielzahl von Sachverhalten auszudrücken. Was dies sein kann, wollen wir uns im Folgenden ansehen.
 
 ## Arithmetische Grundoperationen und Basisfunktionen
 
-R beherrscht für alle  Zahlen die arithmetischen Grundoperationen und eignet sich somit wunderbar als Taschenrechner.
+R beherrscht für alle Zahlendarstellungen die arithmetischen Grundoperationen und eignet sich daher hervorragend als Taschenrechner.
 
   Operation     Beschreibung                          Beispiel  
   ----------    --------------------------            ---------
@@ -37,8 +37,7 @@ Beispiel:
 ```
 
  
-R verfügt für Daten numerischen Typs über viele elementare Grundfunktionen.
- Hier nur ein paar wenige relevante Beispiele:
+Zusätzlich verfügt  R für Daten numerischen Typs über viele elementare Grundfunktionen. Hier nur ein paar wenige relevante Beispiele:
  
   Operation         Beschreibung                           Beispiel  
   --------------    -------------------------------------- ---------
@@ -54,7 +53,7 @@ log(3)
 
 ### Funktionsaufrufe  
 
-Funktionen sind ein wichtiger Teil von R und werden syntaktisch durch eine öffnende und eine schließende Klammer gekennzeichnet, nach diesem Schema: `funktion()`. Gerade haben wir bereits eine Funktion ausgeführt, indem wir `sqrt(9)` aufgerufen haben. Ausführlich werden Funktionen noch in Kapitel \@ref(funktionen) besprochen. Ein paar Grundlagen wollen wir hier aber schon einmal einführen:
+Funktionen sind ein wichtiger Teil von R und werden syntaktisch durch eine öffnende und eine schließende Klammer nach dem Schema `funktion()` gekennzeichnet. Wir haben gerade bereits eine Funktion ausgeführt, indem wir `sqrt(9)` aufgerufen haben. Ausführlich werden Funktionen noch im Kapitel \@ref(funktionen) besprochen. Ein paar Grundlagen wollen sollen hier aber schon einmal einführen:
 
 Funktionsaufrufe erfolgen in der Regel über das Schema
  
@@ -98,7 +97,7 @@ Geben wir etwa `3` oder `"password"` in die Konsole ein, wird ein entsprechendes
 knitr::include_graphics("resources/1_pure_memory.png")
 ```
 
-Auf diese Objekte haben wir allerdings anschließend keinen Zugriff mehr. Wenn wir jetzt zum Beispiel erneut die Zeichenkette `"password"` benötigten, müssten wir sie auch erneut eintippen. Wie es ändern können, dass uns Objekte längerfristig zur Verfügung stehen, wollen wir uns jetzt anschauen.
+Auf diese Objekte haben wir allerdings anschließend keinen Zugriff mehr. Wenn wir zum Beispiel erneut die Zeichenkette `"password"` benötigten, müssten wir sie auch erneut eingeben. Wie wir das ändern können, damit uns die Objekte länger zur Verfügung stehen, wollen wir uns jetzt anschauen.
 
 ## Erzeugung von referenzierbaren Objekten
 
@@ -124,9 +123,7 @@ Wenn wir
 ausführen, passiert formal eigentlich Folgendes:
 
 1.  Es wird im Speicher ein Objekt mit dem Wert 3 erzeugt.
-2.  Es wird der Name `x_test` an dieses Objekt gebunden, sodass zu diesem Objekt
-    mit dem Namen `x_test` referiert werden kann bzw. bei Aufruf von `x_test` 
-    der Wert zurückgegeben wird.
+2.  Der Name `x_test` wird an dieses Objekt gebunden, so dass auf das Objekt über den Namen `x_test` zugegriffen werden kann bzw. beim Aufruf von `x_test` der Wert zurückgegeben wird.
 
 ```{r, echo=FALSE, out.width='55%', fig.align='center'}
 knitr::include_graphics("resources/2_assign_object.png")
@@ -136,9 +133,7 @@ knitr::include_graphics("resources/2_assign_object.png")
 
 ### Anmerkung Namen
 
-Für Namen dürfen alle Buchstaben und Zahlen verwendet werden, sowie 
-die beiden Sonderzeichen `_` und `.`, wobei diese nicht
-am Anfang stehen dürfen. 
+Für Namen dürfen alle Buchstaben und Zahlen verwendet werden, sowie die beiden Sonderzeichen `_` und `.`, wobei diese nichtam Anfang stehen dürfen. 
 
 Beispiel:
 
@@ -156,8 +151,7 @@ _x_1 <- 3
 
 ### Rechnungen mit Werten von Objekten
  
-Das über seinen Namen referenzierbare Objekt steht für alle weiteren 
-Berechnungen und Operationen zur Verfügung:
+Das über seinen Namen referenzierbare Objekt steht für alle weiteren Berechnungen und Operationen zur Verfügung:
 
 ```{r}
 x_test + 2
@@ -187,7 +181,7 @@ Unser Speicher sieht aktuell so aus:
 knitr::include_graphics("resources/5_calculation_left_over.png")
 ```
 
-Zwar haben wir für die Berechnung auch eine zwei im Speicher angelegt, diese ist aber nicht an einen Namen gebunden. Die drei und die fünf hingegen schon. Wenn wir nun `x_test` und `y_test` aufrufen, bekommen wir jeweils das entsprechende Objekt zurück.
+Zwar haben wir für die Berechnung auch eine Zwei im Speicher angelegt, diese ist aber nicht an einen Namen gebunden. Die Drei und die Fünf hingegen schon. Wenn wir nun `x_test` und `y_test` aufrufen, erhalten wir jeweils das entsprechende Objekt zurück.
 
 ### Namen überschreiben
  
@@ -214,7 +208,7 @@ Das ursprüngliche Objekt zum Namen `y_test` steht uns nicht mehr zur Verfügung
 knitr::include_graphics("resources/7_reassignmend_part_2.png")
 ```
 
-Führt man die Codezeile `y_test <- log(y_test)` jetzt noch einmal aus, so wird `y_test` wieder an ein anderes Objekt gebunden. Durch dieses Verhalten können wir nie sicher vorhersagen, an welches Objekt `y_test` momentan gebunden ist. Deswegen sollte man immer neue Namen vergeben und diese nicht doppelt verwenden.
+Führt man die Codezeile `y_test <- log(y_test)` jetzt noch einmal aus, so wird `y_test` wieder an ein anderes Objekt gebunden. Durch dieses Verhalten kann man nie mit Sicherheit vorhersagen, an welches Objekt `y_test` gerade gebunden ist. Aus diesem Grund sollte man immer neue Namen vergeben und diese nicht doppelt verwenden.
 
 
 ### Objekte löschen
@@ -242,8 +236,7 @@ rm(list = ls())
  
 ## Logische Werte und Operationen
 
-Die Werte Wahr und Falsch werden in R mit `TRUE` und `FALSE` repräsentiert. 
-Es stehen die elementaren Booleschen Operationen zur Verfügung.
+Die Werte Wahr und Falsch werden in R mit `TRUE` und `FALSE` repräsentiert. Es stehen die elementaren booleschen Operationen zur Verfügung.
 
   Operator  | Bedeutung 
   --------- | --------- 
@@ -264,8 +257,7 @@ q <- FALSE
  
 ### Der "logische" Wert NA
 
-Neben Wahr und Falsch existiert noch die logische Konstante `NA`, welche
-für einen unbestimmten aber bestimmbaren Wert steht (not assigned, not available 
+Neben Wahr und Falsch existiert noch die logische Konstante `NA`, welche für einen unbestimmten aber bestimmbaren Wert steht (not assigned, not available 
 yet). 
 
 Dieser Wert wird z.B. universell für alle atomaren Datentypen für die Codierung 
@@ -280,8 +272,8 @@ theendoftheworld <- NA
 
 ### Vergleichs-Operationen
  
-Logische Werte spielen in R an verschiedenen Stellen eine große Rolle, 
-da sie z.B. beschreiben, ob bestimmte Vergleiche wahr oder falsch sind.
+Logische Werte spielen in R an verschiedenen Stellen eine Rolle, zum Beispiel als Rückgabewerte eines Vergleichs, ob dieser positiv ausgefallen ist oder nicht. Gänge Vergleichsoperatoren sind hier aufgelistet:
+
    
   Operator  | Bedeutung 
   --------- | -----------------
@@ -301,7 +293,7 @@ alter_tom > alter_moni
 
 Neben Zahlen und logischen Werten werden wir auch 
 Zeichenketten begegnen bzw. benötigen. Diese können auf
-zweierlei Art zugewiesen werden:
+zweierlei Art ausgezeichnet werden:
 
 ```{r}
 "Tom"
@@ -315,8 +307,7 @@ name_bundeskanzler
 
 ## Klasse eines Datenobjektes
  
-Die Klasse bzw. der Datentyp eines Objekts lässt sich 
-mit der Funktion `class()` ermitteln oder aber spezifisch/logisch prüfen.
+Die Klasse bzw. was wir hier als Datentyp eines Objekts eingeführt haben lässt sich mit der Funktion `class()` ermitteln oder aber spezifisch/logisch prüfen.
 
 ```{r}
 class(alter_moni)

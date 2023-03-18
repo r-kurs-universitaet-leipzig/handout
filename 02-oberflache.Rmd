@@ -94,6 +94,12 @@ Oben rechts (Standardeinstellung, Abbildung \@ref(fig:editor)b) existiert die **
 alle gespeicherten Objekte angezeigt werden. Schließlich kann hier auf die 
 **History** und **Verbindungen**, wie GitHub, zugegriffen werden.
 
+*Video zur Oberfläche von RStudio:*
+
+```{r, echo=FALSE}
+knitr::include_url("https://videocampus.urz.uni-leipzig.de/paella/ui/watch.html?id=753da1a0-535c-4afb-8a84-dbf3c200be7f")
+```
+
 ## Prüfe dich selbst
 
 Von dieser Sitzung solltest du folgendes mitgenommen haben: 

@@ -236,11 +236,8 @@ div.csl-indent {
 <li class="chapter" data-level="4.4.3" data-path="strukturierte-datentypen.html"><a href="strukturierte-datentypen.html#operationen-auf-datentabellen"><i class="fa fa-check"></i><b>4.4.3</b> Operationen auf Datentabellen</a></li>
 </ul></li>
 <li class="chapter" data-level="4.5" data-path="strukturierte-datentypen.html"><a href="strukturierte-datentypen.html#prüfe-dich-selbst-2"><i class="fa fa-check"></i><b>4.5</b> Prüfe dich selbst</a></li>
-<li class="chapter" data-level="4.6" data-path="strukturierte-datentypen.html"><a href="strukturierte-datentypen.html#videos-zum-kapitel-1"><i class="fa fa-check"></i><b>4.6</b> Videos zum Kapitel</a>
-<ul>
-<li class="chapter" data-level="4.6.1" data-path="strukturierte-datentypen.html"><a href="strukturierte-datentypen.html#homogene-strukturierte-datentypen"><i class="fa fa-check"></i><b>4.6.1</b> Homogene Strukturierte Datentypen</a></li>
-<li class="chapter" data-level="4.6.2" data-path="strukturierte-datentypen.html"><a href="strukturierte-datentypen.html#heterogene-strukturierte-datentypen"><i class="fa fa-check"></i><b>4.6.2</b> Heterogene Strukturierte Datentypen</a></li>
-</ul></li>
+<li class="chapter" data-level="4.6" data-path="strukturierte-datentypen.html"><a href="strukturierte-datentypen.html#videos-zum-kapitel-1"><i class="fa fa-check"></i><b>4.6</b> Videos zum Kapitel</a></li>
+<li class="chapter" data-level="4.7" data-path="strukturierte-datentypen.html"><a href="strukturierte-datentypen.html#literaturverweise-1"><i class="fa fa-check"></i><b>4.7</b> Literaturverweise</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="funktionen.html"><a href="funktionen.html"><i class="fa fa-check"></i><b>5</b> Funktionen</a>
 <ul>
@@ -361,7 +358,7 @@ div.csl-indent {
 <div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="funktionen.html#cb146-1" aria-hidden="true" tabindex="-1"></a>mean</span></code></pre></div>
 <pre><code>## function (x, ...) 
 ## UseMethod(&quot;mean&quot;)
-## &lt;bytecode: 0x556d844345c0&gt;
+## &lt;bytecode: 0x558c1b209ca8&gt;
 ## &lt;environment: namespace:base&gt;</code></pre>
 <p>Alle anderen Funktionen bestehen aus einer Komposition dieser <em>primitiven</em> Funktionen.</p>
 <p>Beispiel:</p>
@@ -404,7 +401,7 @@ div.csl-indent {
 ##     class(f) &lt;- c(if (ordered) &quot;ordered&quot;, &quot;factor&quot;)
 ##     f
 ## }
-## &lt;bytecode: 0x556d829a4178&gt;
+## &lt;bytecode: 0x558c1af29590&gt;
 ## &lt;environment: namespace:base&gt;</code></pre>
 </div>
 <div id="aufbau" class="section level2 hasAnchor" number="5.2">
@@ -453,8 +450,8 @@ div.csl-indent {
 <li>Auch diese Funktion gibt ein Objekt zurück.</li>
 <li>usw.</li>
 </ul>
-<div id="htmlwidget-ea4563477a056af06035" style="width:672px;height:192px;" class="DiagrammeR html-widget"></div>
-<script type="application/json" data-for="htmlwidget-ea4563477a056af06035">{"x":{"diagram":"\ngraph LR;\n    A(X) -->|mean| B(mean of X)\n    B -->|abs| C(absolute of mean of X)\n    C -->|...| D(result)\n        "},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-6f531dcd38e628927447" style="width:672px;height:192px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-6f531dcd38e628927447">{"x":{"diagram":"\ngraph LR;\n    A(X) -->|mean| B(mean of X)\n    B -->|abs| C(absolute of mean of X)\n    C -->|...| D(result)\n        "},"evals":[],"jsHooks":[]}</script>
 <p>Code Beispiel:</p>
 <div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="funktionen.html#cb161-1" aria-hidden="true" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="sc">-</span><span class="dv">2</span>,<span class="sc">-</span><span class="dv">3</span>,<span class="sc">-</span><span class="dv">4</span>)</span>
 <span id="cb161-2"><a href="funktionen.html#cb161-2" aria-hidden="true" tabindex="-1"></a></span>

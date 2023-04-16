@@ -487,3 +487,23 @@ Von dieser Sitzung solltest du folgendes mitgenommen haben:
   - [x] Du solltest wissen, wie die generische `plot()` Funktion in R funktioniert.
   - [x] Du solltest mindestens zwei Möglichkeiten nennen können, wie man in R Grafiken erzeugen kann.
   - [x] Du solltest verstanden haben, wie man ggplot Grafiken aufbaut. (Stichwort: Layer)
+  
+## Literaturverweise 
+
+*Ergänzend*
+
+- [R for Data Science](https://r4ds.had.co.nz/data-visualisation.html) Kapitel 3 (Data Visualisation)
+- [Data Visualization](https://socviz.co/makeplot.html#how-ggplot-works) "How ggplot works" Kapitel
+
+*Weiterführend* 
+
+- [Fundamentals of Data Visualization](https://clauswilke.com/dataviz/) Prinzipien guter Daten Visualisierung (nicht konkrete Umsetzung)
+
+
+<!-- Referenzen  -->
+
+::: {.invisible style="display:none"}
+@wickham2016r
+@wilke2019fundamentals
+@healy2018data
+:::  

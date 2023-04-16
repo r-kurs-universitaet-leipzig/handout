@@ -68,6 +68,7 @@ pipes
 default-werte
 help-fenster
 prüfe-dich-selbst-3
+literaturverweise-2
 packages
 packages-installieren-und-laden
 needs
@@ -78,6 +79,7 @@ dateien-einlesen
 r-interne-dateien
 r-externe-dateien
 haven-package
+literaturverweise-3
 tidyverse
 das-tidyverse
 tidyverse-laden
@@ -89,6 +91,7 @@ variablen-umbennen
 fälle-manipulieren
 fälle-gruppieren
 prüfe-dich-selbst-4
+literaturverweise-4
 plots
 r-base-plots-mit-plot
 speichern-von-base-grafiken
@@ -107,6 +110,7 @@ viridis
 letzter-hinweis
 code-für-die-einstiegs-grafik
 prüfe-dich-selbst-5
+literaturverweise-5
 kontrollstrukturen
 prinzipien-der-programmierung
 funktionen-selber-schreiben
@@ -115,3 +119,4 @@ vektorisierte-fallunterscheidungen
 schleifen
 vektorisiertes-programmieren
 prüfe-dich-selbst-6
+literaturverweise-6

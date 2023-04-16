@@ -6,9 +6,7 @@ In R wird grundsätzlich zwischen **Funktionen** und **Objekten** unterschieden.
 
 In diesem Kapitel wird es um die Grundlagen im Umgang mit Funktionen gehen. 
 
-Technisch gesehen handelt es sich bei R um eine *funktionale Programmiersprache*. Das heißt, einfach formuliert, dass Problemlösungen durch Funktionen erfolgen.[^*]
-
-[^*]: Für die technischen Details, siehe [Wickham, H.: Advanced R, Chapter 6, Introduction](https://adv-r.hadley.nz/fp.html).
+Technisch gesehen handelt es sich bei R um eine *funktionale Programmiersprache*. Das heißt, einfach formuliert, dass Problemlösungen durch Funktionen erfolgen.
 
 ## Eigenschaften
 
@@ -202,3 +200,22 @@ Von dieser Sitzung solltest du folgendes mitgenommen haben:
 - [x] Du solltest Pipes kennen, verstehen und rudimentär anwenden können.
 - [x] Du solltest wissen, dass es Default Werte gibt und wie du herausfindest, welche Werte als solche hinterlegt sind.
 - [x] Du solltest dich im Hilfefenster zurechtfinden.
+
+## Literaturverweise
+
+*Ergänzend*
+
+- [R-Intro](https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf) Kapitel 4 
+
+*Weiterführend*
+
+- [towardsdatascience blogpost](https://towardsdatascience.com/understanding-the-native-r-pipe-98dea6d8b61b) (Unterschied zwischen Base-R und magrittr Pipe)
+- [Advanced R](https://adv-r.hadley.nz/functions.html) Kapitel 6
+
+
+
+::: {.invisible style="display:none"}
+@r-intro
+@pipe
+@wickham2019advanced
+:::

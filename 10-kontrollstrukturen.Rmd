@@ -340,4 +340,20 @@ Von dieser Sitzung solltest du folgendes mitgenommen haben:
   - [x] Du solltest Kontrollstrukturen dazu nutzen können, eigene Probleme zu lösen.
   - [x] Du solltest mindestens zwei Möglichkeiten nennen können, wie man in R iterative Probleme lösen kann. 
   - [x] Du solltest verstanden haben, wie vektorisierte Funktionen ausgewertet werden.
+  
+## Literaturverweise
 
+*Ergänzend*
+
+- [R for Data Science](https://r4ds.had.co.nz/functions.html) Kapitel 19 (Functions)
+- [Hands-On Programming with R](https://rstudio-education.github.io/hopr/basics.html#write-functions) Kapitel 2.4 bis 2.7 
+
+*Weiterführend*
+
+- [Advanced R](https://adv-r.hadley.nz/functions.html) Kapitel 9 (Functional Programming)
+
+
+::: {.invisible style="display:none"}
+@wickham2016r
+@wickham2019advanced
+:::

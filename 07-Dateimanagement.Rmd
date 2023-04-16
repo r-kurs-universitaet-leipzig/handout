@@ -156,8 +156,19 @@ df_example_stata <-
              encoding = "UTF-8")        # Optional
 ```
 
+## Literaturverweise
 
+*Ergänzend*
 
+- [R for Data Science](https://r4ds.had.co.nz/workflow-projects.html) Kapitel 8 (R-Projects)
+
+*Weiterführend*
+
+- [R for Data Science](https://r4ds.had.co.nz/workflow-projects.html) Kapitel 11 (Data Import)
+
+::: {.invisible style="display:none"}
+@wickham2016r
+:::
 
 
 

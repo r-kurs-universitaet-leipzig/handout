@@ -200,7 +200,7 @@ starwars %>%
 
 Die hier verwendete Funktion `summarise()` oder `summarize()` macht es uns nun möglich, Gruppeneigenschaften zu ermitteln. Analog zu `mutate()` können wir so Spalten zu dem resultierenden Dataframe hinzufügen. Auf dem [dplyr:: Cheatsheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-transformation.pdf) findet ihr auf der zweiten Seite unter "Summary Functions" ein paar Funktionen, welche ihr auf die jeweiligen Gruppen anwenden könnt. Im Beispiel haben wir `mean()` benutzt, um das durchschnittliche Gewicht der Gruppe zu ermitteln; `n()` hingegen gibt die Anzahl an Fällen in der Gruppe aus. Zu beachten gilt es, dass alle unbestimmten Werte (`NA`) zu einer Gruppe zusammengefasst wurden. 
 
-Mit `ungroup()` kann das Gruppenattribut wieder entfernet werden. 
+Mit `ungroup()` kann das Gruppenattribut wieder entfernt werden. 
 
 Man sollte sich immer vergegenwärtigen, an welchem Punkt man Analysen auf Gruppenebene oder auf Individualebene macht, bzw. ob man mit einem gruppierten Tibble arbeitet oder nicht. 
 
@@ -212,3 +212,17 @@ Von dieser Sitzung solltest du Folgendes mitgenommen haben:
   - [x] Du solltest wissen, was "tidy-data" auszeichnet (siehe 8.2). 
   - [x] Du solltest unterscheiden können, mit welchen Funktionen man Fälle und mit welchen man Variablen manipuliert. 
   - [x] Du solltest verstanden haben, was die Funktion `group_by()` macht und wann diese nützlich sein könnte.
+
+## Literaturverweise
+
+*Ergänzend*
+
+- [R for Data Science](https://r4ds.had.co.nz/transform.html) Kapitel 5 (Data Transformation)
+
+*Weiterführend*
+
+- [R for Data Science](https://r4ds.had.co.nz/tidy-data.html) Kapitel 12 (Tidy data), wie sind hier davon ausgegangen, dass "tidy data" vorliegt.
+
+::: {.invisible style="display:none"}
+@wickham2016r
+:::

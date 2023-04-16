@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Kapitel 5 Funktionen | Handout für R Grundkurs</title>
-  <meta name="description" content="Kapitel 5 Funktionen | Handout für R Grundkurs" />
+  <title>Kapitel 5 Funktionen | Handout zum Kurs: Einführung in die Programmierung mit R</title>
+  <meta name="description" content="Kapitel 5 Funktionen | Handout zum Kurs: Einführung in die Programmierung mit R" />
   <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Kapitel 5 Funktionen | Handout für R Grundkurs" />
+  <meta property="og:title" content="Kapitel 5 Funktionen | Handout zum Kurs: Einführung in die Programmierung mit R" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Kapitel 5 Funktionen | Handout für R Grundkurs" />
+  <meta name="twitter:title" content="Kapitel 5 Funktionen | Handout zum Kurs: Einführung in die Programmierung mit R" />
   
   
   
@@ -335,7 +335,7 @@ div.csl-indent {
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Handout für R Grundkurs</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Handout zum Kurs: Einführung in die Programmierung mit R</a>
           </h1>
         </div>
 
@@ -363,7 +363,7 @@ div.csl-indent {
 <div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="funktionen.html#cb146-1" aria-hidden="true" tabindex="-1"></a>mean</span></code></pre></div>
 <pre><code>## function (x, ...) 
 ## UseMethod(&quot;mean&quot;)
-## &lt;bytecode: 0x55c0eb04a1f8&gt;
+## &lt;bytecode: 0x5619a81cb100&gt;
 ## &lt;environment: namespace:base&gt;</code></pre>
 <p>Alle anderen Funktionen bestehen aus einer Komposition dieser <em>primitiven</em> Funktionen.</p>
 <p>Beispiel:</p>
@@ -406,7 +406,7 @@ div.csl-indent {
 ##     class(f) &lt;- c(if (ordered) &quot;ordered&quot;, &quot;factor&quot;)
 ##     f
 ## }
-## &lt;bytecode: 0x55c0f0881b50&gt;
+## &lt;bytecode: 0x5619ad9b09a8&gt;
 ## &lt;environment: namespace:base&gt;</code></pre>
 </div>
 <div id="aufbau" class="section level2 hasAnchor" number="5.2">
@@ -455,8 +455,8 @@ div.csl-indent {
 <li>Auch diese Funktion gibt ein Objekt zurück.</li>
 <li>usw.</li>
 </ul>
-<div id="htmlwidget-0ea59ee6ec49ad87c7a6" style="width:672px;height:192px;" class="DiagrammeR html-widget"></div>
-<script type="application/json" data-for="htmlwidget-0ea59ee6ec49ad87c7a6">{"x":{"diagram":"\ngraph LR;\n    A(X) -->|mean| B(mean of X)\n    B -->|abs| C(absolute of mean of X)\n    C -->|...| D(result)\n        "},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-65881c851cdaf6aaa41e" style="width:672px;height:192px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-65881c851cdaf6aaa41e">{"x":{"diagram":"\ngraph LR;\n    A(X) -->|mean| B(mean of X)\n    B -->|abs| C(absolute of mean of X)\n    C -->|...| D(result)\n        "},"evals":[],"jsHooks":[]}</script>
 <p>Code Beispiel:</p>
 <div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="funktionen.html#cb161-1" aria-hidden="true" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="sc">-</span><span class="dv">2</span>,<span class="sc">-</span><span class="dv">3</span>,<span class="sc">-</span><span class="dv">4</span>)</span>
 <span id="cb161-2"><a href="funktionen.html#cb161-2" aria-hidden="true" tabindex="-1"></a></span>

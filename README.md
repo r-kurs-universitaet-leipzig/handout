@@ -10,10 +10,11 @@ Wir freuen uns über jegliche Form von Anregungen und Verbesserungsvorschlägen.
 ## Authors
 
 Aktuelle Kursleiter\*innen:
-
-- Anne Sophie Küllmer ([sophie.kuellmer@uni-leipzig.de](mailto:sophie.kuellmer@uni-leipzig.de))
+ 
+- Jonas Frost ([jonas.frost@uni-leipzig.de](mailto:jonas.frost@uni-leipzig.de))
 - Peter Kannewitz ([peter.kannewitz@uni-leipzig.de](mailto:peter.kannewitz@uni-leipzig.de))
 
 Ehemalige Kursleiter\*innen:
 
+- Anne Sophie Küllmer ([sophie.kuellmer@uni-leipzig.de](mailto:sophie.kuellmer@uni-leipzig.de))
 - Peer Keßler ([peer.schwertfeger@uni-leipzig.de](mailto:peer.schwertfeger@uni-leipzig.de))

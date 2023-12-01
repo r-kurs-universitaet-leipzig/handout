@@ -1,13 +1,15 @@
 --- 
 title: "Handout zum Kurs: Einführung in die Programmierung mit R"
 author: |
-  | Anne Sophie Küllmer
-  | sophie.kuellmer@uni-leipzig.de
-  |
   | Peter Kannewitz 
   | peter.kannewitz@uni-leipzig.de
   |
+  | Jonas Frost
+  | jonas.frost@uni-leipzig.de
+  |
   | Peer Keßler
+  |
+  | Anne Sophie Küllmer
 subtitle: "URZ und Academic Lab -- Universität Leipzig"
 date: "Stand: `r Sys.Date()`"
 bibliography: ["references.bib"]

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Kapitel 2 Oberfläche | Handout zum Kurs: Einführung in die Programmierung mit R</title>
   <meta name="description" content="Kapitel 2 Oberfläche | Handout zum Kurs: Einführung in die Programmierung mit R" />
-  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Kapitel 2 Oberfläche | Handout zum Kurs: Einführung in die Programmierung mit R" />
   <meta property="og:type" content="book" />
@@ -50,14 +50,14 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
 <script src="libs/d3-3.3.8/d3.min.js"></script>
 <script src="libs/dagre-0.4.0/dagre-d3.min.js"></script>
 <link href="libs/mermaid-0.3.0/dist/mermaid.css" rel="stylesheet" />
 <script src="libs/mermaid-0.3.0/dist/mermaid.slim.min.js"></script>
 <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
 <script src="libs/chromatography-0.1/chromatography.js"></script>
-<script src="libs/DiagrammeR-binding-1.0.9/DiagrammeR.js"></script>
+<script src="libs/DiagrammeR-binding-1.0.10/DiagrammeR.js"></script>
 
 
 <style type="text/css">
@@ -125,6 +125,10 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 <style type="text/css">
 /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
 div.csl-bib-body { }
@@ -219,6 +223,7 @@ div.csl-indent {
 <li class="chapter" data-level="4.1.1" data-path="strukturierte-datentypen.html"><a href="strukturierte-datentypen.html#abfragen-von-werten-durch-subsetting-von-vektoren"><i class="fa fa-check"></i><b>4.1.1</b> Abfragen von Werten durch Subsetting von Vektoren</a></li>
 <li class="chapter" data-level="4.1.2" data-path="strukturierte-datentypen.html"><a href="strukturierte-datentypen.html#vektorisierte-operationen"><i class="fa fa-check"></i><b>4.1.2</b> Vektorisierte Operationen</a></li>
 <li class="chapter" data-level="4.1.3" data-path="strukturierte-datentypen.html"><a href="strukturierte-datentypen.html#operationen-auf-vektoren"><i class="fa fa-check"></i><b>4.1.3</b> Operationen auf Vektoren</a></li>
+<li class="chapter" data-level="4.1.4" data-path="strukturierte-datentypen.html"><a href="strukturierte-datentypen.html#faktoren-ein-spezieller-datentyp-für-kategorische-daten"><i class="fa fa-check"></i><b>4.1.4</b> Faktoren: ein spezieller Datentyp für kategorische Daten</a></li>
 </ul></li>
 <li class="chapter" data-level="4.2" data-path="strukturierte-datentypen.html"><a href="strukturierte-datentypen.html#matrizen"><i class="fa fa-check"></i><b>4.2</b> Matrizen</a>
 <ul>
@@ -351,7 +356,7 @@ div.csl-indent {
 mitinstalliert. Hier können wir bereits R Code eingeben und mit <code>Enter</code> an den
 Computer übergeben. In der nächsten Zeile wird die Antwort vom Computer an uns
 zurückgegeben.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-5"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-6"></span>
 <img src="resources/GUI.png" alt="R GUI" width="80%" />
 <p class="caption">
 Abb. 2.1: R GUI
@@ -361,13 +366,13 @@ Abb. 2.1: R GUI
 </div>
 <div id="rstudio" class="section level2 hasAnchor" number="2.2">
 <h2><span class="header-section-number">2.2</span> RStudio<a href="oberfläche.html#rstudio" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-6"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-7"></span>
 <img src="resources/RStudio.png" alt="RStudio Logo (https://www.rstudio.com/about/logos/)" width="60%" />
 <p class="caption">
 Abb. 2.2: RStudio Logo (<a href="https://www.rstudio.com/about/logos/" class="uri">https://www.rstudio.com/about/logos/</a>)
 </p>
 </div>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-7"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-8"></span>
 <img src="resources/interface.png" alt="RStudio Interface" width="80%" />
 <p class="caption">
 Abb. 2.3: RStudio Interface
@@ -384,7 +389,7 @@ Abb. 2.3: RStudio Interface
 <p>Das Interface von RStudio besteht aus mehreren Fenstern.</p>
 <div id="console" class="section level3 hasAnchor" number="2.2.1">
 <h3><span class="header-section-number">2.2.1</span> Console<a href="oberfläche.html#console" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-8"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-9"></span>
 <img src="resources/console.png" alt="Console" width="80%" />
 <p class="caption">
 Abb. 2.4: Console
@@ -400,7 +405,7 @@ hier angezeigt.</p>
 </div>
 <div id="script-editor" class="section level3 hasAnchor" number="2.2.2">
 <h3><span class="header-section-number">2.2.2</span> Script Editor<a href="oberfläche.html#script-editor" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-9"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-10"></span>
 <img src="resources/editor.png" alt="Script Editor" width="80%" />
 <p class="caption">
 Abb. 2.5: Script Editor
@@ -447,10 +452,10 @@ alle gespeicherten Objekte angezeigt werden. Schließlich kann hier auf die
 <h2><span class="header-section-number">2.3</span> Prüfe dich selbst<a href="oberfläche.html#prüfe-dich-selbst" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Von dieser Sitzung solltest du folgendes mitgenommen haben:</p>
 <ul class="task-list">
-<li><input type="checkbox" disabled="" checked="" />Du solltest die wesentliche Funktionsweise von R verstanden haben.</li>
-<li><input type="checkbox" disabled="" checked="" />Du solltest den Aufbau von RStudio kennen.</li>
-<li><input type="checkbox" disabled="" checked="" />Du solltest wissen, was ein Script ist und wie es geöffnet werden kann.</li>
-<li><input type="checkbox" disabled="" checked="" />Du solltest wissen, wie Befehlssequenzen in der Console und in einem Script ausgeführt werden.</li>
+<li><input type="checkbox" checked="" />Du solltest die wesentliche Funktionsweise von R verstanden haben.</li>
+<li><input type="checkbox" checked="" />Du solltest den Aufbau von RStudio kennen.</li>
+<li><input type="checkbox" checked="" />Du solltest wissen, was ein Script ist und wie es geöffnet werden kann.</li>
+<li><input type="checkbox" checked="" />Du solltest wissen, wie Befehlssequenzen in der Console und in einem Script ausgeführt werden.</li>
 </ul>
 
 </div>

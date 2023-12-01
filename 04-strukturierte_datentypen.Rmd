@@ -156,6 +156,39 @@ mean(DJ_Alter) # numerischer Vektor
 any(DJ_Vinyl) # logischer Vektor
 ```
 
+### Faktoren: ein spezieller Datentyp für kategoriale Daten
+
+Die Klasse `factor` ist in R ein eigener Datentyp, welcher die Typen integer und character derart verbindet, sodass man geeignet kategoriale Variablen (nominal/ordinales Messniveau) repräsentieren kann. Dieser Datentyp ist eine Besonderheit von R und ermöglicht es, einfacher kategoriale Variablen statistisch zu untersuchen.  
+Mit der Funktion `factor()` können wir einem Vektor die Menge der möglichen Ausprägungen (`levels`) und deren Bezeichnungen (`labels`) zuordnen.
+
+```{r}
+x <- factor(x = c(0, 1, 0, 1),                  # Vektor 
+            levels = c(0, 1, 2),                # Mögliche Werte
+            labels = c("Mann","Frau","Divers")) # Bezeichnungen 
+x
+```
+
+Die Werte, die in einem Faktor vorkommen können, werden als `level` bezeichnet und können über die Funktion `level()` abgerufen werden. Es spielt hierbei keine Rolle, ob die Werte tatsächlich in dem Vektor auftreten.
+
+```{r}
+levels(x)
+```
+
+Die Level werden intern mit Integers repräsentiert. Die `labels` geben Namen für die entsprechenden Levels vor. 
+
+```{r}
+as.integer(x)
+```
+
+Nicht nur `character`-Vektoren lassen sich in Faktoren umschreiben. Jeder homogene Daten-Vektor kann als Faktor geschrieben werden. Soll dabei auf Labels verzichtet werden, vereinfacht sich das Erstellen:
+
+```{r}
+grades <- as.factor(x = 1:6)
+
+grades
+```
+
+
 ## Matrizen
 
  Die Datenstruktur einer Matrix verallgemeinert das Konzept

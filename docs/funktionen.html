@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Kapitel 5 Funktionen | Handout zum Kurs: Einführung in die Programmierung mit R</title>
   <meta name="description" content="Kapitel 5 Funktionen | Handout zum Kurs: Einführung in die Programmierung mit R" />
-  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Kapitel 5 Funktionen | Handout zum Kurs: Einführung in die Programmierung mit R" />
   <meta property="og:type" content="book" />
@@ -50,14 +50,14 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
 <script src="libs/d3-3.3.8/d3.min.js"></script>
 <script src="libs/dagre-0.4.0/dagre-d3.min.js"></script>
 <link href="libs/mermaid-0.3.0/dist/mermaid.css" rel="stylesheet" />
 <script src="libs/mermaid-0.3.0/dist/mermaid.slim.min.js"></script>
 <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
 <script src="libs/chromatography-0.1/chromatography.js"></script>
-<script src="libs/DiagrammeR-binding-1.0.9/DiagrammeR.js"></script>
+<script src="libs/DiagrammeR-binding-1.0.10/DiagrammeR.js"></script>
 
 
 <style type="text/css">
@@ -125,6 +125,10 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 <style type="text/css">
 /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
 div.csl-bib-body { }
@@ -219,6 +223,7 @@ div.csl-indent {
 <li class="chapter" data-level="4.1.1" data-path="strukturierte-datentypen.html"><a href="strukturierte-datentypen.html#abfragen-von-werten-durch-subsetting-von-vektoren"><i class="fa fa-check"></i><b>4.1.1</b> Abfragen von Werten durch Subsetting von Vektoren</a></li>
 <li class="chapter" data-level="4.1.2" data-path="strukturierte-datentypen.html"><a href="strukturierte-datentypen.html#vektorisierte-operationen"><i class="fa fa-check"></i><b>4.1.2</b> Vektorisierte Operationen</a></li>
 <li class="chapter" data-level="4.1.3" data-path="strukturierte-datentypen.html"><a href="strukturierte-datentypen.html#operationen-auf-vektoren"><i class="fa fa-check"></i><b>4.1.3</b> Operationen auf Vektoren</a></li>
+<li class="chapter" data-level="4.1.4" data-path="strukturierte-datentypen.html"><a href="strukturierte-datentypen.html#faktoren-ein-spezieller-datentyp-für-kategorische-daten"><i class="fa fa-check"></i><b>4.1.4</b> Faktoren: ein spezieller Datentyp für kategorische Daten</a></li>
 </ul></li>
 <li class="chapter" data-level="4.2" data-path="strukturierte-datentypen.html"><a href="strukturierte-datentypen.html#matrizen"><i class="fa fa-check"></i><b>4.2</b> Matrizen</a>
 <ul>
@@ -360,14 +365,14 @@ div.csl-indent {
 <p><strong>3. Funktionen bestehen im Wesentlichen aus einer Komposition von <em>Base</em>-Funktionen.</strong></p>
 <p>In R sind sogenannte <em>primitive</em> Funktionen definiert und bilden die kleinste Einheit von Funktionen.</p>
 <p>Beispiel:</p>
-<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="funktionen.html#cb146-1" aria-hidden="true" tabindex="-1"></a>mean</span></code></pre></div>
+<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="funktionen.html#cb154-1" tabindex="-1"></a>mean</span></code></pre></div>
 <pre><code>## function (x, ...) 
 ## UseMethod(&quot;mean&quot;)
-## &lt;bytecode: 0x5619a81cb100&gt;
+## &lt;bytecode: 0x0000018a9dd19470&gt;
 ## &lt;environment: namespace:base&gt;</code></pre>
 <p>Alle anderen Funktionen bestehen aus einer Komposition dieser <em>primitiven</em> Funktionen.</p>
 <p>Beispiel:</p>
-<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb148-1"><a href="funktionen.html#cb148-1" aria-hidden="true" tabindex="-1"></a>factor</span></code></pre></div>
+<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="funktionen.html#cb156-1" tabindex="-1"></a>factor</span></code></pre></div>
 <pre><code>## function (x = character(), levels, labels = levels, exclude = NA, 
 ##     ordered = is.ordered(x), nmax = NA) 
 ## {
@@ -406,7 +411,7 @@ div.csl-indent {
 ##     class(f) &lt;- c(if (ordered) &quot;ordered&quot;, &quot;factor&quot;)
 ##     f
 ## }
-## &lt;bytecode: 0x5619ad9b09a8&gt;
+## &lt;bytecode: 0x0000018a9a83e298&gt;
 ## &lt;environment: namespace:base&gt;</code></pre>
 </div>
 <div id="aufbau" class="section level2 hasAnchor" number="5.2">
@@ -419,19 +424,19 @@ div.csl-indent {
 <li><strong>Optionen</strong>, die die Verarbeitung des Objekts beeinflussen.</li>
 </ul>
 <p>Beispiel:</p>
-<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="funktionen.html#cb150-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rep</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>,     <span class="co"># x ist hier das Objekt</span></span>
-<span id="cb150-2"><a href="funktionen.html#cb150-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">times =</span> <span class="dv">2</span>)   <span class="co"># times ist die Option</span></span></code></pre></div>
+<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="funktionen.html#cb158-1" tabindex="-1"></a><span class="fu">rep</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>,     <span class="co"># x ist hier das Objekt</span></span>
+<span id="cb158-2"><a href="funktionen.html#cb158-2" tabindex="-1"></a>    <span class="at">times =</span> <span class="dv">2</span>)   <span class="co"># times ist die Option</span></span></code></pre></div>
 <p>Die Reihenfolge der Argumente in einer Funktion sind fest definiert.</p>
-<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="funktionen.html#cb151-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rep</span>(<span class="dv">3</span>, <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="funktionen.html#cb159-1" tabindex="-1"></a><span class="fu">rep</span>(<span class="dv">3</span>, <span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## [1] 3 3</code></pre>
-<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="funktionen.html#cb153-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rep</span>(<span class="dv">2</span>, <span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="funktionen.html#cb161-1" tabindex="-1"></a><span class="fu">rep</span>(<span class="dv">2</span>, <span class="dv">3</span>)</span></code></pre></div>
 <pre><code>## [1] 2 2 2</code></pre>
 <p>In diesem Fall wird das erste Argument als Objekt (<code>x</code>) und das zweite als Option (<code>times</code>) erkannt. Die Reihenfolge der Argumente ist aber nur dann relevant, wenn die Argumente nicht benannt werden. Werden die Argumente hingegen benannt, wird die interne Reihenfolge überschrieben:</p>
-<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="funktionen.html#cb155-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rep</span>(<span class="at">x =</span> <span class="dv">2</span>,</span>
-<span id="cb155-2"><a href="funktionen.html#cb155-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">times =</span> <span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="funktionen.html#cb163-1" tabindex="-1"></a><span class="fu">rep</span>(<span class="at">x =</span> <span class="dv">2</span>,</span>
+<span id="cb163-2"><a href="funktionen.html#cb163-2" tabindex="-1"></a>    <span class="at">times =</span> <span class="dv">3</span>)</span></code></pre></div>
 <pre><code>## [1] 2 2 2</code></pre>
-<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="funktionen.html#cb157-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rep</span>(<span class="at">times =</span> <span class="dv">3</span>,</span>
-<span id="cb157-2"><a href="funktionen.html#cb157-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="funktionen.html#cb165-1" tabindex="-1"></a><span class="fu">rep</span>(<span class="at">times =</span> <span class="dv">3</span>,</span>
+<span id="cb165-2"><a href="funktionen.html#cb165-2" tabindex="-1"></a>    <span class="at">x =</span> <span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## [1] 2 2 2</code></pre>
 <p><strong>Wichtiger Hinweis!</strong></p>
 <p>Es lohnt sich immer, die Argumente in einer Funktion zu benennen. Nicht nur erleichtert es euch, den Code auch nach langer Zeit noch zu verstehen, sondern auch anderen wird das Lesen eures Codes erleichtert.</p>
@@ -440,7 +445,7 @@ div.csl-indent {
 <h2><span class="header-section-number">5.3</span> Verschachtelungen<a href="funktionen.html#verschachtelungen" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Bei dem Output von Funktionen handelt es sich (fast) immer um Objekte. Diese Objekte können natürlich direkt wieder einer Funktion übergeben werden. Diese Eigenschaft ermöglicht es, Funktionen zu schachteln. Hieraus ergibt sich, dass R diese Schachtelungen von <strong>Innen nach Außen</strong> auflöst.</p>
 <p>Im folgenden Beispiel wird also zunächst der Mittelwert des Vektors bestimmt. Im Anschluss wird der Absolutbetrag hiervon genommen, usw.</p>
-<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="funktionen.html#cb159-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">log</span>(<span class="fu">abs</span>(<span class="fu">mean</span>(<span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="sc">-</span><span class="dv">2</span>,<span class="sc">-</span><span class="dv">3</span>,<span class="sc">-</span><span class="dv">4</span>)))))</span></code></pre></div>
+<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="funktionen.html#cb167-1" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">log</span>(<span class="fu">abs</span>(<span class="fu">mean</span>(<span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="sc">-</span><span class="dv">2</span>,<span class="sc">-</span><span class="dv">3</span>,<span class="sc">-</span><span class="dv">4</span>)))))</span></code></pre></div>
 <pre><code>## [1] 1</code></pre>
 <p>Dieses Beispiel ist noch relativ gut überschaubar. Im Arbeiten werden diese Ketten jedoch schnell komplexer und unübersichtlich. Eine Alternative hierzu bieten sogenannte <strong>Pipes</strong>.</p>
 </div>
@@ -455,16 +460,16 @@ div.csl-indent {
 <li>Auch diese Funktion gibt ein Objekt zurück.</li>
 <li>usw.</li>
 </ul>
-<div id="htmlwidget-65881c851cdaf6aaa41e" style="width:672px;height:192px;" class="DiagrammeR html-widget"></div>
-<script type="application/json" data-for="htmlwidget-65881c851cdaf6aaa41e">{"x":{"diagram":"\ngraph LR;\n    A(X) -->|mean| B(mean of X)\n    B -->|abs| C(absolute of mean of X)\n    C -->|...| D(result)\n        "},"evals":[],"jsHooks":[]}</script>
+<div class="DiagrammeR html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-9f1d3dcfe923e33590d6" style="width:672px;height:192px;"></div>
+<script type="application/json" data-for="htmlwidget-9f1d3dcfe923e33590d6">{"x":{"diagram":"\ngraph LR;\n    A(X) -->|mean| B(mean of X)\n    B -->|abs| C(absolute of mean of X)\n    C -->|...| D(result)\n        "},"evals":[],"jsHooks":[]}</script>
 <p>Code Beispiel:</p>
-<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="funktionen.html#cb161-1" aria-hidden="true" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="sc">-</span><span class="dv">2</span>,<span class="sc">-</span><span class="dv">3</span>,<span class="sc">-</span><span class="dv">4</span>)</span>
-<span id="cb161-2"><a href="funktionen.html#cb161-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb161-3"><a href="funktionen.html#cb161-3" aria-hidden="true" tabindex="-1"></a>X <span class="sc">|&gt;</span> </span>
-<span id="cb161-4"><a href="funktionen.html#cb161-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mean</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb161-5"><a href="funktionen.html#cb161-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">abs</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb161-6"><a href="funktionen.html#cb161-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">log</span>() <span class="sc">|&gt;</span></span>
-<span id="cb161-7"><a href="funktionen.html#cb161-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">round</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="funktionen.html#cb169-1" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="sc">-</span><span class="dv">2</span>,<span class="sc">-</span><span class="dv">3</span>,<span class="sc">-</span><span class="dv">4</span>)</span>
+<span id="cb169-2"><a href="funktionen.html#cb169-2" tabindex="-1"></a></span>
+<span id="cb169-3"><a href="funktionen.html#cb169-3" tabindex="-1"></a>X <span class="sc">|&gt;</span> </span>
+<span id="cb169-4"><a href="funktionen.html#cb169-4" tabindex="-1"></a>  <span class="fu">mean</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb169-5"><a href="funktionen.html#cb169-5" tabindex="-1"></a>  <span class="fu">abs</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb169-6"><a href="funktionen.html#cb169-6" tabindex="-1"></a>  <span class="fu">log</span>() <span class="sc">|&gt;</span></span>
+<span id="cb169-7"><a href="funktionen.html#cb169-7" tabindex="-1"></a>  <span class="fu">round</span>()</span></code></pre></div>
 <pre><code>## [1] 1</code></pre>
 <p>An dem Code Beispiel werden die Vorteile von Pipes nochmal deutlich. Die Code-Sequenz kann von oben nach unten gelesen werden (wie eine Geschichte). Außerdem wird deutlicher, was mit den Daten Passiert und der Vorgang kann schnell, Durch das Anpassen von Argumenten abgewandelt werden.</p>
 <p><strong>Pro Tipp</strong></p>
@@ -477,27 +482,27 @@ div.csl-indent {
 <h2><span class="header-section-number">5.5</span> Default Werte<a href="funktionen.html#default-werte" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Die meisten Funktionen in R verfügen über sogenannte <em>Default Werte</em>. Hierbei handelt es sich um voreingestellte Werte, die für bestimmte Argumente verwendet werden, wenn bei diesen kein Wert übergeben wird.</p>
 <p>Für die Funktion <code>round()</code> ist ein Default Wert von <code>0</code> für das Argument <code>digits</code> hinterlegt. Entsprechend sind die folgenden zwei Codezeilen funktional identisch:</p>
-<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="funktionen.html#cb163-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="at">x =</span> pi)</span></code></pre></div>
+<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="funktionen.html#cb171-1" tabindex="-1"></a><span class="fu">round</span>(<span class="at">x =</span> pi)</span></code></pre></div>
 <pre><code>## [1] 3</code></pre>
-<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="funktionen.html#cb165-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="at">x =</span> pi,</span>
-<span id="cb165-2"><a href="funktionen.html#cb165-2" aria-hidden="true" tabindex="-1"></a>      <span class="at">digits =</span> <span class="dv">0</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="funktionen.html#cb173-1" tabindex="-1"></a><span class="fu">round</span>(<span class="at">x =</span> pi,</span>
+<span id="cb173-2"><a href="funktionen.html#cb173-2" tabindex="-1"></a>      <span class="at">digits =</span> <span class="dv">0</span>)</span></code></pre></div>
 <pre><code>## [1] 3</code></pre>
 <p>In manchen Fällen sind aber auch logische Werte als Default Werte hinterlegt. In der Funktion <code>sd()</code> ist das Argument <code>na.rm</code> enthalten. Enthält der Vektor, der der Funktion übergeben wird ein <code>NA</code>, wird die Funktion auch <code>NA</code> zurückgeben. Schließlich ist ein Wert unbekannt und daher kann auch nicht mit Sicherheit eine Standardabweichung bestimmt werden. Mit dem Argument <code>na.rm</code> können vor der Berechnung alle <code>NA</code> entfernt werden. Hier ist ein logischer Default Wert von <code>FALSE</code> vorgegeben.</p>
-<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="funktionen.html#cb167-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="cn">NA</span>)</span>
-<span id="cb167-2"><a href="funktionen.html#cb167-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(x)            </span></code></pre></div>
+<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="funktionen.html#cb175-1" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="cn">NA</span>)</span>
+<span id="cb175-2"><a href="funktionen.html#cb175-2" tabindex="-1"></a><span class="fu">sd</span>(x)            </span></code></pre></div>
 <pre><code>## [1] NA</code></pre>
-<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="funktionen.html#cb169-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Das entspricht:</span></span>
-<span id="cb169-2"><a href="funktionen.html#cb169-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(x, <span class="at">na.rm =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="funktionen.html#cb177-1" tabindex="-1"></a><span class="co"># Das entspricht:</span></span>
+<span id="cb177-2"><a href="funktionen.html#cb177-2" tabindex="-1"></a><span class="fu">sd</span>(x, <span class="at">na.rm =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <pre><code>## [1] NA</code></pre>
-<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="funktionen.html#cb171-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Mit geändertem Wert:</span></span>
-<span id="cb171-2"><a href="funktionen.html#cb171-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="funktionen.html#cb179-1" tabindex="-1"></a><span class="co"># Mit geändertem Wert:</span></span>
+<span id="cb179-2"><a href="funktionen.html#cb179-2" tabindex="-1"></a><span class="fu">sd</span>(x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>## [1] 1</code></pre>
 </div>
 <div id="help-fenster" class="section level2 hasAnchor" number="5.6">
 <h2><span class="header-section-number">5.6</span> Help Fenster<a href="funktionen.html#help-fenster" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Natürlich muss und soll niemand alle Argumente zu allen Funktionen auswendig lernen. R stellt hierzu bereits intern ein hilfreiches Hilfe-Fenster zur Verfügung.</p>
 <p>Für jede Funktion kann dieses über <code>?Funktionsaufruf</code> aufgerufen werden.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-87"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-92"></span>
 <img src="resources/Help.png" alt="Help Fenster" width="80%" />
 <p class="caption">
 Abb. 5.1: Help Fenster
@@ -517,10 +522,10 @@ Abb. 5.1: Help Fenster
 <h2><span class="header-section-number">5.7</span> Prüfe dich selbst<a href="funktionen.html#prüfe-dich-selbst-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Von dieser Sitzung solltest du folgendes mitgenommen haben:</p>
 <ul class="task-list">
-<li><input type="checkbox" disabled="" checked="" />Du solltest den typischen Aufbau von Funktionen kennen.</li>
-<li><input type="checkbox" disabled="" checked="" />Du solltest Pipes kennen, verstehen und rudimentär anwenden können.</li>
-<li><input type="checkbox" disabled="" checked="" />Du solltest wissen, dass es Default Werte gibt und wie du herausfindest, welche Werte als solche hinterlegt sind.</li>
-<li><input type="checkbox" disabled="" checked="" />Du solltest dich im Hilfefenster zurechtfinden.</li>
+<li><input type="checkbox" checked="" />Du solltest den typischen Aufbau von Funktionen kennen.</li>
+<li><input type="checkbox" checked="" />Du solltest Pipes kennen, verstehen und rudimentär anwenden können.</li>
+<li><input type="checkbox" checked="" />Du solltest wissen, dass es Default Werte gibt und wie du herausfindest, welche Werte als solche hinterlegt sind.</li>
+<li><input type="checkbox" checked="" />Du solltest dich im Hilfefenster zurechtfinden.</li>
 </ul>
 </div>
 <div id="literaturverweise-2" class="section level2 hasAnchor" number="5.8">
@@ -535,9 +540,9 @@ Abb. 5.1: Help Fenster
 <li><a href="https://adv-r.hadley.nz/functions.html">Advanced R</a> Kapitel 6</li>
 </ul>
 <div class="invisible" style="display:none">
-<p><span class="citation">R Core Team (<a href="#ref-r-intro" role="doc-biblioref">2022a</a>)</span>
-<span class="citation">Isabella Velásquez (<a href="#ref-pipe" role="doc-biblioref">2022</a>)</span>
-<span class="citation">Wickham (<a href="#ref-wickham2019advanced" role="doc-biblioref">2019</a>)</span></p>
+<p><span class="citation">R Core Team (<a href="#ref-r-intro">2022a</a>)</span>
+<span class="citation">Isabella Velásquez (<a href="#ref-pipe">2022</a>)</span>
+<span class="citation">Wickham (<a href="#ref-wickham2019advanced">2019</a>)</span></p>
 </div>
 
 </div>

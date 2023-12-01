@@ -1,8 +1,0 @@
-"0","df_regio <- readRDS(file = ""data/regio.rds"") %>% "
-"0","  mutate(Region = if_else(condition = Regio_Code < 11000,"
-"0","                            true = ""Alte Bundesländer"","
-"0","                            false = ""Neue Bundesländer"""
-"0","                          ),"
-"0","         Region = as_factor(Region),"
-"0","         Durchschnittsalter_cat = cut_interval(Durchschnittsalter, n = 3)"
-"0","         )"

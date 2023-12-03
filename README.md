@@ -1,4 +1,4 @@
-## Handout R-Kurs
+# Handout R-Kurs
 
 Handout zum Kurs "Einführung in die statistische Programmierung mit R" an der Universität Leipzig. Der Kurs wird ermöglicht durch das [Academic Lab](https://home.uni-leipzig.de/academiclab/) und das Universitätsrechenzentrum ([URZ](https://www.urz.uni-leipzig.de/)).
 

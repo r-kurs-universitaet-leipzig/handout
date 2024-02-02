@@ -156,9 +156,9 @@ mean(DJ_Alter) # numerischer Vektor
 any(DJ_Vinyl) # logischer Vektor
 ```
 
-### Faktoren: ein spezieller Datentyp für kategoriale Daten
+## Faktoren: ein spezieller Datentyp für kategoriale Daten
 
-Die Klasse `factor` ist in R ein eigener Datentyp, welcher die Typen integer und character derart verbindet, sodass man geeignet kategoriale Variablen (nominal/ordinales Messniveau) repräsentieren kann. Dieser Datentyp ist eine Besonderheit von R und ermöglicht es, einfacher kategoriale Variablen statistisch zu untersuchen.  
+Die Klasse `factor` ist in R ein eigener Datentyp, welcher die Typen integer und character derart verbindet, dass man geeignet kategoriale Variablen (nominal/ordinales Messniveau) repräsentieren kann. Dieser Datentyp ist eine Besonderheit von R und ermöglicht es, einfacher kategoriale Variablen statistisch zu untersuchen.  
 Mit der Funktion `factor()` können wir einem Vektor die Menge der möglichen Ausprägungen (`levels`) und deren Bezeichnungen (`labels`) zuordnen.
 
 ```{r}
@@ -168,7 +168,7 @@ x <- factor(x = c(0, 1, 0, 1),                  # Vektor
 x
 ```
 
-Die Werte, die in einem Faktor vorkommen können, werden als `level` bezeichnet und können über die Funktion `level()` abgerufen werden. Es spielt hierbei keine Rolle, ob die Werte tatsächlich in dem Vektor auftreten.
+Die Werte, die in einem Faktor vorkommen können, werden als `level` bezeichnet und können über die Funktion `levels()` abgerufen werden. Es spielt hierbei keine Rolle, ob die Werte tatsächlich in dem Vektor auftreten.
 
 ```{r}
 levels(x)
@@ -188,6 +188,37 @@ grades <- as.factor(x = 1:6)
 grades
 ```
 
+Faktoren sind insbesondere hilfreich für deskriptive Statistiken und Abbildungen, da sie es ermöglichen, auch mögliche Ausprägungen eines Merkmals darzustellen, die im Datensatz nicht vorkommen.  
+
+Beispielsweise wurde der Wohnort von Studierenden in Leipzig mit den möglichen Antworten Zentrum, Nord, Süd, Ost und West abgefragt. Der `character`-Vektor z beinhaltet die Antworten einiger Studierender.
+
+```{r}
+z <- c("Nord", "Ost", "Ost", "West", "Süd", "Nord", "Ost")
+z
+```
+
+Eine einfache Häufigkeitstabelle zeigt die absoluten Häufigkeiten der Antworten:
+
+```{r}
+table(z)
+```
+
+Wie wir sehen, hat keine der befragten Studierenden angegeben, im Leipziger Zentrum zu wohnen. Der Wert taucht in der Häufigkeitstabelle also auch nicht auf. Mithilfe eines Faktors können wir nun die Menge aller möglichen Ausprägungen hinterlegen und so auch die Ausprägung mit 0 Antworten sichtbar machen.
+
+```{r}
+z <- factor(z,
+            levels = c("Nord", "Süd", "Ost", "West", "Zentrum"))
+
+table(z)
+```
+
+Dies ist auch hinfreich für Abbildungen (siehe Abschnitt \@ref(plots)). 
+
+```{r}
+plot(z)
+```
+
+Für die Anordnung der Levels, das Umkodieren oder das Hinzufügen und Löschen einzelner Levels eignet sich das Paket `forcats`. 
 
 ## Matrizen
 
@@ -197,11 +228,11 @@ grades
 
 
 ```{r}
-  M <- matrix(data = 1:9,
-              nrow = 3,
-              ncol = 3,
-              byrow = TRUE)
-  M
+M <- matrix(data = 1:9,
+            nrow = 3,
+            ncol = 3,
+            byrow = TRUE)
+M
 ```
 
 Die Rückgabe gibt uns schon einen Hinweis darauf, wie wir die Matrix "subsetten" können. In den eckigen Klammern ist jeweils der Index vermerkt, welche Zeile bzw. Spalte dargestellt wird.
@@ -209,7 +240,7 @@ Die Rückgabe gibt uns schon einen Hinweis darauf, wie wir die Matrix "subsetten
 Die Indizierung erfolgt dann ähnlich zu Vektoren:
  
 ```{r}
- M[1, 2]
+M[1, 2]
 ```
 
 Lassen wir ein Argument offen und geben zum Beispiel nur einen Zeilenindex an, evaluiert der Ausdruck entsprechend zur gesamten angegebenen Zeile.
@@ -363,6 +394,7 @@ mean(df_lineup$Alter)
 
 - [x] Du solltest die vier grundlegenden strukturierten Datentypen nennen und unterscheiden können.
 - [x] Du solltest wissen, auf welche Weisen du auf die Elemente der unterschiedlichen strukturierten Datentypen zugreifen kannst.
+- [x] Du solltest wissen, in welchen Situationen Faktoren hilfreich sind.
 - [x] Du solltest verstanden haben, welche Möglichkeiten es gibt, verschiedene Teilmengen eines strukturierten Datentyps abzufragen.
 
 ## Videos zum Kapitel

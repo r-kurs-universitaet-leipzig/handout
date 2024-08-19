@@ -1,4 +1,4 @@
-# Einführung
+# Einfuehrung
 
 ```{r, echo=FALSE, out.width='30%', fig.align='center', fig.cap="R Logo (https://www.r-project.org/logo/)"}
 knitr::include_graphics("resources/R_logo.png")

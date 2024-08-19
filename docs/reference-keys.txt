@@ -13,10 +13,10 @@ fig:unnamed-chunk-113
 fig:unnamed-chunk-115
 fig:unnamed-chunk-137
 fig:unnamed-chunk-173
-einführung
+einfuehrung
 was-ist-r-und-warum-sollte-man-r-lernen
 installation
-oberfläche
+oberflaeche
 r-gui
 rstudio
 console

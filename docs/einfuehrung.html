@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Kapitel 7 Dateimanagement | Handout zum Kurs: Einführung in die Programmierung mit R</title>
-  <meta name="description" content="Kapitel 7 Dateimanagement | Handout zum Kurs: Einführung in die Programmierung mit R" />
+  <title>Kapitel 1 Einfuehrung | Handout zum Kurs: Einführung in die Programmierung mit R</title>
+  <meta name="description" content="Kapitel 1 Einfuehrung | Handout zum Kurs: Einführung in die Programmierung mit R" />
   <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Kapitel 7 Dateimanagement | Handout zum Kurs: Einführung in die Programmierung mit R" />
+  <meta property="og:title" content="Kapitel 1 Einfuehrung | Handout zum Kurs: Einführung in die Programmierung mit R" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Kapitel 7 Dateimanagement | Handout zum Kurs: Einführung in die Programmierung mit R" />
+  <meta name="twitter:title" content="Kapitel 1 Einfuehrung | Handout zum Kurs: Einführung in die Programmierung mit R" />
   
   
   
@@ -28,8 +28,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="packages.html"/>
-<link rel="next" href="tidyverse.html"/>
+<link rel="prev" href="hinweise-zur-verwendung-des-handouts.html"/>
+<link rel="next" href="oberflaeche.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -350,190 +350,63 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="dateimanagement" class="section level1 hasAnchor" number="7">
-<h1><span class="header-section-number">Kapitel 7</span> Dateimanagement<a href="dateimanagement.html#dateimanagement" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>RStudio bietet intern bereits ein gutes Tool, um Dateien auf der Festplatte zu verarbeiten. Dateien lassen sich hier <em>löschen</em>, <em>umbenennen</em>, <em>verschieben</em>, <em>kopieren</em> oder <em>neue Ordner hinzufügen</em>.</p>
-<div id="absolute-und-relative-dateipfade-exkurs" class="section level2 hasAnchor" number="7.1">
-<h2><span class="header-section-number">7.1</span> Absolute und relative Dateipfade (Exkurs)<a href="dateimanagement.html#absolute-und-relative-dateipfade-exkurs" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Um Dateien in R zu laden, muss zumeist ein Datenpfad angegeben werden, der zu der zu ladenden Datei führt. Der Datenpfad ist dabei zunächst entsprechen lang:</p>
-<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="dateimanagement.html#cb192-1" tabindex="-1"></a>df_example <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">&quot;/Users/username/Documents/GitHub/r-kurs/sitzung/data/strata.csv&quot;</span>)</span></code></pre></div>
-<p>Diese langen Datenpfade können mithilfe von <em>Working Directories</em> (WD) gelöst werden. Diese können mit der Funktion <code>setwd()</code> eingerichtet werden.</p>
-<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="dateimanagement.html#cb193-1" tabindex="-1"></a><span class="fu">setwd</span>(<span class="at">dir =</span> <span class="st">&quot;/Users/username/Documents/GitHub/r-kurs/sitzung&quot;</span>)</span></code></pre></div>
-<p>Im Zweifel kann die WD dann mithilfe von <code>getwd()</code> abgerufen werden.</p>
-<p>Wurde eine WD festgelegt, kann der Datenpfad nun bei dem Ort beginnen, der über die <code>setwd()</code> Funktion festgelegt wurde.</p>
-<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="dateimanagement.html#cb194-1" tabindex="-1"></a>df_example <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">&quot;data/strata.csv&quot;</span>)</span></code></pre></div>
-<p>Der Nachteil dieser Herangehensweise ist, dass die WD global für alle Arbeitsschritte festgelegt wird. Sollen aber WDs für einzelne “Projekte” festgelegt werden, <strong>sollten</strong> RProjects genutzt werden.</p>
-<p><em>Video zum Thema Pfadangaben:</em></p>
-<iframe src="https://videocampus.urz.uni-leipzig.de/paella/ui/watch.html?id=5c6f7375-c590-4156-931f-a58eb8bc7dc1" width="672" height="400px" data-external="1">
-</iframe>
-</div>
-<div id="r-projects" class="section level2 hasAnchor" number="7.2">
-<h2><span class="header-section-number">7.2</span> R Projects<a href="dateimanagement.html#r-projects" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-106"></span>
-<img src="resources/r_proj.png" alt="R Project Logo" width="40%" />
+<div id="einfuehrung" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">Kapitel 1</span> Einfuehrung<a href="einfuehrung.html#einfuehrung" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-4"></span>
+<img src="resources/R_logo.png" alt="R Logo (https://www.r-project.org/logo/)" width="30%" />
 <p class="caption">
-Abb. 7.1: R Project Logo
+Abb. 1.1: R Logo (<a href="https://www.r-project.org/logo/" class="uri">https://www.r-project.org/logo/</a>)
 </p>
 </div>
-<p>Um ein R Project anzulegen, sollten folgende Schritte befolgt werden:</p>
+<div id="was-ist-r-und-warum-sollte-man-r-lernen" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> Was ist R und warum sollte man R lernen?<a href="einfuehrung.html#was-ist-r-und-warum-sollte-man-r-lernen" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>R ist eine freie Programmiersprache, die in erster Linie für statistische Analysen konzipiert wurde. Durch ihre große Community (siehe <a href="https://stackoverflow.com/questions">Stack Overflow</a> oder <a href="https://www.r-bloggers.com">RBlogger</a>) und ihre ständige Weiterentwicklung durch sogenannte <em>Packages</em>, ist der Funktionsumfang von R praktisch unbegrenzt.</p>
+<p>Neben den <em>klassischen</em> Funktionen statistischer Software (Datenaufbereitung, Analysen, Graphikerstellung) sind z.B. folgende Anwendungen möglich:</p>
+<ul>
+<li>Erstellen von Präsentationen und Papern (mit RMarkdown)</li>
+<li>Webscraping</li>
+<li>Qualitative Textanalyse</li>
+<li>Auslesen von Datenbanken</li>
+<li>Automatisierungen</li>
+<li>uvm.</li>
+</ul>
+<p>Zum Teil durch die vielfältigen Anwendungsmöglichkeiten hat sich bzw. entwickelt sich
+R zum Goldstandard in der akademischen Welt und in vielen Bereichen der Wirtschaft<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>.</p>
+<p>Wie auch bei Sprachen, lernt man Programmiersprachen nicht (nur) durch Kurse. Eine aktive Auseinandersetzung mit konkreten Problemen hilft, “fließender” im Umgang mit der Sprache zu werden. Kommt man einmal nicht weiter (wird passieren… versprochen!), hilft es, sich so lange mit dem Thema zu beschäftigen, bis eine Lösung gefunden wurde.</p>
+<p>Warum sollte man das auf sich nehmen?</p>
+<p><strong>6 Gründe, R zu lernen</strong>:</p>
 <ol style="list-style-type: decimal">
-<li><p>Projekt-Ordner anlegen (Name des Ordners wird zum Projekt-Namen)</p></li>
-<li><p>In RStudio über <code>Projects</code> (oben rechts) <code>New Project...</code> wählen</p></li>
-<li><p><code>New Project</code> <span class="math inline">\(\Rightarrow\)</span> <code>Existing Directory</code> <span class="math inline">\(\Rightarrow\)</span> Erstellten Ordner aus 1. wählen <span class="math inline">\(\Rightarrow\)</span> <code>Create</code></p></li>
+<li><em>Open Source</em> und plattformübergreifend</li>
+<li>Praktisch unbegrenzter Funktionsumfang</li>
+<li>Entwickelt sich zum Standard in akademischer Welt und Wirtschaft</li>
+<li>Publizierfähige Graphiken</li>
+<li>Integration von Aufbereitung, Analyse und Präsentation</li>
+<li>Internationale Community (<a href="https://stackoverflow.com/questions/tagged/r">Stack Overflow</a>, <a href="https://www.r-bloggers.com">RBloggers</a> etc.)</li>
 </ol>
-<p>Ein Projekt kann dann immer über die <code>.RProj</code>-Datei geöffnet werden.</p>
-<p>Vorteile von Projekten:</p>
-<ul>
-<li>Wechsel von Projekten einfach möglich (WD muss nicht immer neu festgelegt werden)</li>
-<li>Code wird transportabel</li>
-<li>Deutlich übersichtlicher als lose Ordnerstruktur</li>
-<li>RHistory wird projektbezogen gespeichert</li>
-</ul>
 </div>
-<div id="dateien-einlesen" class="section level2 hasAnchor" number="7.3">
-<h2><span class="header-section-number">7.3</span> Dateien einlesen<a href="dateimanagement.html#dateien-einlesen" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>In R sind grundsätzlich alle Datei-Typen einlesbar bzw. verarbeitbar. Hierunter zählen z.B.</p>
-<table>
-<thead>
-<tr class="header">
-<th>Datenformat</th>
-<th>File-Extension</th>
-<th>Bemerkung</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>RData/RDS</td>
-<td>.Rda bzw. .Rds</td>
-<td>Native R-Datenformate</td>
-</tr>
-<tr class="even">
-<td>CSV</td>
-<td>.csv</td>
-<td>Comma-Seperated Values</td>
-</tr>
-<tr class="odd">
-<td>Text/ASCII</td>
-<td>.txt</td>
-<td>Reines Textfile</td>
-</tr>
-<tr class="even">
-<td>XLS</td>
-<td>.xls bzw. .xlsx</td>
-<td>EXCEL-Datenformat</td>
-</tr>
-<tr class="odd">
-<td>SAV</td>
-<td>.sav</td>
-<td>SPSS-Datenformat</td>
-</tr>
-<tr class="even">
-<td>DTA</td>
-<td>.dta</td>
-<td>Stata-Datenformat</td>
-</tr>
-<tr class="odd">
-<td>R</td>
-<td>.R</td>
-<td>Speicherung als R-Skript</td>
-</tr>
-</tbody>
-</table>
-<p>R interne Dateien, sowie verschiedene Text-Formate (.csv, .tsv, .txt, …) können bereits mit R Base eingelesen werden. Komplexere Datenformate (Excel, Stata, SPSS) benötigen bestimmte Packages.</p>
-<div id="r-interne-dateien" class="section level3 hasAnchor" number="7.3.1">
-<h3><span class="header-section-number">7.3.1</span> R-interne Dateien<a href="dateimanagement.html#r-interne-dateien" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Objekte in der R Umgebung lassen sich explizit als Datei auf dem Computer speichern.
-Hierzu gibt es zwei mögliche Datei-Formate:</p>
-<p><strong><code>.Rda</code> (R Data)</strong></p>
-<p>Mithilfe der Funktion <code>save()</code> können R Objekte gespeichert werden.</p>
-<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="dateimanagement.html#cb195-1" tabindex="-1"></a>df_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,   <span class="co"># Objekte anlegen</span></span>
-<span id="cb195-2"><a href="dateimanagement.html#cb195-2" tabindex="-1"></a>                      <span class="at">y =</span> <span class="dv">10</span><span class="sc">:</span><span class="dv">1</span>)</span>
-<span id="cb195-3"><a href="dateimanagement.html#cb195-3" tabindex="-1"></a></span>
-<span id="cb195-4"><a href="dateimanagement.html#cb195-4" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">4</span></span>
-<span id="cb195-5"><a href="dateimanagement.html#cb195-5" tabindex="-1"></a></span>
-<span id="cb195-6"><a href="dateimanagement.html#cb195-6" tabindex="-1"></a><span class="fu">save</span>(<span class="at">list =</span> <span class="fu">c</span>(<span class="st">&quot;df_data&quot;</span>,<span class="st">&quot;x&quot;</span>),     <span class="co"># Objekt speichern (als Liste)</span></span>
-<span id="cb195-7"><a href="dateimanagement.html#cb195-7" tabindex="-1"></a>     <span class="at">file =</span> <span class="st">&quot;data/example.Rda&quot;</span>)   <span class="co"># Datenpfad</span></span></code></pre></div>
-<p>Die Funktion <code>load</code> lädt die gespeicherten Objekte wieder in die Umgebung.</p>
-<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="dateimanagement.html#cb196-1" tabindex="-1"></a><span class="fu">load</span>(<span class="at">file =</span> <span class="st">&quot;data/example.Rda&quot;</span>)</span></code></pre></div>
-<p><em>Vorteil</em></p>
-<ul>
-<li>Mehrere Objekte speicherbar</li>
-</ul>
-<p><em>Nachteil</em></p>
-<ul>
-<li>Objekte werden mit gleichem Namen wieder geladen</li>
-</ul>
-<p><strong><code>.Rds</code> (R Data Single)</strong></p>
-<p>Das <code>.Rds</code>-Format erlaubt das speichern <em>eines</em> Objektes. Das Speichern erfolgt
-ähnlich wie bei den <code>.Rda</code>-Formaten.</p>
-<div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb197-1"><a href="dateimanagement.html#cb197-1" tabindex="-1"></a><span class="fu">saveRDS</span>(df_data,</span>
-<span id="cb197-2"><a href="dateimanagement.html#cb197-2" tabindex="-1"></a>        <span class="at">file =</span> <span class="st">&quot;data/example.Rds&quot;</span>)</span></code></pre></div>
-<p>Beim Laden wird ein neuer Name für das Objekt festgelegt.</p>
-<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="dateimanagement.html#cb198-1" tabindex="-1"></a>df_new <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">&quot;data/example.Rds&quot;</span>)</span></code></pre></div>
-<p><em>Vorteil</em></p>
-<ul>
-<li>An neuen Namen bindbar</li>
-</ul>
-<p><em>Nachteil</em></p>
-<ul>
-<li>Nur ein Objekt kann gespeichert/geladen werden</li>
-</ul>
-</div>
-<div id="r-externe-dateien" class="section level3 hasAnchor" number="7.3.2">
-<h3><span class="header-section-number">7.3.2</span> R-externe Dateien<a href="dateimanagement.html#r-externe-dateien" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Sollen andere Dateiformate eingelesen werden, werden unterschiedliche Packages benötigt.</p>
-<div id="haven-package" class="section level4 hasAnchor" number="7.3.2.1">
-<h4><span class="header-section-number">7.3.2.1</span> Haven Package<a href="dateimanagement.html#haven-package" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-111"></span>
-<img src="resources/logo_haven.png" alt="haven Package Logo" width="40%" />
-<p class="caption">
-Abb. 7.2: haven Package Logo
-</p>
-</div>
-<p>Das <code>haven</code>-Package ist ein mächtiges Package, um Dateien in anderen gängigen
-Statistik-Formaten (<code>.sav</code>, <code>.dta</code>) einzulesen.</p>
-<p>Die Funktionen funktionieren weitestgehend selbsterklärend:</p>
-<div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb199-1"><a href="dateimanagement.html#cb199-1" tabindex="-1"></a><span class="fu">needs</span>(haven)</span>
-<span id="cb199-2"><a href="dateimanagement.html#cb199-2" tabindex="-1"></a></span>
-<span id="cb199-3"><a href="dateimanagement.html#cb199-3" tabindex="-1"></a>df_example_spss <span class="ot">&lt;-</span> </span>
-<span id="cb199-4"><a href="dateimanagement.html#cb199-4" tabindex="-1"></a>  <span class="fu">read_spss</span>(<span class="at">file =</span> <span class="st">&quot;data/example.sav&quot;</span>,  <span class="co"># Dateipfad</span></span>
-<span id="cb199-5"><a href="dateimanagement.html#cb199-5" tabindex="-1"></a>            <span class="at">encoding =</span> <span class="st">&quot;UTF-8&quot;</span>)         <span class="co"># Optional</span></span>
-<span id="cb199-6"><a href="dateimanagement.html#cb199-6" tabindex="-1"></a></span>
-<span id="cb199-7"><a href="dateimanagement.html#cb199-7" tabindex="-1"></a>df_example_stata <span class="ot">&lt;-</span> </span>
-<span id="cb199-8"><a href="dateimanagement.html#cb199-8" tabindex="-1"></a>  <span class="fu">read_stata</span>(<span class="at">file =</span> <span class="st">&quot;data/example.dta&quot;</span>, <span class="co"># Dateipfad</span></span>
-<span id="cb199-9"><a href="dateimanagement.html#cb199-9" tabindex="-1"></a>             <span class="at">encoding =</span> <span class="st">&quot;UTF-8&quot;</span>)        <span class="co"># Optional</span></span></code></pre></div>
-</div>
-</div>
-</div>
-<div id="literaturverweise-3" class="section level2 hasAnchor" number="7.4">
-<h2><span class="header-section-number">7.4</span> Literaturverweise<a href="dateimanagement.html#literaturverweise-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><em>Ergänzend</em></p>
-<ul>
-<li><a href="https://r4ds.had.co.nz/workflow-projects.html">R for Data Science</a> Kapitel 8 (R-Projects)</li>
-</ul>
-<p><em>Weiterführend</em></p>
-<ul>
-<li><a href="https://r4ds.had.co.nz/workflow-projects.html">R for Data Science</a> Kapitel 11 (Data Import)</li>
-</ul>
-<div class="invisible" style="display:none">
-<p><span class="citation">Wickham and Grolemund (<a href="#ref-wickham2016r">2016</a>)</span></p>
-</div>
+<div id="installation" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> Installation<a href="einfuehrung.html#installation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Zunächst muss unser Computer R “lernen”.</p>
+<p>Um R zu installieren, gehe auf die entsprechende <a href="https://cran.r-project.org">Cran Website</a>. Wähle dein Betriebssystem aus und folge
+den Anweisungen auf der Website.</p>
+<p>Um produktiv zu arbeiten, sollte zusätzlich die Open Source-Version von RStudio
+installiert werden. Weitere Infos hierzu gibt es <a href="https://www.rstudio.com">hier</a>.</p>
 
 </div>
 </div>
-<h3>Quellen<a href="quellen.html#quellen" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
-<div id="ref-wickham2016r" class="csl-entry">
-Wickham, Hadley, and Garrett Grolemund. 2016. <em>R for Data Science: Import, Tidy, Transform, Visualize, and Model Data</em>. " O’Reilly Media, Inc.". <a href="https://r4ds.had.co.nz">https://r4ds.had.co.nz</a>.
-</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p><a href="https://analyticsindiamag.com/has-python-completely-edged-out-r-in-data-science-field/" class="uri">https://analyticsindiamag.com/has-python-completely-edged-out-r-in-data-science-field/</a><a href="einfuehrung.html#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="packages.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="tidyverse.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="hinweise-zur-verwendung-des-handouts.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="oberflaeche.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -564,7 +437,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/r-kurs-universitaet-leipzig/handout/edit/master/07-Dateimanagement.Rmd",
+"link": "https://github.com/r-kurs-universitaet-leipzig/handout/edit/master/01-einfuehrung.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -572,7 +445,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/r-kurs-universitaet-leipzig/handout/blob/master/07-Dateimanagement.Rmd",
+"link": "https://github.com/r-kurs-universitaet-leipzig/handout/blob/master/01-einfuehrung.Rmd",
 "text": null
 },
 "download": null,

@@ -5,7 +5,6 @@ author: |
   | peter.kannewitz@uni-leipzig.de
   |
   | Jonas Frost
-  | jonas.frost@uni-leipzig.de
   |
   | Peer Keßler
   |
@@ -39,7 +38,7 @@ sollten Angaben nicht mehr aktuell sein bzw. sollten sich Fehler eingeschlichen 
 
 **R-Intensivkurs**
 
-Falls ihr auf der Suche nach dem Handout des R-Intensivkurses seid, findet ihr dieses unter folgendem Link: <https://r-intensivkurs.netlify.app/>. Der R-Intensivkurs ist ein weitere Angebot des URZs und des Academic Labs der Universität Leipzig. Weitere Infos zu den Kursen gibt es hier: <https://www.urz.uni-leipzig.de/unsere-services/services-fuer-studierende/it-kurse-fuer-studierende>.
+Falls ihr auf der Suche nach dem Handout des R-Intensivkurses seid, findet ihr dieses unter folgendem Link: <https://r-intensivkurs-uni-leipzig.github.io/handout/>. Der R-Intensivkurs ist ein weitere Angebot des URZs und des Academic Labs der Universität Leipzig. Weitere Infos zu den Kursen gibt es hier: <https://www.urz.uni-leipzig.de/unsere-services/services-fuer-studierende/it-kurse-fuer-studierende>.
 
 ```{r, echo=FALSE, out.width='30%',  fig.show='hold'}
 knitr::include_graphics(

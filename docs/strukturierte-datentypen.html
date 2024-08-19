@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Kapitel 4 Strukturierte Datentypen | Handout zum Kurs: Einführung in die Programmierung mit R</title>
   <meta name="description" content="Kapitel 4 Strukturierte Datentypen | Handout zum Kurs: Einführung in die Programmierung mit R" />
-  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Kapitel 4 Strukturierte Datentypen | Handout zum Kurs: Einführung in die Programmierung mit R" />
   <meta property="og:type" content="book" />
@@ -50,6 +50,7 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet" />
 <script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
 <script src="libs/d3-3.3.8/d3.min.js"></script>
 <script src="libs/dagre-0.4.0/dagre-d3.min.js"></script>
@@ -57,12 +58,12 @@
 <script src="libs/mermaid-0.3.0/dist/mermaid.slim.min.js"></script>
 <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
 <script src="libs/chromatography-0.1/chromatography.js"></script>
-<script src="libs/DiagrammeR-binding-1.0.10/DiagrammeR.js"></script>
+<script src="libs/DiagrammeR-binding-1.0.11/DiagrammeR.js"></script>
 
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -72,7 +73,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -134,6 +135,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging div.csl-entry {
   margin-left:2em;
@@ -170,21 +172,21 @@ div.csl-indent {
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Vorwort</a></li>
 <li class="chapter" data-level="" data-path="hinweise-zur-verwendung-des-handouts.html"><a href="hinweise-zur-verwendung-des-handouts.html"><i class="fa fa-check"></i>Hinweise zur Verwendung des Handouts</a></li>
-<li class="chapter" data-level="1" data-path="einführung.html"><a href="einführung.html"><i class="fa fa-check"></i><b>1</b> Einführung</a>
+<li class="chapter" data-level="1" data-path="einfuehrung.html"><a href="einfuehrung.html"><i class="fa fa-check"></i><b>1</b> Einfuehrung</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="einführung.html"><a href="einführung.html#was-ist-r-und-warum-sollte-man-r-lernen"><i class="fa fa-check"></i><b>1.1</b> Was ist R und warum sollte man R lernen?</a></li>
-<li class="chapter" data-level="1.2" data-path="einführung.html"><a href="einführung.html#installation"><i class="fa fa-check"></i><b>1.2</b> Installation</a></li>
+<li class="chapter" data-level="1.1" data-path="einfuehrung.html"><a href="einfuehrung.html#was-ist-r-und-warum-sollte-man-r-lernen"><i class="fa fa-check"></i><b>1.1</b> Was ist R und warum sollte man R lernen?</a></li>
+<li class="chapter" data-level="1.2" data-path="einfuehrung.html"><a href="einfuehrung.html#installation"><i class="fa fa-check"></i><b>1.2</b> Installation</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="oberfläche.html"><a href="oberfläche.html"><i class="fa fa-check"></i><b>2</b> Oberfläche</a>
+<li class="chapter" data-level="2" data-path="oberflaeche.html"><a href="oberflaeche.html"><i class="fa fa-check"></i><b>2</b> Oberflaeche</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="oberfläche.html"><a href="oberfläche.html#r-gui"><i class="fa fa-check"></i><b>2.1</b> R GUI</a></li>
-<li class="chapter" data-level="2.2" data-path="oberfläche.html"><a href="oberfläche.html#rstudio"><i class="fa fa-check"></i><b>2.2</b> RStudio</a>
+<li class="chapter" data-level="2.1" data-path="oberflaeche.html"><a href="oberflaeche.html#r-gui"><i class="fa fa-check"></i><b>2.1</b> R GUI</a></li>
+<li class="chapter" data-level="2.2" data-path="oberflaeche.html"><a href="oberflaeche.html#rstudio"><i class="fa fa-check"></i><b>2.2</b> RStudio</a>
 <ul>
-<li class="chapter" data-level="2.2.1" data-path="oberfläche.html"><a href="oberfläche.html#console"><i class="fa fa-check"></i><b>2.2.1</b> Console</a></li>
-<li class="chapter" data-level="2.2.2" data-path="oberfläche.html"><a href="oberfläche.html#script-editor"><i class="fa fa-check"></i><b>2.2.2</b> Script Editor</a></li>
-<li class="chapter" data-level="2.2.3" data-path="oberfläche.html"><a href="oberfläche.html#file-editor-und-environment"><i class="fa fa-check"></i><b>2.2.3</b> File-Editor und Environment</a></li>
+<li class="chapter" data-level="2.2.1" data-path="oberflaeche.html"><a href="oberflaeche.html#console"><i class="fa fa-check"></i><b>2.2.1</b> Console</a></li>
+<li class="chapter" data-level="2.2.2" data-path="oberflaeche.html"><a href="oberflaeche.html#script-editor"><i class="fa fa-check"></i><b>2.2.2</b> Script Editor</a></li>
+<li class="chapter" data-level="2.2.3" data-path="oberflaeche.html"><a href="oberflaeche.html#file-editor-und-environment"><i class="fa fa-check"></i><b>2.2.3</b> File-Editor und Environment</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="oberfläche.html"><a href="oberfläche.html#prüfe-dich-selbst"><i class="fa fa-check"></i><b>2.3</b> Prüfe dich selbst</a></li>
+<li class="chapter" data-level="2.3" data-path="oberflaeche.html"><a href="oberflaeche.html#prüfe-dich-selbst"><i class="fa fa-check"></i><b>2.3</b> Prüfe dich selbst</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="atomare-datentypen.html"><a href="atomare-datentypen.html"><i class="fa fa-check"></i><b>3</b> Atomare Datentypen</a>
 <ul>
@@ -552,7 +554,7 @@ Mit der Funktion <code>factor()</code> können wir einem Vektor die Menge der m�
 <span id="cb104-4"><a href="strukturierte-datentypen.html#cb104-4" tabindex="-1"></a>x</span></code></pre></div>
 <pre><code>## [1] Mann Frau Mann Frau
 ## Levels: Mann Frau Divers</code></pre>
-<p>Die Werte, die in einem Faktor vorkommen können, werden als <code>level</code> bezeichnet und können über die Funktion <code>level()</code> abgerufen werden. Es spielt hierbei keine Rolle, ob die Werte tatsächlich in dem Vektor auftreten.</p>
+<p>Die Werte, die in einem Faktor vorkommen können, werden als <code>level</code> bezeichnet und können über die Funktion <code>levels()</code> abgerufen werden. Es spielt hierbei keine Rolle, ob die Werte tatsächlich in dem Vektor auftreten.</p>
 <div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="strukturierte-datentypen.html#cb106-1" tabindex="-1"></a><span class="fu">levels</span>(x)</span></code></pre></div>
 <pre><code>## [1] &quot;Mann&quot;   &quot;Frau&quot;   &quot;Divers&quot;</code></pre>
 <p>Die Level werden intern mit Integers repräsentiert. Die <code>labels</code> geben Namen für die entsprechenden Levels vor.</p>
@@ -568,20 +570,21 @@ Mit der Funktion <code>factor()</code> können wir einem Vektor die Menge der m�
 <p>Beispielsweise wurde der Wohnort von Studierenden in Leipzig mit den möglichen Antworten Zentrum, Nord, Süd, Ost und West abgefragt. Der <code>character</code>-Vektor z beinhaltet die Antworten einiger Studierender.</p>
 <div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="strukturierte-datentypen.html#cb112-1" tabindex="-1"></a>z <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Nord&quot;</span>, <span class="st">&quot;Ost&quot;</span>, <span class="st">&quot;Ost&quot;</span>, <span class="st">&quot;West&quot;</span>, <span class="st">&quot;Süd&quot;</span>, <span class="st">&quot;Nord&quot;</span>, <span class="st">&quot;Ost&quot;</span>)</span>
 <span id="cb112-2"><a href="strukturierte-datentypen.html#cb112-2" tabindex="-1"></a>z</span></code></pre></div>
-<pre><code>## [1] &quot;Nord&quot; &quot;Ost&quot;  &quot;Ost&quot;  &quot;West&quot; &quot;Süd&quot;  &quot;Nord&quot; &quot;Ost&quot;</code></pre>
+<pre><code>## [1] &quot;Nord&quot;       &quot;Ost&quot;        &quot;Ost&quot;        &quot;West&quot;       &quot;S&lt;U+00FC&gt;d&quot;
+## [6] &quot;Nord&quot;       &quot;Ost&quot;</code></pre>
 <p>Eine einfache Häufigkeitstabelle zeigt die absoluten Häufigkeiten der Antworten:</p>
 <div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="strukturierte-datentypen.html#cb114-1" tabindex="-1"></a><span class="fu">table</span>(z)</span></code></pre></div>
 <pre><code>## z
-## Nord  Ost  Süd West 
-##    2    3    1    1</code></pre>
-<p>Wie wir sehen, hat keine der befragten Studierenden angegeben, im leipziger Zentrum zu wohnen. Der Wert taucht in der Häufigkeitstabelle also auch nicht auf. Mithilfe eines Faktors können wir nun die Menge aller möglichen Ausprägungen hinterlegen und so auch die Ausprägung mit 0 Antworten sichtbar machen.</p>
+##       Nord        Ost S&lt;U+00FC&gt;d       West 
+##          2          3          1          1</code></pre>
+<p>Wie wir sehen, hat keine der befragten Studierenden angegeben, im Leipziger Zentrum zu wohnen. Der Wert taucht in der Häufigkeitstabelle also auch nicht auf. Mithilfe eines Faktors können wir nun die Menge aller möglichen Ausprägungen hinterlegen und so auch die Ausprägung mit 0 Antworten sichtbar machen.</p>
 <div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="strukturierte-datentypen.html#cb116-1" tabindex="-1"></a>z <span class="ot">&lt;-</span> <span class="fu">factor</span>(z,</span>
 <span id="cb116-2"><a href="strukturierte-datentypen.html#cb116-2" tabindex="-1"></a>            <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;Nord&quot;</span>, <span class="st">&quot;Süd&quot;</span>, <span class="st">&quot;Ost&quot;</span>, <span class="st">&quot;West&quot;</span>, <span class="st">&quot;Zentrum&quot;</span>))</span>
 <span id="cb116-3"><a href="strukturierte-datentypen.html#cb116-3" tabindex="-1"></a></span>
 <span id="cb116-4"><a href="strukturierte-datentypen.html#cb116-4" tabindex="-1"></a><span class="fu">table</span>(z)</span></code></pre></div>
 <pre><code>## z
-##    Nord     Süd     Ost    West Zentrum 
-##       2       1       3       1       0</code></pre>
+##       Nord S&lt;U+00FC&gt;d        Ost       West    Zentrum 
+##          2          1          3          1          0</code></pre>
 <p>Dies ist auch hinfreich für Abbildungen (siehe Abschnitt <a href="plots.html#plots">9</a>).</p>
 <div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="strukturierte-datentypen.html#cb118-1" tabindex="-1"></a><span class="fu">plot</span>(z)</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/unnamed-chunk-63-1.png" width="672" /></p>
@@ -739,10 +742,10 @@ Datenstruktur ist die einer Datentabelle, ein sogenanntes <code>dataframe</code>
 <div id="prüfe-dich-selbst-2" class="section level2 hasAnchor" number="4.6">
 <h2><span class="header-section-number">4.6</span> Prüfe dich selbst<a href="strukturierte-datentypen.html#prüfe-dich-selbst-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul class="task-list">
-<li><input type="checkbox" checked="" />Du solltest die vier grundlegenden strukturierten Datentypen nennen und unterscheiden können.</li>
-<li><input type="checkbox" checked="" />Du solltest wissen, auf welche Weisen du auf die Elemente der unterschiedlichen strukturierten Datentypen zugreifen kannst.</li>
-<li><input type="checkbox" checked="" />Du solltest wissen, in welchen Situationen Faktoren hilfreich sind.</li>
-<li><input type="checkbox" checked="" />Du solltest verstanden haben, welche Möglichkeiten es gibt, verschiedene Teilmengen eines strukturierten Datentyps abzufragen.</li>
+<li><label><input type="checkbox" checked="" />Du solltest die vier grundlegenden strukturierten Datentypen nennen und unterscheiden können.</label></li>
+<li><label><input type="checkbox" checked="" />Du solltest wissen, auf welche Weisen du auf die Elemente der unterschiedlichen strukturierten Datentypen zugreifen kannst.</label></li>
+<li><label><input type="checkbox" checked="" />Du solltest wissen, in welchen Situationen Faktoren hilfreich sind.</label></li>
+<li><label><input type="checkbox" checked="" />Du solltest verstanden haben, welche Möglichkeiten es gibt, verschiedene Teilmengen eines strukturierten Datentyps abzufragen.</label></li>
 </ul>
 </div>
 <div id="videos-zum-kapitel-1" class="section level2 hasAnchor" number="4.7">
@@ -777,7 +780,7 @@ Datenstruktur ist die einer Datentabelle, ein sogenanntes <code>dataframe</code>
 </div>
 </div>
 <h3>Quellen<a href="quellen.html#quellen" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
 <div id="ref-grolemund2014hands" class="csl-entry">
 Grolemund, Garrett. 2014. <em>Hands-on Programming with r: Write Your Own Functions and Simulations</em>. " O’Reilly Media, Inc.". <a href="https://rstudio-education.github.io/hopr/">https://rstudio-education.github.io/hopr/</a>.
 </div>

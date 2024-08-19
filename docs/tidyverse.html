@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Kapitel 8 Tidyverse | Handout zum Kurs: Einführung in die Programmierung mit R</title>
   <meta name="description" content="Kapitel 8 Tidyverse | Handout zum Kurs: Einführung in die Programmierung mit R" />
-  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Kapitel 8 Tidyverse | Handout zum Kurs: Einführung in die Programmierung mit R" />
   <meta property="og:type" content="book" />
@@ -50,6 +50,7 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet" />
 <script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
 <script src="libs/d3-3.3.8/d3.min.js"></script>
 <script src="libs/dagre-0.4.0/dagre-d3.min.js"></script>
@@ -57,12 +58,12 @@
 <script src="libs/mermaid-0.3.0/dist/mermaid.slim.min.js"></script>
 <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
 <script src="libs/chromatography-0.1/chromatography.js"></script>
-<script src="libs/DiagrammeR-binding-1.0.10/DiagrammeR.js"></script>
+<script src="libs/DiagrammeR-binding-1.0.11/DiagrammeR.js"></script>
 
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -72,7 +73,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -134,6 +135,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging div.csl-entry {
   margin-left:2em;
@@ -170,21 +172,21 @@ div.csl-indent {
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Vorwort</a></li>
 <li class="chapter" data-level="" data-path="hinweise-zur-verwendung-des-handouts.html"><a href="hinweise-zur-verwendung-des-handouts.html"><i class="fa fa-check"></i>Hinweise zur Verwendung des Handouts</a></li>
-<li class="chapter" data-level="1" data-path="einführung.html"><a href="einführung.html"><i class="fa fa-check"></i><b>1</b> Einführung</a>
+<li class="chapter" data-level="1" data-path="einfuehrung.html"><a href="einfuehrung.html"><i class="fa fa-check"></i><b>1</b> Einfuehrung</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="einführung.html"><a href="einführung.html#was-ist-r-und-warum-sollte-man-r-lernen"><i class="fa fa-check"></i><b>1.1</b> Was ist R und warum sollte man R lernen?</a></li>
-<li class="chapter" data-level="1.2" data-path="einführung.html"><a href="einführung.html#installation"><i class="fa fa-check"></i><b>1.2</b> Installation</a></li>
+<li class="chapter" data-level="1.1" data-path="einfuehrung.html"><a href="einfuehrung.html#was-ist-r-und-warum-sollte-man-r-lernen"><i class="fa fa-check"></i><b>1.1</b> Was ist R und warum sollte man R lernen?</a></li>
+<li class="chapter" data-level="1.2" data-path="einfuehrung.html"><a href="einfuehrung.html#installation"><i class="fa fa-check"></i><b>1.2</b> Installation</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="oberfläche.html"><a href="oberfläche.html"><i class="fa fa-check"></i><b>2</b> Oberfläche</a>
+<li class="chapter" data-level="2" data-path="oberflaeche.html"><a href="oberflaeche.html"><i class="fa fa-check"></i><b>2</b> Oberflaeche</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="oberfläche.html"><a href="oberfläche.html#r-gui"><i class="fa fa-check"></i><b>2.1</b> R GUI</a></li>
-<li class="chapter" data-level="2.2" data-path="oberfläche.html"><a href="oberfläche.html#rstudio"><i class="fa fa-check"></i><b>2.2</b> RStudio</a>
+<li class="chapter" data-level="2.1" data-path="oberflaeche.html"><a href="oberflaeche.html#r-gui"><i class="fa fa-check"></i><b>2.1</b> R GUI</a></li>
+<li class="chapter" data-level="2.2" data-path="oberflaeche.html"><a href="oberflaeche.html#rstudio"><i class="fa fa-check"></i><b>2.2</b> RStudio</a>
 <ul>
-<li class="chapter" data-level="2.2.1" data-path="oberfläche.html"><a href="oberfläche.html#console"><i class="fa fa-check"></i><b>2.2.1</b> Console</a></li>
-<li class="chapter" data-level="2.2.2" data-path="oberfläche.html"><a href="oberfläche.html#script-editor"><i class="fa fa-check"></i><b>2.2.2</b> Script Editor</a></li>
-<li class="chapter" data-level="2.2.3" data-path="oberfläche.html"><a href="oberfläche.html#file-editor-und-environment"><i class="fa fa-check"></i><b>2.2.3</b> File-Editor und Environment</a></li>
+<li class="chapter" data-level="2.2.1" data-path="oberflaeche.html"><a href="oberflaeche.html#console"><i class="fa fa-check"></i><b>2.2.1</b> Console</a></li>
+<li class="chapter" data-level="2.2.2" data-path="oberflaeche.html"><a href="oberflaeche.html#script-editor"><i class="fa fa-check"></i><b>2.2.2</b> Script Editor</a></li>
+<li class="chapter" data-level="2.2.3" data-path="oberflaeche.html"><a href="oberflaeche.html#file-editor-und-environment"><i class="fa fa-check"></i><b>2.2.3</b> File-Editor und Environment</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="oberfläche.html"><a href="oberfläche.html#prüfe-dich-selbst"><i class="fa fa-check"></i><b>2.3</b> Prüfe dich selbst</a></li>
+<li class="chapter" data-level="2.3" data-path="oberflaeche.html"><a href="oberflaeche.html#prüfe-dich-selbst"><i class="fa fa-check"></i><b>2.3</b> Prüfe dich selbst</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="atomare-datentypen.html"><a href="atomare-datentypen.html"><i class="fa fa-check"></i><b>3</b> Atomare Datentypen</a>
 <ul>
@@ -384,21 +386,22 @@ Abb. 8.2: dplyr Logo
 <p>Das Package <code>dplyr::</code> ist nicht nur eine Sammlung von verschiedenen Funktionen, sondern beinhaltet auch Datensätze in seinem “Scope”. Wenn ihr das Paket geladen habt, könnt ihr auf diese Datensätze zugreifen. Wir wollen für die folgenden Demonstrationen den Datensatz <code>starwars</code> aus <code>dplyr::</code> verwenden, welcher verschiedene Merkmale von <a href="https://de.wikipedia.org/wiki/Star_Wars">Star Wars</a> Charakteren umfasst. Über den Zuweisungsoperator können wir den Datensatz auch global verfügbar machen, indem wir ihn an den Namen <code>starwars</code> binden.</p>
 <div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb201-1"><a href="tidyverse.html#cb201-1" tabindex="-1"></a>starwars <span class="ot">&lt;-</span> dplyr<span class="sc">::</span>starwars</span>
 <span id="cb201-2"><a href="tidyverse.html#cb201-2" tabindex="-1"></a>starwars</span></code></pre></div>
-<pre><code>## # A tibble: 87 × 14
-##    name     height  mass hair_color skin_color eye_color birth_year sex   gender homeworld species films
-##    &lt;chr&gt;     &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;     &lt;chr&gt;   &lt;lis&gt;
-##  1 Luke Sk…    172    77 blond      fair       blue            19   male  mascu… Tatooine  Human   &lt;chr&gt;
-##  2 C-3PO       167    75 &lt;NA&gt;       gold       yellow         112   none  mascu… Tatooine  Droid   &lt;chr&gt;
-##  3 R2-D2        96    32 &lt;NA&gt;       white, bl… red             33   none  mascu… Naboo     Droid   &lt;chr&gt;
-##  4 Darth V…    202   136 none       white      yellow          41.9 male  mascu… Tatooine  Human   &lt;chr&gt;
-##  5 Leia Or…    150    49 brown      light      brown           19   fema… femin… Alderaan  Human   &lt;chr&gt;
-##  6 Owen La…    178   120 brown, gr… light      blue            52   male  mascu… Tatooine  Human   &lt;chr&gt;
-##  7 Beru Wh…    165    75 brown      light      blue            47   fema… femin… Tatooine  Human   &lt;chr&gt;
-##  8 R5-D4        97    32 &lt;NA&gt;       white, red red             NA   none  mascu… Tatooine  Droid   &lt;chr&gt;
-##  9 Biggs D…    183    84 black      light      brown           24   male  mascu… Tatooine  Human   &lt;chr&gt;
-## 10 Obi-Wan…    182    77 auburn, w… fair       blue-gray       57   male  mascu… Stewjon   Human   &lt;chr&gt;
-## # ℹ 77 more rows
-## # ℹ 2 more variables: vehicles &lt;list&gt;, starships &lt;list&gt;</code></pre>
+<pre><code>## # A tibble: 87 x 14
+##    name      height  mass hair_color skin_color eye_color birth_year
+##    &lt;chr&gt;      &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;          &lt;dbl&gt;
+##  1 Luke Sky~    172    77 blond      fair       blue            19  
+##  2 C-3PO        167    75 &lt;NA&gt;       gold       yellow         112  
+##  3 R2-D2         96    32 &lt;NA&gt;       white, bl~ red             33  
+##  4 Darth Va~    202   136 none       white      yellow          41.9
+##  5 Leia Org~    150    49 brown      light      brown           19  
+##  6 Owen Lars    178   120 brown, gr~ light      blue            52  
+##  7 Beru Whi~    165    75 brown      light      blue            47  
+##  8 R5-D4         97    32 &lt;NA&gt;       white, red red             NA  
+##  9 Biggs Da~    183    84 black      light      brown           24  
+## 10 Obi-Wan ~    182    77 auburn, w~ fair       blue-gray       57  
+## # i 77 more rows
+## # i 7 more variables: sex &lt;chr&gt;, gender &lt;chr&gt;, homeworld &lt;chr&gt;,
+## #   species &lt;chr&gt;, films &lt;list&gt;, vehicles &lt;list&gt;, starships &lt;list&gt;</code></pre>
 </div>
 </div>
 <div id="variablen-manipulieren" class="section level2 hasAnchor" number="8.3">
@@ -461,8 +464,9 @@ Im Prinzip könnt ihr in fast jedem Fall die native Pipe und die Tidyverse Pipe 
 <span id="cb213-2"><a href="tidyverse.html#cb213-2" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="st">&quot;height_in_cm&quot;</span> <span class="ot">=</span> <span class="st">&quot;height&quot;</span>,</span>
 <span id="cb213-3"><a href="tidyverse.html#cb213-3" tabindex="-1"></a>         <span class="st">&quot;mass_in_kg&quot;</span> <span class="ot">=</span> <span class="st">&quot;mass&quot;</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb213-4"><a href="tidyverse.html#cb213-4" tabindex="-1"></a>  <span class="fu">names</span>() <span class="co"># Gibt die Namen aller Variablen aus</span></span></code></pre></div>
-<pre><code>##  [1] &quot;name&quot;         &quot;height_in_cm&quot; &quot;mass_in_kg&quot;   &quot;hair_color&quot;   &quot;skin_color&quot;   &quot;eye_color&quot;   
-##  [7] &quot;birth_year&quot;   &quot;sex&quot;          &quot;gender&quot;       &quot;homeworld&quot;    &quot;species&quot;      &quot;films&quot;       
+<pre><code>##  [1] &quot;name&quot;         &quot;height_in_cm&quot; &quot;mass_in_kg&quot;   &quot;hair_color&quot;  
+##  [5] &quot;skin_color&quot;   &quot;eye_color&quot;    &quot;birth_year&quot;   &quot;sex&quot;         
+##  [9] &quot;gender&quot;       &quot;homeworld&quot;    &quot;species&quot;      &quot;films&quot;       
 ## [13] &quot;vehicles&quot;     &quot;starships&quot;</code></pre>
 <p>Wie man sehen kann, wurden die Namen <code>"height"</code> und <code>"mass"</code> in die von uns angegebenen neuen Namen geändert.</p>
 </div>
@@ -472,25 +476,27 @@ Im Prinzip könnt ihr in fast jedem Fall die native Pipe und die Tidyverse Pipe 
 <p>Der Ausgangsdatensatz hat 87 Fälle. Als Nächstes wollen wir diese Fälle nach gewissen Kriterien filtern. Wenn wir zum Beispiel nur Charaktere mit weißen Haaren betrachten wollten, könnten wir die <code>dplyr::filter()</code> Funktion folgendermaßen verwenden:</p>
 <div class="sourceCode" id="cb215"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb215-1"><a href="tidyverse.html#cb215-1" tabindex="-1"></a>starwars <span class="sc">%&gt;%</span></span>
 <span id="cb215-2"><a href="tidyverse.html#cb215-2" tabindex="-1"></a>  <span class="fu">filter</span>(hair_color <span class="sc">==</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
-<pre><code>## # A tibble: 4 × 14
-##   name      height  mass hair_color skin_color eye_color birth_year sex   gender homeworld species films
-##   &lt;chr&gt;      &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;     &lt;chr&gt;   &lt;lis&gt;
-## 1 Yoda          66    17 white      green      brown            896 male  mascu… &lt;NA&gt;      Yoda&#39;s… &lt;chr&gt;
-## 2 Ki-Adi-M…    198    82 white      pale       yellow            92 male  mascu… Cerea     Cerean  &lt;chr&gt;
-## 3 Dooku        193    80 white      fair       brown            102 male  mascu… Serenno   Human   &lt;chr&gt;
-## 4 Jocasta …    167    NA white      fair       blue              NA fema… femin… Coruscant Human   &lt;chr&gt;
-## # ℹ 2 more variables: vehicles &lt;list&gt;, starships &lt;list&gt;</code></pre>
+<pre><code>## # A tibble: 4 x 14
+##   name       height  mass hair_color skin_color eye_color birth_year
+##   &lt;chr&gt;       &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;          &lt;dbl&gt;
+## 1 Yoda           66    17 white      green      brown            896
+## 2 Ki-Adi-Mu~    198    82 white      pale       yellow            92
+## 3 Dooku         193    80 white      fair       brown            102
+## 4 Jocasta Nu    167    NA white      fair       blue              NA
+## # i 7 more variables: sex &lt;chr&gt;, gender &lt;chr&gt;, homeworld &lt;chr&gt;,
+## #   species &lt;chr&gt;, films &lt;list&gt;, vehicles &lt;list&gt;, starships &lt;list&gt;</code></pre>
 <p>Wie auch in anderen Funktionen, die wir bereits kennengelernt haben, können wir auch logische Konjunktoren verwenden, um bestimmte Bedingungen auszudrücken:</p>
 <div class="sourceCode" id="cb217"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb217-1"><a href="tidyverse.html#cb217-1" tabindex="-1"></a>starwars <span class="sc">%&gt;%</span></span>
 <span id="cb217-2"><a href="tidyverse.html#cb217-2" tabindex="-1"></a>  <span class="fu">filter</span>(homeworld <span class="sc">==</span> <span class="st">&quot;Tatooine&quot;</span> <span class="sc">&amp;</span> sex <span class="sc">!=</span> <span class="st">&quot;male&quot;</span>)</span></code></pre></div>
-<pre><code>## # A tibble: 4 × 14
-##   name      height  mass hair_color skin_color eye_color birth_year sex   gender homeworld species films
-##   &lt;chr&gt;      &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;     &lt;chr&gt;   &lt;lis&gt;
-## 1 C-3PO        167    75 &lt;NA&gt;       gold       yellow           112 none  mascu… Tatooine  Droid   &lt;chr&gt;
-## 2 Beru Whi…    165    75 brown      light      blue              47 fema… femin… Tatooine  Human   &lt;chr&gt;
-## 3 R5-D4         97    32 &lt;NA&gt;       white, red red               NA none  mascu… Tatooine  Droid   &lt;chr&gt;
-## 4 Shmi Sky…    163    NA black      fair       brown             72 fema… femin… Tatooine  Human   &lt;chr&gt;
-## # ℹ 2 more variables: vehicles &lt;list&gt;, starships &lt;list&gt;</code></pre>
+<pre><code>## # A tibble: 4 x 14
+##   name       height  mass hair_color skin_color eye_color birth_year
+##   &lt;chr&gt;       &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;          &lt;dbl&gt;
+## 1 C-3PO         167    75 &lt;NA&gt;       gold       yellow           112
+## 2 Beru Whit~    165    75 brown      light      blue              47
+## 3 R5-D4          97    32 &lt;NA&gt;       white, red red               NA
+## 4 Shmi Skyw~    163    NA black      fair       brown             72
+## # i 7 more variables: sex &lt;chr&gt;, gender &lt;chr&gt;, homeworld &lt;chr&gt;,
+## #   species &lt;chr&gt;, films &lt;list&gt;, vehicles &lt;list&gt;, starships &lt;list&gt;</code></pre>
 <p>Hier zum Beispiel erhalten wir einen Dataframe, der nur die Fälle beinhaltet, welche aus Tatooine stammen und nicht männlich sind.</p>
 <p><strong>Achtung!</strong>
 <code>filter()</code> behält nur diejenigen Zeilen (Fälle), über welche definitiv gesagt werden kann, dass sie der angegebenen Bedingung entsprechen und somit “wahr” sind. Alle <code>NA</code>-Werte, für welche wir nicht wissen, ob sie wahr wären, werden nicht mit aufgenommen!</p>
@@ -500,22 +506,23 @@ Im Prinzip könnt ihr in fast jedem Fall die native Pipe und die Tidyverse Pipe 
 <div class="sourceCode" id="cb219"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb219-1"><a href="tidyverse.html#cb219-1" tabindex="-1"></a>starwars <span class="sc">%&gt;%</span></span>
 <span id="cb219-2"><a href="tidyverse.html#cb219-2" tabindex="-1"></a>  <span class="fu">group_by</span>(homeworld) <span class="sc">%&gt;%</span></span>
 <span id="cb219-3"><a href="tidyverse.html#cb219-3" tabindex="-1"></a>  <span class="fu">head</span>(<span class="dv">5</span>) <span class="co"># nimm die ersten fünf Fälle</span></span></code></pre></div>
-<pre><code>## # A tibble: 5 × 14
+<pre><code>## # A tibble: 5 x 14
 ## # Groups:   homeworld [3]
-##   name      height  mass hair_color skin_color eye_color birth_year sex   gender homeworld species films
-##   &lt;chr&gt;      &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;     &lt;chr&gt;   &lt;lis&gt;
-## 1 Luke Sky…    172    77 blond      fair       blue            19   male  mascu… Tatooine  Human   &lt;chr&gt;
-## 2 C-3PO        167    75 &lt;NA&gt;       gold       yellow         112   none  mascu… Tatooine  Droid   &lt;chr&gt;
-## 3 R2-D2         96    32 &lt;NA&gt;       white, bl… red             33   none  mascu… Naboo     Droid   &lt;chr&gt;
-## 4 Darth Va…    202   136 none       white      yellow          41.9 male  mascu… Tatooine  Human   &lt;chr&gt;
-## 5 Leia Org…    150    49 brown      light      brown           19   fema… femin… Alderaan  Human   &lt;chr&gt;
-## # ℹ 2 more variables: vehicles &lt;list&gt;, starships &lt;list&gt;</code></pre>
+##   name       height  mass hair_color skin_color eye_color birth_year
+##   &lt;chr&gt;       &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;          &lt;dbl&gt;
+## 1 Luke Skyw~    172    77 blond      fair       blue            19  
+## 2 C-3PO         167    75 &lt;NA&gt;       gold       yellow         112  
+## 3 R2-D2          96    32 &lt;NA&gt;       white, bl~ red             33  
+## 4 Darth Vad~    202   136 none       white      yellow          41.9
+## 5 Leia Orga~    150    49 brown      light      brown           19  
+## # i 7 more variables: sex &lt;chr&gt;, gender &lt;chr&gt;, homeworld &lt;chr&gt;,
+## #   species &lt;chr&gt;, films &lt;list&gt;, vehicles &lt;list&gt;, starships &lt;list&gt;</code></pre>
 <p>Im Hintergrund haben wir unseren Tibble aber um das Attribut <code>group</code> ergänzt, welches jeweils die Zeilennummern für die Fälle einer Gruppe als integer Vektor speichert.</p>
 <div class="sourceCode" id="cb221"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb221-1"><a href="tidyverse.html#cb221-1" tabindex="-1"></a>starwars <span class="sc">%&gt;%</span></span>
 <span id="cb221-2"><a href="tidyverse.html#cb221-2" tabindex="-1"></a>  <span class="fu">group_by</span>(homeworld) <span class="sc">%&gt;%</span></span>
 <span id="cb221-3"><a href="tidyverse.html#cb221-3" tabindex="-1"></a>  <span class="fu">attr</span>(<span class="st">&quot;group&quot;</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb221-4"><a href="tidyverse.html#cb221-4" tabindex="-1"></a>  <span class="fu">head</span>(<span class="dv">5</span>)</span></code></pre></div>
-<pre><code>## # A tibble: 5 × 2
+<pre><code>## # A tibble: 5 x 2
 ##   homeworld            .rows
 ##   &lt;chr&gt;          &lt;list&lt;int&gt;&gt;
 ## 1 Alderaan               [3]
@@ -530,7 +537,7 @@ Im Prinzip könnt ihr in fast jedem Fall die native Pipe und die Tidyverse Pipe 
 <span id="cb223-4"><a href="tidyverse.html#cb223-4" tabindex="-1"></a>            <span class="at">n =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
 <span id="cb223-5"><a href="tidyverse.html#cb223-5" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(n)) <span class="sc">%&gt;%</span> <span class="co"># absteigend sortiert nach Anzahl</span></span>
 <span id="cb223-6"><a href="tidyverse.html#cb223-6" tabindex="-1"></a>  <span class="fu">head</span>(<span class="dv">3</span>) <span class="co"># nimm die ersten drei Fälle</span></span></code></pre></div>
-<pre><code>## # A tibble: 3 × 3
+<pre><code>## # A tibble: 3 x 3
 ##   homeworld avg_height     n
 ##   &lt;chr&gt;          &lt;dbl&gt; &lt;int&gt;
 ## 1 Naboo           177.    11
@@ -545,10 +552,10 @@ Im Prinzip könnt ihr in fast jedem Fall die native Pipe und die Tidyverse Pipe 
 <h2><span class="header-section-number">8.5</span> Prüfe dich selbst<a href="tidyverse.html#prüfe-dich-selbst-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Von dieser Sitzung solltest du Folgendes mitgenommen haben:</p>
 <ul class="task-list">
-<li><input type="checkbox" checked="" />Du solltest wissen, was das Tidyverse ist.</li>
-<li><input type="checkbox" checked="" />Du solltest wissen, was “tidy-data” auszeichnet (siehe 8.2).</li>
-<li><input type="checkbox" checked="" />Du solltest unterscheiden können, mit welchen Funktionen man Fälle und mit welchen man Variablen manipuliert.</li>
-<li><input type="checkbox" checked="" />Du solltest verstanden haben, was die Funktion <code>group_by()</code> macht und wann diese nützlich sein könnte.</li>
+<li><label><input type="checkbox" checked="" />Du solltest wissen, was das Tidyverse ist.</label></li>
+<li><label><input type="checkbox" checked="" />Du solltest wissen, was “tidy-data” auszeichnet (siehe 8.2).</label></li>
+<li><label><input type="checkbox" checked="" />Du solltest unterscheiden können, mit welchen Funktionen man Fälle und mit welchen man Variablen manipuliert.</label></li>
+<li><label><input type="checkbox" checked="" />Du solltest verstanden haben, was die Funktion <code>group_by()</code> macht und wann diese nützlich sein könnte.</label></li>
 </ul>
 </div>
 <div id="literaturverweise-4" class="section level2 hasAnchor" number="8.6">
@@ -568,7 +575,7 @@ Im Prinzip könnt ihr in fast jedem Fall die native Pipe und die Tidyverse Pipe 
 </div>
 </div>
 <h3>Quellen<a href="quellen.html#quellen" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
 <div id="ref-wickham2016r" class="csl-entry">
 Wickham, Hadley, and Garrett Grolemund. 2016. <em>R for Data Science: Import, Tidy, Transform, Visualize, and Model Data</em>. " O’Reilly Media, Inc.". <a href="https://r4ds.had.co.nz">https://r4ds.had.co.nz</a>.
 </div>

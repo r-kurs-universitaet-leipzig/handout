@@ -10,7 +10,8 @@
     system = "x86_64-linux";
     pkgs = inputs.nixpkgs.legacyPackages.${system};
     env = pkgs.rstudioWrapper.override {
-      packages = with pkgs.rPackages; [ 
+      packages = with pkgs.rPackages; [
+        viridis
         bookdown
         cowplot # anotations for ggplot
         curl
@@ -46,7 +47,7 @@
 
    in {
      devShell."${system}" = pkgs.mkShell {
-        buildInputs =  [ env ];
+        buildInputs =  [ env pkgs.pandoc ];
         shellHook = ''
           echo 'You entered RStudio development shell' 
         '';

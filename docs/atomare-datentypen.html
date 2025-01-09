@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Kapitel 3 Atomare Datentypen | Handout zum Kurs: Einführung in die Programmierung mit R</title>
   <meta name="description" content="Kapitel 3 Atomare Datentypen | Handout zum Kurs: Einführung in die Programmierung mit R" />
-  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Kapitel 3 Atomare Datentypen | Handout zum Kurs: Einführung in die Programmierung mit R" />
   <meta property="og:type" content="book" />
@@ -523,7 +523,7 @@ zugewiesen werden können:</li>
 <div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="atomare-datentypen.html#cb21-1" tabindex="-1"></a>x_1 <span class="ot">&lt;-</span> <span class="dv">3</span></span></code></pre></div>
 <p>Aber:</p>
 <div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="atomare-datentypen.html#cb22-1" tabindex="-1"></a>_x_1 <span class="ot">&lt;-</span> <span class="dv">3</span></span></code></pre></div>
-<pre><code>## Error: &lt;text&gt;:1:2: unexpected symbol
+<pre><code>## Error in parse(text = input): &lt;text&gt;:1:2: unexpected symbol
 ## 1: _x_1
 ##      ^</code></pre>
 <p><strong>Bemerkung:</strong> Man sollte sich bei den Buchstaben nur auf a,…,z bzw. A,.., Z beschränken, auch wenn je nach lokalem Setting z.B. auch andere Buchstaben wie ä zulässig sind.</p>
@@ -562,18 +562,7 @@ zugewiesen werden können:</li>
 <p>Wir haben mittlerweile ein paar Objekte im Speicher
 angelegt und an Namen gebunden. Mit <code>ls()</code> kann man diese abrufen:</p>
 <div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="atomare-datentypen.html#cb31-1" tabindex="-1"></a><span class="fu">ls</span>()</span></code></pre></div>
-<pre><code>##  [1] &quot;D&quot;                  &quot;DJ_Alter&quot;           &quot;DJ_Geburtsjahr&quot;    
-##  [4] &quot;DJ_Name&quot;            &quot;DJ_Vinyl&quot;           &quot;M&quot;                 
-##  [7] &quot;X&quot;                  &quot;alter_moni&quot;         &quot;alter_tom&quot;         
-## [10] &quot;base_plot&quot;          &quot;countdown&quot;          &quot;df_lineup&quot;         
-## [13] &quot;df_regio&quot;           &quot;grades&quot;             &quot;i&quot;                 
-## [16] &quot;is.positive&quot;        &quot;name&quot;               &quot;name_bundeskanzler&quot;
-## [19] &quot;p&quot;                  &quot;pow&quot;                &quot;profil_marie&quot;      
-## [22] &quot;q&quot;                  &quot;quadrat&quot;            &quot;starwars&quot;          
-## [25] &quot;theendoftheworld&quot;   &quot;un_lambda&quot;          &quot;v1&quot;                
-## [28] &quot;v1_log&quot;             &quot;v2&quot;                 &quot;x&quot;                 
-## [31] &quot;x_1&quot;                &quot;x_test&quot;             &quot;y&quot;                 
-## [34] &quot;y_test&quot;             &quot;z&quot;                  &quot;zahl&quot;</code></pre>
+<pre><code>## [1] &quot;x_1&quot;    &quot;x_test&quot; &quot;y_test&quot;</code></pre>
 <p>Mit <code>rm()</code> kann man unnötige Objekte über deren Namen entfernen:</p>
 <div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="atomare-datentypen.html#cb33-1" tabindex="-1"></a><span class="fu">rm</span>(y_test)</span></code></pre></div>
 <p>Wenn ihr gleich alle angelegten, referenzierbaren Objekte aus dem Speicher entfernen wollt:</p>

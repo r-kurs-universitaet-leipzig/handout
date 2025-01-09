@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Kapitel 4 Strukturierte Datentypen | Handout zum Kurs: Einführung in die Programmierung mit R</title>
   <meta name="description" content="Kapitel 4 Strukturierte Datentypen | Handout zum Kurs: Einführung in die Programmierung mit R" />
-  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Kapitel 4 Strukturierte Datentypen | Handout zum Kurs: Einführung in die Programmierung mit R" />
   <meta property="og:type" content="book" />
@@ -417,7 +417,7 @@ die folgenden grundlegenden Datenstrukturen.</p>
 </table>
 <p>Vektoren und Matrizen sind eine strukturierte Zusammenstellung von Daten gleichen Typs. Ein Vektor kann zum Beispiele eine Reihe von integer Werten bündeln, dann aber keine zusätzlichen logischen Werte oder Zeichenketten aufnehmen. Im Gegensatz dazu erlauben es uns Listen und Data Frames, auch Daten unterschiedlichen Typs zu bündeln. In diesem Kapitel wollen wir uns damit beschäftigen, welche Implikationen die hier skizzierten Eigenschaften der verschiedenen Datenstrukturen für Ihre Anwendung haben.</p>
 <p>Damit die Datenstruktur für euch auch visuell an Gestalt gewinnt, folgt eine vereinfachte Darstellung mit den zentralen Eigenschaften der Datenstrukturen. Die Darstellung ist nicht in jeder Hinsicht korrekt, soll aber dazu dienen, die grundlegenden Unterschiede der verschiedenen Datenstrukturen zu veranschaulichen.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-44"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-45"></span>
 <img src="resources/data_structures.png" alt="Strukturierte Datentypen" width="70%" />
 <p class="caption">
 Abb. 4.1: Strukturierte Datentypen
@@ -570,24 +570,23 @@ Mit der Funktion <code>factor()</code> können wir einem Vektor die Menge der m�
 <p>Beispielsweise wurde der Wohnort von Studierenden in Leipzig mit den möglichen Antworten Zentrum, Nord, Süd, Ost und West abgefragt. Der <code>character</code>-Vektor z beinhaltet die Antworten einiger Studierender.</p>
 <div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="strukturierte-datentypen.html#cb112-1" tabindex="-1"></a>z <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Nord&quot;</span>, <span class="st">&quot;Ost&quot;</span>, <span class="st">&quot;Ost&quot;</span>, <span class="st">&quot;West&quot;</span>, <span class="st">&quot;Süd&quot;</span>, <span class="st">&quot;Nord&quot;</span>, <span class="st">&quot;Ost&quot;</span>)</span>
 <span id="cb112-2"><a href="strukturierte-datentypen.html#cb112-2" tabindex="-1"></a>z</span></code></pre></div>
-<pre><code>## [1] &quot;Nord&quot;       &quot;Ost&quot;        &quot;Ost&quot;        &quot;West&quot;       &quot;S&lt;U+00FC&gt;d&quot;
-## [6] &quot;Nord&quot;       &quot;Ost&quot;</code></pre>
+<pre><code>## [1] &quot;Nord&quot; &quot;Ost&quot;  &quot;Ost&quot;  &quot;West&quot; &quot;Süd&quot;  &quot;Nord&quot; &quot;Ost&quot;</code></pre>
 <p>Eine einfache Häufigkeitstabelle zeigt die absoluten Häufigkeiten der Antworten:</p>
 <div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="strukturierte-datentypen.html#cb114-1" tabindex="-1"></a><span class="fu">table</span>(z)</span></code></pre></div>
 <pre><code>## z
-##       Nord        Ost S&lt;U+00FC&gt;d       West 
-##          2          3          1          1</code></pre>
+## Nord  Ost  Süd West 
+##    2    3    1    1</code></pre>
 <p>Wie wir sehen, hat keine der befragten Studierenden angegeben, im Leipziger Zentrum zu wohnen. Der Wert taucht in der Häufigkeitstabelle also auch nicht auf. Mithilfe eines Faktors können wir nun die Menge aller möglichen Ausprägungen hinterlegen und so auch die Ausprägung mit 0 Antworten sichtbar machen.</p>
 <div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="strukturierte-datentypen.html#cb116-1" tabindex="-1"></a>z <span class="ot">&lt;-</span> <span class="fu">factor</span>(z,</span>
 <span id="cb116-2"><a href="strukturierte-datentypen.html#cb116-2" tabindex="-1"></a>            <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;Nord&quot;</span>, <span class="st">&quot;Süd&quot;</span>, <span class="st">&quot;Ost&quot;</span>, <span class="st">&quot;West&quot;</span>, <span class="st">&quot;Zentrum&quot;</span>))</span>
 <span id="cb116-3"><a href="strukturierte-datentypen.html#cb116-3" tabindex="-1"></a></span>
 <span id="cb116-4"><a href="strukturierte-datentypen.html#cb116-4" tabindex="-1"></a><span class="fu">table</span>(z)</span></code></pre></div>
 <pre><code>## z
-##       Nord S&lt;U+00FC&gt;d        Ost       West    Zentrum 
-##          2          1          3          1          0</code></pre>
+##    Nord     Süd     Ost    West Zentrum 
+##       2       1       3       1       0</code></pre>
 <p>Dies ist auch hinfreich für Abbildungen (siehe Abschnitt <a href="plots.html#plots">9</a>).</p>
 <div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="strukturierte-datentypen.html#cb118-1" tabindex="-1"></a><span class="fu">plot</span>(z)</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-63-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-64-1.png" width="672" /></p>
 <p>Für die Anordnung der Levels, das Umkodieren oder das Hinzufügen und Löschen einzelner Levels eignet sich das Paket <code>forcats</code>.</p>
 </div>
 <div id="matrizen" class="section level2 hasAnchor" number="4.3">

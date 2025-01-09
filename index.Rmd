@@ -1,15 +1,19 @@
 --- 
 title: "Handout zum Kurs: Einführung in die Programmierung mit R"
 author: |
-  | Peter Kannewitz 
-  | peter.kannewitz@uni-leipzig.de
+  | Christoph Mayer
+  | christoph.mayer@uni-leipzig.de
+  |  
+  | Ehemalige Kursleiter:innen:
+  |
+  | Peter Kannewitz
   |
   | Jonas Frost
   |
-  | Peer Keßler
-  |
   | Anne Sophie Küllmer
-subtitle: "URZ und Academic Lab -- Universität Leipzig"
+  |
+  | Peer Keßler
+subtitle: "Academic Lab -- Universität Leipzig"
 date: "Stand: `r Sys.Date()`"
 bibliography: ["references.bib"]
 biblio-style: "apalike"
@@ -21,7 +25,7 @@ site: bookdown::bookdown_site
 
 # Vorwort {-}
 
-Dieses Handout ist Teil des Grundkurses in R am URZ und am Academic Lab der Uni Leipzig.
+Dieses Handout ist Teil des Grundkurses in R am Academic Lab der Uni Leipzig.
 
 Besonderer Dank gilt Stephan Poppe und dem Statistik-Team des Instituts für Soziologie
 für die Unterstützung beim Erstellen der Materialien für diesen Kurs.
@@ -38,16 +42,15 @@ sollten Angaben nicht mehr aktuell sein bzw. sollten sich Fehler eingeschlichen 
 
 **R-Intensivkurs**
 
-Falls ihr auf der Suche nach dem Handout des R-Intensivkurses seid, findet ihr dieses unter folgendem Link: <https://r-intensivkurs-uni-leipzig.github.io/handout/>. Der R-Intensivkurs ist ein weitere Angebot des URZs und des Academic Labs der Universität Leipzig. Weitere Infos zu den Kursen gibt es hier: <https://www.urz.uni-leipzig.de/unsere-services/services-fuer-studierende/it-kurse-fuer-studierende>.
+Falls ihr auf der Suche nach dem Handout des R-Intensivkurses seid, findet ihr dieses unter folgendem Link: <https://r-intensivkurs-uni-leipzig.github.io/handout/>. Der R-Intensivkurs ist ein weiteres Angebot des Academic Labs der Universität Leipzig. Weitere Infos zu den Kursen gibt es hier: <https://www.uni-leipzig.de/academic-lab>.
 
-```{r, echo=FALSE, out.width='30%',  fig.show='hold'}
-knitr::include_graphics(
-  c("resources/Logo_URZ.jpg",
-    "resources/Logo_SMWK.jpg",
-    "resources/logo_lizenz_cc_by_nc_sa.png")
-)
+```{r, echo=FALSE,   fig.show='hold', fig.align='center'}
+knitr::include_graphics("resources/EFRE-ESF_LO_Kombination_EU-Logo_FreistaatSachsen_H_RGB_600dpi.jpg")
 ```
+```{r, echo=FALSE, out.width='30%',  fig.show='hold', fig.align='center'}
+knitr::include_graphics("resources/logo_lizenz_cc_by_nc_sa.png")
 
+```
 
 
 

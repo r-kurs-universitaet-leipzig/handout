@@ -9,13 +9,10 @@ Wir freuen uns über jegliche Form von Anregungen und Verbesserungsvorschlägen.
 
 ## Authors
 
-Aktuelle Kursleiter\*innen:
- 
-- Peter Kannewitz ([peter.kannewitz@uni-leipzig.de](mailto:peter.kannewitz@uni-leipzig.de))
-- Christoph Mayer ([christoph.mayer@uni-leipzig.de](mailto:christoph.mayer@uni-leipzig.de))
-
 Ehemalige Kursleiter\*innen:
 
-- Jonas Frost ([jonas.frost@uni-leipzig.de](mailto:jonas.frost@uni-leipzig.de))
-- Anne Sophie Küllmer ([sophie.kuellmer@uni-leipzig.de](mailto:sophie.kuellmer@uni-leipzig.de))
-- Peer Keßler ([peer.schwertfeger@uni-leipzig.de](mailto:peer.schwertfeger@uni-leipzig.de))
+- Christoph Mayer
+- Peter Kannewitz 
+- Jonas Frost 
+- Anne Sophie Küllmer
+- Peer Keßler
